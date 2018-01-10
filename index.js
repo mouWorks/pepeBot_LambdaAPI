@@ -8,6 +8,19 @@ exports.handler = function (req, res) {
         var reply_token = event.replyToken;
         const ChannelAccessToken = process.env['CHANNEL_ACCESS_TOKEN'];
 
+        var returnMessage = msg;
+
+
+        switch(msg){
+            case 'Leo':
+            case 'leo':
+                returnMessage = '我大李奧有大理抱送你豪華大禮包';
+                break;
+            default:
+                returnMessage = msg;
+                break;
+        }
+
         var options = {
             method: 'POST',
             uri: "https://api.line.me/v2/bot/message/reply",
@@ -21,7 +34,7 @@ exports.handler = function (req, res) {
               messages:[
                 {
                   "type":"text",
-                  "text":msg + ' 9487 1616'
+                  "text":returnMessage
                 }
               ]
             }
