@@ -2,7 +2,7 @@ var rp = require('request-promise');
 
 exports.handler = function (req, res) {
 
-    const promises = req.body.events.map(event => {
+    const promises = req.events.map(event => {
 
         var msg = event.message.text;
         var reply_token = event.replyToken;
@@ -21,7 +21,7 @@ exports.handler = function (req, res) {
               messages:[
                 {
                   "type":"text",
-                  "text":msg + ' 9487 1611'
+                  "text":msg + ' 9487 1616'
                 }
               ]
             }
