@@ -50,7 +50,7 @@ exports.handler = function (req, res) {
             //       "text":returnMessage
             //     }
             //   ]
-            // }
+            }
         };
 
         return rp(options)
