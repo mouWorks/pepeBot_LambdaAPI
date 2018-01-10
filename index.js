@@ -10,14 +10,26 @@ exports.handler = function (req, res) {
 
         var returnMessage = msg;
 
+        var messages = [
+            {
+              "type":"text",
+              "text":msg
+            }
+          ];
 
         switch(msg){
             case 'Leo':
             case 'leo':
-                returnMessage = '我大李奧有大理抱送你豪華大禮包';
+                messages.text = '我大李奧有大理抱送你豪華大禮包';
                 break;
+            case 'pepe':
+                messages.type = 'image';
+                messages.originalContentUrl = 'https://cdn.pixabay.com/photo/2016/03/22/04/08/pepe-the-frog-1272162_640.jpg';
+                messages.previewImageUrl = 'https://cdn.pixabay.com/photo/2016/03/22/04/08/pepe-the-frog-1272162_640.jpg';
+                break;
+            
             default:
-                returnMessage = msg;
+                messages.text = msg;
                 break;
         }
 
@@ -31,13 +43,14 @@ exports.handler = function (req, res) {
             json: true,
             body: {
               replyToken: reply_token,
-              messages:[
-                {
-                  "type":"text",
-                  "text":returnMessage
-                }
-              ]
-            }
+              messages
+            //   messages:[
+            //     {
+            //       "type":"text",
+            //       "text":returnMessage
+            //     }
+            //   ]
+            // }
         };
 
         return rp(options)
