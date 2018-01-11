@@ -35,11 +35,11 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = 'https://cdn.pixabay.com/photo/2016/03/22/04/08/pepe-the-frog-1272162_640.jpg';
                 break;
 
-            case '親密度':
-                var limit = 50000000;
-                var intimacy = Math.floor(Math.random() * Math.floor(limit));
-                messages[0].text = '李奧和腎液親密度+' + intimacy;
-                break;
+            // case '親密度':
+            //     var limit = 50000000;
+            //     var intimacy = Math.floor(Math.random() * Math.floor(limit));
+            //     messages[0].text = '李奧和腎液親密度+' + intimacy;
+            //     break;
             
             default:
                 messages[0].text = msg;
