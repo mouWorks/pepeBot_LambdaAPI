@@ -14,7 +14,16 @@ exports.handler = function (req, res) {
             'Leo is GOD, Don?',
             '嚇到射出來啦',
             '我又偷刷聲望啦',
-            '怕.jpg'
+            '怕.jpg',
+            '我想寫程式',
+            '這點, 我並不認同!',
+            '還記得訂便當我嗎?',
+            'I am 心快活 CEO'
+        ];
+
+        var CoffeeArray = [
+            'Cama','Seven','全家','路易莎',
+            '太濃了吧,否則怎麼苦的說不出話'
         ];
 
         var returnMessage = msg;
@@ -29,10 +38,11 @@ exports.handler = function (req, res) {
         switch(msg){
             case 'Leo':
             case 'leo':
-                //messages[0].text = '我大里奧糞起來!';
-                //Get from Random
                 messages[0].text = LeoArray[Math.floor(Math.random() * LeoArray.length)];
-
+                break;
+            case 'coffee':
+            case '咖啡':
+                messages[0].text = CoffeeArray[Math.floor(Math.random() * CoffeeArray.length)];
                 break;
             case 'LEO':
                 messages[0].type = 'image';
