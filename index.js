@@ -18,7 +18,11 @@ exports.handler = function (req, res) {
             '我想寫程式',
             '這點, 我並不認同!',
             '還記得訂便當我嗎?',
-            'I am 心快活 CEO'
+            'I am 心快活 CEO',
+            '心快活我大快活！',
+            'CheckMarx is the best!',
+            '隊友都死光啦Q_Q',
+            '我大四驅車你敢嘴?'
         ];
 
         var CoffeeArray = [
