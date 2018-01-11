@@ -26,6 +26,14 @@ exports.handler = function (req, res) {
             '太濃了吧,否則怎麼苦的說不出話'
         ];
 
+        var FuckArray = [
+            'https://i.imgur.com/rK5gG4q.png',
+            'https://i.imgur.com/RvNBdjc.png',
+            'https://i.imgur.com/i0qN9yh.png',
+            'https://i.imgur.com/t8JUwcG.png',
+            'https://i.imgur.com/BVm2QR9.png'
+        ];
+
         var returnMessage = msg;
 
         var messages = [
@@ -68,8 +76,15 @@ exports.handler = function (req, res) {
                 messages[0].text = '今日' + msg + ':' + intimacy;
                 break;
             
+            case 'fuckyou':
+                targetUrl = FuckArray[Math.floor(Math.random() * FuckArray.length)];
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = targetUrl;
+                messages[0].previewImageUrl = targetUrl;
+                break;
+
             default:
-                messages[0].text = msg;
+                //messages[0].text = msg;
                 break;
         }
 
