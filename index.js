@@ -1,3 +1,5 @@
+import { basename } from 'path';
+
 var rp = require('request-promise');
 
 exports.handler = function (req, res) {
@@ -20,12 +22,23 @@ exports.handler = function (req, res) {
         switch(msg){
             case 'Leo':
             case 'leo':
-                messages[0].text = '我大李奧有大理抱送你豪華大禮包';
+                messages[0].text = '我大里奧糞起來!';
+                break;
+            case 'LEO':
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'https://i.imgur.com/ll06UaU.png';
+                messages[0].previewImageUrl = 'https://i.imgur.com/ll06UaU.png';
                 break;
             case 'pepe':
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://cdn.pixabay.com/photo/2016/03/22/04/08/pepe-the-frog-1272162_640.jpg';
                 messages[0].previewImageUrl = 'https://cdn.pixabay.com/photo/2016/03/22/04/08/pepe-the-frog-1272162_640.jpg';
+                break;
+
+            case '親密度':
+                var limit = 50000000;
+                var intimacy = Math.floor(Math.random() * Math.floor(limit));
+                messages[0].text = '李奧和腎液親密度+' + intimacy;
                 break;
             
             default:
@@ -44,12 +57,6 @@ exports.handler = function (req, res) {
             body: {
               replyToken: reply_token,
               messages
-            //   messages:[
-            //     {
-            //       "type":"text",
-            //       "text":returnMessage
-            //     }
-            //   ]
             }
         };
 
