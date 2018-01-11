@@ -8,6 +8,15 @@ exports.handler = function (req, res) {
         var reply_token = event.replyToken;
         const ChannelAccessToken = process.env['CHANNEL_ACCESS_TOKEN'];
 
+        var LeoArray =[
+            '我大里奧有大理報送你豪華大禮包',
+            '我大里奧糞起來!',
+            'Leo is GOD, Don?',
+            '嚇到射出來啦',
+            '我又偷刷聲望啦',
+            '怕.jpg'
+        ];
+
         var returnMessage = msg;
 
         var messages = [
@@ -20,7 +29,10 @@ exports.handler = function (req, res) {
         switch(msg){
             case 'Leo':
             case 'leo':
-                messages[0].text = '我大里奧糞起來!';
+                //messages[0].text = '我大里奧糞起來!';
+                //Get from Random
+                messages[0].text = LeoArray[Math.floor(Math.random() * LeoArray.length)];
+
                 break;
             case 'LEO':
                 messages[0].type = 'image';
@@ -37,6 +49,13 @@ exports.handler = function (req, res) {
                 var limit = 50000000;
                 var intimacy = Math.floor(Math.random() * Math.floor(limit));
                 messages[0].text = '李奧和腎液親密度+' + intimacy;
+                break;
+
+            case '吉戰力':
+            case '戰鬥力':
+                var limit = 9000;
+                var intimacy = Math.floor(Math.random() * Math.floor(limit));
+                messages[0].text = '今日' + msg + ':' + intimacy;
                 break;
             
             default:
