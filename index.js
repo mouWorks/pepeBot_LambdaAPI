@@ -87,6 +87,12 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = targetUrl;
                 break;
 
+            case 'cc':
+                messages[0].type = 'sticker';   
+                messages[0].packageId = "3";
+                messages[0].stickerId = "181";
+                break;
+        
             default:
                 needToReply = false;
                 //messages[0].text = msg;
