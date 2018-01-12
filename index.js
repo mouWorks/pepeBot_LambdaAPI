@@ -73,7 +73,14 @@ exports.handler = function (req, res) {
                 messages[0].originalContentUrl = 'https://i.imgur.com/NyZi7R5.png';
                 messages[0].previewImageUrl = 'https://i.imgur.com/NyZi7R5.png';
                 break;
-            
+
+            case 'leo打':
+            case 'Leo打':
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'https://i.imgur.com/BOZzmrA.png';
+                messages[0].previewImageUrl = 'https://i.imgur.com/BOZzmrA.png';
+                break;
+
             case '親密度':
                 var limit = 50000000;
                 var intimacy = Math.floor(Math.random() * Math.floor(limit));
