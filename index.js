@@ -93,6 +93,26 @@ exports.handler = function (req, res) {
                 messages[0].stickerId = "181";
                 break;
         
+            case '屁':
+            case '嗆屁嗆':
+            case 'pu':
+                messages[0].type = 'sticker';   
+                messages[0].packageId = "2";
+                messages[0].stickerId = "177";
+                break;
+
+            case 'uccu':
+                messages[0].type = 'sticker';   
+                messages[0].packageId = "2";
+                messages[0].stickerId = "163";
+                break;
+            
+            case '崩潰':
+                messages[0].type = 'sticker';   
+                messages[0].packageId = "1";
+                messages[0].stickerId = "105";
+                break;
+
             default:
                 needToReply = false;
                 //messages[0].text = msg;
