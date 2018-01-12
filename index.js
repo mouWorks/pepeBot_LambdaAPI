@@ -74,7 +74,14 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = 'https://i.imgur.com/NyZi7R5.png';
                 break;
 
-            case 'leo打':
+            case 'humm':
+            case 'humm??':
+            case 'hummm':
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'https://i.imgur.com/9uQmv6y.jpg';
+                messages[0].previewImageUrl = 'https://i.imgur.com/9uQmv6y.jpg';
+                break;
+
             case 'Leo打':
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://i.imgur.com/BOZzmrA.png';
