@@ -63,10 +63,17 @@ exports.handler = function (req, res) {
                 break;
             case 'pepe':
                 messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://cdn.pixabay.com/photo/2016/03/22/04/08/pepe-the-frog-1272162_640.jpg';
-                messages[0].previewImageUrl = 'https://cdn.pixabay.com/photo/2016/03/22/04/08/pepe-the-frog-1272162_640.jpg';
+                messages[0].originalContentUrl = 'https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg';
+                messages[0].previewImageUrl = 'https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg';
                 break;
 
+            case 'leo嗆':
+            case 'Leo嗆':
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'https://i.imgur.com/NyZi7R5.png';
+                messages[0].previewImageUrl = 'https://i.imgur.com/NyZi7R5.png';
+                break;
+            
             case '親密度':
                 var limit = 50000000;
                 var intimacy = Math.floor(Math.random() * Math.floor(limit));
