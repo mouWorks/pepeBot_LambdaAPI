@@ -58,7 +58,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '打':
-                messages[0].type = 'image';
+                messages[0].type = 'video';
                 messages[0].originalContentUrl = 'https://i.imgur.com/W2vrwqO.gif';
                 messages[0].previewImageUrl = 'https://i.imgur.com/W2vrwqO.gif';
                 break;
