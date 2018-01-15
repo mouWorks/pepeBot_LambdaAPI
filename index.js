@@ -56,6 +56,13 @@ exports.handler = function (req, res) {
             case '咖啡':
                 messages[0].text = CoffeeArray[Math.floor(Math.random() * CoffeeArray.length)];
                 break;
+
+            case '打':
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'http://i0.kym-cdn.com/photos/images/newsfeed/001/197/529/58d.png';
+                messages[0].previewImageUrl = 'http://i0.kym-cdn.com/photos/images/newsfeed/001/197/529/58d.png';
+                break;
+
             case 'LEO':
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://i.imgur.com/ll06UaU.png';
