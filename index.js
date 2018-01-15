@@ -59,8 +59,8 @@ exports.handler = function (req, res) {
 
             case '打':
                 messages[0].type = 'image';
-                messages[0].originalContentUrl = 'http://i0.kym-cdn.com/photos/images/newsfeed/001/172/936/b62.gif';
-                messages[0].previewImageUrl = 'http://i0.kym-cdn.com/photos/images/newsfeed/001/172/936/b62.gif';
+                messages[0].originalContentUrl = 'https://i.imgur.com/W2vrwqO.gif';
+                messages[0].previewImageUrl = 'https://i.imgur.com/W2vrwqO.gif';
                 break;
 
             case 'LEO':
