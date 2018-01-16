@@ -95,6 +95,13 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = 'https://i.imgur.com/BOZzmrA.png';
                 break;
 
+            case 'ssd':
+            case 'SSD':
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'https://i.imgur.com/Y1IxoJd.jpg';
+                messages[0].previewImageUrl = 'https://i.imgur.com/Y1IxoJd.jpg';
+                break;    
+
             case '親密度':
                 var limit = 50000000;
                 var intimacy = Math.floor(Math.random() * Math.floor(limit));
