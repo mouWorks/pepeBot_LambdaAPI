@@ -95,11 +95,12 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = 'https://i.imgur.com/BOZzmrA.png';
                 break;
 
+            case 'Ssd':
             case 'ssd':
             case 'SSD':
                 messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/Y1IxoJd.jpg';
-                messages[0].previewImageUrl = 'https://i.imgur.com/Y1IxoJd.jpg';
+                messages[0].originalContentUrl = 'https://i.imgur.com/yaHDmwr.png';
+                messages[0].previewImageUrl = 'https://i.imgur.com/yaHDmwr.png';
                 break;    
 
             case '親密度':
