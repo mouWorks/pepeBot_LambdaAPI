@@ -38,6 +38,15 @@ exports.handler = function (req, res) {
             'https://i.imgur.com/BVm2QR9.png'
         ];
 
+        var WorkArray = [
+            'https://i.imgur.com/KDBfidU.png',
+            'https://i.imgur.com/9nRAc2u.png',
+            'https://i.imgur.com/O4dHfuT.png',
+            'https://i.imgur.com/ONAhcWb.png',
+            'https://i.imgur.com/fUJtP4S.png',
+            'https://i.imgur.com/H5rW4df.png'
+        ];
+
         var messages = [
             {
               "type":"text",
@@ -119,6 +128,15 @@ exports.handler = function (req, res) {
             
             case 'fuckyou':
                 targetUrl = FuckArray[Math.floor(Math.random() * FuckArray.length)];
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = targetUrl;
+                messages[0].previewImageUrl = targetUrl;
+                break;
+
+            case 'work':
+            case 'Work':
+            case '上班':
+                targetUrl = WorkArray[Math.floor(Math.random() * WorkArray.length)];
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = targetUrl;
                 messages[0].previewImageUrl = targetUrl;
