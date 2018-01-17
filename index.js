@@ -95,6 +95,7 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = 'https://i.imgur.com/BOZzmrA.png';
                 break;
 
+            case 'ssd ':
             case 'Ssd':
             case 'ssd':
             case 'SSD':
