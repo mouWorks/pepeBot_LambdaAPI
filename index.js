@@ -4,7 +4,7 @@ exports.handler = function (req, res) {
 
     const promises = req.events.map(event => {
 
-        var msg = event.message.text;
+        var msg = event.message.text.toUpperCase();
         var reply_token = event.replyToken;
         const ChannelAccessToken = process.env['CHANNEL_ACCESS_TOKEN'];
 
@@ -56,12 +56,12 @@ exports.handler = function (req, res) {
         
         needToReply = true;
 
+        //Text is switch to UpperCase()
         switch(msg){
-            case 'Leo':
-            case 'leo':
+            case 'LEO':
                 messages[0].text = LeoArray[Math.floor(Math.random() * LeoArray.length)];
                 break;
-            case 'coffee':
+            case 'Coffee':
             case '咖啡':
                 messages[0].text = CoffeeArray[Math.floor(Math.random() * CoffeeArray.length)];
                 break;
@@ -72,41 +72,32 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = 'https://i.imgur.com/W2vrwqO.gif';
                 break;
 
-            case 'LEO':
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/ll06UaU.png';
-                messages[0].previewImageUrl = 'https://i.imgur.com/ll06UaU.png';
-                break;
-            case 'pepe':
+            case 'PEPE':
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg';
                 messages[0].previewImageUrl = 'https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg';
                 break;
 
-            case 'leo嗆':
-            case 'Leo嗆':
+            case 'LEO嗆':
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://i.imgur.com/NyZi7R5.png';
                 messages[0].previewImageUrl = 'https://i.imgur.com/NyZi7R5.png';
                 break;
 
-            case 'humm':
-            case 'humm??':
-            case 'hummm':
+            case 'HUMM?':
+            case 'HUMM':
+            case 'HUMMMM':
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://i.imgur.com/9uQmv6y.jpg';
                 messages[0].previewImageUrl = 'https://i.imgur.com/9uQmv6y.jpg';
                 break;
 
-            case 'Leo打':
+            case 'LEO打':
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://i.imgur.com/BOZzmrA.png';
                 messages[0].previewImageUrl = 'https://i.imgur.com/BOZzmrA.png';
                 break;
 
-            case 'ssd ':
-            case 'Ssd':
-            case 'ssd':
             case 'SSD':
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://i.imgur.com/yaHDmwr.png';
@@ -126,15 +117,14 @@ exports.handler = function (req, res) {
                 messages[0].text = '今日' + msg + ':' + intimacy;
                 break;
             
-            case 'fuckyou':
+            case 'FUCKYOU':
                 targetUrl = FuckArray[Math.floor(Math.random() * FuckArray.length)];
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = targetUrl;
                 messages[0].previewImageUrl = targetUrl;
                 break;
 
-            case 'work':
-            case 'Work':
+            case 'WORK':
             case '上班':
                 targetUrl = WorkArray[Math.floor(Math.random() * WorkArray.length)];
                 messages[0].type = 'image';
@@ -142,7 +132,7 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = targetUrl;
                 break;
 
-            case 'cc':
+            case 'CC':
                 messages[0].type = 'sticker';   
                 messages[0].packageId = "3";
                 messages[0].stickerId = "181";
@@ -150,13 +140,13 @@ exports.handler = function (req, res) {
         
             case '屁':
             case '嗆屁嗆':
-            case 'pu':
+            case 'PU':
                 messages[0].type = 'sticker';   
                 messages[0].packageId = "2";
                 messages[0].stickerId = "177";
                 break;
 
-            case 'uccu':
+            case 'UCCU':
                 messages[0].type = 'sticker';   
                 messages[0].packageId = "2";
                 messages[0].stickerId = "163";
