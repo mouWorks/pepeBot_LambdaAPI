@@ -95,7 +95,7 @@ exports.handler = function (req, res) {
             case 'R!!':
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://i.imgur.com/1JtJplI.jpg';
-                messages[0].previewImageUrl = 'https://i.imgur.com/9uQmv6y.jpg';
+                messages[0].previewImageUrl = 'https://i.imgur.com/1JtJplI.jpg';
                 break;
 
             case 'LEO打':
