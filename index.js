@@ -59,6 +59,12 @@ exports.handler = function (req, res) {
         //Text is switch to UpperCase()
         switch(msg){
 
+            case '6':
+                var limit = 15;
+                var randomNumber = [Math.floor(Math.random() * limit)];
+                messages[0].text = "6".repeat(randomNumber);
+                break;
+
             case 'U':
                 var limit = 30;
                 var randomNumber = [Math.floor(Math.random() * limit)];
