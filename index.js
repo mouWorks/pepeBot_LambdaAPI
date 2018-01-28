@@ -58,6 +58,14 @@ exports.handler = function (req, res) {
 
         //Text is switch to UpperCase()
         switch(msg){
+
+            case 'U':
+                var limit = 30;
+                var randomNumber = [Math.floor(Math.random() * limit)];
+                var randomUString = "U".repeat(randomNumber);
+                messages[0].text = randomUString + '起來!';
+                break;
+                
             case 'LEO':
                 messages[0].text = LeoArray[Math.floor(Math.random() * LeoArray.length)];
                 break;
