@@ -30,6 +30,10 @@ exports.handler = function (req, res) {
             '太濃了吧,否則怎麼苦的說不出話'
         ];
 
+        var FireArray = [
+            'You are FIRED!','Well you can stay.','什麼爛code給我加班重寫！','XX單在那邊自己去拿',
+        ];
+
         var FuckArray = [
             'https://i.imgur.com/rK5gG4q.png',
             'https://i.imgur.com/RvNBdjc.png',
@@ -84,6 +88,10 @@ exports.handler = function (req, res) {
             case 'COFFEE':
             case '咖啡':
                 messages[0].text = CoffeeArray[Math.floor(Math.random() * CoffeeArray.length)];
+                break;
+
+            case 'FIRE':
+                messages[0].text = FireArray[Math.floor(Math.random() * FireArray.length)];
                 break;
 
             case '打':
