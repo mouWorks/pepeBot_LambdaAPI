@@ -51,6 +51,12 @@ exports.handler = function (req, res) {
             'https://i.imgur.com/H5rW4df.png'
         ];
 
+        var chokeArray = [
+            'https://i.imgur.com/NyZi7R5.png',
+            'https://i.imgur.com/2Wh2IIe.png',
+            'https://i.imgur.com/fqyV7ao.png'
+        ];
+
         var messages = [
             {
               "type":"text",
@@ -106,10 +112,13 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = 'https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg';
                 break;
 
-            case 'LEO嗆':
+            case 'leo嗆':
+            case 'Leo嗆':
+            case '嗆':
+                var imgUrl = chokeArray[Math.floor(Math.random() * chokeArray.length)];
                 messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/NyZi7R5.png';
-                messages[0].previewImageUrl = 'https://i.imgur.com/NyZi7R5.png';
+                messages[0].originalContentUrl = imgUrl;
+                messages[0].previewImageUrl = imgUrl;
                 break;
 
             case 'HUMM?':
