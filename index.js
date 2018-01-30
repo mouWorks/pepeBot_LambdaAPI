@@ -4,7 +4,7 @@ exports.handler = function (req, res) {
 
     const promises = req.events.map(event => {
 
-        var msg = event.message.text.toUpperCase();
+        var msg = event.message.text.toUpperCase().trim();
         var reply_token = event.replyToken;
         const ChannelAccessToken = process.env['CHANNEL_ACCESS_TOKEN'];
 
@@ -112,8 +112,7 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = 'https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg';
                 break;
 
-            case 'leo嗆':
-            case 'Leo嗆':
+            case 'LEO嗆':
             case '嗆':
                 var imgUrl = chokeArray[Math.floor(Math.random() * chokeArray.length)];
                 messages[0].type = 'image';
