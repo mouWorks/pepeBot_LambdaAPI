@@ -54,7 +54,8 @@ exports.handler = function (req, res) {
         var chokeArray = [
             'https://i.imgur.com/NyZi7R5.png',
             'https://i.imgur.com/2Wh2IIe.png',
-            'https://i.imgur.com/fqyV7ao.png'
+            'https://i.imgur.com/fqyV7ao.png',
+            'https://i.imgur.com/kDLlykE.png'
         ];
 
         var messages = [
