@@ -56,7 +56,8 @@ exports.handler = function (req, res) {
             'https://i.imgur.com/2Wh2IIe.png',
             'https://i.imgur.com/fqyV7ao.png',
             'https://i.imgur.com/kDLlykE.png',
-            'https://i.imgur.com/vjxnR5b.png'
+            'https://i.imgur.com/vjxnR5b.png',
+            'https://i.imgur.com/UAuai2P.png'
         ];
 
         var messages = [
@@ -102,12 +103,13 @@ exports.handler = function (req, res) {
                 messages[0].text = FireArray[Math.floor(Math.random() * FireArray.length)];
                 break;
 
-            case '打':
-                messages[0].type = 'video';
-                messages[0].originalContentUrl = 'https://i.imgur.com/W2vrwqO.gif';
-                messages[0].previewImageUrl = 'https://i.imgur.com/W2vrwqO.gif';
+            case '成龍':
+            case 'JACKIECHAN':
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'https://i.imgur.com/UAuai2P.png';
+                messages[0].previewImageUrl = 'https://i.imgur.com/UAuai2P.png';
                 break;
-
+    
             case 'PEPE':
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg';
