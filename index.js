@@ -52,12 +52,13 @@ exports.handler = function (req, res) {
         ];
 
         var chokeArray = [
+            'https://i.imgur.com/UAuai2P.png', //JackieChan-Lesion
             'https://i.imgur.com/NyZi7R5.png',
             'https://i.imgur.com/2Wh2IIe.png',
             'https://i.imgur.com/fqyV7ao.png',
             'https://i.imgur.com/kDLlykE.png',
             'https://i.imgur.com/vjxnR5b.png',
-            'https://i.imgur.com/UAuai2P.png'
+            'https://i.imgur.com/KlSkphd.png'
         ];
 
         var messages = [
