@@ -91,7 +91,15 @@ exports.handler = function (req, res) {
                 var randomUString = "U".repeat(randomNumber);
                 messages[0].text = randomUString + '起來!';
                 break;
-                
+
+            case '+':
+            case '加':
+                var limit = 30;
+                var randomNumber = [Math.floor(Math.random() * limit)];
+                var randomUString = "加".repeat(randomNumber);
+                messages[0].text = "通通" + randomUString + '起來!';
+                break;
+
             case 'LEO':
                 messages[0].text = LeoArray[Math.floor(Math.random() * LeoArray.length)];
                 break;
@@ -133,6 +141,7 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = 'https://i.imgur.com/9uQmv6y.jpg';
                 break;
 
+            case 'R':
             case 'R!!':
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://i.imgur.com/1JtJplI.jpg';
