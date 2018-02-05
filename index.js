@@ -158,7 +158,14 @@ exports.handler = function (req, res) {
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://i.imgur.com/yaHDmwr.png';
                 messages[0].previewImageUrl = 'https://i.imgur.com/yaHDmwr.png';
-                break;    
+                break;
+
+            case 'BAD':
+            case '壞':
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'https://i.imgur.com/nV3P7dt.png';
+                messages[0].previewImageUrl = 'https://i.imgur.com/nV3P7dt.png';
+                break;
 
             case '親密度':
                 var limit = 50000000;
