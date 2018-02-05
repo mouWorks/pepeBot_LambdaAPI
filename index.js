@@ -61,6 +61,11 @@ exports.handler = function (req, res) {
             'https://i.imgur.com/KlSkphd.png',
             'https://i.imgur.com/i8keUUo.png'
         ];
+        
+        var ceoArray = [
+            'https://i.imgur.com/i8keUUo.png',
+            'https://i.imgur.com/GfQjXRg.png'
+        ];
 
         var messages = [
             {
@@ -126,6 +131,15 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = 'https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg';
                 break;
 
+            case 'CEO':
+                var imgUrl = ceoArray[Math.floor(Math.random() * ceoArray.length)];
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = imgUrl;
+                messages[0].previewImageUrl = imgUrl;
+                break;
+                
+                
+                
             case 'LEO嗆':
             case '嗆':
                 var imgUrl = chokeArray[Math.floor(Math.random() * chokeArray.length)];
