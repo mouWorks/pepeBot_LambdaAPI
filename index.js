@@ -138,8 +138,6 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = imgUrl;
                 break;
                 
-                
-                
             case 'LEO嗆':
             case '嗆':
                 var imgUrl = chokeArray[Math.floor(Math.random() * chokeArray.length)];
