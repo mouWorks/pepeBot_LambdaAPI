@@ -67,6 +67,8 @@ exports.handler = function (req, res) {
             'https://i.imgur.com/9Rg4NjB.png',
             'https://i.imgur.com/ryROyuj.png',
             'https://i.imgur.com/d7SFgf4.png',
+            'https://i.imgur.com/QQwS0Ic.png',
+            'https://i.imgur.com/9cJMpVe.png',
         ];
 
         var messages = [
