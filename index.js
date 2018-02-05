@@ -64,7 +64,9 @@ exports.handler = function (req, res) {
         
         var ceoArray = [
             'https://i.imgur.com/i8keUUo.png',
-            'https://i.imgur.com/GfQjXRg.png'
+            'https://i.imgur.com/9Rg4NjB.png',
+            'https://i.imgur.com/ryROyuj.png',
+            'https://i.imgur.com/d7SFgf4.png',
         ];
 
         var messages = [
