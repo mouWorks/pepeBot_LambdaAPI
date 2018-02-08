@@ -59,9 +59,17 @@ exports.handler = function (req, res) {
             'https://i.imgur.com/kDLlykE.png',
             'https://i.imgur.com/vjxnR5b.png',
             'https://i.imgur.com/KlSkphd.png',
-            'https://i.imgur.com/i8keUUo.png'
+            'https://i.imgur.com/i8keUUo.png',
+            'https://i.imgur.com/j5vZauw.png',
+            'https://i.imgur.com/lsc3Fb8.png',
         ];
-        
+
+        var ssdArray = [
+            'https://i.imgur.com/yaHDmwr.png',
+            'https://i.imgur.com/j5vZauw.png',
+            'https://i.imgur.com/lsc3Fb8.png',
+        ];
+
         var ceoArray = [
             'https://i.imgur.com/i8keUUo.png',
             'https://i.imgur.com/9Rg4NjB.png',
@@ -172,9 +180,10 @@ exports.handler = function (req, res) {
                 break;
 
             case 'SSD':
+                var imgUrl = ssdArray[Math.floor(Math.random() * ssdArray.length)];
                 messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/yaHDmwr.png';
-                messages[0].previewImageUrl = 'https://i.imgur.com/yaHDmwr.png';
+                messages[0].originalContentUrl = imgUrl;
+                messages[0].previewImageUrl = imgUrl;
                 break;
 
             case 'BAD':
