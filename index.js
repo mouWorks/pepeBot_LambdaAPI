@@ -62,6 +62,7 @@ exports.handler = function (req, res) {
             'https://i.imgur.com/i8keUUo.png',
             'https://i.imgur.com/j5vZauw.png',
             'https://i.imgur.com/lsc3Fb8.png',
+            'https://i.imgur.com/cT5H1pq.png',
         ];
 
         var ssdArray = [
