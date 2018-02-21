@@ -238,6 +238,10 @@ exports.handler = function (req, res) {
                 messages[0].stickerId = "105";
                 break;
 
+            case 'CRY':
+                messages[0].text = '􀜁􀄟Crying With Laughter Girl􏿿';
+                break;
+
             default:
                 needToReply = false;
                 //messages[0].text = msg;
