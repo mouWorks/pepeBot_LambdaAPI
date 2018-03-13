@@ -79,6 +79,10 @@ exports.handler = function (req, res) {
             'https://i.imgur.com/OeMtOqL.png',
         ];
 
+        var okayArray = [
+            'https://i.imgur.com/IyUrfuW.png',
+        ];
+
         var ceoArray = [
             'https://i.imgur.com/i8keUUo.png',
             'https://i.imgur.com/9Rg4NjB.png',
@@ -161,6 +165,14 @@ exports.handler = function (req, res) {
 
             case 'ISSUE':
                 var imgUrl = issueArray[Math.floor(Math.random() * issueArray.length)];
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = imgUrl;
+                messages[0].previewImageUrl = imgUrl;
+                break;
+
+            case 'OK':
+            case 'OKAY':
+                var imgUrl = okayArray[Math.floor(Math.random() * okayArray.length)];
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = imgUrl;
                 messages[0].previewImageUrl = imgUrl;
