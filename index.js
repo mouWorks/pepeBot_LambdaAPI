@@ -25,6 +25,11 @@ exports.handler = function (req, res) {
             '我大四驅車你敢嘴?'
         ];
 
+        var KuoArray =[
+            'https://i.imgur.com/X6mAbic.png',
+        ];
+
+
         var CoffeeArray = [
             'Cama','Seven','全家','路易莎',
             '太濃了吧,否則怎麼苦的說不出話'
@@ -158,6 +163,13 @@ exports.handler = function (req, res) {
 
             case 'CEO':
                 var imgUrl = ceoArray[Math.floor(Math.random() * ceoArray.length)];
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = imgUrl;
+                messages[0].previewImageUrl = imgUrl;
+                break;
+
+            case '郭':
+                var imgUrl = KuoArray[Math.floor(Math.random() * KuoArray.length)];
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = imgUrl;
                 messages[0].previewImageUrl = imgUrl;
