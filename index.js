@@ -39,6 +39,11 @@ exports.handler = function (req, res) {
             'You are FIRED!','Well you can stay.','什麼爛code給我加班重寫！','XX單在那邊自己去拿',
         ];
 
+        //Random Format
+        var RandomArray = [
+            'jpg', 'png', 'avi', 'gif', 'txt'
+        ];
+
         var FuckArray = [
             'https://i.imgur.com/rK5gG4q.png',
             'https://i.imgur.com/RvNBdjc.png',
@@ -295,7 +300,7 @@ exports.handler = function (req, res) {
             default:
 
                 if(msg.length == 1){
-                    messages[0].text = msg + '.jpg';
+                    messages[0].text = msg + '.' + RandomArray[Math.floor(Math.random() * RandomArray.length)];
                     break;
                 }
 
