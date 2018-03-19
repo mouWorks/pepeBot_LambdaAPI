@@ -67,6 +67,7 @@ exports.handler = function (req, res) {
             'https://i.imgur.com/7qgmKzW.png',
             'https://i.imgur.com/7XvfnDO.png',
             'https://i.imgur.com/lHkxxU7.png',
+            'https://i.imgur.com/Csp1HV3.png', //Eat on the ground.
         ];
 
         var ssdArray = [
@@ -280,6 +281,18 @@ exports.handler = function (req, res) {
                 break;
 
             default:
+
+                if(msg.length == 1){
+                    messages[0].text = msg + '.jpg';
+                    break;
+                }
+
+                 if(msg.length == 3){
+                    messages[0].text = msg + '.avi';
+                    break;
+                }
+
+
                 needToReply = false;
                 //messages[0].text = msg;
                 break;
