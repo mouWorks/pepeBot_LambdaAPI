@@ -103,6 +103,11 @@ exports.handler = function (req, res) {
             'https://i.imgur.com/9cJMpVe.png',
         ];
 
+        var hentaiArray = [
+            'https://i.imgur.com/reSsFr3.png',
+            'https://i.imgur.com/uWLf5Qe.png',
+        ];
+
         var messages = [
             {
               "type":"text",
@@ -267,6 +272,17 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = targetUrl;
                 break;
 
+            case 'HENTAI':
+            case '變態':
+            case '氣到':
+                targetUrl = hentaiArray[Math.floor(Math.random() * hentaiArray.length)];
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = targetUrl;
+                messages[0].previewImageUrl = targetUrl;
+                break;
+
+            //STICKER Part
+            //STICKER Part
             case 'CC':
                 messages[0].type = 'sticker';   
                 messages[0].packageId = "3";
