@@ -172,6 +172,28 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = 'https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg';
                 break;
 
+            case 'WHAT':
+            case 'WHAT?':
+            case '你說什麼':
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'https://i.imgur.com/BDqIWCb.png';
+                messages[0].previewImageUrl = 'https://i.imgur.com/BDqIWCb.png';
+                break;
+
+
+            case '995':
+            case '救救我':
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'https://i.imgur.com/EY43bcx.jpg';
+                messages[0].previewImageUrl = 'https://i.imgur.com/EY43bcx.jpg';
+                break;
+
+            case '看屁看':
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'https://i.imgur.com/Dc4ztxN.png';
+                messages[0].previewImageUrl = 'https://i.imgur.com/Dc4ztxN.png';
+                break;
+
             case 'CEO':
                 var imgUrl = ceoArray[Math.floor(Math.random() * ceoArray.length)];
                 messages[0].type = 'image';
