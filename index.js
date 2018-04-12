@@ -2,8 +2,10 @@ var rp = require('request-promise');
 
 exports.handler = function (req, res) {
 
-    const promises = req.events.map(event => {
+    console.log('test data');
+    console.log(req);
 
+    const promises = req.events.map(event => {
 
         var deadline = 'June 3 2018 13:30:00 GMT+0800'; //Leo's Wedding
 
@@ -361,10 +363,6 @@ exports.handler = function (req, res) {
 
             case 'CRY':
                 messages[0].text = '􀜁􀄟Crying With Laughter Girl􏿿';
-                break;
-
-            case 'DEBUG':
-                message[0].text = req; //Get back the entire request
                 break;
 
             default:
