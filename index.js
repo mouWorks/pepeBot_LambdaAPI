@@ -3,7 +3,10 @@ var rp = require('request-promise');
 exports.handler = function (req, res) {
 
     console.log('test data');
-    console.log(req);
+    source = JSON.stringify(req.source, null, 4);
+    message = JSON.stringify(req.message, null, 4))
+    console.log(source);
+    console.log(message);
 
     const promises = req.events.map(event => {
 
