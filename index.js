@@ -2,10 +2,8 @@ var rp = require('request-promise');
 
 exports.handler = function (req, res) {
 
-    console.log('test data 22');
-    // source = JSON.stringify(req.source, null, 4);
-    // message = JSON.stringify(req.message, null, 4));
-    console.log(req.source);
+    console.log('test data 23');
+    console.log(JSON.stringify(req));
 
     const promises = req.events.map(event => {
 
