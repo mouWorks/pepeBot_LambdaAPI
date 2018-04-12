@@ -363,6 +363,10 @@ exports.handler = function (req, res) {
                 messages[0].text = '􀜁􀄟Crying With Laughter Girl􏿿';
                 break;
 
+            case 'DEBUG':
+                message[0].text = req; //Get back the entire request
+                break;
+
             default:
 
                 if(msg.length == 1){
