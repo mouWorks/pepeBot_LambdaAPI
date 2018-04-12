@@ -4,7 +4,7 @@ exports.handler = function (req, res) {
 
     console.log('test data');
     source = JSON.stringify(req.source, null, 4);
-    message = JSON.stringify(req.message, null, 4))
+    message = JSON.stringify(req.message, null, 4));
     console.log(source);
     console.log(message);
 
