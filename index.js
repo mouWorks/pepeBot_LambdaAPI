@@ -4,6 +4,24 @@ exports.handler = function (req, res) {
 
     const promises = req.events.map(event => {
 
+
+        var deadline = 'June 3 2018 13:30:00 GMT+0800'; //Leo's Wedding
+
+        var getTimeRemaining = function(endtime){
+            var t = Date.parse(endtime) - Date.parse(new Date());
+            var seconds = Math.floor( (t/1000) % 60 );
+            var minutes = Math.floor( (t/1000/60) % 60 );
+            var hours = Math.floor( (t/(1000*60*60)) % 24 );
+            var days = Math.floor( t/(1000*60*60*24) );
+            return {
+                'total': t,
+                'days': days,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+            };
+        }
+
         var msg = event.message.text.toUpperCase().trim();
         var reply_token = event.replyToken;
         const ChannelAccessToken = process.env['CHANNEL_ACCESS_TOKEN'];
@@ -157,6 +175,16 @@ exports.handler = function (req, res) {
 
             case 'FIRE':
                 messages[0].text = FireArray[Math.floor(Math.random() * FireArray.length)];
+                break;
+
+            case 'GAMEOVER':
+            case 'GG':
+            case '婚':
+            case '婚禮':
+
+                //Go fetch time.
+                countdownJson = getTimeRemaining(deadline);
+                messages[0].text = '距離李奧爆炸還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, cc!';
                 break;
 
             case '成龍':
