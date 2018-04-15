@@ -35,7 +35,7 @@ exports.handler = function (req, res, callback) {
 
     request.post(options, function (err, response, body) {
 
-        conosle.log('success');
+        console.log('success');
         callback(null, 'AND?');
     });
 
