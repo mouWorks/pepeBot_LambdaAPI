@@ -1,15 +1,18 @@
 var rp = require('request-promise');
 var request = require('request');
+var AWS = require('aws-sdk');
 
 var PEPEBOT_S3_BUCKET = 'pepebot-images';
 var EXPORT_PATH = 'pepebot';
 
 exports.handler = function (req, res) {
 
-    console.log('TestData0415');
+    console.log('TestData0415-8pm');
     console.log(JSON.stringify(req));
 
     const promises = req.events.map(event => {
+
+        const ChannelAccessToken = process.env['CHANNEL_ACCESS_TOKEN'];
 
         //User pass-in images
         if(event.message.type == 'image')
@@ -31,6 +34,23 @@ exports.handler = function (req, res) {
                     var info = JSON.parse(body);
                     console.log(info);
                     console.log(body);
+
+                    //Here upload to S3
+                    var dstBucket = 'pepebot-images';
+                    var dstKey = 'pepebot' + img_id + '.jpg';
+
+                    s3.putObject({
+                            Bucket: dstBucket,
+                            Key: dstKey,
+                            Body: data,
+                            ContentType: contentType
+                        },
+                        function(resp){
+
+                        console.log('Upload success');
+                        });
+
+
                     // console.log(info.stargazers_count + " Stars");
                     // console.log(info.forks_count + " Forks");
                 }
@@ -38,9 +58,6 @@ exports.handler = function (req, res) {
 
             request(options, callback);
         }//endif;
-
-
-
 
         var deadline = 'June 3 2018 13:30:00 GMT+0800'; //Leo's Wedding
 
@@ -61,7 +78,7 @@ exports.handler = function (req, res) {
 
         var msg = event.message.text.toUpperCase().trim();
         var reply_token = event.replyToken;
-        const ChannelAccessToken = process.env['CHANNEL_ACCESS_TOKEN'];
+
 
         var LeoArray =[
             '我大里奧有大理報送你豪華大禮包',
