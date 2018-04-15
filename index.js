@@ -21,7 +21,7 @@ exports.handler = function (req, res, callback) {
     };
 
     var messages = 'Now Testing...Fuck you, Don?';
-
+    var reply_token = req.event.replyToken;
     var options = {
         method: 'POST',
         uri: "https://api.line.me/v2/bot/message/reply",
