@@ -5,8 +5,14 @@ var AWS = require('aws-sdk');
 var PEPEBOT_S3_BUCKET = 'pepebot-images';
 var EXPORT_PATH = 'pepebot';
 
-//Extract Lists
-var LeoArray = require('data/_LeoArray.json');
+//Extract Lists - add more data here if needed.
+var LeoArray =  require('data/_LeoArray.json');
+var FuckArray = require('data/_FuckArray.json');
+var WorkArray = require('data/_WorkArray.json');
+var chokeArray = require('data/_chokeArray.json');
+var ssdArray = require('data/_ssdArray.json');
+var ceoArray = require('data/_ceoArray.json');
+var hentaiArray = require('data/_hentaiArray.json');
 
 exports.handler = function (req, res) {
 
@@ -113,68 +119,12 @@ exports.handler = function (req, res) {
             'jpg', 'png', 'avi', 'gif', 'txt'
         ];
 
-        var FuckArray = [
-            'https://i.imgur.com/rK5gG4q.png',
-            'https://i.imgur.com/RvNBdjc.png',
-            'https://i.imgur.com/i0qN9yh.png',
-            'https://i.imgur.com/t8JUwcG.png',
-            'https://i.imgur.com/BVm2QR9.png'
-        ];
-
-        var WorkArray = [
-            'https://i.imgur.com/KDBfidU.png',
-            'https://i.imgur.com/9nRAc2u.png',
-            'https://i.imgur.com/O4dHfuT.png',
-            'https://i.imgur.com/ONAhcWb.png',
-            'https://i.imgur.com/fUJtP4S.png',
-            'https://i.imgur.com/H5rW4df.png'
-        ];
-
-        var chokeArray = [
-            'https://i.imgur.com/UAuai2P.png', //JackieChan-Lesion
-            'https://i.imgur.com/NyZi7R5.png',
-            'https://i.imgur.com/2Wh2IIe.png',
-            'https://i.imgur.com/fqyV7ao.png',
-            'https://i.imgur.com/kDLlykE.png',
-            'https://i.imgur.com/vjxnR5b.png',
-            'https://i.imgur.com/KlSkphd.png',
-            'https://i.imgur.com/i8keUUo.png',
-            'https://i.imgur.com/j5vZauw.png',
-            'https://i.imgur.com/lsc3Fb8.png',
-            'https://i.imgur.com/cT5H1pq.png',
-            'https://i.imgur.com/qRTvMFB.png',
-            'https://i.imgur.com/7qgmKzW.png',
-            'https://i.imgur.com/7XvfnDO.png',
-            'https://i.imgur.com/lHkxxU7.png',
-            'https://i.imgur.com/Csp1HV3.png', //Eat on the ground.
-        ];
-
-        var ssdArray = [
-            'https://i.imgur.com/yaHDmwr.png',
-            'https://i.imgur.com/j5vZauw.png',
-            'https://i.imgur.com/lsc3Fb8.png',
-        ];
-
         var issueArray = [
             'https://i.imgur.com/OeMtOqL.png',
         ];
 
         var okayArray = [
             'https://i.imgur.com/IyUrfuW.png',
-        ];
-
-        var ceoArray = [
-            'https://i.imgur.com/i8keUUo.png',
-            'https://i.imgur.com/9Rg4NjB.png',
-            'https://i.imgur.com/ryROyuj.png',
-            'https://i.imgur.com/d7SFgf4.png',
-            'https://i.imgur.com/QQwS0Ic.png',
-            'https://i.imgur.com/9cJMpVe.png',
-        ];
-
-        var hentaiArray = [
-            'https://i.imgur.com/reSsFr3.png',
-            'https://i.imgur.com/uWLf5Qe.png',
         ];
 
         var messages = [
