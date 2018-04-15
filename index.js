@@ -11,7 +11,7 @@ var hentaiArray = require('data/_hentaiArray.json');
 
 exports.handler = function (req, res, callback) {
 
-    console.log('TestData0415-8pm');
+    console.log('TestData0415-911pm');
     console.log(JSON.stringify(req));
 
     const ChannelAccessToken = process.env['CHANNEL_ACCESS_TOKEN'];
@@ -21,7 +21,7 @@ exports.handler = function (req, res, callback) {
     };
 
     var messages = 'Now Testing...Fuck you, Don?';
-    var reply_token = req.event.replyToken;
+    var reply_token = req.events.replyToken;
     var options = {
         method: 'POST',
         uri: "https://api.line.me/v2/bot/message/reply",
