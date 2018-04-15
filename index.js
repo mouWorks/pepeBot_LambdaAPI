@@ -5,6 +5,9 @@ var AWS = require('aws-sdk');
 var PEPEBOT_S3_BUCKET = 'pepebot-images';
 var EXPORT_PATH = 'pepebot';
 
+//Extract Lists
+var LeoArray = require('data/_LeoArray.json');
+
 exports.handler = function (req, res) {
 
     console.log('TestData0415-8pm');
@@ -14,9 +17,11 @@ exports.handler = function (req, res) {
 
         const ChannelAccessToken = process.env['CHANNEL_ACCESS_TOKEN'];
 
+        var gotUserMessage = true;
         //User pass-in images
         if(event.message.type == 'image')
         {
+           gotUserMessage = false;
            var img_id = event.message.id;
            content_url = "https://api.line.me/v2/bot/message/" + img_id + "/content";
 
@@ -82,25 +87,12 @@ exports.handler = function (req, res) {
             };
         }
 
-        var msg = event.message.text.toUpperCase().trim();
-        var reply_token = event.replyToken;
+        msg = '.';
+        if(gotUserMessage){
+            var msg = event.message.text.toUpperCase().trim();
+        }
 
-        var LeoArray =[
-            '我大里奧有大理報送你豪華大禮包',
-            '我大里奧糞起來!',
-            'Leo is GOD, Don?',
-            '嚇到射出來啦',
-            '我又偷刷聲望啦',
-            '怕.jpg', '我大里OH!', 
-            '我想寫程式',
-            '這點, 我並不認同!',
-            '還記得訂便當我嗎?',
-            'I am 心快活 CEO',
-            '心快活我大快活！',
-            'CheckMarx is the best!',
-            '隊友都死光啦Q_Q',
-            '我大四驅車你敢嘴?'
-        ];
+        var reply_token = event.replyToken;
 
         var KuoArray =[
             'https://i.imgur.com/X6mAbic.png',
@@ -433,7 +425,6 @@ exports.handler = function (req, res) {
                     messages[0].text = msg + '.avi';
                     break;
                 }
-
 
                 needToReply = false;
                 //messages[0].text = msg;
