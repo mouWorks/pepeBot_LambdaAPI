@@ -1,11 +1,46 @@
 var rp = require('request-promise');
+var request = require('request');
+
+var PEPEBOT_S3_BUCKET = 'pepebot-images';
+var EXPORT_PATH = 'pepebot';
 
 exports.handler = function (req, res) {
 
-    console.log('test data 23');
+    console.log('TestData0415');
     console.log(JSON.stringify(req));
 
     const promises = req.events.map(event => {
+
+        //User pass-in images
+        if(event.message.type == 'image')
+        {
+           var img_id = event.message.id;
+           content_url = "https://api.line.me/v2/bot/message/" + img_id + "/content";
+
+            //Make get Request
+            var options = {
+                url: content_url,
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8",
+                    "Authorization": " Bearer " + ChannelAccessToken
+                }
+            };
+
+            function callback(error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    var info = JSON.parse(body);
+                    console.log(info);
+                    console.log(body);
+                    // console.log(info.stargazers_count + " Stars");
+                    // console.log(info.forks_count + " Forks");
+                }
+            }
+
+            request(options, callback);
+        }//endif;
+
+
+
 
         var deadline = 'June 3 2018 13:30:00 GMT+0800'; //Leo's Wedding
 
@@ -134,7 +169,7 @@ exports.handler = function (req, res) {
               "text": msg
             }
           ];
-        
+
         needToReply = true;
 
         //Text is switch to UpperCase()
