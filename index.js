@@ -48,8 +48,14 @@ exports.handler = function (req, res) {
                         function(resp){
 
                         console.log('Upload success');
-                        });
 
+                            return rp(options)
+                                .then(function (response) {
+                                    console.log("111 Success : " + response);
+                                }).catch(function (err) {
+                                    console.log("111 Error : " + err);
+                                });
+                        });
 
                     // console.log(info.stargazers_count + " Stars");
                     // console.log(info.forks_count + " Forks");
@@ -78,7 +84,6 @@ exports.handler = function (req, res) {
 
         var msg = event.message.text.toUpperCase().trim();
         var reply_token = event.replyToken;
-
 
         var LeoArray =[
             '我大里奧有大理報送你豪華大禮包',
