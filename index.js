@@ -6,7 +6,7 @@ var PEPEBOT_S3_BUCKET = 'pepebot-images';
 var EXPORT_PATH = 'pepebot';
 
 //Extract Lists
-//var LeoArray = require('data/_LeoArray.json');
+var LeoArray = require('data/_LeoArray.json');
 
 exports.handler = function (req, res) {
 
