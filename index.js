@@ -182,10 +182,14 @@ exports.handler = function (req, res) {
             case 'GG':
             case '婚':
             case '婚禮':
+            case '崩':
+            case '崩崩':
+            case 'BON':
+            case 'BONBON':
 
                 //Go fetch time.
                 countdownJson = getTimeRemaining(deadline);
-                messages[0].text = '距離李奧爆炸還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, cc!';
+                messages[0].text = '距離李奧大崩潰還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, cc!';
                 break;
 
             case '成龍':
