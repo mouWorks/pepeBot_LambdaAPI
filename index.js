@@ -2,7 +2,7 @@
 var rp = require('request-promise');
 var request = require('request');
 var AWS = require('aws-sdk');
-var fs = require('fs');
+// var fs = require('fs');
 
 var PEPEBOT_S3_BUCKET = 'pepebot-images';
 var EXPORT_PATH = 'pepebot';
@@ -72,7 +72,7 @@ exports.handler = function (req, res) {
                     { console.log('Error uploading data: ', data);}
                     else
                         {
-                            console.log('Successfully uploaded the image!';
+                            console.log('Successfully uploaded the image! Yo');
                         }
                 });
 
