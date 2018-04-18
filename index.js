@@ -73,7 +73,7 @@ exports.handler = function (req, res) {
                 // });
 
                 var s3 = new AWS.S3();
-                s3.client.putObject({
+                s3.putObject({
                     Bucket: PEPEBOT_S3_BUCKET,
                     Key: EXPORT_PATH + imageName,
                     Body: body,
