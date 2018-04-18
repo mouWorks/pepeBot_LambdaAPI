@@ -27,7 +27,7 @@ var okayArray = ["https://i.imgur.com/IyUrfuW.png"];
 
 exports.handler = function (req, res) {
 
-    console.log('TestData0415-8pm');
+    console.log('TestData0418-6pm');
     console.log(JSON.stringify(req));
 
     const promises = req.events.map(event => {
@@ -43,48 +43,22 @@ exports.handler = function (req, res) {
            content_url = "https://api.line.me/v2/bot/message/" + img_id + "/content";
 
             //Make get Request
-            var options = {
+            var requestSettings  = {
                 url: content_url,
                 headers: {
                     "Content-type": "application/json; charset=UTF-8",
                     "Authorization": " Bearer " + ChannelAccessToken
-                }
+                },
+                method: 'GET',
+                encoding: null
             };
 
-            function callback(error, response, body) {
-                if (!error && response.statusCode == 200) {
-                    var info = JSON.parse(body);
-                    console.log(info);
-                    console.log(body);
+            request(requestSettings, function(error, response, body) {
+                // Use body as a binary Buffer
+                console.log('Getting image as binary');
+                console.log(body);
+            });
 
-                    //Here upload to S3
-                    var dstBucket = 'pepebot-images';
-                    var dstKey = 'pepebot' + img_id + '.jpg';
-
-                    s3.putObject({
-                            Bucket: dstBucket,
-                            Key: dstKey,
-                            Body: data,
-                            ContentType: contentType
-                        },
-                        function(resp){
-
-                        console.log('Upload success');
-
-                            return rp(options)
-                                .then(function (response) {
-                                    console.log("111 Success : " + response);
-                                }).catch(function (err) {
-                                    console.log("111 Error : " + err);
-                                });
-                        });
-
-                    // console.log(info.stargazers_count + " Stars");
-                    // console.log(info.forks_count + " Forks");
-                }
-            }
-
-            request(options, callback);
         }//endif;
 
         var deadline = 'June 3 2018 13:30:00 GMT+0800'; //Leo's Wedding
@@ -356,7 +330,6 @@ exports.handler = function (req, res) {
                 //messages[0].text = msg;
                 break;
         }
-
         if(needToReply){
 
             var options = {
@@ -373,7 +346,7 @@ exports.handler = function (req, res) {
                 }
             };
     
-            return rp(options)
+            return rp(options) //Making the POST call.
             .then(function (response) {
                 console.log("Success : " + response);
             }).catch(function (err) {
