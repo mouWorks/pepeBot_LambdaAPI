@@ -61,18 +61,23 @@ exports.handler = function (req, res) {
                 console.log(body);
                 imageName = img_id + '.jpg';
 
-                var wstream = fs.createWriteStream(imageName);
-                wstream.write( body );
-                wstream.end();
+                // var wstream = fs.createWriteStream(imageName);
+                // wstream.write(body);
+                // wstream.end();
                 // var prefix = "data:image/png;base64, ";
                 // var base64Image = new Buffer(body, 'binary').toString('base64');
                 // base64Image = prefix + base64Image;
 
-                var base64data = new Buffer(body, 'binary');
+                // var base64data = new Buffer(body, 'binary');
 
                 //Here Upload to S3
                 var s3Bucket = new AWS.S3({params:{Bucket:PEPEBOT_S3_BUCKET} });
-                var data = {Key: imageName, Body: wstream};
+                var data = {
+                    Key: imageName,
+                    Body: body,
+                    ContentType: "image/jpeg"
+                };
+
                 s3Bucket.upload(data, function(err, data){
                     if (err)
                     { console.log('Error uploading data: ', data);}
