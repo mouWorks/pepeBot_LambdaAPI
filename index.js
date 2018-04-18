@@ -36,6 +36,7 @@ exports.handler = function (req, res) {
         const ChannelAccessToken = process.env['CHANNEL_ACCESS_TOKEN'];
 
         var gotUserMessage = true;
+        msg = '.';
         //User pass-in images
         if(event.message.type == 'image')
         {
@@ -58,32 +59,33 @@ exports.handler = function (req, res) {
                 // Use body as a binary Buffer
                 console.log('Getting image as binary');
                 console.log(body);
-                imageName = img_id + '.jpg';
+                imageName = '/' + img_id + '.jpg';
 
                 //Here Upload to S3
-                // var s3Bucket = new AWS.S3({params:{Bucket:PEPEBOT_S3_BUCKET} });
-                // var data = {Key: EXPORT_PATH + imageName, Body: body};
-                // s3Bucket.putObject(data, function(err, data){
-                //     if (err)
-                //     { console.log('Error uploading data: ', data);}
-                //     else
-                //     {
-                //       console.log('Successfully uploaded the image! Yo');
-                //     }
-                // });
-
-                var s3 = new AWS.S3();
-                s3.putObject({
-                    Bucket: PEPEBOT_S3_BUCKET,
-                    Key: EXPORT_PATH + imageName,
-                    Body: body,
-                    ACL: 'public-read'
-                },function (resp) {
-                    console.log(arguments);
-                    console.log('Successfully uploaded package.');
+                var s3Bucket = new AWS.S3({params:{Bucket:PEPEBOT_S3_BUCKET} });
+                var data = {Key: EXPORT_PATH + imageName, Body: body};
+                s3Bucket.putObject(data, function(err, data){
+                    if (err)
+                    { console.log('Error uploading data: ', data);}
+                    else
+                    {
+                      console.log('Successfully uploaded the image! Yo');
+                      msg = 'Uploaded Image';
+                    }
                 });
 
-            });//end of reuqest
+                // var s3 = new AWS.S3();
+                // s3.putObject({
+                //     Bucket: PEPEBOT_S3_BUCKET,
+                //     Key: EXPORT_PATH + imageName,
+                //     Body: body,
+                //     ACL: 'public-read'
+                // },function (resp) {
+                //     console.log(arguments);
+                //     console.log('Successfully uploaded package.');
+                // });
+
+            });//end of request
 
         }//endif;
 
@@ -104,7 +106,6 @@ exports.handler = function (req, res) {
             };
         }
 
-        msg = '.';
         if(gotUserMessage){
             var msg = event.message.text.toUpperCase().trim();
         }
