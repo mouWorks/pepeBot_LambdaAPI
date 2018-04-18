@@ -1,3 +1,4 @@
+
 var rp = require('request-promise');
 var request = require('request');
 var AWS = require('aws-sdk');
@@ -13,6 +14,16 @@ var chokeArray = require('data/_chokeArray.json');
 var ssdArray = require('data/_ssdArray.json');
 var ceoArray = require('data/_ceoArray.json');
 var hentaiArray = require('data/_hentaiArray.json');
+
+//Loading Predefined stuff
+var KuoArray =["https://i.imgur.com/X6mAbic.png"];
+var CoffeeArray = ["Cama","Seven","全家","路易莎","太濃了吧,否則怎麼苦的說不出話"];
+var FireArray = ["You are FIRED!","Well you can stay.","什麼爛code給我加班重寫！","XX單在那邊自己去拿"];
+
+//Random Format
+var RandomArray = ["jpg", "png", "avi", "gif", "txt"];
+var issueArray = ["https://i.imgur.com/OeMtOqL.png"];
+var okayArray = ["https://i.imgur.com/IyUrfuW.png"];
 
 exports.handler = function (req, res) {
 
@@ -98,41 +109,11 @@ exports.handler = function (req, res) {
             var msg = event.message.text.toUpperCase().trim();
         }
 
-        var reply_token = event.replyToken;
-
-        var KuoArray =[
-            'https://i.imgur.com/X6mAbic.png',
-        ];
-
-
-        var CoffeeArray = [
-            'Cama','Seven','全家','路易莎',
-            '太濃了吧,否則怎麼苦的說不出話'
-        ];
-
-        var FireArray = [
-            'You are FIRED!','Well you can stay.','什麼爛code給我加班重寫！','XX單在那邊自己去拿',
-        ];
-
-        //Random Format
-        var RandomArray = [
-            'jpg', 'png', 'avi', 'gif', 'txt'
-        ];
-
-        var issueArray = [
-            'https://i.imgur.com/OeMtOqL.png',
-        ];
-
-        var okayArray = [
-            'https://i.imgur.com/IyUrfuW.png',
-        ];
-
-        var messages = [
-            {
-              "type":"text",
-              "text": msg
-            }
-          ];
+        var reply_token = event.replyToken; //Need to get this Token to pass back.
+        var messages = [{
+            "type":"text",
+            "text": msg
+        }];
 
         needToReply = true;
 
@@ -178,14 +159,7 @@ exports.handler = function (req, res) {
                 messages[0].text = FireArray[Math.floor(Math.random() * FireArray.length)];
                 break;
 
-            case 'GAMEOVER':
-            case 'GG':
-            case '婚':
-            case '婚禮':
-            case '崩':
-            case '崩崩':
-            case 'BON':
-            case 'BONBON':
+            case 'GAMEOVER':case 'GG':case '婚':case '婚禮':case '崩':case '崩崩':case 'BON':case 'BONBON':
 
                 //Go fetch time.
                 countdownJson = getTimeRemaining(deadline);
