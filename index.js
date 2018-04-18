@@ -5,7 +5,7 @@ var AWS = require('aws-sdk');
 // var fs = require('fs');
 
 var PEPEBOT_S3_BUCKET = 'pepebot-images';
-var EXPORT_PATH = 'pepebot';
+var EXPORT_PATH = 'pepebot/';
 
 //Extract Lists - add more data here if needed.
 var LeoArray =  require('data/_LeoArray.json');
@@ -58,25 +58,32 @@ exports.handler = function (req, res) {
                 // Use body as a binary Buffer
                 console.log('Getting image as binary');
                 console.log(body);
-
-                var bucketName = 'pepebot-images';
-
-                //Here Upload to S3
-                var s3Bucket = new AWS.S3( { params: {Bucket: bucketName} } )
-
                 imageName = img_id + '.jpg';
 
-                var data = {Key: imageName, Body: body};
-                s3Bucket.putObject(data, function(err, data){
-                    if (err)
-                    { console.log('Error uploading data: ', data);}
-                    else
-                        {
-                            console.log('Successfully uploaded the image! Yo');
-                        }
+                //Here Upload to S3
+                // var s3Bucket = new AWS.S3({params:{Bucket:PEPEBOT_S3_BUCKET} });
+                // var data = {Key: EXPORT_PATH + imageName, Body: body};
+                // s3Bucket.putObject(data, function(err, data){
+                //     if (err)
+                //     { console.log('Error uploading data: ', data);}
+                //     else
+                //     {
+                //       console.log('Successfully uploaded the image! Yo');
+                //     }
+                // });
+
+                var s3 = new AWS.S3();
+                s3.client.putObject({
+                    Bucket: PEPEBOT_S3_BUCKET,
+                    Key: EXPORT_PATH + imageName,
+                    Body: body,
+                    ACL: 'public-read'
+                },function (resp) {
+                    console.log(arguments);
+                    console.log('Successfully uploaded package.');
                 });
 
-            });
+            });//end of reuqest
 
         }//endif;
 
