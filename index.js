@@ -2,6 +2,7 @@
 var rp = require('request-promise');
 var request = require('request');
 var AWS = require('aws-sdk');
+var fs = require('fs');
 
 var PEPEBOT_S3_BUCKET = 'pepebot-images';
 var EXPORT_PATH = 'pepebot';
@@ -57,6 +58,24 @@ exports.handler = function (req, res) {
                 // Use body as a binary Buffer
                 console.log('Getting image as binary');
                 console.log(body);
+
+                var bucketName = 'pepebot-images';
+
+                //Here Upload to S3
+                var s3Bucket = new AWS.S3( { params: {Bucket: bucketName} } )
+
+                imageName = img_id + '.jpg';
+
+                var data = {Key: imageName, Body: body};
+                s3Bucket.putObject(data, function(err, data){
+                    if (err)
+                    { console.log('Error uploading data: ', data);}
+                    else
+                        {
+                            console.log('Successfully uploaded the image!';
+                        }
+                });
+
             });
 
         }//endif;
