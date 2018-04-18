@@ -35,7 +35,7 @@ exports.handler = function (req, res) {
         const ChannelAccessToken = process.env['CHANNEL_ACCESS_TOKEN'];
 
         var gotUserMessage = true;
-        msg = '.';
+        msg = 'Uploading Images';
         //User pass-in images
         if(event.message.type == 'image')
         {
@@ -63,7 +63,7 @@ exports.handler = function (req, res) {
                 //Here Upload to S3
                 var s3Bucket = new AWS.S3({params:{Bucket:PEPEBOT_S3_BUCKET} });
                 var data = {Key: imageName, Body: body};
-                s3Bucket.putObject(data, function(err, data){
+                s3Bucket.upload(data, function(err, data){
                     if (err)
                     { console.log('Error uploading data: ', data);}
                     else
