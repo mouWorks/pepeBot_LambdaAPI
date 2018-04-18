@@ -58,11 +58,11 @@ exports.handler = function (req, res) {
                 // Use body as a binary Buffer
                 console.log('Getting image as binary');
                 console.log(body);
-                imageName = '/' + img_id + '.jpg';
+                imageName = img_id + '.jpg';
 
                 //Here Upload to S3
                 var s3Bucket = new AWS.S3({params:{Bucket:PEPEBOT_S3_BUCKET} });
-                var data = {Key: EXPORT_PATH + imageName, Body: body};
+                var data = {Key: imageName, Body: body};
                 s3Bucket.putObject(data, function(err, data){
                     if (err)
                     { console.log('Error uploading data: ', data);}
