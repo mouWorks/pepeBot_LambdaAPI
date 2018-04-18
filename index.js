@@ -344,10 +344,8 @@ exports.handler = function (req, res) {
                 messages[0].stickerId = "181";
                 break;
         
-            case '屁':
-            case '嗆屁嗆':
-            case 'PU':
-                messages[0].type = 'sticker';   
+            case '屁':  case '嗆屁嗆': case 'PU':
+                messages[0].type = 'sticker';
                 messages[0].packageId = "2";
                 messages[0].stickerId = "177";
                 break;
