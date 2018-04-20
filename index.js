@@ -13,6 +13,7 @@ var chokeArray = require('data/_chokeArray.json');
 var ssdArray = require('data/_ssdArray.json');
 var ceoArray = require('data/_ceoArray.json');
 var hentaiArray = require('data/_hentaiArray.json');
+var guanArray = require('data/_guanArray.json');
 
 exports.handler = function (req, res) {
 
@@ -229,6 +230,13 @@ exports.handler = function (req, res) {
 
             case 'CEO':
                 var imgUrl = ceoArray[Math.floor(Math.random() * ceoArray.length)];
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = imgUrl;
+                messages[0].previewImageUrl = imgUrl;
+                break;
+
+            case 'GUAN': case '慣': case '冠':
+                var imgUrl = guanArray[Math.floor(Math.random() * guanArray.length)];
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = imgUrl;
                 messages[0].previewImageUrl = imgUrl;
