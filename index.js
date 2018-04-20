@@ -1,9 +1,11 @@
+
 var rp = require('request-promise');
 var request = require('request');
 var AWS = require('aws-sdk');
+var fs = require('fs');
 
 var PEPEBOT_S3_BUCKET = 'pepebot-images';
-var EXPORT_PATH = 'pepebot';
+var EXPORT_PATH = 'pepebot/';
 
 //Extract Lists - add more data here if needed.
 var LeoArray =  require('data/_LeoArray.json');
@@ -15,9 +17,19 @@ var ceoArray = require('data/_ceoArray.json');
 var hentaiArray = require('data/_hentaiArray.json');
 var guanArray = require('data/_guanArray.json');
 
+//Loading Predefined stuff
+var KuoArray =["https://i.imgur.com/X6mAbic.png"];
+var CoffeeArray = ["Cama","Seven","全家","路易莎","太濃了吧,否則怎麼苦的說不出話"];
+var FireArray = ["You are FIRED!","Well you can stay.","什麼爛code給我加班重寫！","XX單在那邊自己去拿"];
+
+//Random Format
+var RandomArray = ["jpg", "png", "avi", "gif", "txt"];
+var issueArray = ["https://i.imgur.com/OeMtOqL.png"];
+var okayArray = ["https://i.imgur.com/IyUrfuW.png"];
+
 exports.handler = function (req, res) {
 
-    console.log('TestData0415-8pm');
+    console.log('TestData0418-6pm');
     console.log(JSON.stringify(req));
 
     const promises = req.events.map(event => {
@@ -25,6 +37,7 @@ exports.handler = function (req, res) {
         const ChannelAccessToken = process.env['CHANNEL_ACCESS_TOKEN'];
 
         var gotUserMessage = true;
+        msg = 'Uploading Images';
         //User pass-in images
         if(event.message.type == 'image')
         {
@@ -33,48 +46,49 @@ exports.handler = function (req, res) {
            content_url = "https://api.line.me/v2/bot/message/" + img_id + "/content";
 
             //Make get Request
-            var options = {
+            var requestSettings  = {
                 url: content_url,
                 headers: {
                     "Content-type": "application/json; charset=UTF-8",
                     "Authorization": " Bearer " + ChannelAccessToken
-                }
+                },
+                method: 'GET',
+                encoding: null
             };
 
-            function callback(error, response, body) {
-                if (!error && response.statusCode == 200) {
-                    var info = JSON.parse(body);
-                    console.log(info);
-                    console.log(body);
+            request(requestSettings, function(error, response, body) {
+                // Use body as a binary Buffer
+                console.log('Getting image as binary');
+                console.log(body);
+                imageName = img_id + '.jpg';
 
-                    //Here upload to S3
-                    var dstBucket = 'pepebot-images';
-                    var dstKey = 'pepebot' + img_id + '.jpg';
+                // var wstream = fs.createWriteStream(imageName);
+                // wstream.write(body);
+                // wstream.end();
+                // var prefix = "data:image/png;base64, ";
+                // var base64Image = new Buffer(body, 'binary').toString('base64');
+                // base64Image = prefix + base64Image;
 
-                    s3.putObject({
-                            Bucket: dstBucket,
-                            Key: dstKey,
-                            Body: data,
-                            ContentType: contentType
-                        },
-                        function(resp){
+                // var base64data = new Buffer(body, 'binary');
 
-                        console.log('Upload success');
+                //Here Upload to S3
+                var s3Bucket = new AWS.S3({params:{Bucket:PEPEBOT_S3_BUCKET} });
+                var data = {
+                    Key: imageName,
+                    Body: body,
+                    ContentType: "image/jpeg"
+                };
 
-                            return rp(options)
-                                .then(function (response) {
-                                    console.log("111 Success : " + response);
-                                }).catch(function (err) {
-                                    console.log("111 Error : " + err);
-                                });
-                        });
+                s3Bucket.upload(data, function(err, data){
+                    if (err)
+                    { console.log('Error uploading data: ', data);}
+                    else
+                    {
+                      console.log('Successfully uploaded the image! Yo');
+                    }
+                });
+            });//end of request
 
-                    // console.log(info.stargazers_count + " Stars");
-                    // console.log(info.forks_count + " Forks");
-                }
-            }
-
-            request(options, callback);
         }//endif;
 
         var deadline = 'June 3 2018 13:30:00 GMT+0800'; //Leo's Wedding
@@ -94,46 +108,15 @@ exports.handler = function (req, res) {
             };
         }
 
-        msg = '.';
         if(gotUserMessage){
             var msg = event.message.text.toUpperCase().trim();
         }
 
-        var reply_token = event.replyToken;
-
-        var KuoArray =[
-            'https://i.imgur.com/X6mAbic.png',
-        ];
-
-
-        var CoffeeArray = [
-            'Cama','Seven','全家','路易莎',
-            '太濃了吧,否則怎麼苦的說不出話'
-        ];
-
-        var FireArray = [
-            'You are FIRED!','Well you can stay.','什麼爛code給我加班重寫！','XX單在那邊自己去拿',
-        ];
-
-        //Random Format
-        var RandomArray = [
-            'jpg', 'png', 'avi', 'gif', 'txt'
-        ];
-
-        var issueArray = [
-            'https://i.imgur.com/OeMtOqL.png',
-        ];
-
-        var okayArray = [
-            'https://i.imgur.com/IyUrfuW.png',
-        ];
-
-        var messages = [
-            {
-              "type":"text",
-              "text": msg
-            }
-          ];
+        var reply_token = event.replyToken; //Need to get this Token to pass back.
+        var messages = [{
+            "type":"text",
+            "text": msg
+        }];
 
         needToReply = true;
 
@@ -179,14 +162,7 @@ exports.handler = function (req, res) {
                 messages[0].text = FireArray[Math.floor(Math.random() * FireArray.length)];
                 break;
 
-            case 'GAMEOVER':
-            case 'GG':
-            case '婚':
-            case '婚禮':
-            case '崩':
-            case '崩崩':
-            case 'BON':
-            case 'BONBON':
+            case 'GAMEOVER':case 'GG':case '婚':case '婚禮':case '崩':case '崩崩':case 'BON':case 'BONBON':
 
                 //Go fetch time.
                 countdownJson = getTimeRemaining(deadline);
@@ -352,10 +328,8 @@ exports.handler = function (req, res) {
                 messages[0].stickerId = "181";
                 break;
         
-            case '屁':
-            case '嗆屁嗆':
-            case 'PU':
-                messages[0].type = 'sticker';   
+            case '屁':  case '嗆屁嗆': case 'PU':
+                messages[0].type = 'sticker';
                 messages[0].packageId = "2";
                 messages[0].stickerId = "177";
                 break;
@@ -392,7 +366,6 @@ exports.handler = function (req, res) {
                 //messages[0].text = msg;
                 break;
         }
-
         if(needToReply){
 
             var options = {
@@ -409,7 +382,7 @@ exports.handler = function (req, res) {
                 }
             };
     
-            return rp(options)
+            return rp(options) //Making the POST call.
             .then(function (response) {
                 console.log("Success : " + response);
             }).catch(function (err) {
