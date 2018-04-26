@@ -92,7 +92,6 @@ exports.handler = function (req, res) {
         }//endif;
 
         var deadline = 'June 3 2018 13:30:00 GMT+0800'; //Leo's Wedding
-
         var getTimeRemaining = function(endtime){
             var t = Date.parse(endtime) - Date.parse(new Date());
             var seconds = Math.floor( (t/1000) % 60 );
@@ -110,6 +109,10 @@ exports.handler = function (req, res) {
 
         if(gotUserMessage){
             var msg = event.message.text.toUpperCase().trim();
+
+            if(msg.indexOf('婚') !== -1){
+                msg = 'GG';
+            }
         }
 
         var reply_token = event.replyToken; //Need to get this Token to pass back.
