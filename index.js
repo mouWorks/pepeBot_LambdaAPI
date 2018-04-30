@@ -113,6 +113,10 @@ exports.handler = function (req, res) {
             if(msg.indexOf('婚') !== -1){
                 msg = 'GG';
             }
+
+            if((msg.indexOf('親') !== -1) || (msg.indexOf('腎') !== -1){
+                msg = '親密度';
+            }
         }
 
         var reply_token = event.replyToken; //Need to get this Token to pass back.
