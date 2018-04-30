@@ -114,7 +114,7 @@ exports.handler = function (req, res) {
                 msg = 'GG';
             }
 
-            if((msg.indexOf('親') !== -1) || (msg.indexOf('腎') !== -1){
+            if((msg.indexOf('親') !== -1) || (msg.indexOf('腎') !== -1)){
                 msg = '親密度';
             }
         }
