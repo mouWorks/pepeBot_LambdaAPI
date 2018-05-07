@@ -117,6 +117,10 @@ exports.handler = function (req, res) {
             if((msg.indexOf('親') !== -1) || (msg.indexOf('腎') !== -1)){
                 msg = '親密度';
             }
+
+            if((msg.indexOf('呵') !== -1) || (msg.indexOf('嘻') !== -1) || (msg.indexOf('笑') !== -1)){
+                msg = 'SMILE';
+            }
         }
 
         var reply_token = event.replyToken; //Need to get this Token to pass back.
@@ -176,8 +180,7 @@ exports.handler = function (req, res) {
                 messages[0].text = '距離李奧大崩潰還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, cc!';
                 break;
 
-            case '呵呵': case '嘻嘻': case '笑':
-
+            case 'SMILE':
                 smilePhoto = 'https://i.imgur.com/X3WaD15.png';
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = smilePhoto;
