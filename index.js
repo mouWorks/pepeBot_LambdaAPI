@@ -176,6 +176,14 @@ exports.handler = function (req, res) {
                 messages[0].text = '距離李奧大崩潰還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, cc!';
                 break;
 
+            case '呵呵': case '嘻嘻': case '笑':
+
+                smilePhoto = 'https://i.imgur.com/X3WaD15.png';
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = smilePhoto;
+                messages[0].previewImageUrl = smilePhoto;
+                break;
+
             case '成龍':
             case 'JACKIECHAN':
                 messages[0].type = 'image';
