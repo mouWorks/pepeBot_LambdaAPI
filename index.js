@@ -16,6 +16,7 @@ var ssdArray = require('data/_ssdArray.json');
 var ceoArray = require('data/_ceoArray.json');
 var hentaiArray = require('data/_hentaiArray.json');
 var guanArray = require('data/_guanArray.json');
+var smileArray = require('data/_smileArray.json');
 
 //Loading Predefined stuff
 var KuoArray =["https://i.imgur.com/X6mAbic.png"];
@@ -26,6 +27,9 @@ var FireArray = ["You are FIRED!","Well you can stay.","什麼爛code給我加�
 var RandomArray = ["jpg", "png", "avi", "gif", "txt"];
 var issueArray = ["https://i.imgur.com/OeMtOqL.png"];
 var okayArray = ["https://i.imgur.com/IyUrfuW.png"];
+
+
+
 
 exports.handler = function (req, res) {
 
@@ -181,7 +185,7 @@ exports.handler = function (req, res) {
                 break;
 
             case 'SMILE':
-                smilePhoto = 'https://i.imgur.com/X3WaD15.png';
+                smilePhoto = smileArray[Math.floor(Math.random() * smileArray.length)];
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = smilePhoto;
                 messages[0].previewImageUrl = smilePhoto;
