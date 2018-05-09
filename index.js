@@ -173,15 +173,15 @@ exports.handler = function (req, res) {
                 break;
 
             case 'LEO':
-                messages[0].text = LeoArray[Math.floor(Math.random() * LeoArray.length)];
+                messages[0].text = getRandomFromArray(LeoArray);
                 break;
             case 'COFFEE':
             case '咖啡':
-                messages[0].text = CoffeeArray[Math.floor(Math.random() * CoffeeArray.length)];
+                messages[0].text = getRandomFromArray(CoffeeArray);
                 break;
 
             case 'FIRE':
-                messages[0].text = FireArray[Math.floor(Math.random() * FireArray.length)];
+                messages[0].text = getRandomFromArray(FireArray);
                 break;
 
             case 'GAMEOVER':case 'GG':case '婚':case '婚禮':case '崩':case '崩崩':case 'BON':case 'BONBON':
@@ -192,7 +192,7 @@ exports.handler = function (req, res) {
                 break;
 
             case 'SMILE':
-                smilePhoto = smileArray[Math.floor(Math.random() * smileArray.length)];
+                smilePhoto = getRandomFromArray(smileArray);
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = smilePhoto;
                 messages[0].previewImageUrl = smilePhoto;
@@ -234,28 +234,28 @@ exports.handler = function (req, res) {
                 break;
 
             case 'CEO':
-                var imgUrl = ceoArray[Math.floor(Math.random() * ceoArray.length)];
+                var imgUrl = getRandomFromArray(ceoArray);
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = imgUrl;
                 messages[0].previewImageUrl = imgUrl;
                 break;
 
             case 'GUAN': case '慣': case '冠':
-                var imgUrl = guanArray[Math.floor(Math.random() * guanArray.length)];
+                var imgUrl = getRandomFromArray(guanArray);
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = imgUrl;
                 messages[0].previewImageUrl = imgUrl;
                 break;
 
             case '郭':
-                var imgUrl = KuoArray[Math.floor(Math.random() * KuoArray.length)];
+                var imgUrl = getRandomFromArray(KuoArray);
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = imgUrl;
                 messages[0].previewImageUrl = imgUrl;
                 break;
 
             case 'ISSUE':
-                var imgUrl = issueArray[Math.floor(Math.random() * issueArray.length)];
+                var imgUrl = getRandomFromArray(issueArray);
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = imgUrl;
                 messages[0].previewImageUrl = imgUrl;
@@ -263,7 +263,7 @@ exports.handler = function (req, res) {
 
             case 'OK':
             case 'OKAY':
-                var imgUrl = okayArray[Math.floor(Math.random() * okayArray.length)];
+                var imgUrl =  getRandomFromArray(okayArray);
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = imgUrl;
                 messages[0].previewImageUrl = imgUrl;
@@ -271,7 +271,7 @@ exports.handler = function (req, res) {
                 
             case 'LEO嗆':
             case '嗆':
-                var imgUrl = chokeArray[Math.floor(Math.random() * chokeArray.length)];
+                var imgUrl = getRandomFromArray(chokeArray);
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = imgUrl;
                 messages[0].previewImageUrl = imgUrl;
@@ -299,7 +299,7 @@ exports.handler = function (req, res) {
                 break;
 
             case 'SSD':
-                var imgUrl = ssdArray[Math.floor(Math.random() * ssdArray.length)];
+                var imgUrl = getRandomFromArray(ssdArray);
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = imgUrl;
                 messages[0].previewImageUrl = imgUrl;
@@ -327,7 +327,7 @@ exports.handler = function (req, res) {
                 break;
             
             case 'FUCKYOU':
-                targetUrl = FuckArray[Math.floor(Math.random() * FuckArray.length)];
+                targetUrl = getRandomFromArray(FuckArray);
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = targetUrl;
                 messages[0].previewImageUrl = targetUrl;
@@ -335,7 +335,7 @@ exports.handler = function (req, res) {
 
             case 'WORK':
             case '上班':
-                targetUrl = WorkArray[Math.floor(Math.random() * WorkArray.length)];
+                targetUrl = getRandomFromArray(WorkArray);
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = targetUrl;
                 messages[0].previewImageUrl = targetUrl;
@@ -344,7 +344,7 @@ exports.handler = function (req, res) {
             case 'HENTAI':
             case '變態':
             case '氣到':
-                targetUrl = hentaiArray[Math.floor(Math.random() * hentaiArray.length)];
+                targetUrl = getRandomFromArray(hentaiArray);
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = targetUrl;
                 messages[0].previewImageUrl = targetUrl;
@@ -383,7 +383,7 @@ exports.handler = function (req, res) {
             default:
 
                 if(msg.length == 1){
-                    messages[0].text = msg + '.' + RandomArray[Math.floor(Math.random() * RandomArray.length)];
+                    messages[0].text = msg + '.' + getRandomFromArray(RandomArray);
                     break;
                 }
 
