@@ -28,8 +28,8 @@ var RandomArray = ["jpg", "png", "avi", "gif", "txt"];
 var issueArray = ["https://i.imgur.com/OeMtOqL.png"];
 var okayArray = ["https://i.imgur.com/IyUrfuW.png"];
 
-
-
+//Randomized a person
+var personArray = ['李奧', '郭文彬', 'Jonic', 'rainLAY', 'mou'];
 
 exports.handler = function (req, res) {
 
@@ -109,6 +109,13 @@ exports.handler = function (req, res) {
                 'minutes': minutes,
                 'seconds': seconds
             };
+        }
+
+        //Fetch Random Data
+        var getRandomFromArray = function(ArrayNames){
+
+            var length = ArrayNames.length;
+            return ArrayNames[Math.floor(Math.random() * length)];
         }
 
         if(gotUserMessage){
@@ -308,7 +315,8 @@ exports.handler = function (req, res) {
             case '親密度':
                 var limit = 50000000;
                 var intimacy = Math.floor(Math.random() * Math.floor(limit));
-                messages[0].text = '李奧和腎液親密度+' + intimacy;
+                var who = getRandomFromArray(personArray);
+                messages[0].text = who + '和腎液親密度+' + intimacy;
                 break;
 
             case '吉戰力':
