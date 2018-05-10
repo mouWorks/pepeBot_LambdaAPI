@@ -96,6 +96,7 @@ exports.handler = function (req, res) {
         }//endif;
 
         var deadline = 'June 3 2018 13:30:00 GMT+0800'; //Leo's Wedding
+        var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
         var getTimeRemaining = function(endtime){
             var t = Date.parse(endtime) - Date.parse(new Date());
             var seconds = Math.floor( (t/1000) % 60 );
@@ -111,11 +112,16 @@ exports.handler = function (req, res) {
             };
         }
 
+
         //Fetch Random Data
         var getRandomFromArray = function(ArrayNames){
 
             var length = ArrayNames.length;
             return ArrayNames[Math.floor(Math.random() * length)];
+        }
+
+        var getRandomValue = function(limit){
+            return [Math.floor(Math.random() * limit)];
         }
 
         if(gotUserMessage){
@@ -132,6 +138,10 @@ exports.handler = function (req, res) {
             if((msg.indexOf('呵') !== -1) || (msg.indexOf('嘻') !== -1) || (msg.indexOf('笑') !== -1)){
                 msg = 'SMILE';
             }
+
+            if(msg.indexOf('雞') !== -1){
+                msg = 'G';
+            }
         }
 
         var reply_token = event.replyToken; //Need to get this Token to pass back.
@@ -147,19 +157,19 @@ exports.handler = function (req, res) {
 
             case 'Z':
                 var limit = 15;
-                var randomNumber = [Math.floor(Math.random() * limit)];
+                var randomNumber = getRandomValue(15);
                 messages[0].text = "Z".repeat(randomNumber) + 'uvio起來!';
                 break;
 
             case '6':
                 var limit = 15;
-                var randomNumber = [Math.floor(Math.random() * limit)];
+                var randomNumber = getRandomValue(15);
                 messages[0].text = "6".repeat(randomNumber);
                 break;
 
             case 'U':
                 var limit = 30;
-                var randomNumber = [Math.floor(Math.random() * limit)];
+                var randomNumber = getRandomValue(30);
                 var randomUString = "U".repeat(randomNumber);
                 messages[0].text = randomUString + '起來!';
                 break;
@@ -167,7 +177,7 @@ exports.handler = function (req, res) {
             case '+':
             case '加':
                 var limit = 30;
-                var randomNumber = [Math.floor(Math.random() * limit)];
+                var randomNumber = getRandomValue(30);
                 var randomUString = "加".repeat(randomNumber);
                 messages[0].text = "通通" + randomUString + '起來!';
                 break;
@@ -189,6 +199,11 @@ exports.handler = function (req, res) {
                 //Go fetch time.
                 countdownJson = getTimeRemaining(deadline);
                 messages[0].text = '距離李奧大崩潰還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, cc!';
+                break;
+
+            case 'G':
+                countdownJson = getTimeRemaining(friedGdeadline);
+                messages[0].text = '距離G排時間還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, 想ㄘ!';
                 break;
 
             case 'SMILE':
@@ -396,6 +411,7 @@ exports.handler = function (req, res) {
                 //messages[0].text = msg;
                 break;
         }
+
         if(needToReply){
 
             var options = {
