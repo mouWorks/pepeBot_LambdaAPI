@@ -33,8 +33,8 @@ var personArray = ['李奧', '郭文彬', 'Jonic', 'rainLAY', 'mou'];
 
 exports.handler = function (req, res) {
 
-    console.log('TestData0418-6pm');
-    console.log(JSON.stringify(req));
+    // console.log('TestData0418-6pm');
+    // console.log(JSON.stringify(req));
 
     const promises = req.events.map(event => {
 
@@ -62,18 +62,7 @@ exports.handler = function (req, res) {
 
             request(requestSettings, function(error, response, body) {
                 // Use body as a binary Buffer
-                console.log('Getting image as binary');
-                console.log(body);
                 imageName = img_id + '.jpg';
-
-                // var wstream = fs.createWriteStream(imageName);
-                // wstream.write(body);
-                // wstream.end();
-                // var prefix = "data:image/png;base64, ";
-                // var base64Image = new Buffer(body, 'binary').toString('base64');
-                // base64Image = prefix + base64Image;
-
-                // var base64data = new Buffer(body, 'binary');
 
                 //Here Upload to S3
                 var s3Bucket = new AWS.S3({params:{Bucket:PEPEBOT_S3_BUCKET} });
@@ -112,7 +101,6 @@ exports.handler = function (req, res) {
             };
         }
 
-
         //Fetch Random Data
         var getRandomFromArray = function(ArrayNames){
 
@@ -139,9 +127,9 @@ exports.handler = function (req, res) {
                 msg = 'SMILE';
             }
 
-            if(msg.indexOf('雞') !== -1){
-                msg = 'G';
-            }
+            // if(msg.indexOf('雞') !== -1){
+            //     msg = 'G';
+            // }
         }
 
         var reply_token = event.replyToken; //Need to get this Token to pass back.
@@ -201,10 +189,10 @@ exports.handler = function (req, res) {
                 messages[0].text = '距離李奧大崩潰還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, cc!';
                 break;
 
-            case 'G':
-                countdownJson = getTimeRemaining(friedGdeadline);
-                messages[0].text = '距離G排時間還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, 想ㄘ!';
-                break;
+            // case 'G':
+            //     countdownJson = getTimeRemaining(friedGdeadline);
+            //     messages[0].text = '距離G排時間還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, 想ㄘ!';
+            //     break;
 
             case 'SMILE':
                 smilePhoto = getRandomFromArray(smileArray);
