@@ -155,11 +155,11 @@ exports.handler = function (req, res) {
                 messages[0].text = "6".repeat(randomNumber);
                 break;
 
-            case 'U':
+            case '8':
                 var limit = 30;
                 var randomNumber = getRandomValue(30);
-                var randomUString = "U".repeat(randomNumber);
-                messages[0].text = randomUString + '起來!';
+                var randomUString = "6".repeat(randomNumber);
+                messages[0].text =  '8'+ randomUString + '起來!';
                 break;
 
             case '+':
