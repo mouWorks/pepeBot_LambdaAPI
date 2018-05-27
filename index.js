@@ -33,8 +33,8 @@ var personArray = ['李奧', '郭文彬', 'Jonic', 'rainLAY', 'mou'];
 
 exports.handler = function (req, res) {
 
-    // console.log('TestData0418-6pm');
-    // console.log(JSON.stringify(req));
+    console.log('1221:Testing Chatroom');
+    console.log(JSON.stringify(req));
 
     const promises = req.events.map(event => {
 
