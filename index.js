@@ -119,6 +119,11 @@ exports.handler = function (req, res) {
                 msg = 'GG';
             }
 
+            if(msg.indexOf('親 --force') !== -1){
+                msg = '親密度X';
+            }
+
+
             if((msg.indexOf('親') !== -1) || (msg.indexOf('腎') !== -1)){
                 msg = '親密度';
             }
@@ -321,6 +326,14 @@ exports.handler = function (req, res) {
                 var who = getRandomFromArray(personArray);
                 messages[0].text = who + '和腎液親密度+' + intimacy;
                 break;
+
+            case '親密度X':
+                var limit = 900000000;
+                var intimacy = Math.floor(Math.random() * Math.floor(limit));
+                var who = getRandomFromArray(personArray);
+                messages[0].text = '郭文彬和腎液親密度+' + intimacy;
+                break;
+
 
             case '吉戰力':
             case '戰鬥力':
