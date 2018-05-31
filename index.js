@@ -119,7 +119,7 @@ exports.handler = function (req, res) {
                 msg = 'GG';
             }
 
-            if(msg.indexOf('親 --force') !== -1){
+            if(msg.indexOf('親 --FORCE') !== -1){
                 msg = '親密度X';
             }
 
