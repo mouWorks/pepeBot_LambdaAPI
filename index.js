@@ -186,7 +186,7 @@ exports.handler = function (req, res) {
 
                 //Go fetch time.
                 countdownJson = getTimeRemaining(deadline);
-                messages[0].text = '距離李奧大崩潰還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, cc!';
+                messages[0].text = '距離 李奧 全.面.崩.潰. 倒數: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
                 break;
 
             // case 'G':
@@ -234,7 +234,7 @@ exports.handler = function (req, res) {
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://i.imgur.com/Dc4ztxN.png';
                 messages[0].previewImageUrl = 'https://i.imgur.com/Dc4ztxN.png';
-                break;
+                break
 
             case 'CEO':
                 var imgUrl = getRandomFromArray(ceoArray);
