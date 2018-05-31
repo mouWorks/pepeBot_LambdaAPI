@@ -112,6 +112,8 @@ exports.handler = function (req, res) {
             return [Math.floor(Math.random() * limit)];
         }
 
+        var forceLeo = false;
+
         if(gotUserMessage){
             var msg = event.message.text.toUpperCase().trim();
 
@@ -119,12 +121,17 @@ exports.handler = function (req, res) {
                 msg = 'GG';
             }
 
-            if((msg.indexOf('親') !== -1) || (msg.indexOf('腎') !== -1)){
-                msg = '親密度';
-            }
 
             if(msg.indexOf('親 --FORCE') !== -1){
                 msg = '親密度X';
+                forceLeo = true;
+            }
+
+            if((msg.indexOf('親') !== -1) || (msg.indexOf('腎') !== -1)){
+
+                if(!forceLeo){
+                    msg = '親密度';
+                }
             }
 
             if((msg.indexOf('呵') !== -1) || (msg.indexOf('嘻') !== -1) || (msg.indexOf('笑') !== -1)){
