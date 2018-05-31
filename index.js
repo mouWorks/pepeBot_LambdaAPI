@@ -119,13 +119,12 @@ exports.handler = function (req, res) {
                 msg = 'GG';
             }
 
-            if(msg.indexOf('親 --FORCE') !== -1){
-                msg = '親密度X';
-            }
-
-
             if((msg.indexOf('親') !== -1) || (msg.indexOf('腎') !== -1)){
                 msg = '親密度';
+            }
+
+            if(msg.indexOf('親 --FORCE') !== -1){
+                msg = '親密度X';
             }
 
             if((msg.indexOf('呵') !== -1) || (msg.indexOf('嘻') !== -1) || (msg.indexOf('笑') !== -1)){
