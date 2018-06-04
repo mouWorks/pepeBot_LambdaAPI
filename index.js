@@ -121,6 +121,9 @@ exports.handler = function (req, res) {
                 msg = 'GG';
             }
 
+            if(msg.indexOf('打') !== -1){
+                msg = 'HIT';
+            }
 
             if(msg.indexOf('親 --FORCE') !== -1){
                 msg = '親密度X';
@@ -226,6 +229,12 @@ exports.handler = function (req, res) {
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg';
                 messages[0].previewImageUrl = 'https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg';
+                break;
+
+             case 'HIT':
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'https://i.imgur.com/Z4UAjkp.png';
+                messages[0].previewImageUrl = 'https://i.imgur.com/Z4UAjkp.png';
                 break;
 
             case 'WHAT':
