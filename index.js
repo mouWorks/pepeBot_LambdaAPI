@@ -196,8 +196,11 @@ exports.handler = function (req, res) {
             case 'GAMEOVER':case 'GG':case '婚':case '婚禮':case '崩':case '崩崩':case 'BON':case 'BONBON':
 
                 //Go fetch time.
-                countdownJson = getTimeRemaining(deadline);
-                messages[0].text = '距離 李奧 全.面.崩.潰. 倒數: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
+                //countdownJson = getTimeRemaining(deadline);
+
+                messages[0].text = '沒的崩啦 崩屁崩, 李奧已成 Husbando!';
+
+                //messages[0].text = '距離 李奧 全.面.崩.潰. 倒數: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
                 break;
 
             // case 'G':
