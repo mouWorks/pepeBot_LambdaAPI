@@ -106,11 +106,16 @@ exports.handler = function (req, res) {
 
             var length = ArrayNames.length;
             return ArrayNames[Math.floor(Math.random() * length)];
-        }
+        };
 
         var getRandomValue = function(limit){
             return [Math.floor(Math.random() * limit)];
-        }
+        };
+
+        var getRandomNumber = function(x, y) {
+            var diff = y - x;
+            return x + Math.floor(Math.random() * diff);
+        };
 
         var forceLeo = false;
 
@@ -157,7 +162,7 @@ exports.handler = function (req, res) {
         //Text is switch to UpperCase()
         switch(msg){
             case 'MAYBE':
-                var randomNumber = 100 + getRandomValue(1000);
+                var randomNumber = getRandomNumber(100, 365 * 3);
                 messages[0].text = "我大阿Mou Maybe 在 " + randomNumber + ' 天之後在沖繩崩崩婚!';
                 break;
 
