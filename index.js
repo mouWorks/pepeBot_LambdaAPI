@@ -31,6 +31,8 @@ var okayArray = ["https://i.imgur.com/IyUrfuW.png"];
 //Randomized a person
 var personArray = ['李奧', '郭文彬', 'Jonic', 'rainLAY', 'mou'];
 
+var placeArray = ['沖繩', '美國', '東京', '北海道', '北歐', '韓國', '新加坡'];
+
 exports.handler = function (req, res) {
 
     console.log('1221:Testing Chatroom');
@@ -220,8 +222,9 @@ exports.handler = function (req, res) {
             //     messages[0].text = '距離G排時間還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, 想ㄘ!';
             //     break;
             case 'MAYBE':
-                var randomNumber = getRandomNumber(100, 365 * 3);
-                messages[0].text = "我大阿Mou Maybe 在 " + randomNumber + ' 天之後在沖繩崩崩婚!';
+                var randomNumber = getRandomNumber(10, 365 * 3);
+                var place = getRandomFromArray(placeArray);
+                messages[0].text = "我大阿Mou Maybe 在 " + randomNumber + ' 天之後在' + place + '崩崩婚!';
                 break;
 
             case 'SMILE':
