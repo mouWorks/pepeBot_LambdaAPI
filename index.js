@@ -31,7 +31,8 @@ var okayArray = ["https://i.imgur.com/IyUrfuW.png"];
 //Randomized a person
 var personArray = ['李奧', '郭文彬', 'Jonic', 'rainLAY', 'mou'];
 
-var placeArray = ['台灣', '白宮', '沖繩', '美國', '東京', '北海道', '北歐', '韓國', '新加坡'];
+//var placeArray = ['台灣', '白宮', '沖繩', '美國', '東京', '北海道', '北歐', '韓國', '新加坡'];
+var placeArray = ['芝加哥豪宅', '奧勒岡鄉間屋宅', '赫里福基地', '總統專機','杜斯妥也夫斯基咖啡館', '貧民窟','巴特雷特大學'];
 
 exports.handler = function (req, res) {
 
@@ -203,18 +204,13 @@ exports.handler = function (req, res) {
                 break;
 
             case 'GAMEOVER':case 'GG':case '婚':case '婚禮':case '崩':case '崩崩':case 'BON':case 'BONBON':
-
                 if (getRandomNumber(0, 10) <= 5) {
                     messages[0].text = '沒的崩啦 崩屁崩, 李奧已成 Husbando!';
                     break;
-                } else {
-                    // no break and to maybe
-                }
+                } 
 
             //Go fetch time.
                 //countdownJson = getTimeRemaining(deadline);
-
-
                 //messages[0].text = '距離 李奧 全.面.崩.潰. 倒數: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
 
             // case 'G':
@@ -224,7 +220,7 @@ exports.handler = function (req, res) {
             case 'MAYBE':
                 var randomNumber = getRandomNumber(10, 365 * 3);
                 var place = getRandomFromArray(placeArray);
-                messages[0].text = "我大阿Mou Maybe 在 " + randomNumber + ' 天之後在' + place + '舉行世紀婚禮!';
+                messages[0].text = "我大阿Mou Maybe 在 " + randomNumber + ' 天之後在' + place + '舉行 反恐婚禮!';
                 break;
 
             case 'SMILE':
