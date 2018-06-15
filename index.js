@@ -31,7 +31,7 @@ var okayArray = ["https://i.imgur.com/IyUrfuW.png"];
 //Randomized a person
 var personArray = ['李奧', '郭文彬', 'Jonic', 'rainLAY', 'mou'];
 
-var placeArray = ['沖繩', '美國', '東京', '北海道', '北歐', '韓國', '新加坡'];
+var placeArray = ['台灣', '白宮', '沖繩', '美國', '東京', '北海道', '北歐', '韓國', '新加坡'];
 
 exports.handler = function (req, res) {
 
@@ -224,7 +224,7 @@ exports.handler = function (req, res) {
             case 'MAYBE':
                 var randomNumber = getRandomNumber(10, 365 * 3);
                 var place = getRandomFromArray(placeArray);
-                messages[0].text = "我大阿Mou Maybe 在 " + randomNumber + ' 天之後在' + place + '崩崩婚!';
+                messages[0].text = "我大阿Mou Maybe 在 " + randomNumber + ' 天之後在' + place + '舉行世紀婚禮!';
                 break;
 
             case 'SMILE':
