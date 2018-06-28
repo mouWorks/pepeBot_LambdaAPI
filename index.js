@@ -236,6 +236,12 @@ exports.handler = function (req, res) {
                 messages[0].originalContentUrl = 'https://i.imgur.com/UAuai2P.png';
                 messages[0].previewImageUrl = 'https://i.imgur.com/UAuai2P.png';
                 break;
+
+            case 'TV': case '4K': case 'HDR':  
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'https://i.imgur.com/Xl2kijL.png';
+                messages[0].previewImageUrl = 'https://i.imgur.com/Xl2kijL.png';
+                break;
     
             case 'PEPE':
                 messages[0].type = 'image';
