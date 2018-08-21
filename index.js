@@ -17,7 +17,7 @@ var ceoArray = require('data/_ceoArray.json');
 var hentaiArray = require('data/_hentaiArray.json');
 var guanArray = require('data/_guanArray.json');
 var smileArray = require('data/_smileArray.json');
-var holanArray = require('data/_holanArray.json');
+var holanArray = require('data/_HolanArray.json');
 
 //Loading Predefined stuff
 var KuoArray =["https://i.imgur.com/X6mAbic.png"];
