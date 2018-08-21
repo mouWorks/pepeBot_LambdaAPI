@@ -17,6 +17,7 @@ var ceoArray = require('data/_ceoArray.json');
 var hentaiArray = require('data/_hentaiArray.json');
 var guanArray = require('data/_guanArray.json');
 var smileArray = require('data/_smileArray.json');
+var holanArray = require('data/_holanArray.json');
 
 //Loading Predefined stuff
 var KuoArray =["https://i.imgur.com/X6mAbic.png"];
@@ -286,6 +287,13 @@ exports.handler = function (req, res) {
 
             case 'GUAN': case '慣': case '冠':
                 var imgUrl = getRandomFromArray(guanArray);
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = imgUrl;
+                messages[0].previewImageUrl = imgUrl;
+                break;
+
+            case 'HOLAN': case '騙': case '冠':
+                var imgUrl = getRandomFromArray(holanArray);
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = imgUrl;
                 messages[0].previewImageUrl = imgUrl;
