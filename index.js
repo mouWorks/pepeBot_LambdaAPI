@@ -408,6 +408,7 @@ exports.handler = function (req, res) {
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = targetUrl;
                 messages[0].previewImageUrl = targetUrl;
+
                 break;
 
             //STICKER Part
@@ -442,15 +443,15 @@ exports.handler = function (req, res) {
 
             default:
 
-                if(msg.length == 1){
-                    messages[0].text = msg + '.' + getRandomFromArray(RandomArray);
-                    break;
-                }
-
-                 if(msg.length == 3){
-                    messages[0].text = msg + '.avi';
-                    break;
-                }
+                // Shut this up: too loud
+                // if(msg.length == 1){
+                //     messages[0].text = msg + '.' + getRandomFromArray(RandomArray);
+                //     break;
+                // }
+                //  if(msg.length == 3){
+                //     messages[0].text = msg + '.avi';
+                //     break;
+                // }
 
                 needToReply = false;
                 //messages[0].text = msg;
