@@ -441,6 +441,12 @@ exports.handler = function (req, res) {
                 messages[0].text = '􀜁􀄟Crying With Laughter Girl􏿿';
                 break;
 
+            case '辣雞':
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'https://i.imgur.com/yCg7UDi.png';
+                messages[0].previewImageUrl = 'https://i.imgur.com/yCg7UDi.png';
+                break;
+
             default:
 
                 // Shut this up: too loud
