@@ -442,6 +442,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '辣雞':
+            case 'LAJI':
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://i.imgur.com/yCg7UDi.png';
                 messages[0].previewImageUrl = 'https://i.imgur.com/yCg7UDi.png';
