@@ -90,6 +90,7 @@ exports.handler = function (req, res) {
 
         var deadline = 'June 3 2018 13:30:00 GMT+0800'; //Leo's Wedding
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
+        var mouOnboardLine = 'April 1 2019 09:30:00 GMT+0800'; //Leo's Wedding
         var getTimeRemaining = function(endtime){
             var t = Date.parse(endtime) - Date.parse(new Date());
             var seconds = Math.floor( (t/1000) % 60 );
@@ -218,6 +219,10 @@ exports.handler = function (req, res) {
             //     countdownJson = getTimeRemaining(friedGdeadline);
             //     messages[0].text = '距離G排時間還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, 想ㄘ!';
             //     break;
+            case 'MOU': case '王':
+                countdownJson = getTimeRemaining(mouOnboardLine);
+                messages[0].text = '距離 Mou 登入 ZUVIO 時間還有: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
+                break;
             case 'MAYBE':
                 var randomNumber = getRandomNumber(10, 365 * 3);
                 var place = getRandomFromArray(placeArray);
