@@ -219,6 +219,13 @@ exports.handler = function (req, res) {
             //     countdownJson = getTimeRemaining(friedGdeadline);
             //     messages[0].text = '距離G排時間還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, 想ㄘ!';
             //     break;
+
+            case '爽':
+            case 'song':
+                countdownJson = getTimeRemaining(mouOnboardLine);
+                messages[0].text = '距離阿 Mou 開始 oncall 還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, cc!!';
+                break;
+
             case 'MOU': case '王':
                 countdownJson = getTimeRemaining(mouOnboardLine);
                 messages[0].text = '距離 Mou 登入 ZUVIO 時間還有: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
