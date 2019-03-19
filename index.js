@@ -223,7 +223,7 @@ exports.handler = function (req, res) {
             case '爽':
             case 'SONG':
                 countdownJson = getTimeRemaining(mouOnboardLine);
-                messages[0].text = '距離阿 Mou 開始 oncall 還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, cc!!';
+                messages[0].text = '距離阿 Mou 挖坑給李奧醬 還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, cc!!';
                 break;
 
             case 'MOU': case '王':
