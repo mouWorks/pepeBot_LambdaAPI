@@ -394,7 +394,7 @@ exports.handler = function (req, res) {
             case '戰鬥力':
                 var limit = 9000;
                 var intimacy = Math.floor(Math.random() * Math.floor(limit));
-                messages[0].text = '今日' + msg + ' :: ' + intimacy;
+                messages[0].text = '今日 `' + msg + '` :' + intimacy;
                 break;
             
             case 'FUCKYOU':
