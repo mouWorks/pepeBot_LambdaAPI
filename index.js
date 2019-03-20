@@ -37,7 +37,6 @@ var placeArray = ['芝加哥豪宅', '奧勒岡鄉間屋宅', '赫里福基地',
 
 exports.handler = function (req, res) {
 
-
     const promises = req.events.map(event => {
 
         const ChannelAccessToken = process.env['CHANNEL_ACCESS_TOKEN'];
@@ -230,9 +229,8 @@ exports.handler = function (req, res) {
                 break;
 
             case 'MAYBE':
-                var randomNumber = getRandomNumber(10, 365 * 3);
-                var place = getRandomFromArray(placeArray);
-                messages[0].text = "我大阿Mou Maybe 在 " + randomNumber + ' 天之後在' + place + '舉行 反恐婚禮!';
+                countdownJson = getTimeRemaining(mouOnboardLine);
+                messages[0].text = '距離 李奧 *全.面.崩.潰.* 倒數: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
                 break;
 
             case 'SMILE':

@@ -6,7 +6,8 @@ build:
 	npm install --only=production
 
 pack:
-	zip -r code.zip . -x *.git*
+	tar -czf code.tar.gz .
+	#zip -r code.zip . -x *.git*
 
 upload:
 	./upload.sh
