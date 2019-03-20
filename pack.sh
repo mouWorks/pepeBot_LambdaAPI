@@ -1,4 +1,2 @@
 #!/bin/bash
-base=$(basename $PWD) &&
-cd .. &&
-tar -czf code.tar.gz $base
+zip -r code.zip . -x *.git*
