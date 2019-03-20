@@ -6,9 +6,10 @@ build:
 	npm install --only=production
 
 pack:
-	base=$(basename $PWD)
-	cd ..
-	tar -czf code.tar.gz $base
+	./pack.sh
+#	base=$(basename $PWD)
+#	cd ..
+#	tar -czf code.tar.gz $base
 #	cd .. && tar -czf code.tar.gz /
 	#zip -r code.zip . -x *.git*
 
