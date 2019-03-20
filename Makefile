@@ -6,7 +6,7 @@ build:
 	npm install --only=production
 
 pack:
-	tar -czf code.tar.gz .
+	cd .. && tar -czf code.tar.gz /
 	#zip -r code.zip . -x *.git*
 
 upload:
