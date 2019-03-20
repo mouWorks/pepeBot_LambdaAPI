@@ -37,8 +37,6 @@ var placeArray = ['芝加哥豪宅', '奧勒岡鄉間屋宅', '赫里福基地',
 
 exports.handler = function (req, res) {
 
-    console.log('1221:Testing Chatroom');
-    console.log(JSON.stringify(req));
 
     const promises = req.events.map(event => {
 
@@ -229,8 +227,8 @@ exports.handler = function (req, res) {
             case 'MOU': case '王':
                 countdownJson = getTimeRemaining(mouOnboardLine);
                 messages[0].text = '距離 Mou 登入 Zuvio 時間還有: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
-
                 break;
+
             case 'MAYBE':
                 var randomNumber = getRandomNumber(10, 365 * 3);
                 var place = getRandomFromArray(placeArray);
@@ -396,7 +394,7 @@ exports.handler = function (req, res) {
             case '戰鬥力':
                 var limit = 9000;
                 var intimacy = Math.floor(Math.random() * Math.floor(limit));
-                messages[0].text = '今日' + msg + '|' + intimacy;
+                messages[0].text = '今日' + msg + ' | ' + intimacy;
                 break;
             
             case 'FUCKYOU':
