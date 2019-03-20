@@ -120,11 +120,6 @@ exports.handler = function (req, res) {
             return x + Math.floor(Math.random() * diff);
         };
 
-        var getRandomNumberWithHighLight = function(x, y){
-
-            return '`' + getRandomNumber(x, y) + '`';
-        }
-
         var forceLeo = false;
 
         if(gotUserMessage){
@@ -384,22 +379,20 @@ exports.handler = function (req, res) {
                 var limit = 50000000;
                 var intimacy = Math.floor(Math.random() * Math.floor(limit));
                 var who = getRandomFromArray(personArray);
-                messages[0].text = who + '和腎液親密度+' + intimacy;
+                messages[0].text = who + '和腎液親密度 `+' + intimacy + '`';
                 break;
 
             case '親密度X':
                 var limit = 900000000;
                 var intimacy = getRandomNumberWithHighLight(0, limit);
-                // var intimacy = Math.floor(Math.random() * Math.floor(limit));
                 var who = getRandomFromArray(personArray);
-                messages[0].text = '郭文彬和腎液親密度+' + intimacy;
+                messages[0].text = '郭文彬和腎液親密度 `+' + intimacy + '`';
                 break;
 
             case '吉戰力':
             case '戰鬥力':
                 var limit = 9000;
                 var intimacy = getRandomNumber(0, limit);
-                // var intimacy = Math.floor(Math.random() * Math.floor(limit));
                 messages[0].text = '今日 ' + msg + ' `' + intimacy + '`';
                 break;
             
