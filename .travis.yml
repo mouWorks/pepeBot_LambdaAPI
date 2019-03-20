@@ -1,6 +1,7 @@
 language: node_js
 node_js:
 - '6.10'
+cache: npm
 env:
   global:
   - AWS_ACCESS_KEY_ID=AKIAILJJKURL5KF2EKTA
@@ -12,7 +13,7 @@ branches:
 before_install:
 - pip install --user awscli
 - export PATH=$PATH:$HOME/.local/bin
-script: make build
+script: make all
 notifications:
   slack:
     secure: XgUpZpqUpHXnMWr27tD0cuQGUFt54cnK+nknr89o5A3xYY9GPuH/Bl2E0iJxIdjTd74vBHtZVuMiN1EEf8GuXcAV1JmGNJ4QSTLbz5ByMZBgI7PKNpFeU3PpsLqffnPAKPekvZH/hHKea/ib4mNKAGdg3Zf0FINvejUcB2/yr9X+xIZ8QPe/3u1TQ/Tr6m9Shi9jBceSh9ZjqWf0Nups2CqgT8HpNJrU5drHgfYsYpk9AjfOndxB37mmMDV0E2YFl6eckxH/HSNgIVTD2FrMBMN43VzQyfXJGFg2NtJqHuCpUhuiHxsOPOInHzv+ihnLDlGGJcsuf0k5TCBLhpkfJg7t89Kb5kgYcD6iAnv17f4SJPTMK+9nmax6k1np46ZwX5YddfRgQY1FHe+r6fwWER9yRjRotGDm73qbNlM7DyxH/IK02T9RFAC5lnpzZ8UzfWyCgsOxRyPBAyZdToYzbK1LBrtR6Ndx67fhqFH8BE0KJlvARcrJlgR0zJyX6cuZLHaoIdVmGcVFf2Sx9T26YdYLSWdRsO0WZyEVdSYEHMo63uTcT5d9oClL8vIqaTxOoSZ7eIOCiMloVIeM5UJSH2b7Q9G/i5EBTScIUQ5GjRLBxjLTV/LjO22VE3DrBoSOkRU28/e8v2AX9MZfFYB6tiwuwktzaabdGVhXrNj/C4g=
