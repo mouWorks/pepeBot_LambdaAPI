@@ -120,6 +120,11 @@ exports.handler = function (req, res) {
             return x + Math.floor(Math.random() * diff);
         };
 
+        var getRandomNumberWithHighLight = function(x, y){
+
+            return '`' + getRandomNumber(x, y) + '`';
+        }
+
         var forceLeo = false;
 
         if(gotUserMessage){
@@ -384,7 +389,7 @@ exports.handler = function (req, res) {
 
             case '親密度X':
                 var limit = 900000000;
-                var intimacy = getRandomNumber(0, limit);
+                var intimacy = getRandomNumberWithHighLight(0, limit);
                 // var intimacy = Math.floor(Math.random() * Math.floor(limit));
                 var who = getRandomFromArray(personArray);
                 messages[0].text = '郭文彬和腎液親密度+' + intimacy;
