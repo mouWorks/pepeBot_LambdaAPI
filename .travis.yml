@@ -19,6 +19,11 @@ script: make all
 notifications:
   slack:
     template:
-      - "%{duration} | %{result} by %{author} "
-      - "<%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository_slug}@%{branch}"
+      - "%{repository_slug} (%{commit}) : %{message} %{foo} "
+      - "Build details: %{build_url}"
     secure: gwXsoHavEO2mjfGlG50T1QrMUxJLRh76cdvesvPVbwA8Vch2Ve6q/0CldYIzGWPaDDt+kyndjUInjCVbLEOvSufeAetyIro7T6pu4TU/1LKBFp5VXZwx0bBsAjyevbqE31YuRcY/B2yKdj6NEuIAGqIMAuwRi6cyYiwZuzfHnkdJ5AneqhBu/IgvRsL8fdObD1No6o/vgUYjUZjgHPpxNY2JHu19shr6E/LPyWm7mGwsxEqQR3b85zdMwJCGyZw/CYCC9gT/tg8RqLMUQYv1cWXe0p5HdB6KZBa98+VD4s1zJKB5buxXuwc/bioM4WJ31KAl7Xbv4fdw4YDrn97iGm4brDUGslsRa9p/5jFIYncHT2TsOZyFChVsttZfsPaNq5cKmEaHci5O4jTjR6MKHZePWfh9VWQosfxvOhxyVBwh0Sptz3BJXoFaw26E+9l+x6z/xmVQoE2GR0R5bUSlPG6ChGC+sMH57lxO8RrjDMYmcjEfTfeZUNHR3rHOBY74m4Favsfy9vi0pshSDW31ds19MzOo8q3zpynIPaySYYW1QrzlBvzP3b1muAwaqjTjtOIlEn/6+/7cn/3ymoRU1S9L9xPdleeDuVSThqOvq3zi18Leaa+LAVAU5Kjel8NPqYy/C+xLcV8P/irmrENTGhQHiUYZ7Xq7uyq6Aw0N3Fs=
+
+
+#
+#      - "%{duration} | %{result} by %{author} "
+#      - "<%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository_slug}@%{branch}"

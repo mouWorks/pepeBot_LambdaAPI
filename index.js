@@ -384,16 +384,17 @@ exports.handler = function (req, res) {
 
             case '親密度X':
                 var limit = 900000000;
-                var intimacy = Math.floor(Math.random() * Math.floor(limit));
+                var intimacy = getRandomNumber(0, limit);
+                // var intimacy = Math.floor(Math.random() * Math.floor(limit));
                 var who = getRandomFromArray(personArray);
                 messages[0].text = '郭文彬和腎液親密度+' + intimacy;
                 break;
 
-
             case '吉戰力':
             case '戰鬥力':
                 var limit = 9000;
-                var intimacy = Math.floor(Math.random() * Math.floor(limit));
+                var intimacy = getRandomNumber(0, limit);
+                // var intimacy = Math.floor(Math.random() * Math.floor(limit));
                 messages[0].text = '今日 ' + msg + ' `' + intimacy + '`';
                 break;
             
@@ -499,7 +500,7 @@ exports.handler = function (req, res) {
                 console.log("Error : " + err);
             });
 
-        }//Otherwiese no need to reply
+        }//Otherwise no need to reply
     });
 
     Promise
