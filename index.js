@@ -221,17 +221,17 @@ exports.handler = function (req, res) {
             case 'SONG':
                 countdownJson = getTimeRemaining(mouOnboardLine);
                 var countDownString = countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒';
-                messages[0].text = '距離阿 Mou 挖坑給李奧醬 還有 `' + countDownString + '`, cc!!';
+                messages[0].text = '距離阿 Mou 挖坑給李奧醬 還有 ' + countDownString + ', cc!!';
                 break;
 
             case 'MOU': case '王':
                 countdownJson = getTimeRemaining(mouOnboardLine);
-                messages[0].text = '距離 Mou 登入 Zuvio 時間還有: `' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒`, get ready!';
+                messages[0].text = '距離 Mou 登入 Zuvio 時間還有: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
                 break;
 
             case 'MAYBE':
                 countdownJson = getTimeRemaining(mouOnboardLine);
-                messages[0].text = '距離 李奧 *全.面.崩.潰.* 倒數: `' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒`, get ready!';
+                messages[0].text = '距離 李奧 *全.面.崩.潰.* 倒數: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
                 break;
 
             case 'SMILE':
