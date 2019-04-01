@@ -222,7 +222,7 @@ exports.handler = function (req, res) {
             case 'MOU':
             case '王':
             case 'MAYBE':
-                messages[0].text = '還爽啊 Mou, 開始上班啦！';
+                messages[0].text = '還爽啊 `Mou` , 開始上班啦，懂？！';
                 break;
 
             case 'SMILE':
