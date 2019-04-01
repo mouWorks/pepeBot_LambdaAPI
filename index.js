@@ -219,17 +219,10 @@ exports.handler = function (req, res) {
 
             case '爽':
             case 'SONG':
-                messages[0].text = '還爽啊 Mou, 開始上班啦！';
-                break;
-
-            case 'MOU': case '王':
-                countdownJson = getTimeRemaining(mouOnboardLine);
-                messages[0].text = '距離 Mou 登入 Zuvio 時間還有: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
-                break;
-
+            case 'MOU':
+            case '王':
             case 'MAYBE':
-                countdownJson = getTimeRemaining(mouOnboardLine);
-                messages[0].text = '距離 李奧 *全.面.崩.潰.* 倒數: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
+                messages[0].text = '還爽啊 Mou, 開始上班啦！';
                 break;
 
             case 'SMILE':
