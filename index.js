@@ -190,6 +190,7 @@ exports.handler = function (req, res) {
                 messages[0].text = "通通" + randomUString + '起來!';
                 break;
 
+            case 'L': //because LEO is way too fking long
             case 'LEO':
                 messages[0].text = getRandomFromArray(LeoArray);
                 break;
