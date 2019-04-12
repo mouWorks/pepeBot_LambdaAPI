@@ -32,7 +32,7 @@ var okayArray = ["https://i.imgur.com/IyUrfuW.png"];
 //Randomized a person
 var personArray = ['李奧', '郭文彬', 'Jonic', 'rainLAY', 'mou'];
 var ZuvioTeamMate = ['李奧', '阿酷', 'RainLay', 'L30'];
-var Behavior = ['Carry' , '挖坑', '神救援', '狂嗆', '拯救', '衝康'];
+var Behavior = ['Carry' , '挖坑', '神救援', '狂嗆', '拯救', '衝康', '霸凌'];
 
 //var placeArray = ['台灣', '白宮', '沖繩', '美國', '東京', '北海道', '北歐', '韓國', '新加坡'];
 var placeArray = ['芝加哥豪宅', '奧勒岡鄉間屋宅', '赫里福基地', '總統專機','杜斯妥也夫斯基咖啡館', '貧民窟','巴特雷特大學'];
@@ -243,7 +243,7 @@ exports.handler = function (req, res) {
                 days = getCountDownDate();
                 var who = getRandomFromArray(ZuvioTeamMate);
                 action = getRandomFromArray(Behavior);
-                messages[0].text = '`Mou` 已在 `Zuvio` 被 `'+'` ' + action + ' 了 `' + days +'` 天！';
+                messages[0].text = '`Mou` 已在 `Zuvio` 被 `' + who + '` ' + action + ' 了 `' + days +'` 天！';
                 break;
 
             case 'SMILE':
