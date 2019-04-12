@@ -119,6 +119,17 @@ exports.handler = function (req, res) {
             return x + Math.floor(Math.random() * diff);
         };
 
+        var getCountDownDate = function(){
+
+            var mouWorkDay = new Date('4/1/2019');
+            var date2 = new Date();
+            var diffTime = Math.abs(date2.getTime() - mouWorkDay.getTime());
+            var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            return diffDays;
+        }
+
+
         var forceLeo = false;
 
         if(gotUserMessage){
@@ -224,6 +235,11 @@ exports.handler = function (req, res) {
             case '王':
             case 'MAYBE':
                 messages[0].text = '還爽啊 `Mou` , 開始上班啦，懂？！';
+                break;
+
+            case 'M':
+                days = getCountDownDate();
+                messages[0].text = '`Mou` 已在 `Zuvio` 被 `L30` Carry 了 `' + days +'` 天！';
                 break;
 
             case 'SMILE':
@@ -380,8 +396,10 @@ exports.handler = function (req, res) {
                 messages[0].text = '郭文彬和腎液親密度 `+' + intimacy + '`';
                 break;
 
+            case '仇恨值':
             case '吉戰力':
             case '戰鬥力':
+            case '奮力':
                 var limit = 9000;
                 var intimacy = getRandomNumber(0, limit);
                 messages[0].text = '今日 ' + msg + ' `' + intimacy + '`';
