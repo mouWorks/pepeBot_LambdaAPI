@@ -31,6 +31,8 @@ var okayArray = ["https://i.imgur.com/IyUrfuW.png"];
 
 //Randomized a person
 var personArray = ['李奧', '郭文彬', 'Jonic', 'rainLAY', 'mou'];
+var ZuvioTeamMate = ['李奧', '阿酷', 'RainLay', 'L30'];
+var Behavior = ['Carry' , '挖坑', '神救援', '狂嗆', '拯救', '衝康'];
 
 //var placeArray = ['台灣', '白宮', '沖繩', '美國', '東京', '北海道', '北歐', '韓國', '新加坡'];
 var placeArray = ['芝加哥豪宅', '奧勒岡鄉間屋宅', '赫里福基地', '總統專機','杜斯妥也夫斯基咖啡館', '貧民窟','巴特雷特大學'];
@@ -239,7 +241,9 @@ exports.handler = function (req, res) {
 
             case 'M':
                 days = getCountDownDate();
-                messages[0].text = '`Mou` 已在 `Zuvio` 被 `L30` Carry 了 `' + days +'` 天！';
+                var who = getRandomFromArray(ZuvioTeamMate);
+                action = getRandomFromArray(Behavior);
+                messages[0].text = '`Mou` 已在 `Zuvio` 被 `'+'` ' + action + ' 了 `' + days +'` 天！';
                 break;
 
             case 'SMILE':
@@ -399,7 +403,7 @@ exports.handler = function (req, res) {
             case '仇恨值':
             case '吉戰力':
             case '戰鬥力':
-            case '奮力':
+            case '糞力':
                 var limit = 9000;
                 var intimacy = getRandomNumber(0, limit);
                 messages[0].text = '今日 ' + msg + ' `' + intimacy + '`';
