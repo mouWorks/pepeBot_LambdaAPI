@@ -404,11 +404,9 @@ exports.handler = function (req, res) {
             case '科':
                 var limit = 900000000;
                 var intimacy = getRandomNumberWithHighLight(0, limit);
-                var who = getRandomFromArray(personArray);
-
                 var intText = '郭文彬和腎液親密度為' + intimacy ;
-                rand = nodejieba.cut(intText);
-                var returnString = rand.join('...');
+                randwords = nodejieba.cut(intText);
+                var returnString = randwords.join('...');
 
                 messages[0].text = returnString;
                 break;
