@@ -110,7 +110,7 @@ exports.handler = function (req, res) {
         var getRandomFromArrayWithStringStyle = function(ArrayNames)
         {
             var getString = ArrayNames[Math.floor(Math.random() * length)];
-            var style = getRandomInt(4);
+            var style = Math.floor(Math.random() * 4);
 
             switch(style){
                 case 0:
