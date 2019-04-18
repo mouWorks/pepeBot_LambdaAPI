@@ -242,7 +242,6 @@ exports.handler = function (req, res) {
             case 'LL':
             case 'LEO':
                 messages[0].text = getRandomFromArrayWithStringStyle(LeoArray);
-                messages[0].text = getRandomFromArray(LeoArray);
                 break;
 
 
