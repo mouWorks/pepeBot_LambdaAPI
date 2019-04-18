@@ -3,6 +3,7 @@ var rp = require('request-promise');
 var request = require('request');
 var AWS = require('aws-sdk');
 var fs = require('fs');
+var nodejieba = require('nodejieba');
 
 var PEPEBOT_S3_BUCKET = 'pepebot-images';
 var EXPORT_PATH = 'pepebot/';
@@ -398,6 +399,18 @@ exports.handler = function (req, res) {
                 var intimacy = getRandomNumberWithHighLight(0, limit);
                 var who = getRandomFromArray(personArray);
                 messages[0].text = '郭文彬和腎液親密度 `+' + intimacy + '`';
+                break;
+
+            case '科':
+                var limit = 900000000;
+                var intimacy = getRandomNumberWithHighLight(0, limit);
+                var who = getRandomFromArray(personArray);
+
+                var intText = '郭文彬和腎液親密度為' + intimacy ;
+                rand = nodejieba.cut(intText);
+                var returnString = rand.join('...');
+
+                messages[0].text = returnString;
                 break;
 
             case '仇恨值':
