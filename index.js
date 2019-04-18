@@ -402,18 +402,17 @@ exports.handler = function (req, res) {
                 break;
 
             case '財':
-                var l30Choke = '今天要吃什麼好';
+                days = getCountDownDate();
+                var who = getRandomFromArray(ZuvioTeamMate);
+                action = getRandomFromArray(Behavior);
+                l30Choke = '`Mou` 已在 `Zuvio` 被 `' + who + '` ' + action + ' 了 `' + days +'` 天！';
                 var chunk = nodejieba.cut(l30Choke);
                 returnString = chunk.join('...');
                 messages[0].text = returnString;
                 break;
 
             case '科':
-                // var limit = 900000000;
-                // var intimacy = getRandomNumberWithHighLight(0, limit);
                 var demoText =  '郭文彬和腎液親密度為 99999999';
-
-                // var intText = '郭文彬和腎液親密度為' + intimacy ;
                 randwords = nodejieba.cut(demoText);
                 var returnString = randwords.join('...');
 
