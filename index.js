@@ -132,6 +132,12 @@ exports.handler = function (req, res) {
             return diffDays;
         }
 
+        //財哥文體使用
+        var chokeString = function(textString) {
+
+            wordChunk = nodejieba.cut(textString);
+            return wordChunk.join('...');
+        }
 
         var forceLeo = false;
 
@@ -402,13 +408,8 @@ exports.handler = function (req, res) {
                 break;
 
             case '財':
-                days = getCountDownDate();
-                var who = getRandomFromArray(ZuvioTeamMate);
-                action = getRandomFromArray(Behavior);
-                l30Choke = '`Mou` 已在 `Zuvio` 被 `' + who + '` ' + action + ' 了 `' + days +'` 天！';
-                var chunk = nodejieba.cut(l30Choke);
-                returnString = chunk.join('...');
-                messages[0].text = returnString;
+                var randString = '里奧今天是不是又崩了';
+                messages[0].text = chokeString(randString);
                 break;
 
             case '科':
