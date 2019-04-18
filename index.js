@@ -109,6 +109,7 @@ exports.handler = function (req, res) {
 
         var getRandomFromArrayWithStringStyle = function(ArrayNames)
         {
+            var length = ArrayNames.length;
             var getString = ArrayNames[Math.floor(Math.random() * length)];
             var style = Math.floor(Math.random() * 4);
 
