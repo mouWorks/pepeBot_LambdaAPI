@@ -10,6 +10,7 @@ var EXPORT_PATH = 'pepebot/';
 
 //Extract Lists - add more data here if needed.
 var LeoArray =  require('data/_LeoArray.json');
+var Leo2Array =  require('data/_Leo2Array.json');
 var FuckArray = require('data/_FuckArray.json');
 var WorkArray = require('data/_WorkArray.json');
 var chokeArray = require('data/_chokeArray.json');
@@ -105,6 +106,33 @@ exports.handler = function (req, res) {
                 'seconds': seconds
             };
         }
+
+        var getRandomFromArrayWithStringStyle = function(ArrayNames)
+        {
+            var getString = ArrayNames[Math.floor(Math.random() * length)];
+            var style = getRandomInt(4);
+
+            switch(style){
+                case 0:
+                    getString = "`" + getString + "`";
+                    break;
+
+                case 1:
+                    getString = "_" + getString + "_";
+                    break;
+
+                case 2:
+                    getString = "*" + getString + "*";
+                    break;
+
+                case 3:
+                    getString = chokeString(getString);
+                    break;
+            }
+
+            return getString;
+        }
+
 
         //Fetch Random Data
         var getRandomFromArray = function(ArrayNames){
@@ -214,6 +242,15 @@ exports.handler = function (req, res) {
             case 'LEO':
                 messages[0].text = getRandomFromArray(LeoArray);
                 break;
+
+            case 'LL': //because LEO is way too fking long
+
+
+                messages[0].text = getRandomFromArrayWithStringStyle(Leo2Array);
+
+                // messages[0].text = getRandomFromArray(LeoArray);
+                break;
+
             case 'COFFEE':
             case '咖啡':
                 messages[0].text = getRandomFromArray(CoffeeArray);
