@@ -401,6 +401,13 @@ exports.handler = function (req, res) {
                 messages[0].text = '郭文彬和腎液親密度 `+' + intimacy + '`';
                 break;
 
+            case '財':
+                var l30Choke = '今天要吃什麼好';
+                var chunk = nodejieba.cut(l30Choke);
+                returnString = chunk.join('...');
+                messages[0].text = returnString;
+                break;
+
             case '科':
                 // var limit = 900000000;
                 // var intimacy = getRandomNumberWithHighLight(0, limit);
