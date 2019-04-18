@@ -10,7 +10,6 @@ var EXPORT_PATH = 'pepebot/';
 
 //Extract Lists - add more data here if needed.
 var LeoArray =  require('data/_LeoArray.json');
-var Leo2Array =  require('data/_Leo2Array.json');
 var FuckArray = require('data/_FuckArray.json');
 var WorkArray = require('data/_WorkArray.json');
 var chokeArray = require('data/_chokeArray.json');
@@ -240,17 +239,12 @@ exports.handler = function (req, res) {
                 break;
 
             case 'L': //because LEO is way too fking long
+            case 'LL':
             case 'LEO':
+                messages[0].text = getRandomFromArrayWithStringStyle(LeoArray);
                 messages[0].text = getRandomFromArray(LeoArray);
                 break;
 
-            case 'LL': //because LEO is way too fking long
-
-
-                messages[0].text = getRandomFromArrayWithStringStyle(Leo2Array);
-
-                // messages[0].text = getRandomFromArray(LeoArray);
-                break;
 
             case 'COFFEE':
             case '咖啡':
