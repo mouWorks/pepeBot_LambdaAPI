@@ -402,10 +402,12 @@ exports.handler = function (req, res) {
                 break;
 
             case '科':
-                var limit = 900000000;
-                var intimacy = getRandomNumberWithHighLight(0, limit);
-                var intText = '郭文彬和腎液親密度為' + intimacy ;
-                randwords = nodejieba.cut(intText);
+                // var limit = 900000000;
+                // var intimacy = getRandomNumberWithHighLight(0, limit);
+                var demoText =  '郭文彬和腎液親密度為 99999999';
+
+                // var intText = '郭文彬和腎液親密度為' + intimacy ;
+                randwords = nodejieba.cut(demoText);
                 var returnString = randwords.join('...');
 
                 messages[0].text = returnString;
