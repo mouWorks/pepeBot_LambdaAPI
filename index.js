@@ -110,7 +110,7 @@ exports.handler = function (req, res) {
         {
             var length = ArrayNames.length;
             var getString = ArrayNames[Math.floor(Math.random() * length)];
-            var style = Math.floor(Math.random() * 4);
+            var style = Math.floor(Math.random() * 7);
 
             switch(style){
                 case 0:
@@ -125,7 +125,7 @@ exports.handler = function (req, res) {
                     getString = "*" + getString + "*";
                     break;
 
-                case 3:
+                default:
                     getString = chokeString(getString);
                     break;
             }
