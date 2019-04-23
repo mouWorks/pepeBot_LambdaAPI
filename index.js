@@ -3,6 +3,7 @@ var rp = require('request-promise');
 var request = require('request');
 var AWS = require('aws-sdk');
 var fs = require('fs');
+var nodejieba = require('nodejieba');
 
 var PEPEBOT_S3_BUCKET = 'pepebot-images';
 var EXPORT_PATH = 'pepebot/';
@@ -105,6 +106,34 @@ exports.handler = function (req, res) {
             };
         }
 
+        var getRandomFromArrayWithStringStyle = function(ArrayNames)
+        {
+            var length = ArrayNames.length;
+            var getString = ArrayNames[Math.floor(Math.random() * length)];
+            var style = Math.floor(Math.random() * 7);
+
+            switch(style){
+                case 0:
+                    getString = "`" + getString + "`";
+                    break;
+
+                case 1:
+                    getString = "_" + getString + "_";
+                    break;
+
+                case 2:
+                    getString = "*" + getString + "*";
+                    break;
+
+                default:
+                    getString = chokeString(getString);
+                    break;
+            }
+
+            return getString;
+        }
+
+
         //Fetch Random Data
         var getRandomFromArray = function(ArrayNames){
 
@@ -131,6 +160,12 @@ exports.handler = function (req, res) {
             return diffDays;
         }
 
+        //財哥文體使用
+        var chokeString = function(textString) {
+
+            wordChunk = nodejieba.cut(textString);
+            return wordChunk.join('...');
+        }
 
         var forceLeo = false;
 
@@ -204,9 +239,12 @@ exports.handler = function (req, res) {
                 break;
 
             case 'L': //because LEO is way too fking long
+            case 'LL':
             case 'LEO':
-                messages[0].text = getRandomFromArray(LeoArray);
+                messages[0].text = getRandomFromArrayWithStringStyle(LeoArray);
                 break;
+
+
             case 'COFFEE':
             case '咖啡':
                 messages[0].text = getRandomFromArray(CoffeeArray);
@@ -398,6 +436,19 @@ exports.handler = function (req, res) {
                 var intimacy = getRandomNumberWithHighLight(0, limit);
                 var who = getRandomFromArray(personArray);
                 messages[0].text = '郭文彬和腎液親密度 `+' + intimacy + '`';
+                break;
+
+            case '財':
+                var randString = '里奧今天是不是又崩了';
+                messages[0].text = chokeString(randString);
+                break;
+
+            case '科':
+                var demoText =  '郭文彬和腎液親密度為 99999999';
+                randwords = nodejieba.cut(demoText);
+                var returnString = randwords.join('...');
+
+                messages[0].text = returnString;
                 break;
 
             case '仇恨值':
