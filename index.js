@@ -5,6 +5,8 @@ var AWS = require('aws-sdk');
 var fs = require('fs');
 var nodejieba = require('nodejieba');
 
+nodejieba.load({dict: './dict.txt'})
+
 var PEPEBOT_S3_BUCKET = 'pepebot-images';
 var EXPORT_PATH = 'pepebot/';
 
