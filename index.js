@@ -31,7 +31,7 @@ var okayArray = ["https://i.imgur.com/IyUrfuW.png"];
 
 //Randomized a person
 var personArray = ['李奧', '郭文彬', 'Jonic', 'rainLAY', 'mou'];
-var ZuvioTeamMate = ['李奧', '阿酷', 'RainLay', 'L30'];
+var ZuvioTeamMate = ['李奧', '阿酷', 'RainLay', 'L30', 'Mou', 'CarryMan'];
 var Behavior = ['Carry' , '挖坑', '神救援', '狂嗆', '拯救', '衝康', '霸凌'];
 
 //var placeArray = ['台灣', '白宮', '沖繩', '美國', '東京', '北海道', '北歐', '韓國', '新加坡'];
