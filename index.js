@@ -21,7 +21,7 @@ var hentaiArray = require('data/_hentaiArray.json');
 var guanArray = require('data/_guanArray.json');
 var smileArray = require('data/_smileArray.json');
 var holanArray = require('data/_HolanArray.json');
-var lunchArray = require('data/_lunchArray');
+var lunchArray = require('data/_lunchArray.json');
 
 //Loading Predefined stuff
 var KuoArray =["https://i.imgur.com/X6mAbic.png"];
@@ -247,7 +247,7 @@ exports.handler = function (req, res) {
                 messages[0].text = getRandomFromArrayWithStringStyle(LeoArray);
                 break;
 
-            case 'LUNCH'
+            case 'LUNCH':
             case '吃':
             case '午餐':
             case '吃什麼':
