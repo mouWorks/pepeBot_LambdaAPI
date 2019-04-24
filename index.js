@@ -21,6 +21,7 @@ var hentaiArray = require('data/_hentaiArray.json');
 var guanArray = require('data/_guanArray.json');
 var smileArray = require('data/_smileArray.json');
 var holanArray = require('data/_HolanArray.json');
+var lunchArray = require('data/_lunchArray');
 
 //Loading Predefined stuff
 var KuoArray =["https://i.imgur.com/X6mAbic.png"];
@@ -34,7 +35,7 @@ var okayArray = ["https://i.imgur.com/IyUrfuW.png"];
 
 //Randomized a person
 var personArray = ['李奧', '郭文彬', 'Jonic', 'rainLAY', 'mou'];
-var ZuvioTeamMate = ['李奧', '阿酷', 'RainLay', 'L30', 'Mou', 'CarryMan'];
+var ZuvioTeamMate = ['李奧', '阿酷', 'RainLay', 'L30', 'Mou', 'CarryMan','HackerMan'];
 var Behavior = ['Carry' , '挖坑', '神救援', '狂嗆', '拯救', '衝康', '霸凌'];
 
 //var placeArray = ['台灣', '白宮', '沖繩', '美國', '東京', '北海道', '北歐', '韓國', '新加坡'];
@@ -246,6 +247,12 @@ exports.handler = function (req, res) {
                 messages[0].text = getRandomFromArrayWithStringStyle(LeoArray);
                 break;
 
+            case 'LUNCH'
+            case '吃':
+            case '午餐':
+            case '吃什麼':
+                messages[0].text = getRandomFromArray(lunchArray);
+                break;
 
             case 'COFFEE':
             case '咖啡':
