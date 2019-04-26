@@ -266,6 +266,11 @@ exports.handler = function (req, res) {
                 break;
 
             case 'GAMEOVER':case 'GG':case '婚':case '婚禮':case '崩':case '崩崩':case 'BON':case 'BONBON':
+            case '爽':
+            case 'SONG': //A_A
+            case 'MOU':
+            case '王':
+            case 'MAYBE':
                 // if (getRandomNumber(0, 10) <= 5) {
                 //     messages[0].text = '沒的崩啦 崩屁崩, 李奧已成 Husbando!';
                 //     break;
@@ -280,13 +285,8 @@ exports.handler = function (req, res) {
             //     messages[0].text = '距離G排時間還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, 想ㄘ!';
             //     break;
 
-            case '爽':
-            case 'SONG':
-            case 'MOU':
-            case '王':
-            case 'MAYBE':
-                messages[0].text = '還爽啊 `Mou` , 開始上班啦，懂？！';
-                break;
+                // messages[0].text = '還爽啊 `Mou` , 開始上班啦，懂？！';
+                // break;
 
             case 'M':
                 days = getCountDownDate();
