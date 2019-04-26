@@ -11,7 +11,7 @@ var PEPEBOT_S3_BUCKET = 'pepebot-images';
 var EXPORT_PATH = 'pepebot/';
 
 //Extract Lists - add more data here if needed.
-var LeoArray =  require('data/_LeoArray.json');
+var LeoArray = require('data/_LeoArray.json');
 var FuckArray = require('data/_FuckArray.json');
 var WorkArray = require('data/_WorkArray.json');
 var chokeArray = require('data/_chokeArray.json');
@@ -210,7 +210,7 @@ exports.handler = function (req, res) {
             "text": msg
         }];
 
-        console.log(event); //test
+        // console.log(event); //test
 
         needToReply = true;
 
@@ -266,15 +266,15 @@ exports.handler = function (req, res) {
                 break;
 
             case 'GAMEOVER':case 'GG':case '婚':case '婚禮':case '崩':case '崩崩':case 'BON':case 'BONBON':
-                if (getRandomNumber(0, 10) <= 5) {
-                    messages[0].text = '沒的崩啦 崩屁崩, 李奧已成 Husbando!';
-                    break;
-                } 
+                // if (getRandomNumber(0, 10) <= 5) {
+                //     messages[0].text = '沒的崩啦 崩屁崩, 李奧已成 Husbando!';
+                //     break;
+                // }
 
             //Go fetch time.
                 countdownJson = getTimeRemaining(deadline);
                 messages[0].text = '距離 李奧 `家庭日` 倒數: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
-
+                break;
             // case 'G':
             //     countdownJson = getTimeRemaining(friedGdeadline);
             //     messages[0].text = '距離G排時間還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, 想ㄘ!';
