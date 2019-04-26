@@ -91,7 +91,7 @@ exports.handler = function (req, res) {
 
         }//endif;
 
-        var deadline = 'June 3 2018 13:30:00 GMT+0800'; //Leo's Wedding
+        var deadline = 'June 1 2019 08:00:00 GMT+0800'; //Leo's great Family Day !
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
         var mouOnboardLine = 'April 1 2019 09:30:00 GMT+0800'; //Leo's Wedding
         var getTimeRemaining = function(endtime){
@@ -210,6 +210,8 @@ exports.handler = function (req, res) {
             "text": msg
         }];
 
+        console.log(event); //test
+
         needToReply = true;
 
         //Text is switch to UpperCase()
@@ -270,8 +272,8 @@ exports.handler = function (req, res) {
                 } 
 
             //Go fetch time.
-                //countdownJson = getTimeRemaining(deadline);
-                //messages[0].text = '距離 李奧 全.面.崩.潰. 倒數: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
+                countdownJson = getTimeRemaining(deadline);
+                messages[0].text = '距離 李奧 `家庭日` 倒數: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
 
             // case 'G':
             //     countdownJson = getTimeRemaining(friedGdeadline);
