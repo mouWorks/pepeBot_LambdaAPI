@@ -278,7 +278,7 @@ exports.handler = function (req, res) {
 
             //Go fetch time.
                 countdownJson = getTimeRemaining(deadline);
-                messages[0].text = '距離 李奧哥 の `家庭日` 倒數: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
+                messages[0].text = '距離 李奧哥 の `家.庭.日 !` 倒數: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
                 break;
             // case 'G':
             //     countdownJson = getTimeRemaining(friedGdeadline);
