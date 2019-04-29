@@ -41,6 +41,14 @@ var Behavior = ['Carry' , '挖坑', '神救援', '狂嗆', '拯救', '衝康', '
 //var placeArray = ['台灣', '白宮', '沖繩', '美國', '東京', '北海道', '北歐', '韓國', '新加坡'];
 var placeArray = ['芝加哥豪宅', '奧勒岡鄉間屋宅', '赫里福基地', '總統專機','杜斯妥也夫斯基咖啡館', '貧民窟','巴特雷特大學'];
 
+//Recognize People
+var user_id_mou = 'Ua0c22c49b0b3ca7d56da015d4ff37b17';
+var user_id_l30 = '';
+var user_id_lay = '';
+var user_id_jonic = '';
+var user_id_cloud = '';
+var pepe_teamChannel = 'C104fd7b862bd7cfe31839aa4ec773558';
+
 exports.handler = function (req, res) {
 
     const promises = req.events.map(event => {
@@ -108,6 +116,30 @@ exports.handler = function (req, res) {
                 'seconds': seconds
             };
         }
+
+        var recognizePeople = function(hash){
+
+            switch(hash){
+                case 'Ua0c22c49b0b3ca7d56da015d4ff37b17':
+                    return 'mou';
+                    break;
+                case 'U8270abd630176c647e12153d3afa5f9a':
+                    return 'lay';
+                    break;
+                case '':
+                    return 'jonic';
+                    break;
+                case '':
+                    return 'leo';
+                    break;
+                case '':
+                    return 'cloud';
+                    break;
+                default:
+                    return false;
+            }
+        }
+
 
         var getRandomFromArrayWithStringStyle = function(ArrayNames)
         {
@@ -211,6 +243,8 @@ exports.handler = function (req, res) {
         }];
 
         console.log(event); //test
+
+        var speaker = recognizePeople(event.userId); //get the names from User ID
 
         needToReply = true;
 
@@ -467,7 +501,7 @@ exports.handler = function (req, res) {
             case '糞力':
                 var limit = 9000;
                 var intimacy = getRandomNumber(0, limit);
-                messages[0].text = '今日 ' + msg + ' `' + intimacy + '`';
+                messages[0].text = '`' + speaker + '` 今日 ' + msg + ' `' + intimacy + '`';
                 break;
             
             case 'FUCKYOU':
