@@ -244,8 +244,8 @@ exports.handler = function (req, res) {
 
         //console.log(event); //uncomment if you wanna see event
 
-        console.log('check source');
-        console.log(event.message.source);
+        console.log('check source2');
+        console.log(event.source);
         var speaker = '';
 
         //var speaker = recognizePeople(event.message.source); //get the names from User ID
