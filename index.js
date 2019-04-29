@@ -476,6 +476,11 @@ exports.handler = function (req, res) {
                 var limit = 50000000;
                 var intimacy = Math.floor(Math.random() * Math.floor(limit));
                 var who = getRandomFromArray(personArray);
+
+                if(speaker = 'leo'){
+                    who = speaker; //Force cc
+                }
+
                 messages[0].text = who + '和腎液親密度 `+' + intimacy + '`';
                 break;
 
