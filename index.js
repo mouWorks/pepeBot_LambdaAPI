@@ -117,6 +117,7 @@ exports.handler = function (req, res) {
             };
         }
 
+        //Hell Yeah !!
         var recognizePeople = function(hash){
 
             switch(hash){
@@ -126,20 +127,19 @@ exports.handler = function (req, res) {
                 case 'U8270abd630176c647e12153d3afa5f9a':
                     return 'lay';
                     break;
-                case '':
+                case 'U58f6451fbfbf8227628e6d09945d4a62':
                     return 'jonic';
                     break;
-                case '':
+                case 'U2cdda2ee76097f9021bb68e70feffdb4':
                     return 'leo';
                     break;
-                case '':
+                case 'U0941ee4f48f2e8d6e92ea825f60c53e2':
                     return 'cloud';
                     break;
                 default:
-                    return false;
+                    return '';
             }
         }
-
 
         var getRandomFromArrayWithStringStyle = function(ArrayNames)
         {
@@ -242,7 +242,7 @@ exports.handler = function (req, res) {
             "text": msg
         }];
 
-        console.log(event); //test
+        //console.log(event); //uncomment if you wanna see event
 
         var speaker = recognizePeople(event.userId); //get the names from User ID
 
