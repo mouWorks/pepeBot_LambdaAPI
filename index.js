@@ -477,7 +477,7 @@ exports.handler = function (req, res) {
                 var intimacy = Math.floor(Math.random() * Math.floor(limit));
                 var who = getRandomFromArray(personArray);
 
-                if(speaker = 'leo'){
+                if(speaker == 'leo'){
                     who = speaker; //Force cc
                 }
 
