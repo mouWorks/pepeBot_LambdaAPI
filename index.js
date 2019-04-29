@@ -210,7 +210,7 @@ exports.handler = function (req, res) {
             "text": msg
         }];
 
-        // console.log(event); //test
+        console.log(event); //test
 
         needToReply = true;
 
