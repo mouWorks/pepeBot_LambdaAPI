@@ -244,7 +244,7 @@ exports.handler = function (req, res) {
 
         //console.log(event); //uncomment if you wanna see event
 
-        var speaker = recognizePeople(event.userId); //get the names from User ID
+        var speaker = recognizePeople(event.message.source.userId); //get the names from User ID
 
         needToReply = true;
 
