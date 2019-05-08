@@ -380,10 +380,12 @@ exports.handler = function (req, res) {
                 messages[0].previewImageUrl = 'https://i.imgur.com/EY43bcx.jpg';
                 break;
 
+            case '看':
+            case 'LOOK':  case 'WATCH':
             case '看屁看':
                 messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/Dc4ztxN.png';
-                messages[0].previewImageUrl = 'https://i.imgur.com/Dc4ztxN.png';
+                messages[0].originalContentUrl = 'https://i.imgur.com/kj6t3Rd.jpg';
+                messages[0].previewImageUrl = 'https://i.imgur.com/kj6t3Rd.jpg';
                 break
 
             case 'CEO':
