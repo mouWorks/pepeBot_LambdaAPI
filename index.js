@@ -42,11 +42,6 @@ var Behavior = ['Carry' , '挖坑', '神救援', '狂嗆', '拯救', '衝康', '
 var placeArray = ['芝加哥豪宅', '奧勒岡鄉間屋宅', '赫里福基地', '總統專機','杜斯妥也夫斯基咖啡館', '貧民窟','巴特雷特大學'];
 
 //Recognize People
-var user_id_mou = 'Ua0c22c49b0b3ca7d56da015d4ff37b17';
-var user_id_l30 = '';
-var user_id_lay = '';
-var user_id_jonic = '';
-var user_id_cloud = '';
 var pepe_teamChannel = 'C104fd7b862bd7cfe31839aa4ec773558';
 
 exports.handler = function (req, res) {
@@ -510,8 +505,15 @@ exports.handler = function (req, res) {
             case '吉戰力':
             case '戰鬥力':
             case '糞力':
-                var limit = 9000;
+            case '嗆力':
+            case '嘴力':
+                var limit = 9999;
                 var intimacy = getRandomNumber(0, limit);
+
+                if(intimacy > 9500){ //Means you are really lucky;
+                    intimacy = ' Overflow! 已達上限 ! 大家快逃啊';
+                }
+
                 messages[0].text = '`' + speaker + '` 今日 ' + msg + ' `' + intimacy + '`';
                 break;
             
