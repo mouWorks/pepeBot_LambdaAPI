@@ -10,6 +10,9 @@ nodejieba.load({dict: './dict.txt'})
 var PEPEBOT_S3_BUCKET = 'pepebot-images';
 var EXPORT_PATH = 'pepebot/';
 
+// load libraries
+const lib = require('./libs/rand.js');
+
 //Extract Lists - add more data here if needed.
 var LeoArray = require('data/_LeoArray.json');
 var FuckArray = require('data/_FuckArray.json');
@@ -518,7 +521,7 @@ exports.handler = function (req, res) {
                 break;
             
             case 'FUCKYOU':
-                targetUrl = getRandomFromArray(FuckArray);
+                targetUrl = rand.getFormArray(FuckArray);
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = targetUrl;
                 messages[0].previewImageUrl = targetUrl;
