@@ -4,7 +4,7 @@ const rand = require('../libs/rand');
 describe('#libs/rand', () => {
     // 從陣列隨機抽出 1 個值
     it('從陣列隨機抽出 1 個值', done => {
-        const v = rand.getFormArray([1, 2, 3, 4]);
+        const v = rand.getFromArray([1, 2, 3, 4]);
         console.log(v);
         v.should.Number();
         done();

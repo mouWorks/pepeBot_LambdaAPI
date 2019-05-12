@@ -15,7 +15,7 @@ function Rand()
     }
 
     return {
-        getFormArray : getFromArray,
+        getFromArray : getFromArray,
         getValue : getValue,
     }
 }
