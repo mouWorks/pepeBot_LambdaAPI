@@ -11,7 +11,7 @@ var PEPEBOT_S3_BUCKET = 'pepebot-images';
 var EXPORT_PATH = 'pepebot/';
 
 // load libraries
-const lib = require('./libs/rand.js');
+const rand = require('./libs/rand.js');
 
 //Extract Lists - add more data here if needed.
 var LeoArray = require('data/_LeoArray.json');
