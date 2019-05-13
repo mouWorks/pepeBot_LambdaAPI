@@ -168,15 +168,15 @@ exports.handler = function (req, res) {
 
 
         //Fetch Random Data
-        var getRandomFromArray = function(ArrayNames){
+        // var getRandomFromArray = function(ArrayNames){
+        //
+        //     var length = ArrayNames.length;
+        //     return ArrayNames[Math.floor(Math.random() * length)];
+        // };
 
-            var length = ArrayNames.length;
-            return ArrayNames[Math.floor(Math.random() * length)];
-        };
-
-        var getRandomValue = function(limit){
-            return [Math.floor(Math.random() * limit)];
-        };
+        // var getRandomValue = function(limit){
+        //     return [Math.floor(Math.random() * limit)];
+        // };
 
         var getRandomNumber = function(x, y) {
             var diff = y - x;
