@@ -1,6 +1,8 @@
-.PHONY: clean build pack upload
+.PHONY: clean build pack upload test
 
 all: build pack upload
+
+deploy: pack upload
 
 build:
 	npm install --only=production
@@ -11,3 +13,8 @@ pack:
 
 upload:
 	./upload.sh
+
+test:
+	mocha
+
+

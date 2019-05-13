@@ -16,9 +16,12 @@ branches:
   only:
   - master
 before_install:
-- pip install --user awscli
-- export PATH=$PATH:$HOME/.local/bin
-script: make all
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+script:
+  - make build
+  - make test
+after_success: make deploy
 notifications:
   slack:
     rooms:
