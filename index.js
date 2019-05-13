@@ -1,51 +1,50 @@
-
-var rp = require('request-promise');
-var request = require('request');
-var AWS = require('aws-sdk');
-var fs = require('fs');
-var nodejieba = require('nodejieba');
+const rp = require('request-promise');
+const request = require('request');
+const AWS = require('aws-sdk');
+const fs = require('fs');
+const nodejieba = require('nodejieba');
 
 nodejieba.load({dict: './dict.txt'})
 
-var PEPEBOT_S3_BUCKET = 'pepebot-images';
-var EXPORT_PATH = 'pepebot/';
+const PEPEBOT_S3_BUCKET = 'pepebot-images';
+const EXPORT_PATH = 'pepebot/';
 
 // load libraries
 const rand = require('./libs/rand.js');
 
 //Extract Lists - add more data here if needed.
-var LeoArray = require('data/_LeoArray.json');
-var FuckArray = require('data/_FuckArray.json');
-var WorkArray = require('data/_WorkArray.json');
-var chokeArray = require('data/_chokeArray.json');
-var ssdArray = require('data/_ssdArray.json');
-var ceoArray = require('data/_ceoArray.json');
-var hentaiArray = require('data/_hentaiArray.json');
-var guanArray = require('data/_guanArray.json');
-var smileArray = require('data/_smileArray.json');
-var holanArray = require('data/_HolanArray.json');
-var lunchArray = require('data/_lunchArray.json');
+const LeoArray = require('data/_LeoArray.json');
+const FuckArray = require('data/_FuckArray.json');
+const WorkArray = require('data/_WorkArray.json');
+const chokeArray = require('data/_chokeArray.json');
+const ssdArray = require('data/_ssdArray.json');
+const ceoArray = require('data/_ceoArray.json');
+const hentaiArray = require('data/_hentaiArray.json');
+const guanArray = require('data/_guanArray.json');
+const smileArray = require('data/_smileArray.json');
+const holanArray = require('data/_HolanArray.json');
+const lunchArray = require('data/_lunchArray.json');
 
 //Loading Predefined stuff
-var KuoArray =["https://i.imgur.com/X6mAbic.png"];
-var CoffeeArray = ["Cama","Seven","全家","路易莎","太濃了吧,否則怎麼苦的說不出話"];
-var FireArray = ["You are FIRED!","Well you can stay.","什麼爛code給我加班重寫！","XX單在那邊自己去拿"];
+const KuoArray =["https://i.imgur.com/X6mAbic.png"];
+const CoffeeArray = ["Cama","Seven","全家","路易莎","太濃了吧,否則怎麼苦的說不出話"];
+const FireArray = ["You are FIRED!","Well you can stay.","什麼爛code給我加班重寫！","XX單在那邊自己去拿"];
 
 //Random Format
-var RandomArray = ["jpg", "png", "avi", "gif", "txt"];
-var issueArray = ["https://i.imgur.com/OeMtOqL.png"];
-var okayArray = ["https://i.imgur.com/IyUrfuW.png"];
+const RandomArray = ["jpg", "png", "avi", "gif", "txt"];
+const issueArray = ["https://i.imgur.com/OeMtOqL.png"];
+const okayArray = ["https://i.imgur.com/IyUrfuW.png"];
 
 //Randomized a person
-var personArray = ['李奧', '郭文彬', 'Jonic', 'rainLAY', 'mou'];
-var ZuvioTeamMate = ['李奧', '阿酷', 'RainLay', 'L30', 'Mou', 'CarryMan','HackerMan'];
-var Behavior = ['Carry' , '挖坑', '神救援', '狂嗆', '拯救', '衝康', '霸凌'];
+const personArray = ['李奧', '郭文彬', 'Jonic', 'rainLAY', 'mou'];
+const ZuvioTeamMate = ['李奧', '阿酷', 'RainLay', 'L30', 'Mou', 'CarryMan','HackerMan'];
+const Behavior = ['Carry' , '挖坑', '神救援', '狂嗆', '拯救', '衝康', '霸凌'];
 
-//var placeArray = ['台灣', '白宮', '沖繩', '美國', '東京', '北海道', '北歐', '韓國', '新加坡'];
-var placeArray = ['芝加哥豪宅', '奧勒岡鄉間屋宅', '赫里福基地', '總統專機','杜斯妥也夫斯基咖啡館', '貧民窟','巴特雷特大學'];
+//const placeArray = ['台灣', '白宮', '沖繩', '美國', '東京', '北海道', '北歐', '韓國', '新加坡'];
+const placeArray = ['芝加哥豪宅', '奧勒岡鄉間屋宅', '赫里福基地', '總統專機','杜斯妥也夫斯基咖啡館', '貧民窟','巴特雷特大學'];
 
 //Recognize People
-var pepe_teamChannel = 'C104fd7b862bd7cfe31839aa4ec773558';
+const pepe_teamChannel = 'C104fd7b862bd7cfe31839aa4ec773558';
 
 exports.handler = function (req, res) {
 
