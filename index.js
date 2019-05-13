@@ -254,19 +254,19 @@ exports.handler = function (req, res) {
         switch(msg){
             case 'Z':
                 var limit = 15;
-                var randomNumber = getRandomValue(15);
+                var randomNumber = rand.getValue(15);
                 messages[0].text = "Z".repeat(randomNumber) + 'uvio起來!';
                 break;
 
             case '6':
                 var limit = 15;
-                var randomNumber = getRandomValue(15);
+                var randomNumber = rand.getValue(15);
                 messages[0].text = "6".repeat(randomNumber);
                 break;
 
             case '8':
                 var limit = 30;
-                var randomNumber = getRandomValue(30);
+                var randomNumber = rand.getValue(30);
                 var randomUString = "6".repeat(randomNumber);
                 messages[0].text =  '8'+ randomUString + '起來!';
                 break;
@@ -274,7 +274,7 @@ exports.handler = function (req, res) {
             case '+':
             case '加':
                 var limit = 30;
-                var randomNumber = getRandomValue(30);
+                var randomNumber = rand.getValue(30);
                 var randomUString = "加".repeat(randomNumber);
                 messages[0].text = "通通" + randomUString + '起來!';
                 break;
