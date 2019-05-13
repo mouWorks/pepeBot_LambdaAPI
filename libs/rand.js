@@ -5,7 +5,7 @@ function Rand()
 {
     function getFromArray (ArrayNames)
     {
-        var length = ArrayNames.length;
+        let length = ArrayNames.length;
         return ArrayNames[Math.floor(Math.random() * length)];
     }
 
@@ -14,9 +14,10 @@ function Rand()
         return [Math.floor(Math.random() * limit)];
     }
 
-    function getNumber(x, y) {
-        var diff = y - x;
-        return x + Math.floor(Math.random() * diff);
+    function getNumber(lower_limit, upper_limit)
+    {
+        let diff = upper_limit - lower_limit;
+        return lower_limit + Math.floor(Math.random() * diff);
     }
 
     return {

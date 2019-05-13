@@ -17,11 +17,11 @@ describe('#libs/rand', () => {
         done();
     });
 
-    //FIXME: try a sample test that would fail.
-    it('Now it should work', done => {
-        const v = rand.getFromArray([1, 2, 3, 4, 5]);
+    it('隨機出 5', done => {
+        const v = rand.getFromArray([5, 5, 5]);
         // console.log(v);
         v.should.Number();
+        v.should.eqls(5);
         done();
     });
 
