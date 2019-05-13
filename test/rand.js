@@ -16,4 +16,15 @@ describe('#libs/rand', () => {
         v.should.Array();
         done();
     });
+
+    //FIXME: try a sample test that would fail.
+    it('TEST if it fails', done => {
+        const v = rand.getFromArray([1, 2, 3, 4]);
+        // console.log(v);
+        v.should.Array();
+        done();
+    });
+
+
+
 });
