@@ -165,23 +165,6 @@ exports.handler = function (req, res) {
             return getString;
         }
 
-
-        //Fetch Random Data
-        // var getRandomFromArray = function(ArrayNames){
-        //
-        //     var length = ArrayNames.length;
-        //     return ArrayNames[Math.floor(Math.random() * length)];
-        // };
-
-        // var getRandomValue = function(limit){
-        //     return [Math.floor(Math.random() * limit)];
-        // };
-
-        // var getRandomNumber = function(x, y) {
-        //     var diff = y - x;
-        //     return x + Math.floor(Math.random() * diff);
-        // };
-
         var getCountDownDate = function(){
 
             var mouWorkDay = new Date('4/1/2019');
