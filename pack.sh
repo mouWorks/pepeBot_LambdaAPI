@@ -1,2 +1,6 @@
 #!/bin/bash
-zip -r code.zip . -x *.git*
+# -r : directory
+# -1 : faster Zip
+# -q : quiet
+
+zip -r1q code.zip . -x *.git*
