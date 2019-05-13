@@ -14,9 +14,15 @@ function Rand()
         return [Math.floor(Math.random() * limit)];
     }
 
+    function getNumber(x, y) {
+        var diff = y - x;
+        return x + Math.floor(Math.random() * diff);
+    }
+
     return {
         getFromArray : getFromArray,
-        getValue : getValue,
+        getValue     : getValue,
+        getNumber    : getNumber
     }
 }
 module.exports = new Rand();

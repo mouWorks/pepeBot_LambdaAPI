@@ -178,10 +178,10 @@ exports.handler = function (req, res) {
         //     return [Math.floor(Math.random() * limit)];
         // };
 
-        var getRandomNumber = function(x, y) {
-            var diff = y - x;
-            return x + Math.floor(Math.random() * diff);
-        };
+        // var getRandomNumber = function(x, y) {
+        //     var diff = y - x;
+        //     return x + Math.floor(Math.random() * diff);
+        // };
 
         var getCountDownDate = function(){
 
@@ -511,7 +511,7 @@ exports.handler = function (req, res) {
             case '嗆力':
             case '嘴力':
                 var limit = 9999;
-                var intimacy = getRandomNumber(0, limit);
+                var intimacy = rand.getNumber(0, limit);
 
                 if(intimacy > 9500){ //Means you are really lucky;
                     intimacy = ' Overflow! 已達上限 ! 大家快逃啊';
@@ -521,7 +521,7 @@ exports.handler = function (req, res) {
                 break;
             
             case 'FUCKYOU':
-                targetUrl = rand.getFormArray(FuckArray);
+                targetUrl = rand.getFromArray(FuckArray);
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = targetUrl;
                 messages[0].previewImageUrl = targetUrl;

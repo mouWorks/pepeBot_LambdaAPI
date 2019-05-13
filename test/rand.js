@@ -25,4 +25,10 @@ describe('#libs/rand', () => {
         done();
     });
 
+    it('取得上下限中隨機的一個數字', done => {
+        const v = rand.getNumber(1, 1);
+        v.should.Number();
+        v.should.eqls(1);
+        done();
+    });
 });
