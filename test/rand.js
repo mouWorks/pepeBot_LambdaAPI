@@ -18,13 +18,11 @@ describe('#libs/rand', () => {
     });
 
     //FIXME: try a sample test that would fail.
-    it('TEST if it fails', done => {
-        const v = rand.getFromArray([1, 2, 3, 4]);
+    it('Now it should work', done => {
+        const v = rand.getFromArray([1, 2, 3, 4, 5]);
         // console.log(v);
         v.should.Array();
         done();
     });
-
-
 
 });
