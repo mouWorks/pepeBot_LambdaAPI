@@ -17,4 +17,8 @@ upload:
 test:
 	mocha
 
+pull:
+	git pull origin master --rebase
 
+push:
+	git push origin master
