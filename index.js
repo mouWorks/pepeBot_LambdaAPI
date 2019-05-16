@@ -312,12 +312,13 @@ exports.handler = function (req, res) {
                 messages[0].text = '`Mou` 已在 `Zuvio` 被 `' + who + '` ' + action + ' 了 `' + days +'` 天！';
                 break;
 
-            case 'SMILE':
-                smilePhoto = rand.getFromArray(smileArray);
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = smilePhoto;
-                messages[0].previewImageUrl = smilePhoto;
-                break;
+            //Skip this, tired.
+            // case 'SMILE':
+            //     smilePhoto = rand.getFromArray(smileArray);
+            //     messages[0].type = 'image';
+            //     messages[0].originalContentUrl = smilePhoto;
+            //     messages[0].previewImageUrl = smilePhoto;
+            //     break;
 
             case '成龍':
             case 'JACKIECHAN':
