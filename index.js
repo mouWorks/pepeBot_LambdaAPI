@@ -564,6 +564,12 @@ exports.handler = function (req, res) {
                 messages[0].originalContentUrl = 'https://i.imgur.com/yCg7UDi.png';
                 messages[0].previewImageUrl = 'https://i.imgur.com/yCg7UDi.png';
                 break;
+            
+            case '帥':
+                messages[0].type = 'image';
+                messages[0].originalContentUrl = 'https://i.imgur.com/oCa2Fmh.jpg';
+                messages[0].previewImageUrl = 'https://i.imgur.com/oCa2Fmh.jpg';
+                break;
 
             default:
 
