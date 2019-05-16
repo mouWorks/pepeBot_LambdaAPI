@@ -4,6 +4,8 @@ all: build pack upload
 
 deploy: pack upload
 
+BRANCH := $(shell git name-rev --name-only HEAD)
+
 build:
 	npm install --only=production
 
@@ -18,7 +20,9 @@ test:
 	mocha
 
 pull:
-	git pull origin master --rebase
+	@echo ">>> Pull Code on Current branch [$(BRANCH)]"
+	git pull origin $(BRANCH) --rebase
 
 push:
-	git push origin master
+	@echo ">>> Current branch [$(BRANCH)] Pushing Code"
+	git push origin $(BRANCH)
