@@ -18,7 +18,9 @@ branches:
   only:
   - master
 before_install:
-  - apt-get install python3-pip
+  - sudo apt-get -y install python3-pip python-dev
+  - python3 -V
+  - pip3 -V
   - pip3 install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
 script:
