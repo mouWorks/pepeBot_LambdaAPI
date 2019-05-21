@@ -497,7 +497,7 @@ exports.handler = function (req, res) {
                 var intimacy = rand.getNumber(0, limit);
 
                 if(speaker == 'leo'){
-                    intimacy += 2000; //基本盤, 懂?
+                    intimacy += 3000; //基本盤, 懂?
                 }
 
                 if(intimacy > 9500){ //Means you are really lucky;
