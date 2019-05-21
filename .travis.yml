@@ -20,11 +20,11 @@ branches:
   only:
   - master
 before_install:
-  - docker p#
+  - docker pull mesosphere/aws-cli
 #  - sudo apt-get -y install python3-pip python-dev
 #  - python3 -V
 #  - pip3 -V
-  - pip3 install --user awscli
+#  - pip3 install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
 script:
   - make build
