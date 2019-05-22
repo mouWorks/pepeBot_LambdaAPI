@@ -17,7 +17,7 @@ upload:
 	./upload.sh
 
 test:
-	mocha
+	mocha && node --check index.js
 
 pull:
 	@echo ">>> Pull Code on Current branch [$(BRANCH)]"
