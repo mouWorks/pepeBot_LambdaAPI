@@ -493,10 +493,12 @@ exports.handler = function (req, res) {
             case '糞力':
             case '嗆力':
             case '嘴力':
+            case '雷力':
+            case '崩力':
                 var limit = 9999;
                 var intimacy = rand.getNumber(0, limit);
 
-                if(speaker == 'leo'){
+                if(speaker == 'mou'){
                     intimacy += 3000; //基本盤, 懂?
                 }
 
