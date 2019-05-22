@@ -497,6 +497,7 @@ exports.handler = function (req, res) {
             case '崩力':
             case '騙力':
             case '慣力':
+            case '發財力':
                 var limit = 9999;
                 var intimacy = rand.getNumber(0, limit);
 
