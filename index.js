@@ -487,6 +487,7 @@ exports.handler = function (req, res) {
                 messages[0].text = returnString;
                 break;
 
+            case '餓力': //this one by mou
             case '仇恨值':
             case '吉戰力':
             case '戰鬥力':
