@@ -11,6 +11,7 @@ const EXPORT_PATH = 'pepebot/';
 
 // load libraries
 const rand = require('./libs/rand.js');
+const lib = require('./libs/lib.js');
 
 //Extract Lists - add more data here if needed.
 const LeoArray = require('data/_LeoArray.json');
@@ -165,15 +166,16 @@ exports.handler = function (req, res) {
             return getString;
         }
 
-        var getCountDownDate = function(){
-
-            var mouWorkDay = new Date('4/1/2019');
-            var date2 = new Date();
-            var diffTime = Math.abs(date2.getTime() - mouWorkDay.getTime());
-            var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-            return diffDays;
-        }
+        //@todo: waiting remove
+        // var getCountDownDate = function(){
+        //
+        //     var mouWorkDay = new Date('4/1/2019');
+        //     var date2 = new Date();
+        //     var diffTime = Math.abs(date2.getTime() - mouWorkDay.getTime());
+        //     var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        //
+        //     return diffDays;
+        // }
 
         //財哥文體使用
         var chokeString = function(textString) {
@@ -306,7 +308,7 @@ exports.handler = function (req, res) {
             // break;
 
             case 'M':
-                days = getCountDownDate();
+                days = lib.getCountDownDate();
                 var who = rand.getFromArray(ZuvioTeamMate);
                 action = rand.getFromArray(Behavior);
                 messages[0].text = '`Mou` 已在 `Zuvio` 被 `' + who + '` ' + action + ' 了 `' + days +'` 天！';
