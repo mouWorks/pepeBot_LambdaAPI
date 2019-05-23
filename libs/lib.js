@@ -7,7 +7,7 @@ function Lib()
 {
     function getCountDownDate(today)
     {
-        var today = today || miment().format('YYYY-MM-DD');
+        today = today || miment().format('YYYY-MM-DD');
         let diff_secs = miment(today + ' 00:00:00').diff('2019-04-01 00:00:00') / 1000;
         let diff_days = diff_secs / 86400;
 
