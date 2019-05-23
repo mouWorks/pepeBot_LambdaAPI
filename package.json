@@ -17,6 +17,7 @@
     "nodejieba": "^2.3.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
-    "should": "^13.2.3"
+    "should": "^13.2.3",
+    "miment": "^0.0.9"
   }
 }
