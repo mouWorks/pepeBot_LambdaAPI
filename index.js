@@ -166,17 +166,6 @@ exports.handler = function (req, res) {
             return getString;
         }
 
-        //@todo: waiting remove
-        // var getCountDownDate = function(){
-        //
-        //     var mouWorkDay = new Date('4/1/2019');
-        //     var date2 = new Date();
-        //     var diffTime = Math.abs(date2.getTime() - mouWorkDay.getTime());
-        //     var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        //
-        //     return diffDays;
-        // }
-
         //財哥文體使用
         var chokeString = function(textString) {
 
