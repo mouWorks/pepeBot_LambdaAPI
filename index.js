@@ -115,30 +115,6 @@ exports.handler = function (req, res) {
             };
         }
 
-        //Hell Yeah !!
-        var recognizePeople = function(hash){
-
-            switch(hash){
-                case 'Ua0c22c49b0b3ca7d56da015d4ff37b17':
-                    return 'mou';
-                    break;
-                case 'U8270abd630176c647e12153d3afa5f9a':
-                    return 'lay';
-                    break;
-                case 'U58f6451fbfbf8227628e6d09945d4a62':
-                    return 'jonic';
-                    break;
-                case 'U2cdda2ee76097f9021bb68e70feffdb4':
-                    return 'leo';
-                    break;
-                case 'U0941ee4f48f2e8d6e92ea825f60c53e2':
-                    return 'cloud';
-                    break;
-                default:
-                    return '';
-            }
-        }
-
         var getRandomFromArrayWithStringStyle = function(ArrayNames)
         {
             var length = ArrayNames.length;
@@ -219,7 +195,7 @@ exports.handler = function (req, res) {
         // console.log(event.source);
         // var speaker = '';
 
-        var speaker = recognizePeople(event.source.userId); //get the names from User ID
+        var speaker = lib.recognizePeople(event.source.userId); //get the names from User ID
 
         needToReply = true;
 

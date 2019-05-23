@@ -17,4 +17,10 @@ describe('#libs/rand', () => {
         v.should.greaterThan(1);
         done();
     });
+
+    it('取得 speaker', done => {
+        let v = lib.recognizePeople("U2cdda2ee76097f9021bb68e70feffdb4");
+        v.should.eqls('leo');
+        done();
+    });
 });

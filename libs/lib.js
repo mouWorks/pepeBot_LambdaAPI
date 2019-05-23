@@ -14,8 +14,28 @@ function Lib()
         return diff_days + 1;
     }
 
+    function recognizePeople(hash)
+    {
+        switch(hash) {
+            case 'Ua0c22c49b0b3ca7d56da015d4ff37b17':
+                return 'mou';
+            case 'U8270abd630176c647e12153d3afa5f9a':
+                return 'lay';
+            case 'U58f6451fbfbf8227628e6d09945d4a62':
+                return 'jonic';
+            case 'U2cdda2ee76097f9021bb68e70feffdb4':
+                return 'leo';
+            case 'U0941ee4f48f2e8d6e92ea825f60c53e2':
+                return 'cloud';
+            default:
+                return '';
+        }
+    }
+
+
     return {
-        getCountDownDate : getCountDownDate
+        getCountDownDate : getCountDownDate,
+        recognizePeople : recognizePeople
     }
 }
 module.exports = new Lib();
