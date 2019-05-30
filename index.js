@@ -252,7 +252,7 @@ exports.handler = function (req, res) {
             case '594':
             case 'I AM':
             case '我是':
-                messages[0].text = rand.getFromArray(manArray);
+                messages[0].text = getRandomFromArrayWithStringStyle(manArray);
                 break;
 
             case 'FIRE':
