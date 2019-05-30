@@ -26,6 +26,8 @@ const smileArray = require('data/_smileArray.json');
 const holanArray = require('data/_HolanArray.json');
 const lunchArray = require('data/_lunchArray.json');
 
+const manArray = require('data/_manArray.json');
+
 //Loading Predefined stuff
 const KuoArray =["https://i.imgur.com/X6mAbic.png"];
 const CoffeeArray = ["Cama","Seven","全家","路易莎","太濃了吧,否則怎麼苦的說不出話"];
@@ -244,6 +246,13 @@ exports.handler = function (req, res) {
             case 'COFFEE':
             case '咖啡':
                 messages[0].text = rand.getFromArray(CoffeeArray);
+                break;
+
+            case '我就是':
+            case '594':
+            case 'I AM':
+            case '我是':
+                messages[0].text = rand.getFromArray(manArray);
                 break;
 
             case 'FIRE':
