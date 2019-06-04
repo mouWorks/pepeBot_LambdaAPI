@@ -277,9 +277,9 @@ exports.handler = function (req, res) {
                 // }
 
             //Go fetch time.
-                countdownJson = getTimeRemaining(deadline);
-                messages[0].text = ' *中國端子節* | 距離 `L30` の `家.庭.日!` 還有: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
-                break;
+            //     countdownJson = getTimeRemaining(deadline);
+                // messages[0].text = ' *中國端子節* | 距離 `L30` の `家.庭.日!` 還有: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
+                // break;
             // case 'G':
             //     countdownJson = getTimeRemaining(friedGdeadline);
             //     messages[0].text = '距離G排時間還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, 想ㄘ!';
