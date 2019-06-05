@@ -242,6 +242,14 @@ exports.handler = function (req, res) {
                 messages[0].text = getRandomFromArrayWithStringStyle(LeoArray);
                 break;
 
+            case 'HA': //哈哈哈
+            case '哈':
+
+                returnMessage = '`哈哈哈....' + rand.getFromArray(LeoArray) + '`';
+                messages[0].text = returnMessage;
+
+                break;
+
             case 'LUNCH':
             case '吃':
             case '午餐':
