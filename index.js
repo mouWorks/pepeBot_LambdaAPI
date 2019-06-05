@@ -244,10 +244,14 @@ exports.handler = function (req, res) {
 
             case 'HA': //哈哈哈
             case '哈':
-
                 returnMessage = '`哈哈哈....' + rand.getFromArray(LeoArray) + '`';
                 messages[0].text = returnMessage;
+                break;
 
+            case 'WA': //哇！
+            case '哇':
+                returnMessage = '*哇!...' + rand.getFromArray(LeoArray) + '*';
+                messages[0].text = returnMessage;
                 break;
 
             case 'LUNCH':
