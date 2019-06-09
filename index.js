@@ -254,6 +254,14 @@ exports.handler = function (req, res) {
                 messages[0].text = returnMessage;
                 break;
 
+            case '福利熊':
+                messages[0].text = '熊福利';
+                break;
+
+            case '熊福利':
+                messages[0].text = '請支援收銀';
+                break;
+
             case 'LUNCH':
             case '吃':
             case '午餐':
