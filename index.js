@@ -255,11 +255,11 @@ exports.handler = function (req, res) {
                 break;
 
             case '福利熊':
-                messages[0].text = '熊福利';
+                messages[0].text = '*熊福利*';
                 break;
 
             case '熊福利':
-                messages[0].text = '請支援收銀';
+                messages[0].text = '_請支援收銀~_';
                 break;
 
             case 'LUNCH':
