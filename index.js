@@ -477,7 +477,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '秋':
-                messages[0].text = '這個問題怎麼會問我咧？';
+                messages[0].text = '這個問題怎麼會 `問我咧` ？';
                 break;
 
             case '財':
