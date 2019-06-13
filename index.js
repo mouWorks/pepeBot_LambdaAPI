@@ -476,6 +476,10 @@ exports.handler = function (req, res) {
                 messages[0].text = '郭文彬和腎液親密度 `+' + intimacy + '`';
                 break;
 
+            case '秋':
+                messages[0].text = '這個問題怎麼會問我咧？';
+                break;
+
             case '財':
                 var randString = '里奧今天是不是又崩了';
                 messages[0].text = chokeString(randString);
