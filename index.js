@@ -485,6 +485,14 @@ exports.handler = function (req, res) {
                 messages[0].text = '`捧油，你返去印度食蕉啦`';
                 break;
 
+            case '檳友':
+                messages[0].text = '`臉書: 財哥專業檳榔攤`';
+                break;
+
+            case '彬友':
+                messages[0].text = '`我4你Der好彬友`';
+                break;
+
             case '財':
                 var randString = '里奧今天是不是又崩了';
                 messages[0].text = chokeString(randString);
