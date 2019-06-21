@@ -480,8 +480,9 @@ exports.handler = function (req, res) {
                 messages[0].text = '這個問題怎麼會 `問我咧` ？';
                 break;
 
+            case '捧油':
             case '朋友':
-                messages[0].text = '`朋友，你返去印度食蕉啦`';
+                messages[0].text = '`捧油，你返去印度食蕉啦`';
                 break;
 
             case '財':
