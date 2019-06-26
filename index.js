@@ -25,7 +25,7 @@ const guanArray = require('data/_guanArray.json');
 const smileArray = require('data/_smileArray.json');
 const holanArray = require('data/_HolanArray.json');
 const lunchArray = require('data/_lunchArray.json');
-
+const friendArray = require('data/_friendArray');
 const manArray = require('data/_manArray.json');
 
 //Loading Predefined stuff
@@ -482,15 +482,9 @@ exports.handler = function (req, res) {
 
             case '捧油':
             case '朋友':
-                messages[0].text = '`捧油，你返去印度食蕉啦`';
-                break;
-
             case '檳友':
-                messages[0].text = '`臉書: 財哥專業檳榔攤`';
-                break;
-
             case '彬友':
-                messages[0].text = '`我4你Der好彬友`';
+                messages[0].text = getRandomFromArrayWithStringStyle(friendArray);
                 break;
 
             case '財':
@@ -533,7 +527,22 @@ exports.handler = function (req, res) {
 
                 messages[0].text = '`' + speaker + '` 今日 ' + msg + ' `' + intimacy + '`';
                 break;
-            
+
+            case '神智':
+                var limit = 210;
+                var iq = rand.getNumber(0, limit);
+
+                if(iq < 10){ //Means you are really shitty;
+                    iq = 'IQ 200 !!';
+                }
+
+                if(iq < 10){ //Means you are really shitty;
+                    iq = '神智為 0!';
+                }
+
+                messages[0].text = '`' + speaker + '` 今日 ' + msg + ' `' + intimacy + '`';
+                break;
+
             case 'FUCKYOU':
                 targetUrl = rand.getFromArray(FuckArray);
                 messages[0].type = 'image';
