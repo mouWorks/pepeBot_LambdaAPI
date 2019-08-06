@@ -47,8 +47,9 @@ function Lib()
     }
 
     return {
-        getCountDownDate : getCountDownDate,
-        recognizePeople  : recognizePeople
+        getCountDownDate: getCountDownDate,
+        getWorkedDate: getWorkedDate,
+        recognizePeople: recognizePeople
     }
 }
 module.exports = new Lib();
