@@ -7,8 +7,13 @@ function Lib()
 {
     function getCountDownDate(today)
     {
+        let designedDate = '2019-08-30 00:00:00'; //Date of QQ
+        let nowDate = today + ' 00:00:00';
+
         today = today || miment().format('YYYY-MM-DD');
-        let diff_secs = miment(today + ' 00:00:00').diff('2019-04-01 00:00:00') / 1000;
+        //let diff_secs = miment(today + ' 00:00:00').diff('2019-04-01 00:00:00') / 1000;
+
+        let diff_secs = miment(designedDate).diff(nowDate) / 1000;
         let diff_days = diff_secs / 86400;
 
         return diff_days + 1;
@@ -32,10 +37,9 @@ function Lib()
         }
     }
 
-
     return {
         getCountDownDate : getCountDownDate,
-        recognizePeople : recognizePeople
+        recognizePeople  : recognizePeople
     }
 }
 module.exports = new Lib();
