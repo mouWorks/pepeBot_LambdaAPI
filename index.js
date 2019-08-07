@@ -284,12 +284,14 @@ exports.handler = function (req, res) {
             case 'FIRE':
                 messages[0].text = rand.getFromArray(FireArray);
                 break;
+            case '王':
+                messages[0].text = "`Zuvio CDN 之父`";
+                break;
 
             case 'GAMEOVER':case 'GG':case '婚':case '婚禮':case '崩':case '崩崩':case 'BON':case 'BONBON':
             case '爽':
             case 'SONG': //A_A
             case 'MOU':
-            case '王':
             case 'MAYBE':
                 // if (getRandomNumber(0, 10) <= 5) {
                 //     messages[0].text = '沒的崩啦 崩屁崩, 李奧已成 Husbando!';
