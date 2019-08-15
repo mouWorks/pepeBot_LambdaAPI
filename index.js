@@ -288,6 +288,14 @@ exports.handler = function (req, res) {
                 messages[0].text = "`Zuvio CDN 之父`";
                 break;
 
+            case 'CI':
+                messages[0].text = "`CICC`";
+                break;
+
+            case 'CC':
+                messages[0].text = "`UCCU`";
+                break;
+
             case 'GAMEOVER':case 'GG':case '婚':case '婚禮':case '崩':case '崩崩':case 'BON':case 'BONBON':
             case '爽':
             case 'SONG': //A_A
