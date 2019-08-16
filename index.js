@@ -514,6 +514,25 @@ exports.handler = function (req, res) {
                 messages[0].text = returnString;
                 break;
 
+            case '忠':
+            case '忠誠':
+            case '忠誠度':
+                var limit = 60;
+                var loyalty = rand.getNumber(0, limit);
+
+                if(loyalty > 50){
+                    loyalty = ' 誓死效忠 ! 我是舔狗!! ';
+                }
+
+                if(loyalty < 10){
+                    loyalty = ' 幹 乾我屁事!';
+                }
+
+                msg = '忠誠度';
+
+                messages[0].text = '`' + speaker + '` 今日 ' + msg + ' `' + loyalty + '`';
+                break;
+
             case '餓力': //this one by mou
             case '仇恨值':
             case '吉戰力':
