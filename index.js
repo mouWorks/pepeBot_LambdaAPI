@@ -205,6 +205,9 @@ exports.handler = function (req, res) {
 
         var speaker = lib.recognizePeople(event.source.userId); //get the names from User ID
 
+
+
+
         needToReply = true;
 
         //Text is switch to UpperCase()
@@ -637,6 +640,15 @@ exports.handler = function (req, res) {
                 needToReply = false;
                 //messages[0].text = msg;
                 break;
+        }
+
+        if (speaker == 'cloud'){
+            var chance = 20; // 20% 機率 Trigger
+            var hit = rand.getNumber(0, 100);
+
+            if(hit < chance){ //Means you are really lucky;
+                messages[0].text = '`雲姐什麼時候要生第二胎呀?`';
+            }
         }
 
         if(needToReply){
