@@ -521,11 +521,15 @@ exports.handler = function (req, res) {
                 var loyalty = rand.getNumber(0, limit);
 
                 if(loyalty > 50){
-                    loyalty = ' 誓死效忠 ! 我是舔狗!! ';
+                    loyalty = '誓死效忠 ! 我是舔狗!! ';
                 }
 
-                if(loyalty < 10){
-                    loyalty = ' 幹 乾我屁事!';
+                if(loyalty < 20){
+                    loyalty = '幹 乾我屁事!';
+                }
+
+                if(loyalty < 5){
+                    loyalty = '太低, 無法偵測!';
                 }
 
                 msg = '忠誠度';
