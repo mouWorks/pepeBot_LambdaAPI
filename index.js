@@ -666,13 +666,23 @@ exports.handler = function (req, res) {
         }
 
         if (speaker == 'cloud'){
-            var chance = 20; // 20% 機率 Trigger
+            var chance = 40; // 20% 機率 Trigger
             var hit = rand.getNumber(0, 100);
 
             if(hit < chance){ //Means you are really lucky;
                 messages[0].text = '`雲姐什麼時候要生第二胎呀?`';
             }
         }
+
+        if (speaker == 'mou'){
+            var chance = 95; // 20% 機率 Trigger
+            var hit = rand.getNumber(0, 100);
+
+            if(hit < chance){ //Means you are really lucky;
+                messages[0].text = '`那麼 要如何進行單元測試呢?`';
+            }
+        }
+
 
         if(needToReply){
 
