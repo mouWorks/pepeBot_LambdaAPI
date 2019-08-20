@@ -324,8 +324,14 @@ exports.handler = function (req, res) {
                 days = lib.getCountDownDate();
                 var who = rand.getFromArray(ZuvioTeamMate);
                 action = rand.getFromArray(Behavior);
-                // messages[0].text = '`Mou` 已在 `Zuvio` 被 `' + who + '` ' + action + ' 了 `' + days +'` 天！';
-                messages[0].text = '距離 `Mou` 在 `Zuvio` 被 Unset 還剩下 `' + days +'` 天！';
+
+                days -= 2; //Hardcode
+
+                messages[0].text = '距離 `Mou` 在 `Zuvio` 被 KickOut 還剩下 `' + days +'` 天！';
+                if(days <= 0){
+                    messages[0].text = '`GameOver :)`';
+                }
+
                 break;
 
             //Skip this, tired.
