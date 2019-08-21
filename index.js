@@ -685,8 +685,10 @@ exports.handler = function (req, res) {
             var hit = rand.getNumber(0, 100);
 
             if(hit < chance){ //Means you are really lucky;
-                messages[0].type = 'text';
-                messages[0].text = '`這樣你會寫單元測試了嗎？`';
+                var messages = [{
+                    "type":"text",
+                    "text": '`這樣你會寫單元測試了嗎？`'
+                }];
             }
         }
 
