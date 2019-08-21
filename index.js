@@ -680,6 +680,16 @@ exports.handler = function (req, res) {
             }
         }
 
+        if (speaker == 'leo'){
+            var chance = 45; // 20% 機率 Trigger
+            var hit = rand.getNumber(0, 100);
+
+            if(hit < chance){ //Means you are really lucky;
+                messages[0].type = 'text';
+                messages[0].text = '`這樣你會寫單元測試了嗎？`';
+            }
+        }
+
         // if (speaker == 'mou'){
         //     var chance = 95; // 20% 機率 Trigger
         //     var hit = rand.getNumber(0, 100);
