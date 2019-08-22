@@ -666,16 +666,18 @@ exports.handler = function (req, res) {
                 //     break;
                 // }
 
-                needToReply = false;
+                needToReply = false; //這個表示中關鍵字 才要回
                 //messages[0].text = msg;
                 break;
         }
 
-        if (speaker == 'cloud'){
+        //如果沒中關鍵字的話
+        if (speaker == 'cloud') && ( ! needToReply){
             var chance = 45; // 20% 機率 Trigger
             var hit = rand.getNumber(0, 100);
 
             if(hit < chance){ //Means you are really lucky;
+                needToReply = true;
                 messages[0].text = '`雲姐什麼時候要生第二胎呀?`';
             }
         }
