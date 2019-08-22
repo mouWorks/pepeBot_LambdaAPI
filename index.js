@@ -672,8 +672,8 @@ exports.handler = function (req, res) {
         }
 
         //如果沒中關鍵字的話
-        if (speaker == 'cloud') && ( ! needToReply){
-            var chance = 45; // 20% 機率 Trigger
+        if (speaker == 'cloud'){
+            var chance = 40; // 40% 機率 Trigger
             var hit = rand.getNumber(0, 100);
 
             if(hit < chance){ //Means you are really lucky;
@@ -687,9 +687,10 @@ exports.handler = function (req, res) {
             var hit = rand.getNumber(0, 100);
 
             if(hit < chance){ //Means you are really lucky;
+                needToReply = true;
                 var messages = [{
                     "type":"text",
-                    "text": '`這樣你會寫單元測試了嗎？`'
+                    "text": '`難道 我又崩了? 不行崩嗎 ????`'
                 }];
             }
         }
@@ -702,7 +703,6 @@ exports.handler = function (req, res) {
         //         messages[0].text = '`那麼 要如何進行單元測試呢?`';
         //     }
         // }
-
 
         if(needToReply){
 
