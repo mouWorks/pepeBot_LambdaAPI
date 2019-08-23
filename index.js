@@ -682,8 +682,8 @@ exports.handler = function (req, res) {
             }
         }
 
-        if (speaker == '-leo-'){
-            var chance = 45; // 20% 機率 Trigger
+        if (speaker == 'leo'){
+            var chance = 5; // 5% 機率 Trigger
             var hit = rand.getNumber(0, 100);
 
             if(hit < chance){ //Means you are really lucky;
