@@ -672,7 +672,7 @@ exports.handler = function (req, res) {
         }
 
         //如果沒中關鍵字的話
-        if (speaker == 'cloud'){
+        if (speaker == '-cloud-'){
             var chance = 40; // 40% 機率 Trigger
             var hit = rand.getNumber(0, 100);
 
@@ -682,7 +682,7 @@ exports.handler = function (req, res) {
             }
         }
 
-        if (speaker == 'leo'){
+        if (speaker == '-leo-'){
             var chance = 45; // 20% 機率 Trigger
             var hit = rand.getNumber(0, 100);
 
