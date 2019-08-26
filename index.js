@@ -182,7 +182,7 @@ exports.handler = function (req, res) {
                 }
             }
 
-            if((msg.indexOf('呵') !== -1) || (msg.indexOf('嘻') !== -1) || (msg.indexOf('笑') !== -1)){
+            if((msg.indexOf('呵') !== -1) || (msg.indexOf('笑') !== -1)){
                 msg = 'SMILE';
             }
 
