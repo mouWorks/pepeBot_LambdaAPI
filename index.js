@@ -507,6 +507,11 @@ exports.handler = function (req, res) {
                 messages[0].text = getRandomFromArrayWithStringStyle(friendArray);
                 break;
 
+            case '嘻':
+                var randString = '高層嘻';
+                messages[0].text = chokeString(randString);
+                break;
+
             case '財':
                 var randString = '里奧今天是不是又崩了';
                 messages[0].text = chokeString(randString);
