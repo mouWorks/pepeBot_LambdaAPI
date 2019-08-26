@@ -205,9 +205,6 @@ exports.handler = function (req, res) {
 
         var speaker = lib.recognizePeople(event.source.userId); //get the names from User ID
 
-
-
-
         needToReply = true;
 
         //Text is switch to UpperCase()
@@ -528,10 +525,10 @@ exports.handler = function (req, res) {
             case '忠':
             case '忠誠':
             case '忠誠度':
-                var limit = 60;
+                var limit = 50;
                 var loyalty = rand.getNumber(0, limit);
 
-                if(loyalty > 50){
+                if(loyalty > 45){
                     loyalty = '誓死效忠 ! 我是舔狗!! ';
                 }
 
