@@ -326,7 +326,7 @@ exports.handler = function (req, res) {
 
                 messages[0].text = '距離 `Mou` 在 `Zuvio` 被 KickOut 還剩下 `' + days +'` 天！';
                 if(days <= 0){
-                    messages[0].text = '`與你相遇好幸運 可惜我已失去為你瘋狂挖坑的權利 QQ `';
+                    messages[0].text = '` ♪ 與你相遇好幸運 可我已失去為你瘋狂挖坑的權利 ♬ ~ `';
                 }
 
                 break;
