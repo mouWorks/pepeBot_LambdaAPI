@@ -659,10 +659,10 @@ exports.handler = function (req, res) {
             default:
 
                 // Shut this up: too loud
-                // if(msg.length == 1){
-                //     messages[0].text = msg + '.' + rand.getFromArray(RandomArray);
-                //     break;
-                // }
+                if(msg.length == 2){
+                    messages[0].text = msg + '...嘻';
+                    break;
+                }
                 //  if(msg.length == 3){
                 //     messages[0].text = msg + '.avi';
                 //     break;
