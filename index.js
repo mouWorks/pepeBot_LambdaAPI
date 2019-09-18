@@ -695,6 +695,14 @@ exports.handler = function (req, res) {
                     "text": '`難道 我又崩了? 不行崩嗎 ????`'
                 }];
             }
+
+            //Force yes
+            if(msg == 'NO'){
+                var messages = [{
+                    "type":"text",
+                    "text": '`Actually YES cc`'
+                }];
+            }
         }
 
         // if (speaker == 'mou'){
