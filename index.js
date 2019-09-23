@@ -696,11 +696,11 @@ exports.handler = function (req, res) {
                 }];
             }
 
-            //Force yes
-            if(msg == 'NO'){
+            //yes -f
+            if((msg == 'NO') || (msg.indexOf('不') !== -1)){
                 var messages = [{
                     "type":"text",
-                    "text": '`Actually YES cc`'
+                    "text": '`cc 其實是Yes拉`'
                 }];
             }
         }
