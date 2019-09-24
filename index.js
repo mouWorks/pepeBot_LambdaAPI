@@ -684,26 +684,7 @@ exports.handler = function (req, res) {
             }
         }
 
-        if (speaker == 'leo'){
-            var chance = 5; // 5% 機率 Trigger
-            var hit = rand.getNumber(0, 100);
-
-            if(hit < chance){ //Means you are really lucky;
-                needToReply = true;
-                var messages = [{
-                    "type":"text",
-                    "text": '`難道 我又崩了? 不行崩嗎 ????`'
-                }];
-            }
-
-            //yes -f
-            if((msg == 'NO') || (msg.indexOf('不') !== -1)){
-                var messages = [{
-                    "type":"text",
-                    "text": '`cc 其實是Yes拉`'
-                }];
-            }
-        }
+ 
 
         // if (speaker == 'mou'){
         //     var chance = 95; // 20% 機率 Trigger
