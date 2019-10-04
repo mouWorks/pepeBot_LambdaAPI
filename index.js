@@ -684,16 +684,20 @@ exports.handler = function (req, res) {
             }
         }
 
- 
+        //5% random yes
+        if(msg == 'NO'){
 
-        // if (speaker == 'mou'){
-        //     var chance = 95; // 20% 機率 Trigger
-        //     var hit = rand.getNumber(0, 100);
-        //
-        //     if(hit < chance){ //Means you are really lucky;
-        //         messages[0].text = '`那麼 要如何進行單元測試呢?`';
-        //     }
-        // }
+            var chance = 5; // 5% 機率 Trigger
+            var hit = rand.getNumber(0, 100);
+
+            if(hit < chance) { //Means you are really lucky;
+                needToReply = true;
+                var messages = [{
+                    "type": "text",
+                    "text": '`ㄟ湯喔～`'
+                }];
+            }
+        }
 
         if(needToReply){
 
