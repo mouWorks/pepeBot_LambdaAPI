@@ -111,20 +111,7 @@ exports.handler = function (req, res) {
         var deadline = 'June 1 2019 08:00:00 GMT+0800'; //Leo's great Family Day !
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
         var mouOnboardLine = 'April 1 2019 09:30:00 GMT+0800'; //Leo's Wedding
-        var getTimeRemaining = function(endtime){
-            var t = Date.parse(endtime) - Date.parse(new Date());
-            var seconds = Math.floor( (t/1000) % 60 );
-            var minutes = Math.floor( (t/1000/60) % 60 );
-            var hours = Math.floor( (t/(1000*60*60)) % 24 );
-            var days = Math.floor( t/(1000*60*60*24) );
-            return {
-                'total': t,
-                'days': days,
-                'hours': hours,
-                'minutes': minutes,
-                'seconds': seconds
-            };
-        }
+
 
         var getRandomFromArrayWithStringStyle = function(ArrayNames)
         {
@@ -177,6 +164,10 @@ exports.handler = function (req, res) {
                 msg = 'POOR';
             }
 
+            if(msg.indexOf('怕') !== -1){
+                msg = 'SCARE';
+            }
+
             if(msg.indexOf('親 --FORCE') !== -1){
                 msg = '親密度X';
                 forceLeo = true;
@@ -205,7 +196,6 @@ exports.handler = function (req, res) {
         }];
 
         //console.log(event); //uncomment if you wanna see event
-
         // console.log('check source2');
         // console.log(event.source);
         // var speaker = '';
@@ -226,13 +216,6 @@ exports.handler = function (req, res) {
                 var limit = 15;
                 var randomNumber = rand.getValue(15);
                 messages[0].text = "6".repeat(randomNumber);
-                break;
-
-            case '8':
-                var limit = 30;
-                var randomNumber = rand.getValue(30);
-                var randomUString = "6".repeat(randomNumber);
-                messages[0].text =  '8'+ randomUString + '起來!';
                 break;
 
             case '+':
