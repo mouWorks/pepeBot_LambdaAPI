@@ -183,10 +183,6 @@ exports.handler = function (req, res) {
             if((msg.indexOf('呵') !== -1) || (msg.indexOf('笑') !== -1)){
                 msg = 'SMILE';
             }
-
-            // if(msg.indexOf('雞') !== -1){
-            //     msg = 'G';
-            // }
         }
 
         var reply_token = event.replyToken; //Need to get this Token to pass back.
