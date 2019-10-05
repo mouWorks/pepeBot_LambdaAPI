@@ -14,10 +14,10 @@ function Lib()
         return diff_days + 1;
     }
 
-    function getSurvivedDate(today)
+    function getSurvivedDate()
     {
-        today = today || miment().format('YYYY-MM-DD');
-        let diff_secs = miment(today + ' 00:00:00').diff('2019-08-30 00:00:00') / 1000;
+        let today = miment().format('YYYY-MM-DD');
+        let diff_secs = miment('2019-08-30 00:00:00').diff(today + ' 00:00:00') / 1000;
         let diff_days = diff_secs / 86400;
 
         return diff_days + 1;

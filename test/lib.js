@@ -22,7 +22,7 @@ describe('#libs/lib.getWorkedDate', () => {
 describe('#libs/lib.recognizePeople', () => {
     it('取得 speaker', done => {
         let v = lib.recognizePeople("U2cdda2ee76097f9021bb68e70feffdb4");
-        v.should.eqls('leo');
+        v.should.eqls('老凹');
         done();
     });
 });
