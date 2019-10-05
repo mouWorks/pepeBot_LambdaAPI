@@ -369,8 +369,11 @@ exports.handler = function (req, res) {
                 break;
 
             case 'POOR':
+
+                var poorEmoji = String.fromCodePoint(0x100088);
+
                 messages[0].type = 'text';
-                messages[0].text = "嗚嗚 好窮 \\u0x100088";
+                messages[0].text = "嗚嗚 好窮 " + poorEmoji;
                 break;
 
             case 'WHAT':
