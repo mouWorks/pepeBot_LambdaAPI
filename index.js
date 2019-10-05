@@ -28,6 +28,9 @@ const lunchArray = require('data/_lunchArray.json');
 const friendArray = require('data/_friendArray');
 const manArray = require('data/_manArray.json');
 
+//怕的 EmojiCon
+const scaredEmojiArray = require('data/_scaredArray');
+
 //Loading Predefined stuff
 const KuoArray =["https://i.imgur.com/X6mAbic.png"];
 const CoffeeArray = ["Cama","Seven","全家","路易莎","太濃了吧,否則怎麼苦的說不出話"];
@@ -375,7 +378,7 @@ exports.handler = function (req, res) {
 
             case 'SCARE':
                 messages[0].type = 'text';
-                messages[0].text = "怕爆 " + lib.getEmoji('0x10007D');
+                messages[0].text = "怕爆 " + lib.getEmoji(rand.getFromArray(scaredEmojiArray));
                 break;
 
             case 'WHAT':
