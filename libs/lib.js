@@ -46,7 +46,14 @@ function Lib()
         }
     }
 
+    //Get Special Emoji from Line
+    function getEmoji(unicode)
+    {
+        return String.fromCodePoint(unicode);
+    }
+
     return {
+        getEmoji: getEmoji,
         getCountDownDate: getCountDownDate,
         getWorkedDate: getWorkedDate,
         recognizePeople: recognizePeople
