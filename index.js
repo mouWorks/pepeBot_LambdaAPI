@@ -170,6 +170,10 @@ exports.handler = function (req, res) {
                 msg = 'HIT';
             }
 
+            if(msg.indexOf('窮') !== -1){
+                msg = 'POOR';
+            }
+
             if(msg.indexOf('親 --FORCE') !== -1){
                 msg = '親密度X';
                 forceLeo = true;
@@ -362,6 +366,11 @@ exports.handler = function (req, res) {
                 messages[0].type = 'image';
                 messages[0].originalContentUrl = 'https://i.imgur.com/Z4UAjkp.png';
                 messages[0].previewImageUrl = 'https://i.imgur.com/Z4UAjkp.png';
+                break;
+
+            case 'POOR':
+                messages[0].type = 'text';
+                messages[0].text = '嗚嗚 好窮 0x100088';
                 break;
 
             case 'WHAT':
