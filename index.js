@@ -370,7 +370,7 @@ exports.handler = function (req, res) {
 
             case 'POOR':
                 messages[0].type = 'text';
-                messages[0].text = '嗚嗚 好窮 0x100088';
+                messages[0].text = "嗚嗚 好窮 \\u0x100088";
                 break;
 
             case 'WHAT':
