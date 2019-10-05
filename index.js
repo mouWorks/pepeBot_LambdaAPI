@@ -206,10 +206,6 @@ exports.handler = function (req, res) {
                 var limit = 15;
                 var randomNumber = rand.getValue(15);
                 messages[0].text = "Z".repeat(randomNumber) + 'uvio起來!';
-
-
-                messages[0].text =
-
                 break;
 
             case '6':
