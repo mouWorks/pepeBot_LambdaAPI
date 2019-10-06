@@ -501,7 +501,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '嘻':
-                var randString = '高層嘻';
+                var randString = '高層嘻' + lib.getEmoji('0x10008C');
                 messages[0].text = chokeString(randString);
                 break;
 
@@ -529,7 +529,7 @@ exports.handler = function (req, res) {
                 }
 
                 if(loyalty < 20){
-                    loyalty = '幹 乾我屁事!';
+                    loyalty = '幹 乾我屁事!' + lib.getEmoji('0x10009E');
                 }
 
                 if(loyalty < 5){
@@ -559,7 +559,7 @@ exports.handler = function (req, res) {
                 var intimacy = rand.getNumber(0, limit);
 
                 if(intimacy > 9500){ //Means you are really lucky;
-                    intimacy = ' Overflow! 已達上限 ! 大家快逃啊';
+                    intimacy = ' Overflow! 已達上限 ! 大家快逃啊' + lib.getEmoji('0x1000A4');
                 }
 
                 if(intimacy < 500){ //Means you are really shitty;
@@ -690,7 +690,7 @@ exports.handler = function (req, res) {
                 needToReply = true;
                 var messages = [{
                     "type": "text",
-                    "text": '`ㄟ湯喔～`'
+                    "text": '`ㄟ湯喔～`' + lib.getEmoji('0x100095');
                 }];
             }
         }
