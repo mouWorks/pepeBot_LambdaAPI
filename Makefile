@@ -17,7 +17,10 @@ upload:
 	./upload.sh
 
 test:
-	mocha && node --check index.js
+	mocha && \
+	node --check index.js \
+	node --check libs/lib.js \
+	node --check libs/rand.js
 
 pull:
 	@echo ">>> Pull Code on Current branch [$(BRANCH)]"
@@ -26,3 +29,7 @@ pull:
 push: pull test
 	@echo ">>> Current branch [$(BRANCH)] Pushing Code"
 	git push origin $(BRANCH)
+
+push-f: pull test
+	@echo ">>> Current branch [$(BRANCH)] Pushing Code"
+	git push origin $(BRANCH) -f
