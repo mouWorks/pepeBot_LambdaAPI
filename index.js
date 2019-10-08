@@ -2,9 +2,9 @@ const rp = require('request-promise');
 const request = require('request');
 const AWS = require('aws-sdk');
 const fs = require('fs');
-const nodejieba = require('nodejieba');
-
-nodejieba.load({dict: './dict.txt'})
+// const nodejieba = require('nodejieba');
+//
+// nodejieba.load({dict: './dict.txt'})
 
 const PEPEBOT_S3_BUCKET = 'pepebot-images';
 const EXPORT_PATH = 'pepebot/';
@@ -133,19 +133,20 @@ exports.handler = function (req, res) {
                     break;
 
                 default:
-                    getString = chokeString(getString);
+                    getString = "*" + getString + "*";
+                    //getString = chokeString(getString);
                     break;
             }
 
             return getString;
         }
 
-        //財哥文體使用
-        var chokeString = function(textString) {
-
-            wordChunk = nodejieba.cut(textString);
-            return wordChunk.join('...');
-        }
+        // //財哥文體使用
+        // var chokeString = function(textString) {
+        //
+        //     wordChunk = nodejieba.cut(textString);
+        //     return wordChunk.join('...');
+        // }
 
         var forceLeo = false;
 
@@ -502,20 +503,24 @@ exports.handler = function (req, res) {
 
             case '嘻':
                 var randString = '高層嘻' + lib.getEmoji('0x10008C');
-                messages[0].text = chokeString(randString);
+
+                messages[0].text = randString;
+                // messages[0].text = chokeString(randString);
                 break;
 
             case '財':
                 var randString = '里奧今天是不是又崩了';
-                messages[0].text = chokeString(randString);
+                messages[0].text = randString;
+
+                // messages[0].text = chokeString(randString);
                 break;
 
             case '科':
                 var demoText =  '郭文彬和腎液親密度為 99999999';
-                randwords = nodejieba.cut(demoText);
-                var returnString = randwords.join('...');
+                // randwords = nodejieba.cut(demoText);
+                // var returnString = randwords.join('...');
 
-                messages[0].text = returnString;
+                messages[0].text = demoText;
                 break;
 
             case '忠':
