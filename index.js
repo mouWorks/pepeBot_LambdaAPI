@@ -690,7 +690,7 @@ exports.handler = function (req, res) {
                 needToReply = true;
                 var messages = [{
                     "type": "text",
-                    "text": '`ㄟ湯喔～`' + lib.getEmoji('0x100095');
+                    "text": '`ㄟ湯喔～`' + lib.getEmoji('0x100095')
                 }];
             }
         }
