@@ -640,11 +640,18 @@ exports.handler = function (req, res) {
             var chance = 40; // 40% 機率 Trigger
             var hit = rand.getNumber(0, 100);
 
+            needToReply = true;
+
             if(hit < chance) { //Means you are really lucky;
-                needToReply = true;
+
                 var messages = [{
                     "type": "text",
                     "text": ' `ㄟ湯喔～` ' + lib.getEmoji('0x100095')
+                }];
+            }{
+                var messages = [{
+                    "type": "text",
+                    "text": ' `母湯!` ' + lib.getEmoji('0x1000A6')
                 }];
             }
         }
