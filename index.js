@@ -3,7 +3,6 @@ const request = require('request');
 const AWS = require('aws-sdk');
 const fs = require('fs');
 // const nodejieba = require('nodejieba');
-//
 // nodejieba.load({dict: './dict.txt'})
 
 const PEPEBOT_S3_BUCKET = 'pepebot-images';
@@ -629,31 +628,16 @@ exports.handler = function (req, res) {
                     messages[0].text = msg + '...嘻';
                     break;
                 }
-                //  if(msg.length == 3){
-                //     messages[0].text = msg + '.avi';
-                //     break;
-                // }
 
                 needToReply = false; //這個表示中關鍵字 才要回
                 //messages[0].text = msg;
                 break;
         }
 
-        //如果沒中關鍵字的話
-        if (speaker == '-cloud-'){
-            var chance = 40; // 40% 機率 Trigger
-            var hit = rand.getNumber(0, 100);
-
-            if(hit < chance){ //Means you are really lucky;
-                needToReply = true;
-                messages[0].text = '`雲姐什麼時候要生第二胎呀?`';
-            }
-        }
-
         //5% random yes
         if(msg == 'NO'){
 
-            var chance = 5; // 5% 機率 Trigger
+            var chance = 40; // 40% 機率 Trigger
             var hit = rand.getNumber(0, 100);
 
             if(hit < chance) { //Means you are really lucky;
@@ -694,5 +678,4 @@ exports.handler = function (req, res) {
     Promise
     .all(promises)
     .then(() => res.json({success: true}));
-
 };
