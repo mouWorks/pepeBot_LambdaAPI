@@ -494,6 +494,10 @@ exports.handler = function (req, res) {
                 messages[0].text = '這個問題怎麼會 `問我咧` ？';
                 break;
 
+            case '我誰':
+                messages[0].text = '我高層嘻^^';
+                break;
+
             case '捧油':
             case '朋友':
             case '檳友':
