@@ -102,8 +102,6 @@ exports.handler = function (req, res) {
                         }
                     });
                 }
-
-
             });//end of request
 
         }//endif;
@@ -111,35 +109,6 @@ exports.handler = function (req, res) {
         var deadline = 'June 1 2019 08:00:00 GMT+0800'; //Leo's great Family Day !
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
         var mouOnboardLine = 'April 1 2019 09:30:00 GMT+0800'; //Leo's Wedding
-
-
-        var getRandomFromArrayWithStringStyle = function(ArrayNames)
-        {
-            var length = ArrayNames.length;
-            var getString = ArrayNames[Math.floor(Math.random() * length)];
-            var style = Math.floor(Math.random() * 7);
-
-            switch(style){
-                case 0:
-                    getString = "`" + getString + "`";
-                    break;
-
-                case 1:
-                    getString = "_" + getString + "_";
-                    break;
-
-                case 2:
-                    getString = "*" + getString + "*";
-                    break;
-
-                default:
-                    getString = "*" + getString + "*";
-                    //getString = chokeString(getString);
-                    break;
-            }
-
-            return getString;
-        }
 
         // //財哥文體使用
         // var chokeString = function(textString) {
@@ -226,7 +195,7 @@ exports.handler = function (req, res) {
             case 'L': //because LEO is way too fking long
             case 'LL':
             case 'LEO':
-                messages[0].text = getRandomFromArrayWithStringStyle(LeoArray);
+                messages[0].text = lib.getRandomFromArrayWithStringStyle(LeoArray);
                 break;
 
             case 'HA': //哈哈哈
@@ -265,7 +234,7 @@ exports.handler = function (req, res) {
             case '594':
             case 'I AM':
             case '我是':
-                messages[0].text = getRandomFromArrayWithStringStyle(manArray);
+                messages[0].text = lib.getRandomFromArrayWithStringStyle(manArray);
                 break;
 
             case 'FIRE':
@@ -317,14 +286,6 @@ exports.handler = function (req, res) {
                 }
 
                 break;
-
-            //Skip this, tired.
-            // case 'SMILE':
-            //     smilePhoto = rand.getFromArray(smileArray);
-            //     messages[0].type = 'image';
-            //     messages[0].originalContentUrl = smilePhoto;
-            //     messages[0].previewImageUrl = smilePhoto;
-            //     break;
 
             case '成龍':
             case 'JACKIECHAN':
@@ -502,7 +463,7 @@ exports.handler = function (req, res) {
             case '朋友':
             case '檳友':
             case '彬友':
-                messages[0].text = getRandomFromArrayWithStringStyle(friendArray);
+                messages[0].text = lib.getRandomFromArrayWithStringStyle(friendArray);
                 break;
 
             case '嘻':

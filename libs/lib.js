@@ -5,6 +5,34 @@ const miment = require('miment');
  */
 function Lib()
 {
+    function getRandomFromArrayWithStringStyle(ArrayNames)
+    {
+        var length = ArrayNames.length;
+        var getString = ArrayNames[Math.floor(Math.random() * length)];
+        var style = Math.floor(Math.random() * 7);
+
+        switch(style){
+            case 0:
+                getString = "`" + getString + "`";
+                break;
+
+            case 1:
+                getString = "_" + getString + "_";
+                break;
+
+            case 2:
+                getString = "*" + getString + "*";
+                break;
+
+            default:
+                getString = "*" + getString + "*";
+                //getString = chokeString(getString);
+                break;
+        }
+
+        return getString;
+    }
+
     function getWorkedDate(today)
     {
         today = today || miment().format('YYYY-MM-DD');
@@ -82,6 +110,7 @@ function Lib()
     }
 
     return {
+        getRandomFromArrayWithStringStyle: getRandomFromArrayWithStringStyle,
         getTimeRemaining: getTimeRemaining,
         getSurvivedDate : getSurvivedDate,
         getEmoji: getEmoji,
