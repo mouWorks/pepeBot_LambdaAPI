@@ -648,7 +648,7 @@ exports.handler = function (req, res) {
                     "type": "text",
                     "text": ' `ㄟ湯喔～` ' + lib.getEmoji('0x100095')
                 }];
-            }{
+            }else{
                 var messages = [{
                     "type": "text",
                     "text": ' `母湯!` ' + lib.getEmoji('0x1000A6')
