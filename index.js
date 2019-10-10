@@ -137,6 +137,10 @@ exports.handler = function (req, res) {
                 msg = 'SCARE';
             }
 
+            if(msg.indexOf('誒') !== -1){
+                msg = 'COME';
+            }
+
             if(msg.indexOf('親 --FORCE') !== -1){
                 msg = '親密度X';
                 forceLeo = true;
@@ -314,6 +318,11 @@ exports.handler = function (req, res) {
             case 'POOR':
                 messages[0].type = 'text';
                 messages[0].text = "嗚嗚 好窮 " + lib.getEmoji(0x100088);
+                break;
+
+            case 'COME':
+                messages[0].type = 'text';
+                messages[0].text = "`誒你過來一下!` ";
                 break;
 
             case 'SCARE':
