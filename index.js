@@ -321,8 +321,10 @@ exports.handler = function (req, res) {
                 break;
 
             case 'COME':
+
+                var randomNumber = rand.getValue(7);
                 messages[0].type = 'text';
-                messages[0].text = "`誒你過來一下!` ";
+                messages[0].text = "`誒你過來一下 " + "!".repeat(randomNumber) + "`";
                 break;
 
             case 'SCARE':
