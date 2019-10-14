@@ -137,8 +137,8 @@ exports.handler = function (req, res) {
                 msg = 'SCARE';
             }
 
-            if(msg.indexOf('誒') !== -1){
-                msg = 'COME';
+            if((msg.indexOf('誒') !== -1) || (msg.indexOf('欸') !== -1)){
+                    msg = 'COME';
             }
 
             if(msg.indexOf('親 --FORCE') !== -1){
@@ -147,7 +147,6 @@ exports.handler = function (req, res) {
             }
 
             if((msg.indexOf('親') !== -1) || (msg.indexOf('腎') !== -1)){
-
                 if(!forceLeo){
                     msg = '親密度';
                 }
