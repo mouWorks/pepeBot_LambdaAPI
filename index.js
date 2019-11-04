@@ -335,104 +335,68 @@ exports.handler = function (req, res) {
             case 'WHAT':
             case 'WHAT?':
             case '你說什麼':
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/BDqIWCb.png';
-                messages[0].previewImageUrl = 'https://i.imgur.com/BDqIWCb.png';
+                messages[0] = messageBuilder.image( 'https://i.imgur.com/BDqIWCb.png');
                 break;
 
 
             case '995':
             case '救救我':
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/EY43bcx.jpg';
-                messages[0].previewImageUrl = 'https://i.imgur.com/EY43bcx.jpg';
+                messages[0] = messageBuilder.image( 'https://i.imgur.com/EY43bcx.jpg');
                 break;
 
             case '看':
             case 'LOOK':  case 'WATCH':
             case '看屁看':
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/kj6t3Rd.jpg';
-                messages[0].previewImageUrl = 'https://i.imgur.com/kj6t3Rd.jpg';
-                break
+                messages[0] = messageBuilder.image( 'https://i.imgur.com/kj6t3Rd.jpg');
+                break;
 
             case 'CEO':
-                var imgUrl = rand.getFromArray(ceoArray);
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = imgUrl;
-                messages[0].previewImageUrl = imgUrl;
+                messages[0] = messageBuilder.image( rand.getFromArray(ceoArray));
                 break;
 
             case 'GUAN': case '慣': case '冠':
-                var imgUrl = rand.getFromArray(guanArray);
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = imgUrl;
-                messages[0].previewImageUrl = imgUrl;
+                messages[0] = messageBuilder.image( rand.getFromArray(guanArray));
                 break;
 
             case 'HOLAN': case '騙': case '冠':
-                var imgUrl = rand.getFromArray(holanArray);
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = imgUrl;
-                messages[0].previewImageUrl = imgUrl;
+                messages[0] = messageBuilder.image( rand.getFromArray(holanArray));
                 break;
 
             case '郭':
-                var imgUrl = rand.getFromArray(KuoArray);
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = imgUrl;
-                messages[0].previewImageUrl = imgUrl;
+                messages[0] = messageBuilder.image( rand.getFromArray(KuoArray));
                 break;
 
             case 'ISSUE':
-                var imgUrl = rand.getFromArray(issueArray);
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = imgUrl;
-                messages[0].previewImageUrl = imgUrl;
+                messages[0] = messageBuilder.image( rand.getFromArray(issueArray));
                 break;
 
             case 'OK':
             case 'OKAY':
-                var imgUrl =  rand.getFromArray(okayArray);
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = imgUrl;
-                messages[0].previewImageUrl = imgUrl;
+                messages[0] = messageBuilder.image( rand.getFromArray(okayArray));
                 break;
                 
             case 'LEO嗆':
             case '嗆':
-                var imgUrl = rand.getFromArray(chokeArray);
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = imgUrl;
-                messages[0].previewImageUrl = imgUrl;
+                messages[0] = messageBuilder.image( rand.getFromArray(chokeArray));
                 break;
 
             case 'HUMM?':
             case 'HUMM':
             case 'HUMMMM':
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/9uQmv6y.jpg';
-                messages[0].previewImageUrl = 'https://i.imgur.com/9uQmv6y.jpg';
+                messages[0] = messageBuilder.image( 'https://i.imgur.com/9uQmv6y.jpg');
                 break;
 
             case 'R':
             case 'R!!':
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/1JtJplI.jpg';
-                messages[0].previewImageUrl = 'https://i.imgur.com/1JtJplI.jpg';
+                messages[0] = messageBuilder.image( 'https://i.imgur.com/1JtJplI.jpg');
                 break;
 
             case 'LEO打':
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/BOZzmrA.png';
-                messages[0].previewImageUrl = 'https://i.imgur.com/BOZzmrA.png';
+                messages[0] = messageBuilder.image( 'https://i.imgur.com/BOZzmrA.png');
                 break;
 
             case 'SSD':
-                var imgUrl = rand.getFromArray(ssdArray);
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = imgUrl;
-                messages[0].previewImageUrl = imgUrl;
+                messages[0] = messageBuilder.image( rand.getFromArray(ssdArray));
                 break;
 
             case 'BAD':
