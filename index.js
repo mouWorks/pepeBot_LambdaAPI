@@ -437,7 +437,7 @@ exports.handler = function (req, res) {
 
             case 'BAD':
             case '壞':
-                messages[0] = messageBuilder.imageFormat('https://i.imgur.com/nV3P7dt.png');
+                messages[0] = messageBuilder.image('https://i.imgur.com/nV3P7dt.png');
                 //
                 // messages[0].type = 'image';
                 // messages[0].originalContentUrl = 'https://i.imgur.com/nV3P7dt.png';
@@ -568,41 +568,30 @@ exports.handler = function (req, res) {
 
             case 'FUCKYOU':
                 targetUrl = rand.getFromArray(FuckArray);
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = targetUrl;
-                messages[0].previewImageUrl = targetUrl;
+                messages[0] = messageBuilder.imageFormat(targetUrl);
                 break;
 
             case 'WORK':
             case '上班':
                 targetUrl = rand.getFromArray(WorkArray);
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = targetUrl;
-                messages[0].previewImageUrl = targetUrl;
+                messages[0] = messageBuilder.image(targetUrl);
                 break;
 
             case 'HENTAI':
             case '變態':
             case '氣到':
                 targetUrl = rand.getFromArray(hentaiArray);
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = targetUrl;
-                messages[0].previewImageUrl = targetUrl;
-
+                messages[0] = messageBuilder.image(targetUrl);
                 break;
 
             //STICKER Part
             //STICKER Part
             case 'CC':
-                messages[0].type = 'sticker';   
-                messages[0].packageId = "3";
-                messages[0].stickerId = "181";
+                messages[0] = messageBuilder.sticker(3, 181);
                 break;
         
             case '屁':  case '嗆屁嗆': case 'PU':
-                messages[0].type = 'sticker';
-                messages[0].packageId = "2";
-                messages[0].stickerId = "177";
+                messages[0] = messageBuilder.sticker(2, 177);
                 break;
 
             case 'UCCU':
