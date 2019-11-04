@@ -480,7 +480,6 @@ exports.handler = function (req, res) {
 
             case '嘻':
                 var randString = '高層嘻' + lib.getEmoji('0x10008C');
-
                 messages[0].text = randString;
                 // messages[0].text = chokeString(randString);
                 break;
@@ -595,15 +594,11 @@ exports.handler = function (req, res) {
                 break;
 
             case 'UCCU':
-                messages[0].type = 'sticker';   
-                messages[0].packageId = "2";
-                messages[0].stickerId = "163";
+                messages[0] = messageBuilder.sticker(2, 163);
                 break;
             
             case '崩潰':
-                messages[0].type = 'sticker';   
-                messages[0].packageId = "1";
-                messages[0].stickerId = "105";
+                messages[0] = messageBuilder.sticker(1,105);
                 break;
 
             case 'CRY':
@@ -612,15 +607,11 @@ exports.handler = function (req, res) {
 
             case '辣雞':
             case 'LAJI':
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/yCg7UDi.png';
-                messages[0].previewImageUrl = 'https://i.imgur.com/yCg7UDi.png';
+                messages[0] = messageBuilder.image('https://i.imgur.com/yCg7UDi.png');
                 break;
             
             case '帥':
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/oCa2Fmh.jpg';
-                messages[0].previewImageUrl = 'https://i.imgur.com/oCa2Fmh.jpg';
+                messages[0] = messageBuilder.image('https://i.imgur.com/oCa2Fmh.jpg');
                 break;
 
             default:
