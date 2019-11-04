@@ -292,27 +292,19 @@ exports.handler = function (req, res) {
 
             case '成龍':
             case 'JACKIECHAN':
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/UAuai2P.png';
-                messages[0].previewImageUrl = 'https://i.imgur.com/UAuai2P.png';
+                messages[0] = messageBuilder.image('https://i.imgur.com/UAuai2P.png');
                 break;
 
             case 'TV': case '4K': case 'HDR': case 'SONY':
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/Xl2kijL.png';
-                messages[0].previewImageUrl = 'https://i.imgur.com/Xl2kijL.png';
+                messages[0] = messageBuilder.image('https://i.imgur.com/Xl2kijL.png');
                 break;
     
             case 'PEPE':
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg';
-                messages[0].previewImageUrl = 'https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg';
+                messages[0] = messageBuilder.image('https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg');
                 break;
 
              case 'HIT':
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/Z4UAjkp.png';
-                messages[0].previewImageUrl = 'https://i.imgur.com/Z4UAjkp.png';
+                messages[0] = messageBuilder.image('https://i.imgur.com/Z4UAjkp.png');
                 break;
 
             case 'POOR':
