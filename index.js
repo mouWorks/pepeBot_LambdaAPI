@@ -11,6 +11,7 @@ const EXPORT_PATH = 'pepebot/';
 // load libraries
 const rand = require('./libs/rand.js');
 const lib = require('./libs/lib.js');
+const messageBuilder = require('./libs/message.js');
 
 //Extract Lists - add more data here if needed.
 const LeoArray = require('data/_LeoArray.json');
@@ -436,9 +437,11 @@ exports.handler = function (req, res) {
 
             case 'BAD':
             case '壞':
-                messages[0].type = 'image';
-                messages[0].originalContentUrl = 'https://i.imgur.com/nV3P7dt.png';
-                messages[0].previewImageUrl = 'https://i.imgur.com/nV3P7dt.png';
+                messages[0] = messageBuilder.imageFormat('https://i.imgur.com/nV3P7dt.png');
+                //
+                // messages[0].type = 'image';
+                // messages[0].originalContentUrl = 'https://i.imgur.com/nV3P7dt.png';
+                // messages[0].previewImageUrl = 'https://i.imgur.com/nV3P7dt.png';
                 break;
 
             case '親密度':
@@ -483,7 +486,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '財':
-                var randString = '里奧今天是不是又崩了';
+                var randString = '里奧今天是不是又崩了 !?';
                 messages[0].text = randString;
 
                 // messages[0].text = chokeString(randString);
