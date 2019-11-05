@@ -523,7 +523,7 @@ exports.handler = function (req, res) {
 
             case 'FUCKYOU':
                 targetUrl = rand.getFromArray(FuckArray);
-                messages[0] = messageBuilder.imageFormat(targetUrl);
+                messages[0] = messageBuilder.image(targetUrl);
                 break;
 
             case 'WORK':
