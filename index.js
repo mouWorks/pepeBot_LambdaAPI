@@ -496,14 +496,16 @@ exports.handler = function (req, res) {
                 var intimacy = rand.getNumber(0, limit);
 
                 if(intimacy > 9500){ //Means you are really lucky;
-                    intimacy = ' Overflow! 已達上限 ! 大家快逃啊' + lib.getEmoji('0x1000A4');
+                    intimacy = ' Overflow 爆惹! 大家快逃啊' + lib.getEmoji('0x1000A4');
                 }
 
                 if(intimacy < 500){ //Means you are really shitty;
                     intimacy = ' 太低 無法偵測 ';
                 }
+                // messages[0].text = '`' + speaker + '` 今日 ' + msg + ' `' + intimacy + '`';
 
-                messages[0].text = '`' + speaker + '` 今日 ' + msg + ' `' + intimacy + '`';
+                let another_title = speaker + '的' + msg + '為:';
+                messages[0] = messageBuilder.badge('Pepe Algorithm', another_title, intimacy, 'OMG !');
                 break;
 
             case '神智':
