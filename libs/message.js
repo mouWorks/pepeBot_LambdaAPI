@@ -53,7 +53,7 @@ function Message()
                                 "margin": "lg"
                             },
                         ],
-                        "backgroundColor": "#27ACB2",
+                        "backgroundColor": "#0080cc",
                         "paddingTop": "19px",
                         "paddingAll": "12px",
                         "paddingBottom": "16px"
