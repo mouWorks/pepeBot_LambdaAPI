@@ -1,0 +1,75 @@
+version: 2.1
+
+orbs:
+  slack: circleci/slack@3.4.0
+  aws-cli: circleci/aws-cli@0.1.16
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:12.9
+
+    working_directory: ~/Pepebot-Lambda
+    executor: aws-cli/default
+
+    steps:
+      - checkout
+      - aws-cli/setup
+
+      - run:
+          name: check AWS Cli env
+          command: aws --version
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run:
+          name: Install dependencies
+          command: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: Show Current Location
+          command: pwd
+
+      - run:
+          name: Compile TypeScript to JavaScript
+          command: npm run build
+
+      # Zip info
+      # -r : directory
+      # -1 : faster Zip
+      # -q : quiet
+      - run:
+          name: Zip the Folder
+          command: -r1q code.zip . -x *.git*
+
+      - run:
+          name: Update Lamdbda w/AWS Cli
+          command: aws lambda update-function-code --zip-file=fileb://code.zip --region=us-west-2 --function-name=PepeBot
+
+      - slack/status:
+          channel: 'circle_ci'
+          fail_only: true
+          failure_message: "PepeBot Lambda Update fail!!"
+          webhook: ${SLACK_WEBHOOK} # Optional: Enter a specific webhook here or the default will use $SLACK_WEBHOOK
+
+      - slack/notify:
+          channel: 'circle_ci'
+          title: "PepeBot Deploy完成"
+          message: "Deployed by CircleCI"
+          color: "#42e2f4" # Optional: Assign custom colors for each notification
+          webhook: ${SLACK_WEBHOOK} # Optional: Enter a specific webhook here or the default will use $SLACK_WEBHOOK
+
+workflows:
+  version: 2.1
+  build_and_auto_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
