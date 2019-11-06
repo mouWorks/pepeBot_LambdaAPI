@@ -24,8 +24,10 @@ function Message()
     //特殊的badge訊息
     function flexBadge(flexMessage, title, Highlight, messageBelow){
 
+
+
         flexMessage = 'Pepe讚讚';
-        title = 'mou戰鬥力為:';
+        // title = 'mou戰鬥力為:';
         // Highlight = '9214';
         // messageBelow = '';
 
@@ -41,7 +43,7 @@ function Message()
                         "contents": [
                             {
                                 "type": "text",
-                                "text": title,
+                                "text": title.toString(),
                                 "color": "#ffffff",
                                 "align": "start",
                                 "size": "md",

@@ -518,8 +518,8 @@ exports.handler = function (req, res) {
                     iq = '神智為 0!';
                 }
 
-                // let small_title = speaker;
-                messages[0] = messageBuilder.badge('PePeAI', speaker.toString(), iq.toString(), '敢質疑？');
+                let small_title = speaker + '的' + msg + '為:';
+                messages[0] = messageBuilder.badge('PePeAI', small_title, iq.toString(), '敢質疑？');
 
                 // messages[0].text = '`' + speaker + '` 今日 ' + msg + ' `' + iq + '`';
                 break;
