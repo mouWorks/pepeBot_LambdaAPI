@@ -518,7 +518,10 @@ exports.handler = function (req, res) {
                     iq = '神智為 0!';
                 }
 
-                messages[0].text = '`' + speaker + '` 今日 ' + msg + ' `' + iq + '`';
+                var title = '`' + speaker + '` 今日 ' + msg;
+                messages[0] = messageBuilder.badge('PePeAI', title, iq, '敢質疑？');
+
+                // messages[0].text = '`' + speaker + '` 今日 ' + msg + ' `' + iq + '`';
                 break;
 
             case 'FUCKYOU':

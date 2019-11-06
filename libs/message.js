@@ -21,14 +21,76 @@ function Message()
         };
     }
 
-
-    
-
-
+    //特殊的badge訊息
+    function flexBadge(flexMessage, title, Highlight, messageBelow){
+        return { "type": "flex",
+            "altText": flexMessage,
+            "contents":
+                {
+                    "type": "bubble",
+                    "size": "small",
+                    "header": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": title,
+                                "color": "#ffffff",
+                                "align": "start",
+                                "size": "md",
+                                "gravity": "center"
+                            },
+                            {
+                                "type": "text",
+                                "text": Highlight,
+                                "color": "#ffffff",
+                                "align": "start",
+                                "size": "lg",
+                                "gravity": "center",
+                                "margin": "lg"
+                            },
+                        ],
+                        "backgroundColor": "#27ACB2",
+                        "paddingTop": "19px",
+                        "paddingAll": "12px",
+                        "paddingBottom": "16px"
+                    },
+                    "body": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "我大pepe尼感嘴?",
+                                        "color": "#8C8C8C",
+                                        "size": "sm",
+                                        "wrap": true
+                                    }
+                                ],
+                                "flex": 1
+                            }
+                        ],
+                        "spacing": "md",
+                        "paddingAll": "12px"
+                    },
+                    "styles": {
+                        "footer": {
+                            "separator": false
+                        }
+                    }
+                }
+        };
+    }
 
     return {
         image : imageFormat,
-        sticker: stickerFormat
+        sticker: stickerFormat,
+        badge: flexBadge
     }
 }
 module.exports = new Message();
