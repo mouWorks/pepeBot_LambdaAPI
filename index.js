@@ -496,7 +496,7 @@ exports.handler = function (req, res) {
                 var intimacy = rand.getNumber(0, limit);
 
                 if(intimacy > 9500){ //Means you are really lucky;
-                    intimacy = ' Overflow 爆惹! 大家快逃啊' + lib.getEmoji('0x1000A4');
+                    intimacy = ' OVERFLOW!!! ';
                 }
 
                 if(intimacy < 500){ //Means you are really shitty;
