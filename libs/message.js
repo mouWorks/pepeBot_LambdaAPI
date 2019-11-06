@@ -23,9 +23,10 @@ function Message()
 
     //特殊的badge訊息
     function flexBadge(flexMessage, title, Highlight, messageBelow){
-        return { "type": "flex",
-            "altText": flexMessage,
-            "contents":
+        return {
+            type: "flex",
+            altText: flexMessage,
+            contents:
                 {
                     "type": "bubble",
                     "size": "small",
