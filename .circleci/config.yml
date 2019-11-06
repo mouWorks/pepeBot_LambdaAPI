@@ -41,7 +41,7 @@ jobs:
       # -q : quiet
       - run:
           name: Zip the Folder
-          command: -r1q code.zip . -x *.git*
+          command: -r1q code.zip .
 
       - run:
           name: Update Lamdbda w/AWS Cli
