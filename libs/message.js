@@ -24,9 +24,9 @@ function Message()
     //特殊的badge訊息
     function flexBadge(flexMessage, title, Highlight, messageBelow){
 
-        flexMessage = 'Pepe讚讚';
+        // flexMessage = 'Pepe讚讚';
         title = 'mou戰鬥力為:';
-        Highlight = '9213';
+        // Highlight = '9213';
         messageBelow = '';
 
         let msg = { "type": "flex",
