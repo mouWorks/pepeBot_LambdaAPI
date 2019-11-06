@@ -49,7 +49,7 @@ function Message()
                             },
                             {
                                 "type": "text",
-                                "text": '9214',
+                                "text": Highlight,
                                 "color": "#ffffff",
                                 "align": "start",
                                 "size": "lg",
@@ -72,7 +72,7 @@ function Message()
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "我大pepe尼感嘴?",
+                                        "text": messageBelow,
                                         "color": "#8C8C8C",
                                         "size": "sm",
                                         "wrap": true
@@ -93,7 +93,7 @@ function Message()
         };
 
         // msg.contents.header.contents[0].text = title;
-        msg.contents.header.contents[1].text = Highlight;
+        // msg.contents.header.contents[1].text = Highlight;
 
         console.log(msg);
         //Modify the Message above
