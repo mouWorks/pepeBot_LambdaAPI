@@ -519,7 +519,7 @@ exports.handler = function (req, res) {
                 }
 
                 // let small_title = speaker;
-                messages[0] = messageBuilder.badge('PePeAI', speaker, iq, '敢質疑？');
+                messages[0] = messageBuilder.badge('PePeAI', speaker.toString(), iq.toString(), '敢質疑？');
 
                 // messages[0].text = '`' + speaker + '` 今日 ' + msg + ' `' + iq + '`';
                 break;

@@ -26,8 +26,8 @@ function Message()
 
         flexMessage = 'Pepe讚讚';
         title = 'mou戰鬥力為:';
-        Highlight = '9214';
-        messageBelow = '';
+        // Highlight = '9214';
+        // messageBelow = '';
 
         var msg = { "type": "flex",
             "altText": flexMessage,
@@ -49,7 +49,7 @@ function Message()
                             },
                             {
                                 "type": "text",
-                                "text": Highlight,
+                                "text": '9214',
                                 "color": "#ffffff",
                                 "align": "start",
                                 "size": "lg",
@@ -91,6 +91,9 @@ function Message()
                     }
                 }
         };
+
+        // msg.contents.header.contents[0].text = title;
+        msg.contents.header.contents[1].text = Highlight;
 
         console.log(msg);
         //Modify the Message above
