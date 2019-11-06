@@ -36,7 +36,7 @@ function Message()
                         "contents": [
                             {
                                 "type": "text",
-                                "text": title,
+                                "text": "WhatTheF?",
                                 "color": "#ffffff",
                                 "align": "start",
                                 "size": "md",

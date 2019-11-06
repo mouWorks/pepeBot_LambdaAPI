@@ -18,7 +18,7 @@ env:
   - secure: mEYA3Gz9wN2nADkElcX7DtTN3BqBXo4+AQJvaIwlFVqmP4COrtoHw/VzdqA5482k0+xbbFmEfsE6dYz9DfMrlstrh96DS/ZhfrVcG8XerJIrFsyX0QWXFGTUPDRd/5403zmixcmbqy0PYlLej7MlOWKZwPlEbOn+R8l9tFvJ67eFCQi3jyl5cEOhND7Rfd0dnG0U6/5CsTTujyTSluQ+kMCen6OwEdsdGOqf8GR7gRUNeyuSGUrZVhCrD63S1TsQ08oLuJzAFWi/9uscugnO/ef4C4nOQnJ2WJLpBGRsUDnMnfOlkNDoJlo5OOUZA7+7b+Io9BW0mR99tfgZrHf4YVhjv6RWYv4mbCiGdi+Nuc3AZZWU5NegEAnEcrXWuJiooxQW3Ug8vKIl5EYyqkigPQ67Q8EmZy9U7eERRJpkHhcwNqToFsAiqPqmfI6sgb6V8ZXdMpgbqWY6uTi/qHB2HIxC+ApyLGOngqDQQ1jYRRNLY5k6+4trLR/9kw8GB6L1Pq9lFcFgE7be6UhVvLBAqzDCTGnUfIS1F4bulMD4JeHyr7ye92zQbM4ofsouBkRF7wEi2HfsnnAjO01GtHdcy5fpTmN+95AUKfoJjHWWCRdeVqwKz3O5Z8/G2FNYm+f5JAfdHAvlanLNIfm0VXswg6a74aNATGFZ+852ndm+uPk=
 branches:
   only:
-  - master
+  - master_backup
 before_install:
   - docker pull mesosphere/aws-cli
 #  - curl -o /usr/local/bin/aws https://raw.githubusercontent.com/mesosphere/aws-cli/master/aws.sh && chmod a+x /usr/local/bin/aws
