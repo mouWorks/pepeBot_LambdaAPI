@@ -29,7 +29,7 @@ function Message()
         // Highlight = '9213';
         messageBelow = '';
 
-        let msg = { "type": "flex",
+        var msg = { "type": "flex",
             "altText": flexMessage,
             "contents":
                 {
@@ -92,6 +92,7 @@ function Message()
                 }
         };
 
+        console.log(msg);
         //Modify the Message above
 
         return msg;
