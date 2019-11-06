@@ -21,6 +21,79 @@ function Message()
         };
     }
 
+    //BlackBeltTip
+    function flexTip(flexMessage, title, Highlight, messageBelow){
+
+        var msg = {
+            "type": "flex",
+            "altText": flexMessage.toString(),
+            "contents":
+                {
+                    "type": "bubble",
+                    "size": "full",
+                    "header": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": title.toString(),
+                                "color": "#ffffff",
+                                "align": "start",
+                                "size": "md",
+                                "gravity": "center"
+                            },
+                            {
+                                "type": "text",
+                                "text": Highlight.toString(),
+                                "color": "#ffffff",
+                                "align": "start",
+                                "size": "lg",
+                                "gravity": "center",
+                                "margin": "lg"
+                            },
+                        ],
+                        "backgroundColor": "#27ACB2",
+                        "paddingTop": "19px",
+                        "paddingAll": "12px",
+                        "paddingBottom": "16px"
+                    },
+                    "body": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": messageBelow.toString(),
+                                        "color": "#8C8C8C",
+                                        "size": "sm",
+                                        "wrap": true
+                                    }
+                                ],
+                                "flex": 1
+                            }
+                        ],
+                        "spacing": "md",
+                        "paddingAll": "12px"
+                    },
+                    "styles": {
+                        "footer": {
+                            "separator": false
+                        }
+                    }
+                }
+        };
+
+        console.log(msg);
+        //Modify the Message above
+
+        return msg;
+    }
+
     //特殊的badge訊息
     function flexBadge(flexMessage, title, Highlight, messageBelow){
 
@@ -99,7 +172,8 @@ function Message()
     return {
         image : imageFormat,
         sticker: stickerFormat,
-        badge: flexBadge
+        badge: flexBadge,
+        flexTip: flexTip
     }
 }
 module.exports = new Message();

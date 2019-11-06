@@ -27,6 +27,7 @@ const holanArray = require('data/_HolanArray.json');
 const lunchArray = require('data/_lunchArray.json');
 const friendArray = require('data/_friendArray');
 const manArray = require('data/_manArray.json');
+const tipArray = require('data/_tipArray.json');
 
 //怕的 EmojiCon
 const scaredEmojiArray = require('data/_scaredArray');
@@ -529,6 +530,11 @@ exports.handler = function (req, res) {
             case 'FUCKYOU':
                 targetUrl = rand.getFromArray(FuckArray);
                 messages[0] = messageBuilder.image(targetUrl);
+                break;
+
+            case 'TIP':
+                tipMessage = rand.getFromArray(tipArray);
+                messages[0] = messageBuilder.flexTip('BlackBeltTip', 'L30 BlackBeltTip:', tipMessage, '這樣你懂了嗎?');
                 break;
 
             case 'WORK':
