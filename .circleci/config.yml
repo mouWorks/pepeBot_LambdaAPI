@@ -35,10 +35,6 @@ jobs:
           name: Show Current Location
           command: pwd
 
-      - run:
-          name: Compile TypeScript to JavaScript
-          command: npm run build
-
       # Zip info
       # -r : directory
       # -1 : faster Zip
