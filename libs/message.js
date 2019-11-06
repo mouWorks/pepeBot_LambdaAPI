@@ -30,7 +30,7 @@ function Message()
             "contents":
                 {
                     "type": "bubble",
-                    "size": "full",
+                    "size": "mega",
                     "header": {
                         "type": "box",
                         "layout": "vertical",

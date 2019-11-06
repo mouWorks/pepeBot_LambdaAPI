@@ -497,7 +497,7 @@ exports.handler = function (req, res) {
                 var intimacy = rand.getNumber(0, limit);
 
                 if(intimacy > 9500){ //Means you are really lucky;
-                    intimacy = ' OVERFLOW!!! ';
+                    intimacy = 'OVERFLOW!';
                 }
 
                 if(intimacy < 500){ //Means you are really shitty;
