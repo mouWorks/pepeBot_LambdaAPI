@@ -24,15 +24,8 @@ function Message()
     //特殊的badge訊息
     function flexBadge(flexMessage, title, Highlight, messageBelow){
 
-
-
-        flexMessage = 'Pepe讚讚';
-        // title = 'mou戰鬥力為:';
-        // Highlight = '9214';
-        // messageBelow = '';
-
         var msg = { "type": "flex",
-            "altText": flexMessage,
+            "altText": flexMessage.toString(),
             "contents":
                 {
                     "type": "bubble",
@@ -51,7 +44,7 @@ function Message()
                             },
                             {
                                 "type": "text",
-                                "text": Highlight,
+                                "text": Highlight.toString(),
                                 "color": "#ffffff",
                                 "align": "start",
                                 "size": "lg",
@@ -74,7 +67,7 @@ function Message()
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": messageBelow,
+                                        "text": messageBelow.toString(),
                                         "color": "#8C8C8C",
                                         "size": "sm",
                                         "wrap": true
