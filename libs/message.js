@@ -29,7 +29,7 @@ function Message()
             contents:
                 {
                     "type": "bubble",
-                    "size": "small",
+                    "size": "micro",
                     "header": {
                         "type": "box",
                         "layout": "vertical",
