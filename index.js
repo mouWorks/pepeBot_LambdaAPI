@@ -534,7 +534,7 @@ exports.handler = function (req, res) {
 
             case 'TIP':
                 tipMessage = rand.getFromArray(tipArray);
-                messages[0] = messageBuilder.flexTip('BlackBeltTip', 'L30 BlackBeltTip:', tipMessage, '這樣你懂了嗎?');
+                messages[0] = messageBuilder.flexTip('Black Belt Tip', 'Dev Black Belt Tip:', tipMessage, '這樣你懂了嗎?');
                 break;
 
             case 'WORK':
