@@ -410,7 +410,9 @@ exports.handler = function (req, res) {
                     who = speaker; //Force cc
                 }
 
-                messages[0].text = who + '和腎液親密度 `+' + intimacy + '`';
+                let intimacyTitle = who + '和腎液親密度';
+                messages[0] = messageBuilder.badge('PepeAI', intimacyTitle, intimacy, '親密度++!');
+                // messages[0].text = who + '和腎液親密度 `+' + intimacy + '`';
                 break;
 
             case '親密度X':
