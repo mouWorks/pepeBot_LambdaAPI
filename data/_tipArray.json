@@ -1,10 +1,11 @@
 [
   "git push origin master --f",
-  "不寫測試, 測試就不會失敗",
+  "不寫測試的話, Test絕對Pass!",
   "上班就要更新Mac OS",
   "線上:do-release-upgrade",
   "九十九趴 我不開大 我不開大",
   "使用 f1-micro爆發模式",
   "ignore composer.json",
-  "cdk destroy! "
+  "cdk destroy! ",
+  "開一台UltraMem機器"
 ]
