@@ -27,13 +27,23 @@ jobs:
       - run:
           name: Install dependencies
           command: npm install
+
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+
       - run:
           name: Show Current Location
           command: pwd
+
+      - run:
+          name: Install Mocha
+          command: sudo npm install mocha -g
+
+      - run:
+          name: Run the Test
+          command: make test
 
       # Zip info
       # -r : directory
