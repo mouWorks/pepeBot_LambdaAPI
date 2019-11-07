@@ -410,8 +410,8 @@ exports.handler = function (req, res) {
                     who = speaker; //Force cc
                 }
 
-                let intimacyTitle = who + '和腎液親密度';
-                messages[0] = messageBuilder.badge('PepeAI', intimacyTitle, intimacy, '親密度++!');
+                let intimacyTitle = who + '&腎液親密度:';
+                messages[0] = messageBuilder.badge('PepeAI', intimacyTitle, intimacy, '親密度又增加拉!');
                 // messages[0].text = who + '和腎液親密度 `+' + intimacy + '`';
                 break;
 
