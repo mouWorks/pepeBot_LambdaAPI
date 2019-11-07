@@ -7,5 +7,6 @@
   "使用 f1-micro爆發模式",
   "ignore composer.json",
   "cdk destroy! ",
-  "開一台UltraMem機器"
+  "開一台UltraMem機器",
+  "絕不提升VM效能"
 ]
