@@ -585,11 +585,11 @@ exports.handler = function (req, res) {
 
             default:
 
-                // Shut this up: too loud
-                if(msg.length == 2){
-                    messages[0].text = msg + '...嘻';
-                    break;
-                }
+                // Shut this up: too loud - enough la !
+                // if(msg.length == 2){
+                //     messages[0].text = msg + '...嘻';
+                //     break;
+                // }
 
                 needToReply = false; //這個表示中關鍵字 才要回
                 //messages[0].text = msg;
