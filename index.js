@@ -244,8 +244,11 @@ exports.handler = function (req, res) {
             case 'FIRE':
                 messages[0].text = rand.getFromArray(FireArray);
                 break;
+
+            case 'KING':
             case '王':
-                messages[0].text = "`Zuvio CDN 之父`";
+                //messages[0].text = "`Zuvio CDN 之父`";
+                messages[0] = messageBuilder.image('https://i.imgur.com/BTHA8Wp.png');
                 break;
 
             case 'CI':
@@ -384,10 +387,6 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.image( 'https://i.imgur.com/1JtJplI.jpg');
                 break;
 
-            case 'LEO打':
-                messages[0] = messageBuilder.image( 'https://i.imgur.com/BOZzmrA.png');
-                break;
-
             case 'SSD':
                 messages[0] = messageBuilder.image( rand.getFromArray(ssdArray));
                 break;
@@ -395,10 +394,6 @@ exports.handler = function (req, res) {
             case 'BAD':
             case '壞':
                 messages[0] = messageBuilder.image('https://i.imgur.com/nV3P7dt.png');
-                //
-                // messages[0].type = 'image';
-                // messages[0].originalContentUrl = 'https://i.imgur.com/nV3P7dt.png';
-                // messages[0].previewImageUrl = 'https://i.imgur.com/nV3P7dt.png';
                 break;
 
             case '親密度':
