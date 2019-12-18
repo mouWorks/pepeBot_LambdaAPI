@@ -246,9 +246,12 @@ exports.handler = function (req, res) {
                 break;
 
             case 'KING':
-            case '王':
                 //messages[0].text = "`Zuvio CDN 之父`";
                 messages[0] = messageBuilder.image('https://i.imgur.com/BTHA8Wp.png');
+                break;
+
+            case '王':
+                messages[0].text = "`Wemo 救世主`";
                 break;
 
             case 'CI':
