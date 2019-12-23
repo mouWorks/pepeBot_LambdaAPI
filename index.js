@@ -107,7 +107,7 @@ exports.handler = function (req, res) {
 
         }//endif;
 
-        var deadline = 'January 6 2020 09:30:00 GMT+0800'; // Mou Wemo day!
+        var deadline = 'January 6 2020 10:00:00 GMT+0800'; // Mou Wemo day!
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
         var mouOnboardLine = 'April 1 2019 09:30:00 GMT+0800'; //Leo's Wedding
 
