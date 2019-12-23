@@ -107,7 +107,7 @@ exports.handler = function (req, res) {
 
         }//endif;
 
-        var deadline = 'June 1 2019 08:00:00 GMT+0800'; //Leo's great Family Day !
+        var deadline = 'February 6 2020 09:30:00 GMT+0800'; // Mou Wemo day!
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
         var mouOnboardLine = 'April 1 2019 09:30:00 GMT+0800'; //Leo's Wedding
 
@@ -251,8 +251,11 @@ exports.handler = function (req, res) {
                 break;
 
             case '王':
-                messages[0].text = "`Wemo 救世主`";
+                // messages[0].text = "`Wemo 救世主`";
+                countdownJson = lib.getTimeRemaining(deadline);
+                messages[0].text = ' *吾王降臨* | 距離 `王降臨 WEMO 拯救世界` 還有: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
                 break;
+                // break;
 
             case 'CI':
                 messages[0].text = "`CICC`";
