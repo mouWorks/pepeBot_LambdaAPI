@@ -21,6 +21,78 @@ function Message()
         };
     }
 
+    //CountDown Badge
+    function flexCountDown(flexMessage, title, Highlight, messageBelow){
+
+        var msg = {
+            "type": "flex",
+            "altText": flexMessage.toString(),
+            "contents":
+                {
+                    "type": "bubble",
+                    "size": "mega",
+                    "header": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": title.toString(),
+                                "color": "#333333",
+                                "align": "start",
+                                "size": "md",
+                                "gravity": "center"
+                            },
+                            {
+                                "type": "text",
+                                "text": Highlight.toString(),
+                                "color": "#333333",
+                                "align": "start",
+                                "size": "lg",
+                                "gravity": "center",
+                                "margin": "lg"
+                            },
+                        ],
+                        "backgroundColor": "#ff9900",
+                        "paddingTop": "19px",
+                        "paddingAll": "12px",
+                        "paddingBottom": "16px"
+                    },
+                    "body": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": messageBelow.toString(),
+                                        "color": "#ffffff",
+                                        "size": "sm",
+                                        "wrap": true
+                                    }
+                                ],
+                                "flex": 1
+                            }
+                        ],
+                        "spacing": "md",
+                        "paddingAll": "12px"
+                    },
+                    "styles": {
+                        "footer": {
+                            "separator": false
+                        }
+                    }
+                }
+        };
+
+        console.log(msg);
+        //Modify the Message above
+
+        return msg;
+    }
     //BlackBeltTip
     function flexTip(flexMessage, title, Highlight, messageBelow){
 
@@ -173,7 +245,8 @@ function Message()
         image : imageFormat,
         sticker: stickerFormat,
         badge: flexBadge,
-        flexTip: flexTip
+        flexTip: flexTip,
+        flexCountDown: flexCountDown,
     }
 }
 module.exports = new Message();

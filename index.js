@@ -107,6 +107,7 @@ exports.handler = function (req, res) {
 
         }//endif;
 
+        var zuvioDeadLine = 'July 1 2020 10:00:00 GMT+0800'; // Mou Wemo day!
         var deadline = 'January 6 2020 10:00:00 GMT+0800'; // Mou Wemo day!
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
         var mouOnboardLine = 'April 1 2019 09:30:00 GMT+0800'; //Leo's Wedding
@@ -177,9 +178,14 @@ exports.handler = function (req, res) {
         //Text is switch to UpperCase()
         switch(msg){
             case 'Z':
-                var limit = 15;
-                var randomNumber = rand.getValue(15);
-                messages[0].text = "Z".repeat(randomNumber) + 'uvio起來!';
+                // var limit = 15;
+                // var randomNumber = rand.getValue(15);
+                // messages[0].text = "Z".repeat(randomNumber) + 'uvio起來!';
+
+                zuvioCountdownJson = lib.getTimeRemaining(zuvioDeadLine);
+                let tipMessage = zuvioCountdownJson.days + ' 天 ' + zuvioCountdownJson.hours + ' 小時 ' + zuvioCountdownJson.minutes + ' 分 ' + zuvioCountdownJson.seconds + ' 秒' ;
+                messages[0] = messageBuilder.flexCountDown('我Z末日倒數:', '我Z末日倒數剩下:', tipMessage, '你各位抓緊拉');
+
                 break;
 
             case '6':
@@ -308,7 +314,7 @@ exports.handler = function (req, res) {
             case 'TV': case '4K': case 'HDR': case 'SONY':
                 messages[0] = messageBuilder.image('https://i.imgur.com/Xl2kijL.png');
                 break;
-    
+
             case 'PEPE':
                 messages[0] = messageBuilder.image('https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg');
                 break;
@@ -376,7 +382,7 @@ exports.handler = function (req, res) {
             case 'OKAY':
                 messages[0] = messageBuilder.image( rand.getFromArray(okayArray));
                 break;
-                
+
             case 'LEO嗆':
             case '嗆':
                 messages[0] = messageBuilder.image( rand.getFromArray(chokeArray));
@@ -559,7 +565,7 @@ exports.handler = function (req, res) {
             case 'CC':
                 messages[0] = messageBuilder.sticker(3, 181);
                 break;
-        
+
             case '屁':  case '嗆屁嗆': case 'PU':
                 messages[0] = messageBuilder.sticker(2, 177);
                 break;
@@ -567,7 +573,7 @@ exports.handler = function (req, res) {
             case 'UCCU':
                 messages[0] = messageBuilder.sticker(2, 163);
                 break;
-            
+
             case '崩潰':
                 messages[0] = messageBuilder.sticker(1,105);
                 break;
@@ -580,7 +586,7 @@ exports.handler = function (req, res) {
             case 'LAJI':
                 messages[0] = messageBuilder.image('https://i.imgur.com/yCg7UDi.png');
                 break;
-            
+
             case '帥':
                 messages[0] = messageBuilder.image('https://i.imgur.com/oCa2Fmh.jpg');
                 break;
@@ -627,7 +633,7 @@ exports.handler = function (req, res) {
                 uri: "https://api.line.me/v2/bot/message/reply",
                 headers: {
                   "Content-type": "application/json; charset=UTF-8",
-                  "Authorization": " Bearer " + ChannelAccessToken 
+                  "Authorization": " Bearer " + ChannelAccessToken
                 },
                 json: true,
                 body: {
@@ -635,7 +641,7 @@ exports.handler = function (req, res) {
                   messages
                 }
             };
-    
+
             return rp(options) //Making the POST call.
             .then(function (response) {
                 console.log("Success : " + response);
