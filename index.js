@@ -184,7 +184,7 @@ exports.handler = function (req, res) {
 
                 zuvioCountdownJson = lib.getTimeRemaining(zuvioDeadLine);
                 let tipMessage = zuvioCountdownJson.days + ' 天 ' + zuvioCountdownJson.hours + ' 小時 ' + zuvioCountdownJson.minutes + ' 分 ' + zuvioCountdownJson.seconds + ' 秒' ;
-                messages[0] = messageBuilder.flexCountDown('我Z末日倒數:', '我Z末日倒數剩下:', tipMessage, '你各位抓緊拉');
+                messages[0] = messageBuilder.flexCountDown('我Z末日倒數:'+tipMessage, '[我Z末日] 倒數剩下:', tipMessage, 'Are you fking ready?');
 
                 break;
 

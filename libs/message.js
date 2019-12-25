@@ -69,7 +69,7 @@ function Message()
                                     {
                                         "type": "text",
                                         "text": messageBelow.toString(),
-                                        "color": "#ffffff",
+                                        "color": "#333333",
                                         "size": "sm",
                                         "wrap": true
                                     }
