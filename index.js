@@ -587,10 +587,6 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.image('https://i.imgur.com/yCg7UDi.png');
                 break;
 
-            case '帥':
-                messages[0] = messageBuilder.image('https://i.imgur.com/oCa2Fmh.jpg');
-                break;
-
             default:
 
                 // Shut this up: too loud - enough la !
