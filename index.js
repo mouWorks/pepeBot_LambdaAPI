@@ -257,15 +257,13 @@ exports.handler = function (req, res) {
                 break;
 
             case '王':
-                // messages[0].text = "`Wemo 救世主`";
-                countdownJson = lib.getTimeRemaining(deadline);
-                if (countdownJson.type == "before") {
-                    messages[0].text = ' *吾王降臨* | 距離 `王降臨 WEMO 拯救世界` 還有: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
+                let countdown = lib.getTimeRemaining(deadline);
+                if (countdown.type == "before") {
+                    messages[0].text = ' *吾王降臨* | 距離 `王降臨 WEMO 拯救世界` 還有: ' + countdown.days + '天 '+ countdown.hours+ ' 小時 ' +countdown.minutes+ ' 分' + countdown.seconds +'秒, get ready!';
                 } else {
-                    messages[0].text = ' *吾王降臨* | `王降臨 WEMO 統治世界` 已經: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, 向骨王獻出你的忠誠吧!';
+                    messages[0].text = ' *吾王降臨* | `王降臨 WEMO 統治世界` 已經: ' + countdown.days + '天 '+ countdown.hours+ ' 小時 ' +countdown.minutes+ ' 分' + countdown.seconds +'秒, 向骨王獻出你的忠誠吧!';
                 }
                 break;
-                // break;
 
             case 'CI':
                 messages[0].text = "`CICC`";
@@ -286,12 +284,12 @@ exports.handler = function (req, res) {
                 // }
 
             //Go fetch time.
-            //     countdownJson = getTimeRemaining(deadline);
-                // messages[0].text = ' *中國端子節* | 距離 `L30` の `家.庭.日!` 還有: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
+            //     countdown = getTimeRemaining(deadline);
+                // messages[0].text = ' *中國端子節* | 距離 `L30` の `家.庭.日!` 還有: ' + countdown.days + '天 '+ countdown.hours+ ' 小時 ' +countdown.minutes+ ' 分' + countdown.seconds +'秒, get ready!';
                 // break;
             // case 'G':
-            //     countdownJson = getTimeRemaining(friedGdeadline);
-            //     messages[0].text = '距離G排時間還有 ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, 想ㄘ!';
+            //     countdown = getTimeRemaining(friedGdeadline);
+            //     messages[0].text = '距離G排時間還有 ' + countdown.days + '天 '+ countdown.hours+ ' 小時 ' +countdown.minutes+ ' 分' + countdown.seconds +'秒, 想ㄘ!';
             //     break;
             // messages[0].text = '還爽啊 `Mou` , 開始上班啦，懂？！';
             // break;
