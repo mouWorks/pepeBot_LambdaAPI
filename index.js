@@ -107,7 +107,7 @@ exports.handler = function (req, res) {
 
         }//endif;
 
-        var zuvioDeadLine = 'July 1 2020 10:00:00 GMT+0800'; // Mou Wemo day!
+        var zuvioDeadLine = 'July 10 2020 09:30:00 GMT+0800'; // Mou Wemo day!
         var deadline = 'January 6 2020 10:00:00 GMT+0800'; // Mou Wemo day!
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
         var mouOnboardLine = 'April 1 2019 09:30:00 GMT+0800'; //Leo's Wedding
@@ -182,9 +182,15 @@ exports.handler = function (req, res) {
                 // var randomNumber = rand.getValue(15);
                 // messages[0].text = "Z".repeat(randomNumber) + 'uvio起來!';
 
-                zuvioCountdownJson = lib.getTimeRemaining(zuvioDeadLine);
-                let tipMessage = zuvioCountdownJson.days + ' 天 ' + zuvioCountdownJson.hours + ' 小時 ' + zuvioCountdownJson.minutes + ' 分 ' + zuvioCountdownJson.seconds + ' 秒' ;
-                messages[0] = messageBuilder.flexCountDown('我Z末日倒數:'+tipMessage, '[我Z末日] 倒數剩下:', tipMessage, 'Are you fking ready?');
+                countdown = lib.getTimeRemaining(zuvioDeadLine);
+
+                let tipMessage = countdown.days + ' 天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分 ' + countdown.seconds + ' 秒' ;
+
+                if (countdown.type == "before") {
+                    messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[我Z保固] 還剩剩下:', tipMessage, 'How dare you?');
+                } else {
+                    messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[我Z保固] 已過期:', tipMessage, 'How dare you?');
+                }
 
                 break;
 
