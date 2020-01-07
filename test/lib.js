@@ -19,6 +19,31 @@ describe('#libs/lib.getWorkedDate', () => {
     });
 });
 
+describe('#libs/lib.getTimeRemaining', () => {
+    // 倒數計時
+    it('倒數計時取得日期應大於等於0', done => {
+        var deadline = 'January 6 2020 10:00:00 GMT+0800';
+        let v = lib.getTimeRemaining(deadline);
+        v.days.should.Number();
+        v.days.should.greaterThan(0);
+        done();
+    });
+
+    it('倒數計時取得過去時間type應為already', done => {
+        var deadline = 'January 6 2020 10:00:00 GMT+0800';
+        let v = lib.getTimeRemaining(deadline);
+        v.type.should.eqls("after");
+        done();
+    });
+
+    it('倒數計時取得未來時間type應為before', done => {
+        var deadline = 'January 6 2040 10:00:00 GMT+0800';
+        let v = lib.getTimeRemaining(deadline);
+        v.type.should.eqls("before");
+        done();
+    });
+});
+
 describe('#libs/lib.recognizePeople', () => {
     it('取得 speaker', done => {
         let v = lib.recognizePeople("U2cdda2ee76097f9021bb68e70feffdb4");

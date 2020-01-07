@@ -51,13 +51,26 @@ function Lib()
         return diff_days + 1;
     }
 
-    function getTimeRemaining(endtime){
-        var t = Date.parse(endtime) - Date.parse(new Date());
-        var seconds = Math.floor((t / 1000) % 60);
-        var minutes = Math.floor((t / 1000 / 60) % 60);
-        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    function getTimeRemaining(target_time){
+        let t_target = Date.parse(target_time);
+        let t_now = Date.parse(new Date());
+
+        let t = null;
+        let type = null;
+        if (t_target >= t_now) {
+            t = t_target - t_now;
+            type = 'before';
+        } else {
+            t = t_now - t_target;
+            type = 'after';
+        }
+
+        let seconds = Math.floor((t / 1000) % 60);
+        let minutes = Math.floor((t / 1000 / 60) % 60);
+        let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        let days = Math.floor(t / (1000 * 60 * 60 * 24));
         return {
+            'type' : type,
             'total': t,
             'days': days,
             'hours': hours,

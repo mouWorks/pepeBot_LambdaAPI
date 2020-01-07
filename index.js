@@ -259,7 +259,11 @@ exports.handler = function (req, res) {
             case '王':
                 // messages[0].text = "`Wemo 救世主`";
                 countdownJson = lib.getTimeRemaining(deadline);
-                messages[0].text = ' *吾王降臨* | 距離 `王降臨 WEMO 拯救世界` 還有: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
+                if (countdownJson.type == "before") {
+                    messages[0].text = ' *吾王降臨* | 距離 `王降臨 WEMO 拯救世界` 還有: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, get ready!';
+                } else {
+                    messages[0].text = ' *吾王降臨* | `王降臨 WEMO 統治世界` 已經: ' + countdownJson.days + '天 '+ countdownJson.hours+ ' 小時 ' +countdownJson.minutes+ ' 分' + countdownJson.seconds +'秒, 向骨王獻出你的忠誠吧!';
+                }
                 break;
                 // break;
 
