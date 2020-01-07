@@ -187,7 +187,7 @@ exports.handler = function (req, res) {
                 let tipMessage = countdown.days + ' 天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分 ' + countdown.seconds + ' 秒' ;
 
                 if (countdown.type == "before") {
-                    messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[我Z保固] 還剩剩下:', tipMessage, 'How dare you?');
+                    messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[我Z保固] 還剩下:', tipMessage, 'How dare you?');
                 } else {
                     messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[我Z保固] 已過期:', tipMessage, 'How dare you?');
                 }
