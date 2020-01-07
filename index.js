@@ -182,7 +182,7 @@ exports.handler = function (req, res) {
                 // var randomNumber = rand.getValue(15);
                 // messages[0].text = "Z".repeat(randomNumber) + 'uvio起來!';
 
-                countdown = lib.getTimeRemaining(zuvioDeadLine);
+                var countdown = lib.getTimeRemaining(zuvioDeadLine);
 
                 let tipMessage = countdown.days + ' 天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分 ' + countdown.seconds + ' 秒' ;
 
