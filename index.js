@@ -176,13 +176,14 @@ exports.handler = function (req, res) {
         needToReply = true;
 
         //Text is switch to UpperCase()
+        var countdown = null;
         switch(msg){
             case 'Z':
                 // var limit = 15;
                 // var randomNumber = rand.getValue(15);
                 // messages[0].text = "Z".repeat(randomNumber) + 'uvio起來!';
 
-                var countdown = lib.getTimeRemaining(zuvioDeadLine);
+                countdown = lib.getTimeRemaining(zuvioDeadLine);
 
                 let tipMessage = countdown.days + ' 天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分 ' + countdown.seconds + ' 秒' ;
 
@@ -263,7 +264,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '王':
-                let countdown = lib.getTimeRemaining(deadline);
+                countdown = lib.getTimeRemaining(deadline);
                 if (countdown.type == "before") {
                     messages[0].text = ' *吾王降臨* | 距離 `王降臨 WEMO 拯救世界` 還有: ' + countdown.days + '天 '+ countdown.hours+ ' 小時 ' +countdown.minutes+ ' 分' + countdown.seconds +'秒, get ready!';
                 } else {
