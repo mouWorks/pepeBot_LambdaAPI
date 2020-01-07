@@ -29,7 +29,7 @@ describe('#libs/lib.getTimeRemaining', () => {
         done();
     });
 
-    it('倒數計時取得過去時間type應為already', done => {
+    it('倒數計時取得過去時間type應為after
         var deadline = 'January 6 2020 10:00:00 GMT+0800';
         let v = lib.getTimeRemaining(deadline);
         v.type.should.eqls("after");
