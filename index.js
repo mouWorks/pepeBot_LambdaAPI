@@ -28,6 +28,7 @@ const lunchArray = require('data/_lunchArray.json');
 const friendArray = require('data/_friendArray');
 const manArray = require('data/_manArray.json');
 const tipArray = require('data/_tipArray.json');
+const koLienArray = require('data/_koLienArray');
 
 //怕的 EmojiCon
 const scaredEmojiArray = require('data/_scaredArray');
@@ -265,11 +266,7 @@ exports.handler = function (req, res) {
 
             case '王':
                 countdown = lib.getTimeRemaining(deadline);
-                if (countdown.type == "before") {
-                    messages[0].text = ' *吾王降臨* | 距離 `王降臨 WEMO 拯救世界` 還有: ' + countdown.days + '天 '+ countdown.hours+ ' 小時 ' +countdown.minutes+ ' 分' + countdown.seconds +'秒, get ready!';
-                } else {
-                    messages[0].text = ' *吾王降臨* | `王降臨 WEMO 統治世界` 已經: ' + countdown.days + '天 '+ countdown.hours+ ' 小時 ' +countdown.minutes+ ' 分' + countdown.seconds +'秒, 向骨王獻出你的忠誠吧!';
-                }
+                messages[0].text = ' *吾王降臨* | `王降臨 WEMO 統治世界` 已經: ' + countdown.days + '天 '+ countdown.hours+ ' 小時 ' +countdown.minutes+ ' 分' + countdown.seconds +'秒, 向骨王獻出你的忠誠吧!';
                 break;
 
             case 'CI':
@@ -300,6 +297,10 @@ exports.handler = function (req, res) {
             //     break;
             // messages[0].text = '還爽啊 `Mou` , 開始上班啦，懂？！';
             // break;
+
+            case '可憐': case '可憐哪':
+                messages[0] = messageBuilder.image(rand.getFromArray(koLienArray));
+                break;
 
             case 'M':
                 days = lib.getCountDownDate();
