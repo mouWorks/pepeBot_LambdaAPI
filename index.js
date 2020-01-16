@@ -298,9 +298,6 @@ exports.handler = function (req, res) {
             // messages[0].text = '還爽啊 `Mou` , 開始上班啦，懂？！';
             // break;
 
-            case '可憐': case '可憐哪':
-                messages[0] = messageBuilder.image(rand.getFromArray(koLienArray));
-                break;
 
             case 'M':
                 days = lib.getCountDownDate();
@@ -313,7 +310,11 @@ exports.handler = function (req, res) {
                 if(days <= 0){
                     messages[0].text = '` ♪ 與你相遇好幸運 可我已失去為你瘋狂挖坑的權利 ♬ ~ `';
                 }
+                break;
 
+
+            case '可憐': case '可憐哪':
+                messages[0] = messageBuilder.image(rand.getFromArray(koLienArray));
                 break;
 
             case '成龍':
