@@ -186,7 +186,9 @@ exports.handler = function (req, res) {
 
                 countdown = lib.getTimeRemaining(zuvioDeadLine);
 
-                let tipMessage = countdown.days + ' 天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分 ' + countdown.seconds + ' 秒' ;
+                //Rand and have some fun !!
+                let randomDays = rand.getNumber(1, countdown.days);
+                let tipMessage = randomDays + ' 天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分 ' + countdown.seconds + ' 秒' ;
 
                 if (countdown.type == "before") {
                     messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[我Z保固] 還剩下:', tipMessage, 'ko dare you?');
