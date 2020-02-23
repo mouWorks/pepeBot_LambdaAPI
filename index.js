@@ -187,7 +187,8 @@ exports.handler = function (req, res) {
                 countdown = lib.getTimeRemaining(zuvioDeadLine);
 
                 //Rand and have some fun !!
-                let randomDays = rand.getNumber(1, countdown.days);
+                // let randomDays = rand.getNumber(1, countdown.days);
+                let randomDays = countdown.days;  //Reveal actual date
                 let tipMessage = randomDays + ' 天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分 ' + countdown.seconds + ' 秒' ;
 
                 if (countdown.type == "before") {
