@@ -344,13 +344,18 @@ exports.handler = function (req, res) {
 
             case 'COME':
 
-                var randomNumber = rand.getValue(10);
+                var randomNumber = rand.getValue(20);
                 messages[0].type = 'text';
                 messages[0].text = "`誒你過來一下 " + "!".repeat(randomNumber) + "`";
 
                 if(randomNumber > 3){
-                    messages[0].text = "`誒你過來一下 過來一下 你他媽過來一下 !!!!!` ";
+                    messages[0].text = "`誒你過來一下 過來一下 操你媽過來一下 !!!!!` ";
                 }
+
+                if(randomNumber > 7){
+                    messages[0].text = "`不是啊 妳那個妳那個 ... 欸妳過來一下妳過來一下 操妳媽妳過來一下 !!!!!!!!` ";
+                }
+
                 break;
 
             case 'SCARE':
