@@ -344,9 +344,13 @@ exports.handler = function (req, res) {
 
             case 'COME':
 
-                var randomNumber = rand.getValue(7);
+                var randomNumber = rand.getValue(10);
                 messages[0].type = 'text';
                 messages[0].text = "`誒你過來一下 " + "!".repeat(randomNumber) + "`";
+
+                if(randomNumber > 3){
+                    messages[0].text = "`誒你過來一下 過來一下 你他媽過來一下 !!!!!` ";
+                }
                 break;
 
             case 'SCARE':
