@@ -29,6 +29,7 @@ const friendArray = require('data/_friendArray');
 const manArray = require('data/_manArray.json');
 const tipArray = require('data/_tipArray.json');
 const koLienArray = require('data/_koLienArray');
+const taskArray = require('data/_taskArray.json');
 
 //怕的 EmojiCon
 const scaredEmojiArray = require('data/_scaredArray');
@@ -345,14 +346,15 @@ exports.handler = function (req, res) {
             case 'COME':
 
                 var randomNumber = rand.getValue(20);
+                var randomTask = ran.getFromArray(taskArray);
                 messages[0].type = 'text';
-                messages[0].text = "`誒你過來一下 " + "!".repeat(randomNumber) + "`";
+                messages[0].text = "`誒你過來" + randomTask + "一下 " + "!".repeat(randomNumber) + "`";
 
-                if(randomNumber > 3){
+                if(randomNumber > 6){
                     messages[0].text = "`誒你過來一下 過來一下 操你媽過來一下 !!!!!` ";
                 }
 
-                if(randomNumber > 7){
+                if(randomNumber > 12){
                     messages[0].text = "`不是啊 妳那個妳那個 ... 欸妳過來一下妳過來一下 操妳媽妳過來一下 !!!!!!!!` ";
                 }
 
