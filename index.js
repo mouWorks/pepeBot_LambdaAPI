@@ -350,11 +350,11 @@ exports.handler = function (req, res) {
                 messages[0].type = 'text';
                 messages[0].text = "`誒你過來" + randomTask + "一下 " + "!".repeat(randomNumber) + "`";
 
-                if(randomNumber > 7){
+                if(randomNumber > 13){
                     messages[0].text = "`誒你過來一下 過來一下 操你媽過來一下 !!!!!` ";
                 }
 
-                if(randomNumber > 15){ //if u lucky cc
+                if(randomNumber > 18){ //if u lucky cc
                     messages[0].text = "`不是啊 妳那個妳那個 ... 欸妳過來一下妳過來一下 操妳媽妳過來一下 !!!!!!!!` ";
                 }
 
