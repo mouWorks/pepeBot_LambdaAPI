@@ -346,7 +346,7 @@ exports.handler = function (req, res) {
             case 'COME':
 
                 var randomNumber = rand.getValue(20);
-                var randomTask = ran.getFromArray(taskArray);
+                var randomTask = rand.getFromArray(taskArray);
                 messages[0].type = 'text';
                 messages[0].text = "`誒你過來" + randomTask + "一下 " + "!".repeat(randomNumber) + "`";
 
