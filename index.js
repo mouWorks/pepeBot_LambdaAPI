@@ -540,8 +540,15 @@ exports.handler = function (req, res) {
                 }
                 // messages[0].text = '`' + speaker + '` 今日 ' + msg + ' `' + intimacy + '`';
 
-                let another_title = speaker + '的' + msg + '為:';
+                another_title = speaker + '的' + msg + '為:';
                 messages[0] = messageBuilder.badge('Pepe Algorithm', another_title, intimacy, 'OMG !');
+                break;
+
+            case 'SB':
+                //  another_title = speaker + '的' + msg + '為:';
+                let fullText = '傻逼東西!';
+                another_title  = '你J個';
+                messages[0] = messageBuilder.badge('Pepe Algorithm', another_title, fullText, 'SBDX !');
                 break;
 
             case '神智':
