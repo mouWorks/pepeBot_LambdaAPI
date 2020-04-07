@@ -528,6 +528,7 @@ exports.handler = function (req, res) {
             case '秋力':
             case '發財力':
             case '韓力':
+            case 'M力':
                 var limit = 9999;
                 var intimacy = rand.getNumber(0, limit);
 
