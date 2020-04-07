@@ -193,9 +193,9 @@ exports.handler = function (req, res) {
                 let tipMessage = randomDays + ' 天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分 ' + countdown.seconds + ' 秒' ;
 
                 if (countdown.type == "before") {
-                    messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[我Z保固] 還剩下:', tipMessage, 'ko dare you?');
+                    messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[ 我Z保固 破百注意 ] 還剩下:', tipMessage, 'kuo dare you?');
                 } else {
-                    messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[我Z保固] 已過期:', tipMessage, 'ko dare you?');
+                    messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[ 我Z保固 ] 已過期:', tipMessage, 'ko dare you?');
                 }
 
                 break;
@@ -549,7 +549,8 @@ exports.handler = function (req, res) {
                 //  another_title = speaker + '的' + msg + '為:';
                 let fullText = '傻逼東西!';
                 another_title  = '你J個';
-                messages[0] = messageBuilder.badge('Pepe Algorithm', another_title, fullText, 'SBDX !');
+                messages[0] = messageBuilder.flexCountDown('Pepe AI',another_title, fullText, 'SBDX !!');
+                // messages[0] = messageBuilder.badge('Pepe Algorithm', another_title, fullText, 'SBDX !');
                 break;
 
             case '神智':
