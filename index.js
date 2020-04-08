@@ -30,6 +30,7 @@ const manArray = require('data/_manArray.json');
 const tipArray = require('data/_tipArray.json');
 const koLienArray = require('data/_koLienArray');
 const taskArray = require('data/_taskArray.json');
+const handsomeArray = require('data/_handsomeArray');
 
 //怕的 EmojiCon
 const scaredEmojiArray = require('data/_scaredArray');
