@@ -621,6 +621,11 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.image('https://i.imgur.com/yCg7UDi.png');
                 break;
 
+            case '帥':
+                targetUrl = rand.getFromArray(handsomeArray);
+                messages[0] = messageBuilder.image(targetUrl);
+                break;
+
             default:
 
                 // Shut this up: too loud - enough la !
