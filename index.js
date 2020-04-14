@@ -589,7 +589,7 @@ exports.handler = function (req, res) {
 
             case 'SUCK':
             case '爛':
-                targetUrl = rand.getFromArray(SuckArray);
+                targetUrl = rand.getFromArray(suckArray);
                 messages[0] = messageBuilder.image(targetUrl);
                 break;
 
