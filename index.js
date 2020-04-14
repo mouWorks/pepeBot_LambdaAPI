@@ -22,6 +22,7 @@ const ssdArray = require('data/_ssdArray.json');
 const ceoArray = require('data/_ceoArray.json');
 const hentaiArray = require('data/_hentaiArray.json');
 const guanArray = require('data/_guanArray.json');
+const suckArray = require('data/_suckArray.json');
 const smileArray = require('data/_smileArray.json');
 const holanArray = require('data/_HolanArray.json');
 const lunchArray = require('data/_lunchArray.json');
@@ -547,11 +548,9 @@ exports.handler = function (req, res) {
                 break;
 
             case 'SB':
-                //  another_title = speaker + '的' + msg + '為:';
                 let fullText = '傻逼東西!';
                 another_title  = '你J個';
                 messages[0] = messageBuilder.flexCountDown('Pepe AI',another_title, fullText, 'SBDX !!');
-                // messages[0] = messageBuilder.badge('Pepe Algorithm', another_title, fullText, 'SBDX !');
                 break;
 
             case '神智':
@@ -585,6 +584,12 @@ exports.handler = function (req, res) {
             case 'WORK':
             case '上班':
                 targetUrl = rand.getFromArray(WorkArray);
+                messages[0] = messageBuilder.image(targetUrl);
+                break;
+
+            case 'SUCK':
+            case '爛':
+                targetUrl = rand.getFromArray(SuckArray);
                 messages[0] = messageBuilder.image(targetUrl);
                 break;
 
