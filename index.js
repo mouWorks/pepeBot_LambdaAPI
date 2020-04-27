@@ -531,6 +531,7 @@ exports.handler = function (req, res) {
             case '發財力':
             case '韓力':
             case 'M力':
+            case '恥力':
                 var limit = 9999;
                 var intimacy = rand.getNumber(0, limit);
 
@@ -551,6 +552,13 @@ exports.handler = function (req, res) {
                 let fullText = '傻逼東西!';
                 another_title  = '你J個';
                 messages[0] = messageBuilder.flexCountDown('Pepe AI',another_title, fullText, 'SBDX !!');
+                break;
+
+            case '裂根性':
+                //  another_title = speaker + '的' + msg + '為:';
+                let fullText = '傻逼東西!';
+                another_title  = '墾丁仔出列';
+                messages[0] = messageBuilder.badge('Pepe Algorithm', another_title, fullText, 'SBDX !');
                 break;
 
             case '神智':
