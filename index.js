@@ -556,7 +556,7 @@ exports.handler = function (req, res) {
 
             case '裂根':
                 //  another_title = speaker + '的' + msg + '為:';
-                messages[0] = messageBuilder.badge('Pepe Algorithm', '墾丁仔出列，你這個', '裂根東西!', 'LGDX !');
+                messages[0] = messageBuilder.flexCountDown('Pepe Algorithm', '墾丁仔出列，你這個', '裂根東西!', 'LGDX !');
                 break;
 
             case '神智':
