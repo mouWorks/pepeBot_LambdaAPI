@@ -1,4 +1,4 @@
 # PepeBot
 AWS LambdaAPI for Pepebot
 
-https://circleci.com/gh/mouWorks/pepeBot_LambdaAPI.svg?style=svg
+![Status](https://circleci.com/gh/mouWorks/pepeBot_LambdaAPI.svg?style=svg)
