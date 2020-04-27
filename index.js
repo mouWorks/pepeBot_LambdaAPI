@@ -554,11 +554,9 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.flexCountDown('Pepe AI',another_title, fullText, 'SBDX !!');
                 break;
 
-            case '裂根性':
+            case '裂根':
                 //  another_title = speaker + '的' + msg + '為:';
-                let fullText = '傻逼東西!';
-                another_title  = '墾丁仔出列';
-                messages[0] = messageBuilder.badge('Pepe Algorithm', another_title, fullText, 'SBDX !');
+                messages[0] = messageBuilder.badge('Pepe Algorithm', '墾丁仔出列，你這個', '裂根東西!', 'LGDX !');
                 break;
 
             case '神智':
