@@ -195,7 +195,7 @@ exports.handler = function (req, res) {
                 let tipMessage = randomDays + ' 天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分 ' + countdown.seconds + ' 秒' ;
 
                 if (countdown.type == "before") {
-                    messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[ 國家級警報 : 我Z保固即將到期! ] 還剩下:', tipMessage, 'kuo dare you?');
+                    messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[ 我 Z 蜜月期最後倒數 ! ] 還剩下:', tipMessage, 'SBDX !');
                 } else {
                     messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[ 我Z保固 ] 已過期:', tipMessage, 'ko dare you?');
                 }
