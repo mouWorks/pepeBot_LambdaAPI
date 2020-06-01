@@ -32,6 +32,7 @@ const tipArray = require('data/_tipArray.json');
 const koLienArray = require('data/_koLienArray');
 const taskArray = require('data/_taskArray.json');
 const handsomeArray = require('data/_handsomeArray');
+const zuvioArray = require('data/_zuvioArray.json');
 
 //怕的 EmojiCon
 const scaredEmojiArray = require('data/_scaredArray');
@@ -190,12 +191,12 @@ exports.handler = function (req, res) {
                 countdown = lib.getTimeRemaining(zuvioDeadLine);
 
                 //Rand and have some fun !!
-                // let randomDays = rand.getNumber(1, countdown.days);
                 let randomDays = countdown.days;  //Reveal actual date
                 let tipMessage = randomDays + ' 天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分 ' + countdown.seconds + ' 秒' ;
+                let randomChoke = rand.getFromArray(zuvioArray)
 
                 if (countdown.type == "before") {
-                    messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[ 我 Z 蜜月期最後倒數 ! ] 還剩下:', tipMessage, 'SBDX !');
+                    messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[ Z 7/10 毀滅倒數 ] 還剩下:', tipMessage, randomChoke);
                 } else {
                     messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[ 我Z保固 ] 已過期:', tipMessage, 'ko dare you?');
                 }
