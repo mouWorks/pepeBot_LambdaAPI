@@ -182,6 +182,7 @@ exports.handler = function (req, res) {
 
         //Text is switch to UpperCase()
         var countdown = null;
+        let tipMessage
         switch(msg){
             case 'Z':
                 // var limit = 15;
@@ -192,7 +193,7 @@ exports.handler = function (req, res) {
 
                 //Rand and have some fun !!
                 let randomDays = countdown.days;  //Reveal actual date
-                let tipMessage = randomDays + ' 天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分 ' + countdown.seconds + ' 秒' ;
+                tipMessage = randomDays + ' 天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分 ' + countdown.seconds + ' 秒' ;
                 let randomChoke = rand.getFromArray(zuvioArray)
 
                 if (countdown.type == "before") {
