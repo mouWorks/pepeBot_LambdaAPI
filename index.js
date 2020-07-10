@@ -33,6 +33,7 @@ const koLienArray = require('data/_koLienArray');
 const taskArray = require('data/_taskArray.json');
 const handsomeArray = require('data/_handsomeArray');
 const zuvioArray = require('data/_zuvioArray.json');
+const linArray = require('data/_linArray.json);
 
 //怕的 EmojiCon
 const scaredEmojiArray = require('data/_scaredArray');
@@ -202,6 +203,11 @@ exports.handler = function (req, res) {
                     messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[ 我Z保固 ] 已過期:', tipMessage, 'ko dare you?');
                 }
 
+                break;
+
+            case 'W':
+                targetUrl = rand.getFromArray(linArray);
+                messages[0] = messageBuilder.image(targetUrl);
                 break;
 
             case '6':
