@@ -200,7 +200,11 @@ exports.handler = function (req, res) {
                 if (countdown.type == "before") {
                     messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[ Z 7/10 毀滅倒數 ] 還剩下:', tipMessage, randomChoke);
                 } else {
-                    messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[ 我Z保固 ] 已過期:', tipMessage, 'ko dare you?');
+                    targetUrl = rand.getFromArray(linArray);
+                    messages[0] = messageBuilder.image(targetUrl);
+
+                    // Surprise ! MotherFucker :)
+                    // messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[ 我Z保固 ] 已過期:', tipMessage, '里奧已開啟噴發模式!!');
                 }
 
                 break;
