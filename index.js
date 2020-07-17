@@ -277,6 +277,10 @@ exports.handler = function (req, res) {
                 messages[0].text = rand.getFromArray(FireArray);
                 break;
 
+            case 'K':
+                messages[0].text = "@郭文彬 @郭文彬 @郭文彬 @郭文彬 @郭文彬 @郭文彬";
+                break;
+
             case 'KING':
                 //messages[0].text = "`Zuvio CDN 之父`";
                 messages[0] = messageBuilder.image('https://i.imgur.com/BTHA8Wp.png');
