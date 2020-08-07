@@ -172,11 +172,6 @@ exports.handler = function (req, res) {
             "text": msg
         }];
 
-        //console.log(event); //uncomment if you wanna see event
-        // console.log('check source2');
-        // console.log(event.source);
-        // var speaker = '';
-
         var speaker = lib.recognizePeople(event.source.userId); //get the names from User ID
 
         needToReply = true;
@@ -204,7 +199,7 @@ exports.handler = function (req, res) {
                     // messages[0] = messageBuilder.image(targetUrl);
 
                     // Surprise ! MotherFucker :)
-                    messages[0] = messageBuilder.flexCountDown('我Z一年保固升級 ^_^:' + tipMessage, '[ 我Z爽賺 ] : 已賺了:', tipMessage, '里奧已開啟噴發模式!!');
+                    messages[0] = messageBuilder.flexCountDown('我Z一年保固升級 ^_^:' + tipMessage, '[ 我Z爽賺 ] : 已賺了:', tipMessage, randomChoke);
                 }
 
                 break;
