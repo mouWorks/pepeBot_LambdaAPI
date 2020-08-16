@@ -13,24 +13,17 @@ function Lib()
 
         switch(style){
             case 0:
-                getString = "`" + getString + "`";
-                break;
+                return "`" + getString + "`";
 
             case 1:
-                getString = "_" + getString + "_";
-                break;
+                return "_" + getString + "_";
 
             case 2:
-                getString = "*" + getString + "*";
-                break;
+                return "*" + getString + "*";
 
             default:
-                getString = "*" + getString + "*";
-                //getString = chokeString(getString);
-                break;
+                return "*" + getString + "*";
         }
-
-        return getString;
     }
 
     function getWorkedDate(today)
