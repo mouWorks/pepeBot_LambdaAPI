@@ -253,6 +253,7 @@ exports.handler = function (req, res) {
             case '吃':
             case '午餐':
             case '吃什麼':
+            case '沒飯吃啦':
                 messages[0].text = rand.getFromArray(lunchArray);
                 break;
 
