@@ -340,6 +340,10 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.image('https://i.imgur.com/UAuai2P.png');
                 break;
 
+            case 'HIGH': case '國偉': case '林國偉':
+                messages[0] = messageBuilder.image('https://i.imgur.com/otxAPqa.jpg');
+                break;
+
             case 'TV': case '4K': case 'HDR': case 'SONY':
                 messages[0] = messageBuilder.image('https://i.imgur.com/Xl2kijL.png');
                 break;
@@ -492,7 +496,6 @@ exports.handler = function (req, res) {
             case '財':
                 var randString = '里奧今天是不是又崩了 !?';
                 messages[0].text = randString;
-
                 // messages[0].text = chokeString(randString);
                 break;
 
