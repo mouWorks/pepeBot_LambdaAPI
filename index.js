@@ -389,6 +389,21 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.image( 'https://i.imgur.com/BDqIWCb.png');
                 break;
 
+            case 'FAIL': case 'FAILURE': case '失敗':
+                messages[0] = messageBuilder.image( 'https://i.imgur.com/8XQ60fW.png');
+                break;
+
+            case '打氣':
+                messages[0] = messageBuilder.image( 'https://i.imgur.com/HYjWrJw.jpg');
+                break;
+
+            case '衝啊':
+                messages[0] = messageBuilder.image( 'https://i.imgur.com/av4xEyt.jpg');
+                break;
+
+            case '哎': case '唉':
+                messages[0] = messageBuilder.image( 'https://i.imgur.com/KicHgbp.jpg');
+                break;
 
             case '995':
             case '救救我':
