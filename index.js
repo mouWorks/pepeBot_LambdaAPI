@@ -134,9 +134,9 @@ exports.handler = function (req, res) {
                 msg = 'GG';
             }
 
-            if(msg.indexOf('打') !== -1){
-                msg = 'HIT';
-            }
+            // if(msg.indexOf('打') !== -1){
+            //     msg = 'HIT';
+            // }
 
             if(msg.indexOf('窮') !== -1){
                 msg = 'POOR';
@@ -352,7 +352,7 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.image('https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg');
                 break;
 
-             case 'HIT':
+             case 'HIT': case '打':
                 messages[0] = messageBuilder.image('https://i.imgur.com/Z4UAjkp.png');
                 break;
 
