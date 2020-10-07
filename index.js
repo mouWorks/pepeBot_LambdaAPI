@@ -23,7 +23,7 @@ const ceoArray = require('data/_ceoArray.json');
 const hentaiArray = require('data/_hentaiArray.json');
 const guanArray = require('data/_guanArray.json');
 const suckArray = require('data/_suckArray.json');
-const smileArray = require('data/_smileArray.json');
+const smileArray = require('data/_smileArrayTomCruise.json.json');
 const holanArray = require('data/_HolanArray.json');
 const lunchArray = require('data/_lunchArray.json');
 const friendArray = require('data/_friendArray');
@@ -160,10 +160,10 @@ exports.handler = function (req, res) {
                     msg = '親密度';
                 }
             }
-
-            if((msg.indexOf('呵') !== -1) || (msg.indexOf('笑') !== -1)){
-                msg = 'SMILE';
-            }
+            //
+            // if((msg.indexOf('呵') !== -1) || (msg.indexOf('笑') !== -1)){
+            //     msg = 'SMILE';
+            // }
         }
 
         var reply_token = event.replyToken; //Need to get this Token to pass back.
@@ -206,6 +206,11 @@ exports.handler = function (req, res) {
 
             case 'W':
                 targetUrl = rand.getFromArray(linArray);
+                messages[0] = messageBuilder.image(targetUrl);
+                break;
+
+            case '笑': case 'SMILE':
+                targetUrl = rand.getFromArray(smileArray);
                 messages[0] = messageBuilder.image(targetUrl);
                 break;
 
