@@ -113,7 +113,8 @@ exports.handler = function (req, res) {
 
         }//endif;
 
-        var zuvioDeadLine = 'July 10 2020 18:30:00 GMT+0800'; // Zuvio Expire Time
+        // var zuvioDeadLine = 'July 10 2020 18:30:00 GMT+0800'; // Zuvio Expire Time
+        var zuvioDeadLine = 'December 31 2020 18:30:00 GMT+0800'; // Zuvio Expire Time (updated)
         var deadline = 'January 6 2020 10:00:00 GMT+0800'; // Mou Wemo day!
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
         var mouOnboardLine = 'April 1 2019 09:30:00 GMT+0800'; //Leo's Wedding
@@ -193,7 +194,7 @@ exports.handler = function (req, res) {
                 let randomChoke = rand.getFromArray(zuvioArray)
 
                 if (countdown.type == "before") {
-                    messages[0] = messageBuilder.flexCountDown('我Z一年保固:' + tipMessage, '[ Z 7/10 毀滅倒數 ] 還剩下:', tipMessage, randomChoke);
+                    messages[0] = messageBuilder.flexCountDown('我大Z最終倒數:' + tipMessage, '[ Z 12/31 毀滅倒數 ] 還剩下:', tipMessage, randomChoke);
                 } else {
                     // targetUrl = rand.getFromArray(linArray);
                     // messages[0] = messageBuilder.image(targetUrl);
