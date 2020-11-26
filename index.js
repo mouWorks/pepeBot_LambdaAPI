@@ -284,7 +284,7 @@ exports.handler = function (req, res) {
                 break;
 
             case 'WRONG':
-                messages[0] = messageBuilder.image( 'http://i.imgur.com/mZEWfQU.jpg');
+                messages[0] = messageBuilder.image( 'https://i.imgur.com/mZEWfQU.jpg');
                 break;
 
             case '王':
