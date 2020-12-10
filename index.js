@@ -283,6 +283,11 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.image('https://i.imgur.com/BTHA8Wp.png');
                 break;
 
+            case 'QNAP':
+                messages[0].type = 'text';
+                messages[0].text = "啊 `Q.N.A.P` 是回了沒 ?? 到底 !?";
+                break;
+
             case 'WRONG':
                 messages[0] = messageBuilder.image( 'https://i.imgur.com/mZEWfQU.jpg');
                 break;
