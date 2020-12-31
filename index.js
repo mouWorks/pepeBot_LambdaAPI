@@ -182,29 +182,6 @@ exports.handler = function (req, res) {
         let tipMessage
         switch(msg){
             case 'Z':
-                // var limit = 15;
-                // var randomNumber = rand.getValue(15);
-                // messages[0].text = "Z".repeat(randomNumber) + 'uvio起來!';
-
-                countdown = lib.getTimeRemaining(zuvioDeadLine);
-
-                //Rand and have some fun !!
-                let randomDays = countdown.days;  //Reveal actual date
-                tipMessage = randomDays + ' 天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分 ' + countdown.seconds + ' 秒' ;
-                let randomChoke = rand.getFromArray(zuvioArray)
-
-                if (countdown.type == "before") {
-                    messages[0] = messageBuilder.flexCountDown('我大Z最終倒數:' + tipMessage, '[ Z 12/31 毀滅倒數 ] 還剩下:', tipMessage, randomChoke);
-                } else {
-                    // targetUrl = rand.getFromArray(linArray);
-                    // messages[0] = messageBuilder.image(targetUrl);
-
-                    // Surprise ! MotherFucker :)
-                    messages[0] = messageBuilder.flexCountDown('我Z一年保固升級 ^_^:' + tipMessage, '[ 我Z爽賺 ] : 已賺了:', tipMessage, randomChoke);
-                }
-
-                break;
-
             case 'W':
                 targetUrl = rand.getFromArray(linArray);
                 messages[0] = messageBuilder.image(targetUrl);
