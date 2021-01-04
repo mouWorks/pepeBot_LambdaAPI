@@ -181,11 +181,6 @@ exports.handler = function (req, res) {
         var countdown = null;
         let tipMessage
         switch(msg){
-            case 'Z':
-            case 'W':
-                targetUrl = rand.getFromArray(linArray);
-                messages[0] = messageBuilder.image(targetUrl);
-                break;
 
             case '笑': case 'SMILE':
                 targetUrl = rand.getFromArray(smileArray);
