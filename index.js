@@ -32,8 +32,6 @@ const tipArray = require('data/_tipArray.json');
 const koLienArray = require('data/_koLienArray');
 const taskArray = require('data/_taskArray.json');
 const handsomeArray = require('data/_handsomeArray');
-const zuvioArray = require('data/_zuvioArray.json');
-const linArray = require('data/_linArray.json');
 
 //怕的 EmojiCon
 const scaredEmojiArray = require('data/_scaredArray');
@@ -282,22 +280,6 @@ exports.handler = function (req, res) {
             case 'SONG': //A_A
             case 'MOU':
             case 'MAYBE':
-                // if (getRandomNumber(0, 10) <= 5) {
-                //     messages[0].text = '沒的崩啦 崩屁崩, 李奧已成 Husbando!';
-                //     break;
-                // }
-
-            //Go fetch time.
-            //     countdown = getTimeRemaining(deadline);
-                // messages[0].text = ' *中國端子節* | 距離 `L30` の `家.庭.日!` 還有: ' + countdown.days + '天 '+ countdown.hours+ ' 小時 ' +countdown.minutes+ ' 分' + countdown.seconds +'秒, get ready!';
-                // break;
-            // case 'G':
-            //     countdown = getTimeRemaining(friedGdeadline);
-            //     messages[0].text = '距離G排時間還有 ' + countdown.days + '天 '+ countdown.hours+ ' 小時 ' +countdown.minutes+ ' 分' + countdown.seconds +'秒, 想ㄘ!';
-            //     break;
-            // messages[0].text = '還爽啊 `Mou` , 開始上班啦，懂？！';
-            // break;
-
             case 'M':
                 days = lib.getCountDownDate();
                 var who = rand.getFromArray(ZuvioTeamMate);
@@ -485,20 +467,15 @@ exports.handler = function (req, res) {
             case '嘻':
                 var randString = '高層嘻' + lib.getEmoji('0x10008C');
                 messages[0].text = randString;
-                // messages[0].text = chokeString(randString);
                 break;
 
             case '財':
                 var randString = '里奧今天是不是又崩了 !?';
                 messages[0].text = randString;
-                // messages[0].text = chokeString(randString);
                 break;
 
             case '科':
                 var demoText =  '郭文彬和腎液親密度為 99999999';
-                // randwords = nodejieba.cut(demoText);
-                // var returnString = randwords.join('...');
-
                 messages[0].text = demoText;
                 break;
 
@@ -583,8 +560,6 @@ exports.handler = function (req, res) {
 
                 let small_title = speaker + '的' + msg + '為:';
                 messages[0] = messageBuilder.badge('PePeAI', small_title, iq, '敢質疑？');
-
-                // messages[0].text = '`' + speaker + '` 今日 ' + msg + ' `' + iq + '`';
                 break;
 
             case 'FUCKYOU':
