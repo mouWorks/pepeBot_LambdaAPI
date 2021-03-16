@@ -20,10 +20,17 @@ function Rand()
         return lower_limit + Math.floor(Math.random() * diff);
     }
 
+    function getRandomHand(){
+        const handArray = ["👈","👆","👉"];
+        let length = handArray.length;
+        return handArray[Math.floor(Math.random() * length)];
+    }
+
     return {
         getFromArray : getFromArray,
         getValue     : getValue,
-        getNumber    : getNumber
+        getNumber    : getNumber,
+        getRandomHand: getRandomHand
     }
 }
 module.exports = new Rand();
