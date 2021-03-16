@@ -456,6 +456,9 @@ exports.handler = function (req, res) {
             case '我誰':
                 messages[0].text = '我高層嘻 ^^';
                 break;
+            case '不要笑':
+                messages[0].text = '不要笑👈不要笑👆不要笑👉';
+                break;
 
             case '捧油':
             case '朋友':
