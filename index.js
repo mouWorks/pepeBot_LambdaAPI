@@ -457,7 +457,13 @@ exports.handler = function (req, res) {
                 messages[0].text = '我高層嘻 ^^';
                 break;
             case '不要笑':
-                messages[0].text = '不要笑👈不要笑👆不要笑👉';
+
+                let hand1 = rand.getRandomHand()
+                let hand2 = rand.getRandomHand()
+                let hand3 = rand.getRandomHand()
+
+                messages[0].text = `不要笑${hand1}不要笑${hand2}不要笑${hand3}`;
+                // messages[0].text = `不要笑👈不要笑👆不要笑👉`;
                 break;
 
             case '捧油':
