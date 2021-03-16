@@ -458,9 +458,9 @@ exports.handler = function (req, res) {
                 break;
             case '不要笑':
 
-                let hand1 = rand.getRandomHand()
-                let hand2 = rand.getRandomHand()
-                let hand3 = rand.getRandomHand()
+                let hand1 = rand.getRandomHand();
+                let hand2 = rand.getRandomHand();
+                let hand3 = rand.getRandomHand();
 
                 messages[0].text = `不要笑${hand1}不要笑${hand2}不要笑${hand3}`;
                 // messages[0].text = `不要笑👈不要笑👆不要笑👉`;
