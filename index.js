@@ -454,7 +454,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '我誰':
-                messages[0].text = '我高層嘻^^';
+                messages[0].text = '我高層嘻 ^^';
                 break;
 
             case '捧油':
