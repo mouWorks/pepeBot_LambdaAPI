@@ -452,11 +452,15 @@ exports.handler = function (req, res) {
                 break;
 
             case '舔':
-                messages[0].text = '還舔! 還舔!! 還舔嘴唇!!!! (破音';
+                messages[0].text = '`還舔! 還舔!! 還舔嘴唇!!!! (破音`';
                 break;
 
             case '7':
-                messages[0].text = '又偷 又偷 又 又偷打7!!!!(破音';
+                messages[0].text = '`又偷 又偷 又 又偷打7!!!!!!!!(爆音`';
+                break;
+
+            case '偷':
+                messages[0] = messageBuilder.image('https://i.imgur.com/yIsFGWo.png');
                 break;
 
             case '我誰':
