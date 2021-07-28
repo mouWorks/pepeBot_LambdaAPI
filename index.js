@@ -186,14 +186,12 @@ exports.handler = function (req, res) {
                 break;
 
             case '6':
-                var limit = 15;
                 var randomNumber = rand.getValue(15);
                 messages[0].text = "6".repeat(randomNumber);
                 break;
 
             case '+':
             case '加':
-                var limit = 30;
                 var randomNumber = rand.getValue(30);
                 var randomUString = "加".repeat(randomNumber);
                 messages[0].text = "通通" + randomUString + '起來!';
@@ -453,6 +451,14 @@ exports.handler = function (req, res) {
                 messages[0].text = '這個問題怎麼會 `問我咧` ？';
                 break;
 
+            case '舔':
+                messages[0].text = '還舔! 還舔!! 還舔嘴唇!!!! (破音';
+                break;
+
+            case '7':
+                messages[0].text = '又偷 又偷 又 又偷打7!!!!(破音';
+                break;
+
             case '我誰':
                 messages[0].text = '我高層嘻 ^^';
                 break;
@@ -463,7 +469,6 @@ exports.handler = function (req, res) {
                 let hand3 = rand.getRandomHand();
 
                 messages[0].text = `不要笑${hand1}不要笑${hand2}不要笑${hand3}`;
-                // messages[0].text = `不要笑👈不要笑👆不要笑👉`;
                 break;
 
             case '捧油':
