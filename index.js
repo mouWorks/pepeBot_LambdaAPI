@@ -455,6 +455,10 @@ exports.handler = function (req, res) {
                 messages[0].text = '`又舔! 又舔!! 又!(中斷) !又舔嘴唇!!!! (破音`';
                 break;
 
+            case '職等':
+                messages[0].text = '`又Review! 又Review!! 又!(中斷) !又Review職等!!!! (爆氣';
+                break;
+
             case '7':
                 messages[0].text = '`又偷 又偷 又 又偷打7!!!!!!!!(爆音`';
                 break;
