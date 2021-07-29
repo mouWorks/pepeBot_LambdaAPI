@@ -452,7 +452,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '舔':
-                messages[0].text = '`還舔! 還舔!! 還舔嘴唇!!!! (破音`';
+                messages[0].text = '`又舔! 又舔!! 又!(中斷) !又舔嘴唇!!!! (破音`';
                 break;
 
             case '7':
