@@ -14,7 +14,7 @@
     "fs": "0.0.1-security",
     "instagram-node": "^0.5.8",
     "miment": "^0.0.9",
-    "mocha": "^6.2.2",
+    "mocha": "^6.2.3",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "should": "^13.2.3"

@@ -17,7 +17,7 @@ upload:
 	./upload.sh
 
 test:
-	mocha && \
+	npm run test && \
 	node --check index.js \
 	node --check libs/lib.js \
 	node --check libs/rand.js
