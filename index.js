@@ -159,7 +159,6 @@ exports.handler = function (req, res) {
                     msg = '親密度';
                 }
             }
-            //
             // if((msg.indexOf('呵') !== -1) || (msg.indexOf('笑') !== -1)){
             //     msg = 'SMILE';
             // }
@@ -262,7 +261,7 @@ exports.handler = function (req, res) {
 
             case '王':
                 countdown = lib.getTimeRemaining(deadline);
-                messages[0].text = ' *吾王降臨* | `王降臨 WEMO 統治世界` 已經: ' + countdown.days + '天 '+ countdown.hours+ ' 小時 ' +countdown.minutes+ ' 分' + countdown.seconds +'秒, 向骨王獻出你的忠誠吧!';
+                messages[0].text = ' *吾王降臨* | `王寄生 WeMo ` 已經: ' + countdown.days + '天 '+ countdown.hours+ ' 小時 ' +countdown.minutes+ ' 分' + countdown.seconds +'秒, 向骨王獻出你的忠誠吧!';
                 break;
 
             case 'CI':
