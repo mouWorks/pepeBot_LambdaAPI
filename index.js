@@ -32,6 +32,8 @@ const tipArray = require('data/_tipArray.json');
 const koLienArray = require('data/_koLienArray');
 const taskArray = require('data/_taskArray.json');
 const handsomeArray = require('data/_handsomeArray');
+const carefulArray = require('data/_carefulArray');
+
 
 //怕的 EmojiCon
 const scaredEmojiArray = require('data/_scaredArray');
@@ -183,6 +185,12 @@ exports.handler = function (req, res) {
                 targetUrl = rand.getFromArray(smileArray);
                 messages[0] = messageBuilder.image(targetUrl);
                 break;
+
+            case '小心': case '小心那': 
+                targetUrl = rand.getFromArray(smileArray);
+                messages[0] = messageBuilder.image(targetUrl);
+                break;
+
 
             case '6':
                 var randomNumber = rand.getValue(15);
@@ -465,7 +473,7 @@ exports.handler = function (req, res) {
             case '偷':
                 messages[0] = messageBuilder.image('https://i.imgur.com/yIsFGWo.png');
                 break;
-
+                
             case '我誰':
                 messages[0].text = '我高層嘻 ^^';
                 break;
