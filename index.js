@@ -226,6 +226,10 @@ exports.handler = function (req, res) {
                 messages[0].text = '*熊福利*';
                 break;
 
+            case '我不講了':
+                messages[0].text = '*我跟各位講*';
+                break;
+
             case '熊福利':
                 messages[0].text = '_請支援收銀~_';
                 break;
