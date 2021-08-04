@@ -227,7 +227,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '尊重':
-                messages[0].text = '_respect, you know?_';
+                messages[0].text = '```respect, you know?```';
                 break;
 
             case '我不講了':
