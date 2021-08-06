@@ -135,6 +135,10 @@ exports.handler = function (req, res) {
                 msg = 'GG';
             }
 
+            if(msg.indexOf('難道') !== -1){
+                msg = '難道';
+            }
+
             // if(msg.indexOf('打') !== -1){
             //     msg = 'HIT';
             // }
@@ -286,6 +290,10 @@ exports.handler = function (req, res) {
 
             case 'CC':
                 messages[0].text = "`UCCU`";
+                break;
+            
+            case '難道':
+                messages[0].text = "`只 有 你 !`";
                 break;
 
             case 'GAMEOVER':case 'GG':case '婚':case '婚禮':case '崩':case '崩崩':case 'BON':case 'BONBON':
