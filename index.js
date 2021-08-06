@@ -139,6 +139,10 @@ exports.handler = function (req, res) {
                 msg = '難道';
             }
 
+            if(msg.indexOf('小心') !== -1){
+                msg = '小心';
+            }
+
             // if(msg.indexOf('打') !== -1){
             //     msg = 'HIT';
             // }
@@ -190,7 +194,7 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.image(targetUrl);
                 break;
 
-            case '小心': case '小心那': 
+            case '小心': 
                 targetUrl = rand.getFromArray(carefulArray);
                 messages[0] = messageBuilder.image(targetUrl);
                 break;
