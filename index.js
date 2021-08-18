@@ -478,6 +478,10 @@ exports.handler = function (req, res) {
                 messages[0].text = '這個問題怎麼會 `問我咧` ？';
                 break;
 
+            case '怎':
+                messages[0].text = '`世界怎麼跟得上台灣拉!!`';
+                break;    
+
             case '舔':
                 messages[0].text = '`又舔! 又舔!! 又!(中斷) !又舔嘴唇!!!! (破音`';
                 break;
