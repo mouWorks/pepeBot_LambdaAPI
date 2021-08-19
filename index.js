@@ -14,6 +14,7 @@ const lib = require('./libs/lib.js');
 const messageBuilder = require('./libs/message.js');
 
 //Extract Lists - add more data here if needed.
+const duckArray = require('data/_duckArray.json')
 const LeoArray = require('data/_LeoArray.json');
 const FuckArray = require('data/_FuckArray.json');
 const WorkArray = require('data/_WorkArray.json');
@@ -33,7 +34,6 @@ const koLienArray = require('data/_koLienArray');
 const taskArray = require('data/_taskArray.json');
 const handsomeArray = require('data/_handsomeArray');
 const carefulArray = require('data/_carefulArray');
-
 
 //怕的 EmojiCon
 const scaredEmojiArray = require('data/_scaredArray');
@@ -416,12 +416,6 @@ exports.handler = function (req, res) {
                 break;
 
             case '大可不必':
-                var duckArray = [
-                    '粗暴言論 大可不必',
-                    '粗暴言論 DUCK不必',
-                    '幹幹幹幹！操 ! 操你媽過來一下!'
-                ]
-
                 messages[0] = messageBuilder.image( rand.getFromArray(duckArray));
                 break;
 
