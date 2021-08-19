@@ -143,9 +143,9 @@ exports.handler = function (req, res) {
                 msg = '小心';
             }
 
-            // if(msg.indexOf('打') !== -1){
-            //     msg = 'HIT';
-            // }
+            if(msg.indexOf('幹') !== -1){
+                msg = '大可不必';
+            }
 
             if(msg.indexOf('窮') !== -1){
                 msg = 'POOR';
@@ -413,6 +413,16 @@ exports.handler = function (req, res) {
 
             case 'HOLAN': case '騙': case '冠':
                 messages[0] = messageBuilder.image( rand.getFromArray(holanArray));
+                break;
+
+            case '大可不必':
+                var duckArray = [
+                    '粗暴言論 大可不必',
+                    '粗暴言論 DUCK不必',
+                    '幹幹幹幹！操 ! 操你媽過來一下!'
+                ]
+
+                messages[0] = messageBuilder.image( rand.getFromArray(duckArray));
                 break;
 
             case '郭':
