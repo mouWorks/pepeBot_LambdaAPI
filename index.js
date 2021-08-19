@@ -416,7 +416,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '大可不必':
-                messages[0] = messageBuilder.image( rand.getFromArray(duckArray));
+                messages[0].text = rand.getFromArray(duckArray);
                 break;
 
             case '郭':
