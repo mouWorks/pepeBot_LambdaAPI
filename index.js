@@ -37,6 +37,7 @@ const carefulArray = require('data/_carefulArray');
 
 //怕的 EmojiCon
 const scaredEmojiArray = require('data/_scaredArray');
+const message = require('./libs/message.js');
 
 //Loading Predefined stuff
 const KuoArray =["https://i.imgur.com/X6mAbic.png"];
@@ -145,6 +146,10 @@ exports.handler = function (req, res) {
 
             if(msg.indexOf('幹') !== -1){
                 msg = '大可不必';
+            }
+
+            if(msg.indexOf('鬆') !== -1){
+                msg = 'RELAX';
             }
 
             if(msg.indexOf('窮') !== -1){
@@ -280,7 +285,12 @@ exports.handler = function (req, res) {
                 break;
 
             case 'WRONG':
-                messages[0] = messageBuilder.image( 'https://i.imgur.com/mZEWfQU.jpg');
+                messages[0] = messageBuilder.image('https://i.imgur.com/mZEWfQU.jpg');
+                break;
+
+
+            case 'RELAX':
+                messages[0] = messageBuilder.image('https://i.imgur.com/0GZFFLL.png');
                 break;
 
             case '王':
