@@ -156,6 +156,10 @@ exports.handler = function (req, res) {
                 msg = 'POOR';
             }
 
+            if(msg.indexOf('勇') !== -1){
+                msg = '勇';
+            }
+
             if(msg.indexOf('怕') !== -1){
                 msg = 'SCARE';
             }
@@ -245,6 +249,10 @@ exports.handler = function (req, res) {
 
             case '我不講了':
                 messages[0].text = '*我跟各位講*';
+                break;
+
+            case '勇':
+                messages[0].text = '*你很勇嘛*';
                 break;
 
             case '熊福利':
