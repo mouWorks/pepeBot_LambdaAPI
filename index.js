@@ -34,6 +34,9 @@ const koLienArray = require('data/_koLienArray');
 const taskArray = require('data/_taskArray.json');
 const handsomeArray = require('data/_handsomeArray');
 const carefulArray = require('data/_carefulArray');
+const jayArray = require('data/_jayArray');
+const clockArray = require('data/_clockArray');
+
 
 //怕的 EmojiCon
 const scaredEmojiArray = require('data/_scaredArray');
@@ -160,6 +163,14 @@ exports.handler = function (req, res) {
                 msg = '勇';
             }
 
+            if(msg.indexOf('時中') !== -1){
+                msg = 'CLOCK';
+            }
+
+            if((msg.indexOf('杰') !== -1) || (msg.indexOf('傑') !== -1)){
+                msg = 'JAY';
+            }
+
             if(msg.indexOf('怕') !== -1){
                 msg = 'SCARE';
             }
@@ -225,6 +236,14 @@ exports.handler = function (req, res) {
             case 'LL':
             case 'LEO':
                 messages[0].text = lib.getRandomFromArrayWithStringStyle(LeoArray);
+                break;
+
+            case 'CLOCK':
+                messages[0].text = lib.getRandomFromArrayWithStringStyle(clockArray);
+                break;
+
+            case 'JAY':
+                messages[0].text = lib.getRandomFromArrayWithStringStyle(jayArray);
                 break;
 
             case 'HA': //哈哈哈
