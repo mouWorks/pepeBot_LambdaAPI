@@ -631,9 +631,9 @@ exports.handler = function (req, res) {
                 break;
 
               case 'SB+':
-                let fullText = '大傻逼東西！! MDFK';
+                let fullTextSBPlus = '大傻逼東西！! MDFK';
                 another_title  = '你94一個';
-                messages[0] = messageBuilder.flexCountDown('Pepe AI',another_title, fullText, 'SBDX !!');
+                messages[0] = messageBuilder.flexCountDown('Pepe AI',another_title, fullTextSBPlus, 'SBDX !!');
                 break;    
 
             case '裂根':
