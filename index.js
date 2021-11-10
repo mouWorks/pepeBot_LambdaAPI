@@ -43,9 +43,9 @@ const scaredEmojiArray = require('data/_scaredArray');
 const message = require('./libs/message.js');
 
 //Loading Predefined stuff
-const KuoArray =["https://i.imgur.com/X6mAbic.png"];
-const CoffeeArray = ["Cama","Seven","全家","路易莎","太濃了吧,否則怎麼苦的說不出話"];
-const FireArray = ["You are FIRED!","Well you can stay.","什麼爛code給我加班重寫！","XX單在那邊自己去拿"];
+const KuoArray = ["https://i.imgur.com/X6mAbic.png"];
+const CoffeeArray = ["Cama", "Seven", "全家", "路易莎", "太濃了吧,否則怎麼苦的說不出話"];
+const FireArray = ["You are FIRED!", "Well you can stay.", "什麼爛code給我加班重寫！", "XX單在那邊自己去拿"];
 
 //Random Format
 const RandomArray = ["jpg", "png", "avi", "gif", "txt"];
@@ -54,11 +54,11 @@ const okayArray = ["https://i.imgur.com/IyUrfuW.png"];
 
 //Randomized a person
 const personArray = ['李奧', '郭文彬', 'Jonic', 'rainLAY', 'mou'];
-const ZuvioTeamMate = ['李奧', '阿酷', 'RainLay', 'L30', 'Mou', 'CarryMan','HackerMan'];
-const Behavior = ['Carry' , '挖坑', '神救援', '狂嗆', '拯救', '衝康', '霸凌'];
+const ZuvioTeamMate = ['李奧', '阿酷', 'RainLay', 'L30', 'Mou', 'CarryMan', 'HackerMan'];
+const Behavior = ['Carry', '挖坑', '神救援', '狂嗆', '拯救', '衝康', '霸凌'];
 
 //const placeArray = ['台灣', '白宮', '沖繩', '美國', '東京', '北海道', '北歐', '韓國', '新加坡'];
-const placeArray = ['芝加哥豪宅', '奧勒岡鄉間屋宅', '赫里福基地', '總統專機','杜斯妥也夫斯基咖啡館', '貧民窟','巴特雷特大學'];
+const placeArray = ['芝加哥豪宅', '奧勒岡鄉間屋宅', '赫里福基地', '總統專機', '杜斯妥也夫斯基咖啡館', '貧民窟', '巴特雷特大學'];
 
 //Recognize People
 const pepe_teamChannel = 'C104fd7b862bd7cfe31839aa4ec773558';
@@ -72,14 +72,13 @@ exports.handler = function (req, res) {
         var gotUserMessage = true;
         msg = 'Uploading Images';
         //User pass-in images
-        if(event.message.type == 'image')
-        {
-           gotUserMessage = false;
-           var img_id = event.message.id;
-           content_url = "https://api.line.me/v2/bot/message/" + img_id + "/content";
+        if (event.message.type == 'image') {
+            gotUserMessage = false;
+            var img_id = event.message.id;
+            content_url = "https://api.line.me/v2/bot/message/" + img_id + "/content";
 
             //Make get Request
-            var requestSettings  = {
+            var requestSettings = {
                 url: content_url,
                 headers: {
                     "Content-type": "application/json; charset=UTF-8",
@@ -89,26 +88,24 @@ exports.handler = function (req, res) {
                 encoding: null
             };
 
-            request(requestSettings, function(error, response, body) {
+            request(requestSettings, function (error, response, body) {
                 // Use body as a binary Buffer
                 imageName = img_id + '.jpg';
 
                 //Turn off S3 upload first
-                if(FALSE){
+                if (FALSE) {
 
                     //Here Upload to S3
-                    var s3Bucket = new AWS.S3({params:{Bucket:PEPEBOT_S3_BUCKET} });
+                    var s3Bucket = new AWS.S3({ params: { Bucket: PEPEBOT_S3_BUCKET } });
                     var data = {
                         Key: imageName,
                         Body: body,
                         ContentType: "image/jpeg"
                     };
 
-                    s3Bucket.upload(data, function(err, data){
-                        if (err)
-                        { console.log('Error uploading data: ', data);}
-                        else
-                        {
+                    s3Bucket.upload(data, function (err, data) {
+                        if (err) { console.log('Error uploading data: ', data); }
+                        else {
                             console.log('Successfully uploaded the image! Yo');
                         }
                     });
@@ -132,60 +129,65 @@ exports.handler = function (req, res) {
 
         var forceLeo = false;
 
-        if(gotUserMessage){
+        if (gotUserMessage) {
             var msg = event.message.text.toUpperCase().trim();
 
-            if(msg.indexOf('婚') !== -1){
+            if (msg.indexOf('婚') !== -1) {
                 msg = 'GG';
             }
 
-            if(msg.indexOf('難道') !== -1){
+            if (msg.indexOf('難道') !== -1) {
                 msg = '難道';
             }
 
-            if(msg.indexOf('小心') !== -1){
+            if (msg.indexOf('小心') !== -1) {
                 msg = '小心';
             }
 
-            if(msg.indexOf('幹') !== -1){
+            if (msg.indexOf('剛布') !== -1) {
+                msg = '剛布';
+            }
+
+
+            if (msg.indexOf('幹') !== -1) {
                 msg = '大可不必';
             }
 
-            if(msg.indexOf('鬆') !== -1){
+            if (msg.indexOf('鬆') !== -1) {
                 msg = 'RELAX';
             }
 
-            if(msg.indexOf('窮') !== -1){
+            if (msg.indexOf('窮') !== -1) {
                 msg = 'POOR';
             }
 
-            if(msg.indexOf('勇') !== -1){
+            if (msg.indexOf('勇') !== -1) {
                 msg = '勇';
             }
 
-            if(msg.indexOf('時中') !== -1){
+            if (msg.indexOf('時中') !== -1) {
                 msg = 'CLOCK';
             }
 
-            if((msg.indexOf('杰') !== -1) || (msg.indexOf('傑') !== -1)){
+            if ((msg.indexOf('杰') !== -1) || (msg.indexOf('傑') !== -1)) {
                 msg = 'JAY';
             }
 
-            if(msg.indexOf('怕') !== -1){
+            if (msg.indexOf('怕') !== -1) {
                 msg = 'SCARE';
             }
 
-            if((msg.indexOf('誒') !== -1) || (msg.indexOf('欸') !== -1)){
-                    msg = 'COME';
+            if ((msg.indexOf('誒') !== -1) || (msg.indexOf('欸') !== -1)) {
+                msg = 'COME';
             }
 
-            if(msg.indexOf('親 --FORCE') !== -1){
+            if (msg.indexOf('親 --FORCE') !== -1) {
                 msg = '親密度X';
                 forceLeo = true;
             }
 
-            if((msg.indexOf('親') !== -1) || (msg.indexOf('腎') !== -1)){
-                if(!forceLeo){
+            if ((msg.indexOf('親') !== -1) || (msg.indexOf('腎') !== -1)) {
+                if (!forceLeo) {
                     msg = '親密度';
                 }
             }
@@ -196,7 +198,7 @@ exports.handler = function (req, res) {
 
         var reply_token = event.replyToken; //Need to get this Token to pass back.
         var messages = [{
-            "type":"text",
+            "type": "text",
             "text": msg
         }];
 
@@ -207,14 +209,14 @@ exports.handler = function (req, res) {
         //Text is switch to UpperCase()
         var countdown = null;
         let tipMessage
-        switch(msg){
+        switch (msg) {
 
             case '笑': case 'SMILE':
                 targetUrl = rand.getFromArray(smileArray);
                 messages[0] = messageBuilder.image(targetUrl);
                 break;
 
-            case '小心': 
+            case '小心':
                 targetUrl = rand.getFromArray(carefulArray);
                 messages[0] = messageBuilder.image(targetUrl);
                 break;
@@ -314,9 +316,13 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.image('https://i.imgur.com/0GZFFLL.png');
                 break;
 
+            case '剛布':
+                messages[0] = messageBuilder.image('https://i.imgur.com/t7sLvOd.png');
+                break;
+
             case '王':
                 countdown = lib.getTimeRemaining(deadline);
-                messages[0].text = ' *吾王降臨* | `王寄生 WeMo ` 已經: ' + countdown.days + '天 '+ countdown.hours+ ' 小時 ' +countdown.minutes+ ' 分' + countdown.seconds +'秒, 向骨王獻出你的忠誠吧!';
+                messages[0].text = ' *吾王降臨* | `王寄生 WeMo ` 已經: ' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分' + countdown.seconds + '秒, 向骨王獻出你的忠誠吧!';
                 break;
 
             case 'CI':
@@ -326,12 +332,12 @@ exports.handler = function (req, res) {
             case 'CC':
                 messages[0].text = "`UCCU`";
                 break;
-            
+
             case '難道':
                 messages[0].text = "`只 有 你 !`";
                 break;
 
-            case 'GAMEOVER':case 'GG':case '婚':case '婚禮':case '崩':case '崩崩':case 'BON':case 'BONBON':
+            case 'GAMEOVER': case 'GG': case '婚': case '婚禮': case '崩': case '崩崩': case 'BON': case 'BONBON':
             case '爽':
             case 'SONG': //A_A
             case 'MOU':
@@ -343,8 +349,8 @@ exports.handler = function (req, res) {
 
                 days -= 2; //Hardcode
 
-                messages[0].text = '距離 `Mou` 在 `Zuvio` 被 KickOut 還剩下 `' + days +'` 天！';
-                if(days <= 0){
+                messages[0].text = '距離 `Mou` 在 `Zuvio` 被 KickOut 還剩下 `' + days + '` 天！';
+                if (days <= 0) {
                     messages[0].text = '` ♪ 與你相遇好幸運 可我已失去為你瘋狂挖坑的權利 ♬ ~ `';
                 }
                 break;
@@ -370,7 +376,7 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.image('https://ih1.redbubble.net/image.270666598.0736/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1.jpg');
                 break;
 
-             case 'HIT': case '打':
+            case 'HIT': case '打':
                 messages[0] = messageBuilder.image('https://i.imgur.com/Z4UAjkp.png');
                 break;
 
@@ -386,11 +392,11 @@ exports.handler = function (req, res) {
                 messages[0].type = 'text';
                 messages[0].text = "`誒你過來" + randomTask + "一下 " + "!".repeat(randomNumber) + "`";
 
-                if(randomNumber > 13){
+                if (randomNumber > 13) {
                     messages[0].text = "`誒你過來一下 過來一下 操你媽過來一下 !!!!!` ";
                 }
 
-                if(randomNumber > 18){ //if u lucky cc
+                if (randomNumber > 18) { //if u lucky cc
                     messages[0].text = "`不是啊 妳那個妳那個 ... 欸妳過來一下妳過來一下 操妳媽妳過來一下 !!!!!!!!` ";
                 }
 
@@ -404,85 +410,85 @@ exports.handler = function (req, res) {
             case 'WHAT':
             case 'WHAT?':
             case '你說什麼':
-                messages[0] = messageBuilder.image( 'https://i.imgur.com/BDqIWCb.png');
+                messages[0] = messageBuilder.image('https://i.imgur.com/BDqIWCb.png');
                 break;
 
             case 'FAIL': case 'FAILURE': case '失敗':
-                messages[0] = messageBuilder.image( 'https://i.imgur.com/8XQ60fW.png');
+                messages[0] = messageBuilder.image('https://i.imgur.com/8XQ60fW.png');
                 break;
 
             case '打氣':
-                messages[0] = messageBuilder.image( 'https://i.imgur.com/HYjWrJw.jpg');
+                messages[0] = messageBuilder.image('https://i.imgur.com/HYjWrJw.jpg');
                 break;
 
             case '衝啊':
-                messages[0] = messageBuilder.image( 'https://i.imgur.com/av4xEyt.jpg');
+                messages[0] = messageBuilder.image('https://i.imgur.com/av4xEyt.jpg');
                 break;
 
             case '哎': case '唉':
-                messages[0] = messageBuilder.image( 'https://i.imgur.com/KicHgbp.jpg');
+                messages[0] = messageBuilder.image('https://i.imgur.com/KicHgbp.jpg');
                 break;
 
             case '995':
             case '救救我':
-                messages[0] = messageBuilder.image( 'https://i.imgur.com/EY43bcx.jpg');
+                messages[0] = messageBuilder.image('https://i.imgur.com/EY43bcx.jpg');
                 break;
 
             case '看':
-            case 'LOOK':  case 'WATCH':
+            case 'LOOK': case 'WATCH':
             case '看屁看':
-                messages[0] = messageBuilder.image( 'https://i.imgur.com/kj6t3Rd.jpg');
+                messages[0] = messageBuilder.image('https://i.imgur.com/kj6t3Rd.jpg');
                 break;
 
             case 'CEO':
-                messages[0] = messageBuilder.image( rand.getFromArray(ceoArray));
+                messages[0] = messageBuilder.image(rand.getFromArray(ceoArray));
                 break;
 
             case 'GUAN': case '慣': case '冠':
-                messages[0] = messageBuilder.image( rand.getFromArray(guanArray));
+                messages[0] = messageBuilder.image(rand.getFromArray(guanArray));
                 break;
 
             case 'HOLAN': case '騙': case '冠':
-                messages[0] = messageBuilder.image( rand.getFromArray(holanArray));
+                messages[0] = messageBuilder.image(rand.getFromArray(holanArray));
                 break;
 
             case 'DUCK':
-            case 'DUCKYOU':    
+            case 'DUCKYOU':
             case '大可不必':
                 messages[0].text = rand.getFromArray(duckArray);
                 break;
 
             case '郭':
-                messages[0] = messageBuilder.image( rand.getFromArray(KuoArray));
+                messages[0] = messageBuilder.image(rand.getFromArray(KuoArray));
                 break;
 
             case 'ISSUE':
-                messages[0] = messageBuilder.image( rand.getFromArray(issueArray));
+                messages[0] = messageBuilder.image(rand.getFromArray(issueArray));
                 break;
 
             case 'OK':
             case 'OKAY':
-                messages[0] = messageBuilder.image( rand.getFromArray(okayArray));
+                messages[0] = messageBuilder.image(rand.getFromArray(okayArray));
                 break;
 
             case 'LEO嗆':
             case '嗆':
-                messages[0] = messageBuilder.image( rand.getFromArray(chokeArray));
+                messages[0] = messageBuilder.image(rand.getFromArray(chokeArray));
                 break;
 
             case 'HUMM?':
             case 'HUMM':
             case 'HUMMMM':
-                messages[0] = messageBuilder.image( 'https://i.imgur.com/9uQmv6y.jpg');
+                messages[0] = messageBuilder.image('https://i.imgur.com/9uQmv6y.jpg');
                 break;
 
             case 'R':
             case 'R!!':
-                messages[0] = messageBuilder.image( 'https://i.imgur.com/1JtJplI.jpg');
+                messages[0] = messageBuilder.image('https://i.imgur.com/1JtJplI.jpg');
                 break;
 
             case 'SSD':
-                messages[0] = messageBuilder.image( rand.getFromArray(ssdArray));
+                messages[0] = messageBuilder.image(rand.getFromArray(ssdArray));
                 break;
 
             case 'BAD':
@@ -495,7 +501,7 @@ exports.handler = function (req, res) {
                 var intimacy = Math.floor(Math.random() * Math.floor(limit));
                 var who = rand.getFromArray(personArray);
 
-                if(speaker == 'leo'){
+                if (speaker == 'leo') {
                     who = speaker; //Force cc
                 }
 
@@ -517,7 +523,7 @@ exports.handler = function (req, res) {
 
             case '怎':
                 messages[0].text = '`世界怎麼跟得上台灣拉!!`';
-                break;    
+                break;
 
             case '舔':
                 messages[0].text = '`又舔! 又舔!! 又!(中斷) !又舔嘴唇!!!! (破音`';
@@ -534,7 +540,7 @@ exports.handler = function (req, res) {
             case '偷':
                 messages[0] = messageBuilder.image('https://i.imgur.com/yIsFGWo.png');
                 break;
-                
+
             case '我誰':
                 messages[0].text = '我高層嘻 ^^';
                 break;
@@ -564,7 +570,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '科':
-                var demoText =  '郭文彬和腎液親密度為 99999999';
+                var demoText = '郭文彬和腎液親密度為 99999999';
                 messages[0].text = demoText;
                 break;
 
@@ -574,15 +580,15 @@ exports.handler = function (req, res) {
                 var limit = 50;
                 var loyalty = rand.getNumber(0, limit);
 
-                if(loyalty > 45){
+                if (loyalty > 45) {
                     loyalty = '誓死效忠 ! 我是舔狗!! ';
                 }
 
-                if(loyalty < 20){
+                if (loyalty < 20) {
                     loyalty = '幹 乾我屁事!' + lib.getEmoji('0x10009E');
                 }
 
-                if(loyalty < 5){
+                if (loyalty < 5) {
                     loyalty = '太低, 無法偵測!';
                 }
 
@@ -611,11 +617,11 @@ exports.handler = function (req, res) {
                 var limit = 9999;
                 var intimacy = rand.getNumber(0, limit);
 
-                if(intimacy > 9500){ //Means you are really lucky;
+                if (intimacy > 9500) { //Means you are really lucky;
                     intimacy = 'OVERFLOW!';
                 }
 
-                if(intimacy < 500){ //Means you are really shitty;
+                if (intimacy < 500) { //Means you are really shitty;
                     intimacy = ' 太低 無法偵測 ';
                 }
                 // messages[0].text = '`' + speaker + '` 今日 ' + msg + ' `' + intimacy + '`';
@@ -626,15 +632,15 @@ exports.handler = function (req, res) {
 
             case 'SB':
                 let fullText = '傻逼東西!';
-                another_title  = '你J個';
-                messages[0] = messageBuilder.flexCountDown('Pepe AI',another_title, fullText, 'SBDX !!');
+                another_title = '你J個';
+                messages[0] = messageBuilder.flexCountDown('Pepe AI', another_title, fullText, 'SBDX !!');
                 break;
 
-              case 'SB+':
+            case 'SB+':
                 let fullTextSBPlus = '大傻逼東西！! MDFK';
-                another_title  = '你94一個';
-                messages[0] = messageBuilder.flexCountDown('Pepe AI',another_title, fullTextSBPlus, 'SBDX !!');
-                break;    
+                another_title = '你94一個';
+                messages[0] = messageBuilder.flexCountDown('Pepe AI', another_title, fullTextSBPlus, 'SBDX !!');
+                break;
 
             case '裂根':
                 //  another_title = speaker + '的' + msg + '為:';
@@ -645,11 +651,11 @@ exports.handler = function (req, res) {
                 var limit = 210;
                 var iq = rand.getNumber(0, limit);
 
-                if(iq < 10){ //Means you are really shitty;
+                if (iq < 10) { //Means you are really shitty;
                     iq = 'IQ 200 !!';
                 }
 
-                if(iq < 10){ //Means you are really shitty;
+                if (iq < 10) { //Means you are really shitty;
                     iq = '神智為 0!';
                 }
 
@@ -664,7 +670,7 @@ exports.handler = function (req, res) {
 
             case 'TIP':
                 tipMessage = rand.getFromArray(tipArray);
-                messages[0] = messageBuilder.flexCountDown('Black Belt Tip', 'Dev Black Belt Tip:', tipMessage,'這樣你懂了嗎??');
+                messages[0] = messageBuilder.flexCountDown('Black Belt Tip', 'Dev Black Belt Tip:', tipMessage, '這樣你懂了嗎??');
                 // messages[0] = messageBuilder.flexTip('Black Belt Tip', 'Dev Black Belt Tip:', tipMessage, '這樣你懂了嗎?');
                 break;
 
@@ -693,7 +699,7 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.sticker(3, 181);
                 break;
 
-            case '屁':  case '嗆屁嗆': case 'PU':
+            case '屁': case '嗆屁嗆': case 'PU':
                 messages[0] = messageBuilder.sticker(2, 177);
                 break;
 
@@ -702,7 +708,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '崩潰':
-                messages[0] = messageBuilder.sticker(1,105);
+                messages[0] = messageBuilder.sticker(1, 105);
                 break;
 
             case 'CRY':
@@ -733,20 +739,20 @@ exports.handler = function (req, res) {
         }
 
         //5% random yes
-        if(msg == 'NO'){
+        if (msg == 'NO') {
 
             var chance = 40; // 40% 機率 Trigger
             var hit = rand.getNumber(0, 100);
 
             needToReply = true;
 
-            if(hit < chance) { //Means you are really lucky;
+            if (hit < chance) { //Means you are really lucky;
 
                 var messages = [{
                     "type": "text",
                     "text": ' `ㄟ湯喔～` ' + lib.getEmoji('0x100095')
                 }];
-            }else{
+            } else {
                 var messages = [{
                     "type": "text",
                     "text": ' `母湯!` ' + lib.getEmoji('0x1000A6')
@@ -754,33 +760,33 @@ exports.handler = function (req, res) {
             }
         }
 
-        if(needToReply){
+        if (needToReply) {
 
             var options = {
                 method: 'POST',
                 uri: "https://api.line.me/v2/bot/message/reply",
                 headers: {
-                  "Content-type": "application/json; charset=UTF-8",
-                  "Authorization": " Bearer " + ChannelAccessToken
+                    "Content-type": "application/json; charset=UTF-8",
+                    "Authorization": " Bearer " + ChannelAccessToken
                 },
                 json: true,
                 body: {
-                  replyToken: reply_token,
-                  messages
+                    replyToken: reply_token,
+                    messages
                 }
             };
 
             return rp(options) //Making the POST call.
-            .then(function (response) {
-                console.log("Success : " + response);
-            }).catch(function (err) {
-                console.log("Error : " + err);
-            });
+                .then(function (response) {
+                    console.log("Success : " + response);
+                }).catch(function (err) {
+                    console.log("Error : " + err);
+                });
 
         }//Otherwise no need to reply
     });
 
     Promise
-    .all(promises)
-    .then(() => res.json({success: true}));
+        .all(promises)
+        .then(() => res.json({ success: true }));
 };
