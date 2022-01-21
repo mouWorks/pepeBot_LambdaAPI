@@ -144,6 +144,10 @@ exports.handler = function (req, res) {
                 msg = '小心';
             }
 
+            if (msg.indexOf('色') !== -1) {
+                msg = '色色';
+            }
+
             if (msg.indexOf('剛布') !== -1) {
                 msg = '剛布';
             }
@@ -358,6 +362,10 @@ exports.handler = function (req, res) {
             case '可憐': case '可憐哪':
                 messages[0] = messageBuilder.image(rand.getFromArray(koLienArray));
                 break;
+
+            case '色色':
+                messages[0] = messageBuilder.image('https://i.imgur.com/u6gsSWo.png');
+                break;    
 
             case '成龍':
             case 'JACKIECHAN':
