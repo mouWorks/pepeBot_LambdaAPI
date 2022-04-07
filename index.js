@@ -225,7 +225,6 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.image(targetUrl);
                 break;
 
-
             case '6':
                 var randomNumber = rand.getValue(15);
                 messages[0].text = "6".repeat(randomNumber);
