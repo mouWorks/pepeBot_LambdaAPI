@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha # <---- Powerful Mocha Test by L30 cc"
+    "test": "mocha # <---- Powerful Mocha Test by L30 cc!"
   },
   "author": "",
   "license": "ISC",
