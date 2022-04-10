@@ -180,6 +180,10 @@ exports.handler = function (req, res) {
             if (msg.indexOf('怕') !== -1) {
                 msg = 'SCARE';
             }
+            
+            if (msg.indexOf('叫') !== -1) {
+                msg = '叫';
+            }
 
             if ((msg.indexOf('誒') !== -1) || (msg.indexOf('欸') !== -1)) {
                 msg = 'COME';
@@ -309,6 +313,10 @@ exports.handler = function (req, res) {
 
             case 'KING':
                 messages[0] = messageBuilder.image('https://i.imgur.com/BTHA8Wp.png');
+                break;
+
+            case '叫':
+                messages[0] = messageBuilder.image('https://i.imgur.com/khATnPE.png');
                 break;
 
             case 'WRONG':
