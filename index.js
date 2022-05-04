@@ -371,7 +371,8 @@ exports.handler = function (req, res) {
                 break;
 
             case '色色':
-                messages[0] = messageBuilder.image('https://i.imgur.com/u6gsSWo.png');
+                // messages[0] = messageBuilder.image('https://i.imgur.com/u6gsSWo.png');
+                   messages[0] = messageBuilder.image('https://stickershop.line-scdn.net/stickershop/v1/sticker/468533711/android/sticker.png');
                 break;    
 
             case '成龍':
