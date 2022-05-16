@@ -189,19 +189,11 @@ exports.handler = function (req, res) {
                 msg = 'COME';
             }
 
-            if (msg.indexOf('親 --FORCE') !== -1) {
-                msg = '親密度X';
-                forceLeo = true;
-            }
-
-            if ((msg.indexOf('親') !== -1) || (msg.indexOf('腎') !== -1)) {
+            if ((msg.indexOf('冰') !== -1)) {
                 if (!forceLeo) {
-                    msg = '親密度';
+                    msg = '冰淇淋';
                 }
             }
-            // if((msg.indexOf('呵') !== -1) || (msg.indexOf('笑') !== -1)){
-            //     msg = 'SMILE';
-            // }
         }
 
         var reply_token = event.replyToken; //Need to get this Token to pass back.
@@ -512,25 +504,17 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.image('https://i.imgur.com/nV3P7dt.png');
                 break;
 
-            case '親密度':
+            case '冰淇淋':
                 var limit = 50000000;
-                var intimacy = Math.floor(Math.random() * Math.floor(limit));
+                var credit = Math.floor(Math.random() * Math.floor(limit));
                 var who = rand.getFromArray(personArray);
 
                 if (speaker == 'leo') {
                     who = speaker; //Force cc
                 }
 
-                let intimacyTitle = who + '&腎液親密度:';
-                messages[0] = messageBuilder.badge('PepeAI', intimacyTitle, intimacy, '親密度又增加拉!');
-                // messages[0].text = who + '和腎液親密度 `+' + intimacy + '`';
-                break;
-
-            case '親密度X':
-                var limit = 900000000;
-                var intimacy = getRandomNumberWithHighLight(0, limit);
-                var who = rand.getFromArray(personArray);
-                messages[0].text = '郭文彬和腎液親密度 `+' + intimacy + '`';
+                let socialCreditsTitle = `Social Credit`
+                messages[0] = messageBuilder.badge('SocialCreditMeter', socialCreditsTitle, credit, '你們就偷著樂吧');
                 break;
 
             case '秋':
