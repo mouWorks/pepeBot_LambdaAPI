@@ -60,7 +60,7 @@ const ZuvioTeamMate = ['李奧', '阿酷', 'RainLay', 'L30', 'Mou', 'CarryMan', 
 const Behavior = ['Carry', '挖坑', '神救援', '狂嗆', '拯救', '衝康', '霸凌'];
 
 //const placeArray = ['台灣', '白宮', '沖繩', '美國', '東京', '北海道', '北歐', '韓國', '新加坡'];
-const placeArray = ['芝加哥豪宅', '奧勒岡鄉間屋宅', '赫里福基地', '總統專機', '杜斯妥也夫斯基咖啡館', '貧民窟', '巴特雷特大學'];
+// const placeArray = ['芝加哥豪宅', '奧勒岡鄉間屋宅', '赫里福基地', '總統專機', '杜斯妥也夫斯基咖啡館', '貧民窟', '巴特雷特大學'];
 
 //Recognize People
 const pepe_teamChannel = 'C104fd7b862bd7cfe31839aa4ec773558';
