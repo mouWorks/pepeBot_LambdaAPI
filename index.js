@@ -47,6 +47,8 @@ const KuoArray = ["https://i.imgur.com/X6mAbic.png"];
 const CoffeeArray = ["Cama", "Seven", "全家", "路易莎", "太濃了吧,否則怎麼苦的說不出話"];
 const FireArray = ["You are FIRED!", "Well you can stay.", "什麼爛code給我加班重寫！", "XX單在那邊自己去拿"];
 
+const noticeArray = ['注意身心平衡阿', '*能力不足 加班來補*, 你是趕, 還是奴!?']
+
 const placesArray = ["男同俱樂部", "群聊", "郭先生團隊", "剛布!!"]
 
 //Random Format
@@ -290,6 +292,10 @@ exports.handler = function (req, res) {
             case '咖啡':
                 messages[0].text = rand.getFromArray(CoffeeArray);
                 break;
+
+            case '注意':
+                messages[0].text = rand.getFromArray(noticeArray);
+                break
 
             case '這裡是':
                 messages[0].text = rand.getFromArray(placesArray);
