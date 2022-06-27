@@ -47,7 +47,7 @@ const KuoArray = ["https://i.imgur.com/X6mAbic.png"];
 const CoffeeArray = ["Cama", "Seven", "全家", "路易莎", "太濃了吧,否則怎麼苦的說不出話"];
 const FireArray = ["You are FIRED!", "Well you can stay.", "什麼爛code給我加班重寫！", "XX單在那邊自己去拿"];
 
-const noticeArray = ['注意身心平衡阿', '*能力不足 加班來補*, 你是趕, 還是奴!?']
+const noticeArray = ['注意身心平衡阿', "*能力不足 加班來補*, 你是趕, 還是奴!?", '失去平衡了嗎?', '愛注意捏！', '沒事不要加班啊']
 
 const placesArray = ["男同俱樂部", "群聊", "郭先生團隊", "剛布!!"]
 
@@ -166,6 +166,10 @@ exports.handler = function (req, res) {
                 msg = 'POOR';
             }
 
+            if (msg.indexOf('注意') !== -1) {
+                msg = '注意';
+            }
+
             if (msg.indexOf('勇') !== -1) {
                 msg = '勇';
             }
@@ -181,7 +185,7 @@ exports.handler = function (req, res) {
             if (msg.indexOf('怕') !== -1) {
                 msg = 'SCARE';
             }
-            
+
             if (msg.indexOf('叫') !== -1) {
                 msg = '叫';
             }
@@ -299,7 +303,7 @@ exports.handler = function (req, res) {
 
             case '這裡是':
                 messages[0].text = rand.getFromArray(placesArray);
-                break;   
+                break;
 
             case '我就是':
             case '594':
@@ -373,8 +377,8 @@ exports.handler = function (req, res) {
 
             case '色色':
                 // messages[0] = messageBuilder.image('https://i.imgur.com/u6gsSWo.png');
-                   messages[0] = messageBuilder.image('https://stickershop.line-scdn.net/stickershop/v1/sticker/468533711/android/sticker.png');
-                break;    
+                messages[0] = messageBuilder.image('https://stickershop.line-scdn.net/stickershop/v1/sticker/468533711/android/sticker.png');
+                break;
 
             case '成龍':
             case 'JACKIECHAN':
@@ -680,7 +684,6 @@ exports.handler = function (req, res) {
             case 'TIP':
                 tipMessage = rand.getFromArray(tipArray);
                 messages[0] = messageBuilder.flexCountDown('Black Belt Tip', 'Dev Black Belt Tip:', tipMessage, '這樣你懂了嗎??');
-                // messages[0] = messageBuilder.flexTip('Black Belt Tip', 'Dev Black Belt Tip:', tipMessage, '這樣你懂了嗎?');
                 break;
 
             case 'WORK':
@@ -735,12 +738,6 @@ exports.handler = function (req, res) {
                 break;
 
             default:
-
-                // Shut this up: too loud - enough la !
-                // if(msg.length == 2){
-                //     messages[0].text = msg + '...嘻';
-                //     break;
-                // }
 
                 needToReply = false; //這個表示中關鍵字 才要回
                 //messages[0].text = msg;
