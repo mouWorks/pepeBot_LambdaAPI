@@ -153,6 +153,9 @@ exports.handler = function (req, res) {
                 msg = '剛布';
             }
 
+            if (msg.indexOf('OR') !== -1) {
+                msg = 'OR';
+            }
 
             if (msg.indexOf('幹') !== -1) {
                 msg = '大可不必';
@@ -318,6 +321,10 @@ exports.handler = function (req, res) {
 
             case 'KING':
                 messages[0] = messageBuilder.image('https://i.imgur.com/BTHA8Wp.png');
+                break;
+
+            case 'OR':
+                messages[0] = messageBuilder.image('https://i.imgur.com/RkaxqdF.jpg');
                 break;
 
             case '叫':
