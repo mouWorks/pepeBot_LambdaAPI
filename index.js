@@ -345,7 +345,7 @@ exports.handler = function (req, res) {
 
             case '王':
                 countdown = lib.getTimeRemaining(deadline);
-                messages[0].text = ' *寄生WeMo* | `王寄生 WeMo` 已經: ' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分' + countdown.seconds + '秒!';
+                messages[0].text = '*🧎‍♀️🧎寄生WeMo🧎‍♀️🧎* | `王寄生 WeMo` 已經: ' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分' + countdown.seconds + '秒!';
                 break;
 
             case 'CI':
