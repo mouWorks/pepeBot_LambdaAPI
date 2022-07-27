@@ -36,7 +36,7 @@ const handsomeArray = require('data/_handsomeArray');
 const carefulArray = require('data/_carefulArray');
 const jayArray = require('data/_jayArray');
 const clockArray = require('data/_clockArray');
-
+const jkArray = require('data/_jkArray');
 
 //怕的 EmojiCon
 const scaredEmojiArray = require('data/_scaredArray');
@@ -250,6 +250,10 @@ exports.handler = function (req, res) {
             case 'CLOCK':
                 messages[0].text = lib.getRandomFromArrayWithStringStyle(clockArray);
                 break;
+
+            case 'JK':
+                messages[0].text = lib.getRandomFromArrayWithStringStyle(jkArray);
+                break;    
 
             case 'JAY':
                 messages[0].text = lib.getRandomFromArrayWithStringStyle(jayArray);
