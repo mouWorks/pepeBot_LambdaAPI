@@ -357,7 +357,7 @@ exports.handler = function (req, res) {
                 break;
 
             case 'CC':
-                messages[0].messageBuilder.image(`https://i.imgur.com/QxnUgrJ.png`)
+                messages[0].messageBuilder.image('https://i.imgur.com/QxnUgrJ.png')
                 break;
 
             case '難道':
