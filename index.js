@@ -253,7 +253,7 @@ exports.handler = function (req, res) {
 
             case 'JK':
                 messages[0].text = lib.getRandomFromArrayWithStringStyle(jkArray);
-                break;    
+                break;
 
             case 'JAY':
                 messages[0].text = lib.getRandomFromArrayWithStringStyle(jayArray);
@@ -358,6 +358,10 @@ exports.handler = function (req, res) {
 
             case 'CC':
                 messages[0] = messageBuilder.image('https://i.imgur.com/QxnUgrJ.png')
+                break;
+
+            case 'LEET':case 'LEETCODE':
+                messages[0] = messageBuilder.image('https://i.imgur.com/QSWpS7X.png')
                 break;
 
             case '難道':
