@@ -1,0 +1,463 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+# Make data base, printed on Thu Oct 20 03:24:35 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+RUBY_VERSION = ruby-3.1.2
+# automatic
+?F = $(notdir $?)
+# environment
+GP_OPEN_EDITOR = /ide/bin/remote-cli/gitpod-code
+# default
+.SHELLFLAGS := -c
+# environment
+SDKMAN_CANDIDATES_API = https://api.sdkman.io/2
+# environment
+VSX_REGISTRY_URL = https://open-vsx.gitpod.io
+# environment
+GRADLE_HOME = /home/gitpod/.sdkman/candidates/gradle/current
+# environment
+rvm_path = /home/gitpod/.rvm
+# environment
+SUPERVISOR_ADDR = localhost:22999
+# environment
+GITPOD_WORKSPACE_CLASS_INFO = {"id":"default","category":"GENERAL PURPOSE","displayName":"Standard (old)","description":"Up to 6 vCPU, 12GB memory, 30GB disk","powerups":1,"isDefault":false,"deprecated":true}
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /workspace/pepeBot_LambdaAPI
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# environment
+_ = /ide/node
+# environment
+GITPOD_THEIA_PORT = 23000
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+POETRY_CACHE_DIR = /workspace/.pyenv_mirror/poetry
+# environment
+GITPOD_ANALYTICS_WRITER = segment
+# environment
+GO_VERSION = 1.19.2
+# environment
+MAVEN_HOME = /home/gitpod/.sdkman/candidates/maven/current
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+GITPOD_WORKSPACE_CONTEXT_URL = https://github.com/mouWorks/pepeBot_LambdaAPI
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+THEIA_WORKSPACE_ROOT = /workspace/pepeBot_LambdaAPI
+# environment
+INFOPATH = :/home/linuxbrew/.linuxbrew/share/info
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+GIT_EDITOR = /ide/bin/remote-cli/gitpod-code --wait
+# environment
+VSCODE_CWD = /ide
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /ide/bin/remote-cli:/home/gitpod/.nix-profile/bin:/home/gitpod/.local/bin:/workspace/.cargo/bin:/home/gitpod/.pyenv/plugins/pyenv-virtualenv/shims:/home/gitpod/.pyenv/shims:/workspace/go/bin:/home/gitpod/.nix-profile/bin:/home/gitpod/.nix-profile/bin:/home/gitpod/.local/bin:/home/gitpod/.sdkman/candidates/maven/current/bin:/home/gitpod/.sdkman/candidates/java/current/bin:/home/gitpod/.sdkman/candidates/gradle/current/bin:/workspace/.cargo/bin:/home/gitpod/.rvm/gems/ruby-3.1.2/bin:/home/gitpod/.rvm/gems/ruby-3.1.2@global/bin:/home/gitpod/.rvm/rubies/ruby-3.1.2/bin:/home/gitpod/.pyenv/plugins/pyenv-virtualenv/shims:/workspace/go/bin:/home/gitpod/.nix-profile/bin:/ide/bin/remote-cli:/home/gitpod/go/bin:/home/gitpod/go-packages/bin:/home/gitpod/.nvm/versions/node/v16.17.1/bin:/home/gitpod/.yarn/bin:/home/gitpod/.pnpm:/home/gitpod/.pyenv/bin:/workspace/.rvm/bin:/home/gitpod/.cargo/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin/:/home/gitpod/.local/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/gitpod/.nvm/versions/node/v16.17.1/bin:/home/gitpod/.rvm/bin:/home/gitpod/.nvm/versions/node/v16.17.1/bin:/home/gitpod/.nvm/versions/node/v16.17.1/bin
+# environment
+GITPOD_OWNER_ID = bed0305d-8e68-4ffd-8355-7a05b6ae6ed4
+# environment
+GITPOD_WORKSPACE_ID = mouworks-pepebotlambdaa-olmy1c4kdq0
+# environment
+GITPOD_INTERVAL = 30000
+# environment
+CARGO_HOME = /workspace/.cargo
+# environment
+rvm_stored_umask = 0022
+# environment
+GITPOD_WORKSPACE_CLUSTER_HOST = ws-us72.gitpod.io
+# environment
+GITPOD_ANALYTICS_SEGMENT_KEY = bUY8IRdJ42KjLOBS9LoIHMYFBD8rSzjU
+# environment
+SDKMAN_DIR = /home/gitpod/.sdkman
+# environment
+PNPM_HOME = /home/gitpod/.pnpm
+# environment
+GITPOD_REPO_ROOTS = /workspace/pepeBot_LambdaAPI
+# environment
+PIP_CACHE_DIR = /workspace/.pyenv_mirror/pip_cache
+# environment
+GP_PYENV_MIRROR = /workspace/.pyenv_mirror
+# environment
+GOPATH = /workspace/go
+# environment
+PYTHONUSERBASE_VERSION_FILE = /workspace/.pyenv_mirror/user/.mounted_version
+# environment
+SDKMAN_PLATFORM = linuxx64
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+PYENV_ROOT = /home/gitpod/.pyenv
+# environment
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-7929dcb0-a0d5-4919-9511-9f93e6af386d.sock
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+NIX_VERSION = 2.11.0
+# environment
+LS_COLORS = 
+# automatic
+%F = $(notdir $%)
+# environment
+GP_PREVIEW_BROWSER = /ide/bin/remote-cli/gitpod-code --preview
+# automatic
+*F = $(notdir $*)
+# environment
+VISUAL = /ide/bin/remote-cli/gitpod-code
+# environment
+NIX_SSL_CERT_FILE = /etc/ssl/certs/ca-certificates.crt
+# environment
+rvm_bin_path = /home/gitpod/.rvm/bin
+# environment
+WORKSPACEKIT_WRAP_NETNS = true
+# default
+.LOADED := 
+# environment
+GEM_HOME = /home/gitpod/.rvm/gems/ruby-3.1.2
+# environment
+MANPATH = /home/gitpod/.nix-profile/share/man:/home/gitpod/.nix-profile/share/man:/home/gitpod/.nix-profile/share/man:/home/gitpod/.nix-profile/share/man::/home/linuxbrew/.linuxbrew/share/man
+# environment
+NODE_VERSION = 16.17.1
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+PYENV_SHELL = bash
+# environment
+HOME = /home/gitpod
+# environment
+THEIA_WEBVIEW_EXTERNAL_ENDPOINT = webview-{{hostname}}
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+GITPOD_CLI_APITOKEN = r7WqshwfIle_ja1gTw5Ebf3XSTf3LXlk
+# automatic
++F = $(notdir $+)
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+HOSTNAME = mouworks-pepebotlambdaa-olmy1c4kdq0
+# environment
+GP_PYENV_INIT = true
+# environment
+GRADLE_USER_HOME = /workspace/.gradle/
+# environment
+MAKELEVEL := 0
+# environment
+GEM_PATH = /home/gitpod/.rvm/gems/ruby-3.1.2:/home/gitpod/.rvm/gems/ruby-3.1.2@global
+# environment
+SDKMAN_VERSION = 5.16.0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+IRBRC = /home/gitpod/.rvm/rubies/ruby-3.1.2/.irbrc
+# environment
+SHLVL = 0
+# environment
+NIX_PROFILES = /nix/var/nix/profiles/default /home/gitpod/.nix-profile
+# environment
+GITPOD_GIT_USER_NAME = MWang
+# environment
+JAVA_HOME = /home/gitpod/.sdkman/candidates/java/current
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = gitpod
+# makefile
+.DEFAULT_GOAL := all
+# environment
+GOROOT = /home/gitpod/go
+# environment
+GITPOD_IDE_ALIAS = code
+# environment
+rvm_version = 1.29.12 (latest)
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+GITPOD_REPO_ROOT = /workspace/pepeBot_LambdaAPI
+# environment
+THEIA_RATELIMIT_LOG = 50
+# environment
+THEIA_MINI_BROWSER_HOST_PATTERN = browser-{{hostname}}
+# environment
+GITPOD_GIT_USER_EMAIL = mou.wang.works@gmail.com
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /
+# default
+.VARIABLES := 
+# environment
+GITPOD_WORKSPACE_CLASS = default
+# environment
+GITPOD_PREVENT_METADATA_ACCESS = true
+# environment
+GITPOD_HOST = https://gitpod.io
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+NVM_DIR = /home/gitpod/.nvm
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+PYENV_HOOK_PATH = /home/gitpod/.gp_pyenv.d
+# environment
+rvm_user_install_flag = 1
+# environment
+BROWSER = /ide/bin/helpers/browser.sh
+# environment
+GITPOD_MEMORY = 3489
+# environment
+VSCODE_HANDLES_SIGPIPE = true
+# environment
+GITPOD_TASKS = [{"init":"npm install"}]
+# 'override' directive
+.SHELLSTATUS := 0
+# default
+MAKEFILES := 
+# environment
+GITPOD_CODE_HOST = https://gitpod.io
+# environment
+HOMEBREW_NO_AUTO_UPDATE = 1
+# automatic
+<F = $(notdir $<)
+# environment
+GP_PYENV_FAKEROOT = /workspace/.pyenv_mirror/fakeroot
+# environment
+PIPENV_VENV_IN_PROJECT = true
+# environment
+TRIGGER_REBUILD = 1
+# environment
+GP_EXTERNAL_BROWSER = /ide/bin/remote-cli/gitpod-code --openExternal
+# environment
+SDKMAN_CANDIDATES_DIR = /home/gitpod/.sdkman/candidates
+# makefile (from 'Makefile', line 7)
+BRANCH := master
+# environment
+EDITOR = /ide/bin/remote-cli/gitpod-code
+# environment
+PWD = /workspace/pepeBot_LambdaAPI
+# environment
+LC_ALL = C
+# environment
+GITPOD_WORKSPACE_CONTEXT = {"isFile":false,"path":"","title":"mouWorks/pepeBot_LambdaAPI - master","ref":"master","refType":"branch","revision":"fab5861c2b5734cb8be581c2ba2f630491fc5d99","repository":{"cloneUrl":"https://github.com/mouWorks/pepeBot_LambdaAPI.git","host":"github.com","name":"pepeBot_LambdaAPI","owner":"mouWorks","private":false},"normalizedContextURL":"https://github.com/mouWorks/pepeBot_LambdaAPI","checkoutLocation":"pepeBot_LambdaAPI","snapshotBucketId":"workspaces/mouworks-pepebotlambdaa-16rwt5orccc/snapshot-1666236217861571335.tar@gitpod-prod-user-bed0305d-8e68-4ffd-8355-7a05b6ae6ed4","prebuildWorkspaceId":"3d9d2b67-97af-4fbf-bf05-53f74b288733","wasPrebuilt":true}
+# environment
+JAVA_TOOL_OPTIONS =  -Xmx3489m
+# automatic
+^F = $(notdir $^)
+# environment
+rvm_prefix = /home/gitpod
+# default
+SUFFIXES := 
+# environment
+APACHE_DOCROOT_IN_REPO = public
+# environment
+PYENV_VIRTUALENV_INIT = 1
+# environment
+NGINX_DOCROOT_IN_REPO = public
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+rvm_loaded_flag = 1
+# environment
+GITPOD_INSTANCE_ID = b7d4d7aa-1589-4596-9d21-e1b2f7b4fbac
+# environment
+GITPOD_WORKSPACE_URL = https://mouworks-pepebotlambdaa-olmy1c4kdq0.ws-us72.gitpod.io
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+PYTHONUSERBASE = /workspace/.pyenv_mirror/user/current
+# environment
+MY_RUBY_HOME = /home/gitpod/.rvm/rubies/ruby-3.1.2
+# variable set hash-table stats:
+# Load=145/1024=14%, Rehash=0, Collisions=15/176=9%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2346, inode 2013266049): 22 files, no impossibilities.
+
+# 22 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+push-f: pull test
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 34):
+	@echo ">>> Current branch [$(BRANCH)] Pushing Code"
+	git push origin $(BRANCH) -f
+
+pack:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 14):
+	./pack.sh
+
+all: build pack upload
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
+
+.PHONY: clean build pack upload test
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+push: pull test
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 30):
+	@echo ">>> Current branch [$(BRANCH)] Pushing Code"
+	git push origin $(BRANCH)
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-10-20 03:23:22
+#  File has been updated.
+#  Successfully updated.
+
+test:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 20):
+	npm run test && \
+	node --check index.js \
+	node --check libs/lib.js \
+	node --check libs/rand.js
+
+build:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := build
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
+#  recipe to execute (from 'Makefile', line 10):
+	npm install --only=production
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+pull:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 26):
+	@echo ">>> Pull Code on Current branch [$(BRANCH)]"
+	git pull origin $(BRANCH) --rebase
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+deploy: pack upload
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+upload:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 17):
+	./upload.sh
+
+# files hash-table stats:
+# Load=14/1024=1%, Rehash=0, Collisions=0/44=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 36 / storage = 315 B / avg = 8 B
+# current buf: size = 8162 B / used = 315 B / count = 36 / avg = 8 B
+
+# strcache performance: lookups = 66 / hit rate = 45%
+# hash-table stats:
+# Load=36/8192=0%, Rehash=0, Collisions=1/66=2%
+# Finished Make data base on Thu Oct 20 03:24:35 2022
+
+ 

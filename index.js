@@ -248,7 +248,8 @@ exports.handler = function (req, res) {
                 break;
 
             case 'CLOCK':
-                messages[0].text = lib.getRandomFromArrayWithStringStyle(clockArray);
+                messages[0] = messageBuilder.image('https://i.imgur.com/qsORplm.png');
+                // messages[0].text = lib.getRandomFromArrayWithStringStyle(clockArray); //random text
                 break;
 
             case 'JK':

@@ -1,0 +1,1 @@
+{"buildTargets":["all","build","clean","deploy","pack","pull","push","push-f","test","upload"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
