@@ -119,7 +119,7 @@ exports.handler = function (req, res) {
         var zuvioDeadLine = 'December 31 2020 18:30:00 GMT+0800'; // Zuvio Expire Time (updated)
         var deadline = 'January 6 2020 10:00:00 GMT+0800'; // Mou Wemo day!
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
-        var mouOnboardLine = 'April 1 2019 09:30:00 GMT+0800'; //Leo's Wedding
+        var mouExpireTime = 'Feb 6 2023 18:00:00 GMT+0800'; //Mou's Three year
 
         // //財哥文體使用
         // var chokeString = function(textString) {
@@ -348,6 +348,11 @@ exports.handler = function (req, res) {
                 messages[0] = messageBuilder.image('https://i.imgur.com/t7sLvOd.png');
                 break;
 
+            case 'W':
+                countdown = lib.getTimeRemaining(mouExpireTime);
+                messages[0].text = 'WeMo CountDown | 距離滿三年還剩: ' + countdown.days + '天 ' + countdown.hours + ' 小時 ';
+                break;
+
             case '王':
                 countdown = lib.getTimeRemaining(deadline);
                 messages[0].text = '*寄🤭生🫠We🤫Mo🫥* | `王寄生 WeMo` 已經: ' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分' + countdown.seconds + '秒!';
@@ -369,31 +374,31 @@ exports.handler = function (req, res) {
                 messages[0].text = "`只 有 你 !`";
                 break;
 
-            case 'GAMEOVER': case 'GG': case '婚': case '婚禮': case '崩': case '崩崩': case 'BON': case 'BONBON':
-            case '爽':
-            case 'SONG': //A_A
-            case 'MOU':
-            case 'MAYBE':
-            case 'M':
-                days = lib.getCountDownDate();
-                var who = rand.getFromArray(ZuvioTeamMate);
-                action = rand.getFromArray(Behavior);
+            // case 'GAMEOVER': case 'GG': case '婚': case '婚禮': case '崩': case '崩崩': case 'BON': case 'BONBON':
+            // case '爽':
+            // case 'SONG': //A_A
+            // case 'MOU':
+            // case 'MAYBE':
+            // case 'M':
+            //     days = lib.getCountDownDate();
+            //     var who = rand.getFromArray(ZuvioTeamMate);
+            //     action = rand.getFromArray(Behavior);
 
-                days -= 2; //Hardcode
+            //     days -= 2; //Hardcode
 
-                messages[0].text = '距離 `Mou` 在 `Zuvio` 被 KickOut 還剩下 `' + days + '` 天！';
-                if (days <= 0) {
-                    messages[0].text = '` ♪ 與你相遇好幸運 可我已失去為你瘋狂挖坑的權利 ♬ ~ `';
-                }
-                break;
+            //     messages[0].text = '距離 `Mou` 在 `Zuvio` 被 KickOut 還剩下 `' + days + '` 天！';
+            //     if (days <= 0) {
+            //         messages[0].text = '` ♪ 與你相遇好幸運 可我已失去為你瘋狂挖坑的權利 ♬ ~ `';
+            //     }
+            //     break;
 
             case '可憐': case '可憐哪':
                 messages[0] = messageBuilder.image(rand.getFromArray(koLienArray));
                 break;
 
             case '色色':
-                // messages[0] = messageBuilder.image('https://i.imgur.com/u6gsSWo.png');
-                messages[0] = messageBuilder.image('https://stickershop.line-scdn.net/stickershop/v1/sticker/468533711/android/sticker.png');
+                messages[0] = messageBuilder.image('https://i.imgur.com/u6gsSWo.png');
+                // messages[0] = messageBuilder.image('https://stickershop.line-scdn.net/stickershop/v1/sticker/468533711/android/sticker.png');
                 break;
 
             case '成龍':
@@ -547,7 +552,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '秋':
-                messages[0].text = '這個問題怎麼會 `問我咧` ？';
+                messages[0].text = '這個問題怎麼會 `問我咧` ?';
                 break;
 
             case '怎':
