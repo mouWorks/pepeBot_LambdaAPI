@@ -115,11 +115,11 @@ exports.handler = function (req, res) {
 
         }//endif;
 
-        // var zuvioDeadLine = 'July 10 2020 18:30:00 GMT+0800'; // Zuvio Expire Time
-        var zuvioDeadLine = 'December 31 2020 18:30:00 GMT+0800'; // Zuvio Expire Time (updated)
         var deadline = 'January 6 2020 10:00:00 GMT+0800'; // Mou Wemo day!
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
         var mouExpireTime = 'Feb 6 2023 18:00:00 GMT+0800'; //Mou's Three year
+        var qnapStartTime = 'January 11 2021 09:00:00 GMT+0800' // Leo's Qnap
+        var uitoxStartTime = 'January 3 2022 09:00:00 GMT+0800' // Jonic's uitox
 
         // //財哥文體使用
         // var chokeString = function(textString) {
@@ -352,6 +352,13 @@ exports.handler = function (req, res) {
                 countdown = lib.getTimeRemaining(mouExpireTime);
                 messages[0].text = 'WeMo CountDown | 距離滿三年還剩: ' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + '分鐘' + countdown.seconds + '秒';
                 break;
+
+            case '橘':
+                countdown = lib.getTimeRemaining(uitoxStartTime);
+                var timeRangeDesc = '已經' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + '分鐘' + countdown.seconds + '秒';
+                var text = 'uitox 借屍還魂,' + timeRangeDesc
+                messages[0] = messageBuilder.flexCountDown(text, 'Uitox借屍還魂', timeRangeDesc, 'UUUUUUUUUitox起來!');
+                break;    
 
             case '王':
                 countdown = lib.getTimeRemaining(deadline);
