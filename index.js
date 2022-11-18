@@ -355,9 +355,16 @@ exports.handler = function (req, res) {
 
             case '橘':
                 countdown = lib.getTimeRemaining(uitoxStartTime);
-                var timeRangeDesc = '已經' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + '分鐘' + countdown.seconds + '秒';
+                var timeRangeDesc = `已經 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
                 var text = 'uitox 借屍還魂,' + timeRangeDesc
                 messages[0] = messageBuilder.flexCountDown(text, 'Uitox借屍還魂', timeRangeDesc, 'UUUUUUUUUitox起來!');
+                break;    
+            
+            case 'Q':
+                countdown = lib.getTimeRemaining(qnapStartTime);
+                var timeRangeDesc = `已經 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
+                var text = 'Qnap 22K社畜寄生' + timeRangeDesc
+                messages[0] = messageBuilder.flexCountDown(text, '22K社畜寄生', timeRangeDesc, 'qNapper rises!');
                 break;    
 
             case '王':
