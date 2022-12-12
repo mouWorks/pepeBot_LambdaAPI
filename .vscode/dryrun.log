@@ -3,7 +3,7 @@ make: Entering directory '/workspace/pepeBot_LambdaAPI'
  
 npm install --only=production
 ./pack.sh
-./upload.sh
  
+./upload.sh
 make: Leaving directory '/workspace/pepeBot_LambdaAPI'
  
