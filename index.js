@@ -333,7 +333,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '叫':
-                messages[0] = messageBuilder.image(rand.getFromArray(['https://i.imgur.com/khATnPE.png','https://i.imgur.com/GS9g7O6.jpg'] );
+                messages[0] = messageBuilder.image(rand.getFromArray(['https://i.imgur.com/khATnPE.png','https://i.imgur.com/GS9g7O6.jpg']));
                 break;
 
             case 'WRONG':
