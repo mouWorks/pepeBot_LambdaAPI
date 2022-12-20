@@ -51,7 +51,7 @@ jobs:
       - persist_to_workspace:
          root: workspace
          paths:
-          - workspace/code.zip
+          - code.zip
 
   test:
     docker:
