@@ -14,11 +14,6 @@ jobs:
 
     steps:
       - checkout
-      # - aws-cli/setup
-      # - run:
-      #     name: check AWS Cli env
-      #     command: aws --version
-
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
@@ -113,7 +108,7 @@ jobs:
         
 workflows:
   version: 2
-  build && test, then deploy:
+  Build And Test, Deploy if Both Passed:
     jobs:
       - build:
           filters:
