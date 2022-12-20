@@ -7,7 +7,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/base:2022.12
+      - image: cimg/node:19.2.0
 
     working_directory: ~/Pepebot-Lambda
     executor: aws-cli/default
@@ -63,7 +63,7 @@ jobs:
           webhook: ${SLACK_WEBHOOK} # Optional: Enter a specific webhook here or the default will use $SLACK_WEBHOOK
   test:
     docker:
-      - image: cimg/base:2022.12
+      - image: cimg/node:19.2.0
     working_directory: ~/Pepebot-Lambda
     steps:
       - checkout
