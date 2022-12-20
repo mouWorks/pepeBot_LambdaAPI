@@ -6,6 +6,6 @@ module.exports = {
     },
     transformIgnorePatterns: ['<rootDir>/node_modules/'],
     testMatch: [
-        '<rootDir>/dist/test/lib.js'
+        '<rootDir>/dist/test/*.js'
       ]
   };

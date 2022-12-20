@@ -9,7 +9,7 @@ describe(`Rand`, () => {
 
         test('隨機出 5', () => {
             const v = rand.getFromArray([5, 5, 5])
-            expect(v).toBe(5)
+            expect(v).toBe(3)
         })
     })
     describe('getValue', () => {
