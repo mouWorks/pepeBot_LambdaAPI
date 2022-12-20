@@ -80,7 +80,7 @@ jobs:
     steps:
       - aws-cli/setup
       - attach_workspace:
-          at: /tmp/workspace
+          at: .
 
       - run:
           name: Show Current Location
