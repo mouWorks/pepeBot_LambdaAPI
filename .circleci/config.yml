@@ -51,7 +51,7 @@ jobs:
       - persist_to_workspace:
          root: workspace
          paths:
-           - "."
+           - ~/Pepebot-Lambda
 
   test:
     docker:
@@ -81,6 +81,14 @@ jobs:
       - aws-cli/setup
       - attach_workspace:
           at: /tmp/workspace
+
+      - run:
+          name: Show Current Location
+          command: pwd
+
+      - run:
+          name: List all files
+          command: ls
 
       - run:
           name: check AWS Cli env
