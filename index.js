@@ -350,7 +350,7 @@ exports.handler = function (req, res) {
 
             case 'W':
                 countdown = lib.getTimeRemaining(mouExpireTime);
-                messages[0].text = 'WeMo CountDown | 距離滿三年還剩: ' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + '分鐘' + countdown.seconds + '秒';
+                messages[0].text = 'WeMo Count Down | 距離滿三年還剩: ' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + '分鐘' + countdown.seconds + '秒';
                 break;
 
             case '橘':
