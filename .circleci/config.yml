@@ -37,14 +37,6 @@ jobs:
           name: Show Current Location
           command: pwd
 
-      - run:
-          name: Install Mocha
-          command: sudo npm install mocha -g
-
-      - run:
-          name: Run the Test
-          command: make test
-
       # Zip info
       # -r : directory
       # -1 : faster Zip
@@ -69,9 +61,25 @@ jobs:
           message: "Deployed by CircleCI"
           color: "#42e2f4" # Optional: Assign custom colors for each notification
           webhook: ${SLACK_WEBHOOK} # Optional: Enter a specific webhook here or the default will use $SLACK_WEBHOOK
+  test:
+    docker:
+      - image: circleci/node:12.9
+    working_directory: ~/Pepebot-Lambda
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm ci
+      
+      - run:
+          name: Install Jest
+          command: sudo npm install jest -g
 
+      - run:
+          name: Run the Test
+          command: make test
 workflows:
-  version: 2.1
+  version: 2
   build_and_auto_deploy:
     jobs:
       - build:
@@ -79,3 +87,8 @@ workflows:
             branches:
               only:
                 - master
+      - test:
+          filters:
+            branches:
+              only:
+                - master               
