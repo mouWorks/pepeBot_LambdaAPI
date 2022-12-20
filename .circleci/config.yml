@@ -51,7 +51,7 @@ jobs:
       - persist_to_workspace:
          root: workspace
          paths:
-           - ~/Pepebot-Lambda
+           - .
 
   test:
     docker:
