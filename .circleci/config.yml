@@ -36,22 +36,22 @@ jobs:
           name: Show Current Location
           command: pwd
 
+      - run:
+          name: Create Workspace
+          command: mkdir -p workspace
+
       # Zip info
       # -r : directory
       # -1 : faster Zip
       # -q : quiet
       - run:
           name: Zip the Folder
-          command: zip -r1q code.zip .
-
-      - run:
-          name: Create Workspace
-          command: mkdir -p Workspace
+          command: zip -r1q workspace/code.zip .
 
       - persist_to_workspace:
          root: workspace
          paths:
-           - .
+          - workspace/code.zip
 
   test:
     docker:
