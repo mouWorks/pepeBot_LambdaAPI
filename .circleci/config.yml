@@ -14,11 +14,10 @@ jobs:
 
     steps:
       - checkout
-      - aws-cli/setup
-
-      - run:
-          name: check AWS Cli env
-          command: aws --version
+      # - aws-cli/setup
+      # - run:
+      #     name: check AWS Cli env
+      #     command: aws --version
 
       - restore_cache:
           keys:
@@ -45,22 +44,15 @@ jobs:
           name: Zip the Folder
           command: zip -r1q code.zip .
 
-      # - run:
-      #     name: Update Lamdbda w/AWS Cli
-      #     command: aws lambda update-function-code --zip-file=fileb://code.zip --region=us-west-2 --function-name=PepeBot
+      - run:
+          name: Create Workspace
+          command: mkdir -p Workspace
 
-      # - slack/status:
-      #     channel: 'circle_ci'
-      #     fail_only: true
-      #     failure_message: "PepeBot Lambda Update fail!!"
-      #     webhook: ${SLACK_WEBHOOK} # Optional: Enter a specific webhook here or the default will use $SLACK_WEBHOOK
+      - persist_to_workspace:
+         root: workspace
+         paths:
+           - "."
 
-      # - slack/notify:
-      #     channel: 'circle_ci'
-      #     title: "PepeBot Deploy完成"
-      #     message: "Deployed by CircleCI"
-      #     color: "#42e2f4" # Optional: Assign custom colors for each notification
-      #     webhook: ${SLACK_WEBHOOK} # Optional: Enter a specific webhook here or the default will use $SLACK_WEBHOOK
   test:
     docker:
       - image: cimg/node:12.19.0-browsers
@@ -86,37 +78,13 @@ jobs:
     executor: aws-cli/default
 
     steps:
-      - checkout
       - aws-cli/setup
+      - attach_workspace:
+          at: /tmp/workspace
 
       - run:
           name: check AWS Cli env
           command: aws --version
-
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-      - run:
-          name: Install dependencies
-          command: npm install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      - run:
-          name: Show Current Location
-          command: pwd
-
-      # Zip info
-      # -r : directory
-      # -1 : faster Zip
-      # -q : quiet
-      - run:
-          name: Zip the Folder
-          command: zip -r1q code.zip .
 
       - run:
           name: Update Lamdbda w/AWS Cli
