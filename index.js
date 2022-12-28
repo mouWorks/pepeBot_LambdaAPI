@@ -350,7 +350,10 @@ exports.handler = function (req, res) {
 
             case 'W':
                 countdown = lib.getTimeRemaining(mouExpireTime);
-                messages[0].text = 'WeMo CountXDown | 距離滿三年還剩: ' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + '分鐘' + countdown.seconds + '秒';
+                // messages[0].text = 'WeMo CountXDown | 距離滿三年還剩: ' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + '分鐘' + countdown.seconds + '秒';
+                var timeRangeDesc = `已經 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
+                var text = 'WeMo CountDown | 滿三年還剩下' + timeRangeDesc
+                messages[0] = messageBuilder.flexCountDown(text, 'WeMo 騰籠換鳥', timeRangeDesc, '這都得應驗噠!');
                 break;
 
             case '橘':
@@ -362,9 +365,10 @@ exports.handler = function (req, res) {
             
             case 'Q':
                 countdown = lib.getTimeRemaining(qnapStartTime);
+                var note = rand.getFromArray(['緊來Save Qnap!', '丟系Save QNap', `qNapper Rises`, `qLocker 94讚`])
                 var timeRangeDesc = `已經 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
                 var text = 'Qnap 22K社畜寄生' + timeRangeDesc
-                messages[0] = messageBuilder.flexCountDown(text, '22K社畜寄生', timeRangeDesc, '緊來Save Qnap!');
+                messages[0] = messageBuilder.flexCountDown(text, '22K社畜寄生', timeRangeDesc, note);
                 break;    
 
             case '王':
