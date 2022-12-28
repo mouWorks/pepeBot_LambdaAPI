@@ -350,8 +350,7 @@ exports.handler = function (req, res) {
 
             case 'W':
                 countdown = lib.getTimeRemaining(mouExpireTime);
-                // messages[0].text = 'WeMo CountXDown | 距離滿三年還剩: ' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + '分鐘' + countdown.seconds + '秒';
-                var timeRangeDesc = `已經 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
+                var timeRangeDesc = `就在 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
                 var text = 'WeMo CountDown | 滿三年還剩下' + timeRangeDesc
                 messages[0] = messageBuilder.flexCountDown(text, 'WeMo 騰籠換鳥', timeRangeDesc, '這都得應驗噠!');
                 break;
