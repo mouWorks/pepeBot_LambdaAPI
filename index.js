@@ -350,7 +350,7 @@ exports.handler = function (req, res) {
 
             case 'W':
                 countdown = lib.getTimeRemaining(mouExpireTime);
-                var timeRangeDesc = `就在 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
+                var timeRangeDesc = `還剩 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
                 var text = 'WeMo CountDown | 滿三年還剩下' + timeRangeDesc
                 messages[0] = messageBuilder.flexCountDown(text, 'WeMo 騰籠換鳥', timeRangeDesc, '這都得應驗噠!');
                 break;
@@ -372,7 +372,11 @@ exports.handler = function (req, res) {
 
             case '王':
                 countdown = lib.getTimeRemaining(deadline);
-                messages[0].text = '*寄🤭生🫠We🤫Mo🫥* | `王寄生 WeMo` 已經: ' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分' + countdown.seconds + '秒!';
+                // messages[0].text = '*寄🤭生🫠We🤫Mo🫥* | `王寄生 WeMo` 已經: ' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分' + countdown.seconds + '秒!';
+
+                var timeRangeDesc = ` 已經 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
+                var text = '寄🤭生🫠We🤫Mo🫥 已經' + timeRangeDesc
+                messages[0] = messageBuilder.flexCountDown(text, '寄🤭生🫠We🤫Mo🫥', timeRangeDesc, '我就藤壺!');
                 break;
 
             case 'CI':
