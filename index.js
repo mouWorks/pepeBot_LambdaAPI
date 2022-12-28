@@ -364,7 +364,7 @@ exports.handler = function (req, res) {
                 countdown = lib.getTimeRemaining(qnapStartTime);
                 var timeRangeDesc = `已經 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
                 var text = 'Qnap 22K社畜寄生' + timeRangeDesc
-                messages[0] = messageBuilder.flexCountDown(text, '22K社畜寄生', timeRangeDesc, 'qNapper rises!');
+                messages[0] = messageBuilder.flexCountDown(text, '22K社畜寄生', timeRangeDesc, '緊來Save Qnap!');
                 break;    
 
             case '王':
