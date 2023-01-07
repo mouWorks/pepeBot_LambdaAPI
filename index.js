@@ -615,8 +615,7 @@ exports.handler = function (req, res) {
                 break;
 
             case '嘻':
-                var randString = '高層嘻' + lib.getEmoji('0x10008C');
-                messages[0].text = randString;
+                messages[0] = messageBuilder.image('https://i.imgur.com/SaWoqnh.jpg');
                 break;
 
             case '財':
