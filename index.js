@@ -2,8 +2,6 @@ const rp = require('request-promise');
 const request = require('request');
 const AWS = require('aws-sdk');
 const fs = require('fs');
-// const nodejieba = require('nodejieba');
-// nodejieba.load({dict: './dict.txt'})
 
 const PEPEBOT_S3_BUCKET = 'pepebot-images';
 const EXPORT_PATH = 'pepebot/';
@@ -120,6 +118,7 @@ exports.handler = function (req, res) {
         var mouExpireTime = 'Feb 6 2023 18:00:00 GMT+0800'; //Mou's Three year
         var qnapStartTime = 'January 11 2021 09:00:00 GMT+0800' // Leo's Qnap
         var uitoxStartTime = 'January 3 2022 09:00:00 GMT+0800' // Jonic's uitox
+        var esliteStartTime =  'January 9 2022 09:00:00 GMT+0800' // RainLay's Eslite
 
         // //財哥文體使用
         // var chokeString = function(textString) {
@@ -369,11 +368,17 @@ exports.handler = function (req, res) {
                 var text = 'Qnap 22K社畜寄生' + timeRangeDesc
                 messages[0] = messageBuilder.flexCountDown(text, '22K社畜寄生', timeRangeDesc, note);
                 break;    
+            
+            case 'E':
+                    countdown = lib.getTimeRemaining(esliteStartTime);
+                    var note = rand.getFromArray(['緊來Save Eslite!', '丟系Save Eslite'])
+                    var timeRangeDesc = `已經 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
+                    var text = 'Eslite 華麗起飛' + timeRangeDesc
+                    messages[0] = messageBuilder.flexCountDown(text, 'ESLITE 華麗起飛', timeRangeDesc, note);
+                    break;      
 
             case '王':
                 countdown = lib.getTimeRemaining(deadline);
-                // messages[0].text = '*寄🤭生🫠We🤫Mo🫥* | `王寄生 WeMo` 已經: ' + countdown.days + '天 ' + countdown.hours + ' 小時 ' + countdown.minutes + ' 分' + countdown.seconds + '秒!';
-
                 var timeRangeDesc = ` 已經 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
                 var text = '寄🤭生🫠We🤫Mo🫥 已經' + timeRangeDesc
                 messages[0] = messageBuilder.flexCountDown(text, '寄🤭生🫠We🤫Mo🫥', timeRangeDesc, '我就藤壺!');
@@ -694,11 +699,6 @@ exports.handler = function (req, res) {
                 let fullTextSBPlus = '大傻逼東西！! MDFK';
                 another_title = '你94一個';
                 messages[0] = messageBuilder.flexCountDown('Pepe AI', another_title, fullTextSBPlus, 'SBDX !!');
-                break;
-
-            case '裂根':
-                //  another_title = speaker + '的' + msg + '為:';
-                messages[0] = messageBuilder.flexCountDown('Pepe Algorithm', '墾丁仔出列，你這個', '裂根東西!', 'LGDX !');
                 break;
 
             case '神智':
