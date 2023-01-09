@@ -118,7 +118,7 @@ exports.handler = function (req, res) {
         var mouExpireTime = 'Feb 6 2023 18:00:00 GMT+0800'; //Mou's Three year
         var qnapStartTime = 'January 11 2021 09:00:00 GMT+0800' // Leo's Qnap
         var uitoxStartTime = 'January 3 2022 09:00:00 GMT+0800' // Jonic's uitox
-        var esliteStartTime =  'January 9 2022 09:00:00 GMT+0800' // RainLay's Eslite
+        var esliteStartTime =  'January 9 2023 09:00:00 GMT+0800' // RainLay's Eslite
 
         // //財哥文體使用
         // var chokeString = function(textString) {
