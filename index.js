@@ -152,10 +152,6 @@ exports.handler = function (req, res) {
                 msg = '剛布';
             }
 
-            if (msg.indexOf('OR') !== -1) {
-                msg = 'OR';
-            }
-
             if (msg.indexOf('幹') !== -1) {
                 msg = '大可不必';
             }
