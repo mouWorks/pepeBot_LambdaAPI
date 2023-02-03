@@ -346,8 +346,9 @@ exports.handler = function (req, res) {
             case 'W':
                 countdown = lib.getTimeRemaining(mouExpireTime);
                 var timeRangeDesc = `還剩 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
+                var note = rand.getFromArray(['怎麼了 你累了 說好的 離職呢', '怎麼了 你累了 說好的 離職呢', '我錯了 要崩了 不敢了 我孬了'])
                 var text = 'WeMo CountDown | 滿三年還剩下' + timeRangeDesc
-                messages[0] = messageBuilder.flexCountDown(text, 'WeMo 騰籠換鳥', timeRangeDesc, '這都得應驗噠!');
+                messages[0] = messageBuilder.flexCountDown(text, 'WeMo 騰籠換鳥', timeRangeDesc, note);
                 break;
 
             case '橘':
