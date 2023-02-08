@@ -355,7 +355,7 @@ exports.handler = function (req, res) {
                 countdown = lib.getTimeRemaining(uitoxStartTime);
                 var timeRangeDesc = `已經 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
                 var text = 'uitox 借屍還魂,' + timeRangeDesc
-                messages[0] = messageBuilder.flexCountDown(text, 'Uitox借屍還魂', timeRangeDesc, 'UUUUUUUUUitox起來!');
+                messages[0] = messageBuilder.flexCountDown(text, 'Uitox借屍還魂', timeRangeDesc, '版切切切切切切切起來!');
                 break;    
             
             case 'Q':
