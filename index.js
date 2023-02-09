@@ -342,6 +342,10 @@ exports.handler = function (req, res) {
             case '剛布':
                 messages[0] = messageBuilder.image('https://i.imgur.com/t7sLvOd.png');
                 break;
+            
+            case '叛徒':
+                messages[0] = messageBuilder.image('https://i.imgur.com/VJgZ4k1.jpg');
+                break;
 
             case 'W':
                 countdown = lib.getTimeRemaining(mouExpireTime);
