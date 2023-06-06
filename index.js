@@ -116,7 +116,7 @@ exports.handler = function (req, res) {
         var deadline = 'January 6 2020 10:00:00 GMT+0800'; // Mou Wemo day!
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
         var mouExpireTime = 'Feb 6 2023 18:00:00 GMT+0800'; //Mou's Three year
-        var qnapStartTime = 'January 11 2021 09:00:00 GMT+0800' // Leo's Qnap
+        var qnapStartTime = 'January 11 2024 09:00:00 GMT+0800' // Leo's Qnap
         var uitoxStartTime = 'January 3 2022 09:00:00 GMT+0800' // Jonic's uitox
         var esliteStartTime =  'January 9 2023 09:00:00 GMT+0800' // RainLay's Eslite
 
@@ -365,9 +365,9 @@ exports.handler = function (req, res) {
             case 'Q':
                 countdown = lib.getTimeRemaining(qnapStartTime);
                 var note = rand.getFromArray(['緊來Save Qnap!', '丟系Save QNap', `qNapper Rises`, `qLocker 94讚`])
-                var timeRangeDesc = `已經 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
-                var text = 'Qnap 22K社畜寄生' + timeRangeDesc
-                messages[0] = messageBuilder.flexCountDown(text, '22K社畜寄生', timeRangeDesc, note);
+                var timeRangeDesc = `剩下 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
+                var text = 'Qnap 毀滅倒數' + timeRangeDesc
+                messages[0] = messageBuilder.flexCountDown(text, '毀滅倒數', timeRangeDesc, note);
                 break;    
             
             case 'E':
