@@ -364,10 +364,10 @@ exports.handler = function (req, res) {
             
             case 'Q':
                 countdown = lib.getTimeRemaining(qnapStartTime);
-                var note = rand.getFromArray(['凡事太盡 緣份早盡', '去找吧，我把客訴都留在系統裡了', `去怪你的網路公司吧`])
+                var note = rand.getFromArray(['凡事太盡 緣份早盡', '去找吧，我把客訴都留在系統裡了', `去怪你的網路公司吧`, `曾經有一份客訴擺在我面前而我沒有去珍惜`])
                 var timeRangeDesc = `剩下 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
                 var text = 'Qnap 客訴工程師生涯倒數' + timeRangeDesc
-                messages[0] = messageBuilder.flexCountDown(text, '緣盡倒數', timeRangeDesc, note);
+                messages[0] = messageBuilder.flexCountDown(text, 'Qnap 客訴工程師生涯倒數', timeRangeDesc, note);
                 break;    
             
             case 'E':
