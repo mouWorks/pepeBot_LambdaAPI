@@ -382,8 +382,9 @@ exports.handler = function (req, res) {
             case '王':
                 countdown = lib.getTimeRemaining(deadline);
                 var timeRangeDesc = ` 已經 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
+                var note = rand.getFromArray(['you no longer my concern', ])
                 var text = '寄🤭生🫠We🤫Mo🫥 已經' + timeRangeDesc
-                messages[0] = messageBuilder.flexCountDown(text, '寄🤭生🫠We🤫Mo🫥', timeRangeDesc, '我就藤壺!');
+                messages[0] = messageBuilder.flexCountDown(text, 'No time to die()', timeRangeDesc, note);
                 break;
 
             case 'CI':
