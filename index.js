@@ -116,7 +116,8 @@ exports.handler = function (req, res) {
         var deadline = 'January 6 2020 10:00:00 GMT+0800'; // Mou Wemo day!
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
         var mouExpireTime = 'Feb 6 2023 18:00:00 GMT+0800'; //Mou's Three year
-        var qnapStartTime = 'January 11 2024 09:00:00 GMT+0800' // Leo's Qnap
+        // var qnapStartTime = 'January 11 2024 09:00:00 GMT+0800' // Leo's Qnap
+        var qnapStartTime = 'September 29 2023 18:00:00 GMT+0800' // Leo's Qnap
         var uitoxStartTime = 'January 3 2022 09:00:00 GMT+0800' // Jonic's uitox
         var esliteStartTime =  'January 9 2023 09:00:00 GMT+0800' // RainLay's Eslite
 
