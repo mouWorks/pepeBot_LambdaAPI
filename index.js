@@ -113,7 +113,8 @@ exports.handler = function (req, res) {
 
         }//endif;
 
-        var deadline = 'January 6 2020 10:00:00 GMT+0800'; // Mou Wemo day!
+        // var deadline = 'January 6 2020 10:00:00 GMT+0800'; // Mou's Wemo day
+        var deadline = 'August 21 2023 09:30:00 GMT+0800'; // Mou's Eslite day
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
         var mouExpireTime = 'Feb 6 2023 18:00:00 GMT+0800'; //Mou's Three year
         // var qnapStartTime = 'January 11 2024 09:00:00 GMT+0800' // Leo's Qnap
@@ -378,9 +379,9 @@ exports.handler = function (req, res) {
             case '王':
                 countdown = lib.getTimeRemaining(deadline);
                 var timeRangeDesc = ` 已經 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
-                var note = rand.getFromArray(['you no longer my concern', ])
-                var text = '寄🤭生🫠We🤫Mo🫥 已經' + timeRangeDesc
-                messages[0] = messageBuilder.flexCountDown(text, 'No time to die()', timeRangeDesc, note);
+                var note = rand.getFromArray(['How long will I survive ?'])
+                var text = '求🤭生🫠誠🤫品🫥 已經' + timeRangeDesc
+                messages[0] = messageBuilder.flexCountDown(text, 'Re: 從零開始', timeRangeDesc, note);
                 break;
 
             case 'CI':
