@@ -379,9 +379,9 @@ exports.handler = function (req, res) {
             case '王':
                 countdown = lib.getTimeRemaining(deadline);
                 var timeRangeDesc = ` 已經 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
-                var note = rand.getFromArray(['How long will I survive ?'])
+                var note = rand.getFromArray(['How long will I survive ?','寫Code不用腦, 一輩子都是飛機'])
                 var text = '求🤭生🫠誠🤫品🫥 已經' + timeRangeDesc
-                messages[0] = messageBuilder.flexCountDown(text, 'Re: 從零開始', timeRangeDesc, note);
+                messages[0] = messageBuilder.flexCountDown(text, 'Re: 從零開始的和誠品菜雞生活', timeRangeDesc, note);
                 break;
 
             case 'CI':
