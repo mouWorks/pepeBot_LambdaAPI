@@ -118,7 +118,8 @@ exports.handler = function (req, res) {
         var friedGdeadline = 'May 10 2018 19:30:00 GMT+0800'; //time for FriedChicken
         var mouExpireTime = 'Feb 6 2023 18:00:00 GMT+0800'; //Mou's Three year
         // var qnapStartTime = 'January 11 2024 09:00:00 GMT+0800' // Leo's Qnap
-        var qnapStartTime = 'September 29 2023 18:00:00 GMT+0800' // Leo's Qnap
+        // var qnapStartTime = 'September 29 2023 18:00:00 GMT+0800' // Leo's Qnap
+        var qnapStartTime = 'September 22 2023 18:00:00 GMT+0800' // Leo's Qnap Quit Day
         var uitoxStartTime = 'January 3 2022 09:00:00 GMT+0800' // Jonic's uitox
         var esliteStartTime =  'January 9 2023 09:00:00 GMT+0800' // RainLay's Eslite
 
@@ -361,11 +362,25 @@ exports.handler = function (req, res) {
                 break;    
             
             case 'Q':
+                var qArray = [
+                    `今後各自曲折 各自悲哀~`,
+                    `上班好同事 下班不認識 離職陌生人`,
+                    `凡事太盡 緣份早盡`, 
+                    `去找吧，我把客訴都留在系統裡了`,
+                    `去怪你的網路公司吧`, 
+                    `曾經有一份客訴擺在我面前而我沒有去珍惜`, 
+                    `想留停 門都沒有`, 
+                    `你不是還有生命嗎？`, 
+                    `颱風天好好 remote 啊`,
+                    `於是夢醒了擱淺了沉默了揮手了　卻回不了神`
+            ]
+
+
                 countdown = lib.getTimeRemaining(qnapStartTime);
-                var note = rand.getFromArray(['凡事太盡 緣份早盡', '去找吧，我把客訴都留在系統裡了', `去怪你的網路公司吧`, `曾經有一份客訴擺在我面前而我沒有去珍惜`, `想留停 門都沒有`, `你不是還有生命嗎？`, `颱風天好好 remote 啊`])
+                var note = rand.getFromArray(qArray)
                 var timeRangeDesc = `剩下 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
-                var text = 'Qnap 客訴工程師生涯倒數' + timeRangeDesc
-                messages[0] = messageBuilder.flexCountDown(text, 'Qnap 客訴工程師生涯倒數', timeRangeDesc, note);
+                var text = 'Qnap 毀滅倒數' + timeRangeDesc
+                messages[0] = messageBuilder.flexCountDown(text, 'Qnap 毀滅倒數', timeRangeDesc, note);
                 break;    
             
             case 'E':
