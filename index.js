@@ -367,19 +367,19 @@ exports.handler = function (req, res) {
                     `去找吧，我把客訴都留在系統裡了`,
                     `去怪你的網路公司吧`, 
                     `曾經有一份客訴擺在我面前而我沒有去珍惜`, 
-                    `想留停 門都沒有 自己提離職懂嗎？`, 
                     `你不是還有生命嗎？`, 
-                    `颱風天好好 remote 啊`,
-                    `要末位淘汰不會快點執行嗎？這還要我教？`,
-                    `HR:想離職，離職日由我決定，懂嗎？`,
+                    `何以解憂 唯有杜康`, 
+                    `手把青秧插滿田，低頭便見水中天；六根清淨方為道，退步原來是向前。`,
+                    `他強由他強，清風拂山岡。他橫任他橫，明月照大江。`,
+                    `滾滾長江東逝水，浪花淘盡英雄。是非成敗轉頭空，青山依舊在，幾度夕陽紅。`,
                 ];
 
 
                 countdown = lib.getTimeRemaining(qnapStartTime);
                 var note = rand.getFromArray(qArray)
                 var timeRangeDesc = `剩下 ${countdown.days} 天 ${countdown.hours} 小時 ${countdown.minutes} 分 ${countdown.seconds} 秒`
-                var text = 'Qnap 毀滅倒數' + timeRangeDesc
-                messages[0] = messageBuilder.flexCountDown(text, 'Qnap 毀滅倒數', timeRangeDesc, note);
+                var text = 'Qnap 客訴服務品質提升倒數' + timeRangeDesc
+                messages[0] = messageBuilder.flexCountDown(text, 'Qnap 客訴服務品質提升倒數', timeRangeDesc, note);
                 break;    
             
             case 'E':
