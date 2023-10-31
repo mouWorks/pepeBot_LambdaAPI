@@ -202,7 +202,7 @@ exports.handler = function (req, res) {
             }
 
             if ((msg.indexOf('YY') !== -1) || (msg.indexOf('遙遙') !== -1)) {
-                msg = 'YYXL';
+                msg = 'YYLX';
             }
         }
 
@@ -377,7 +377,7 @@ exports.handler = function (req, res) {
                     messages[0] = messageBuilder.flexCountDown(text, 'ESLITE 華麗起飛', timeRangeDesc, note);
                     break;      
 
-            case 'YYXL':
+            case 'YYLX':
                     messages[0].text = rand.getFromArray(['遙遙領先', '遙遙領先, 遙遙領先, 不是領先一點點', '是 遙 遙 領 先'])
                     break;
 
