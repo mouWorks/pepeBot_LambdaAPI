@@ -1,32 +1,21 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # GNU Make 4.3
- 
 # Built for x86_64-pc-linux-gnu
- 
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
- 
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
- 
 # This is free software: you are free to change and redistribute it.
- 
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
- 
-# Make data base, printed on Mon Sep  4 12:51:15 2023
- 
+# Make data base, printed on Tue Oct 31 00:36:42 2023
 
 # Variables
- 
 
- 
 # environment
- 
 GRADLE_USER_HOME = /workspace/.gradle/
- 
 # environment
 JAVA_HOME = /home/gitpod/.sdkman/candidates/java/current
 # environment
+ 
 LC_ALL = C
 # environment
 GITPOD_CONFIGCAT_ENABLED = true
@@ -43,7 +32,7 @@ PIPENV_VENV_IN_PROJECT = true
 # environment
 POETRY_CACHE_DIR = /workspace/.pyenv_mirror/poetry
 # environment
-GITPOD_WORKSPACE_CLUSTER_HOST = ws-us104.gitpod.io
+GITPOD_WORKSPACE_CLUSTER_HOST = ws-us105.gitpod.io
 # environment
 GITPOD_THEIA_PORT = 23000
 # environment
@@ -61,7 +50,6 @@ THEIA_MINI_BROWSER_HOST_PATTERN = browser-{{hostname}}
 # environment
 rvm_user_install_flag = 1
 # environment
- 
 HISTFILE = /workspace/.gitpod/.shell_history
 # environment
 GOPATH = /workspace/go
@@ -82,7 +70,7 @@ PWD = /workspace/pepeBot_LambdaAPI
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
-HOSTNAME = mouworks-pepebotlambdaa-hnuziurvdox
+HOSTNAME = mouworks-pepebotlambdaa-wntxjfuhk58
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -96,11 +84,13 @@ LANG = C
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
 # environment
-GEM_PATH = /home/gitpod/.rvm/gems/ruby-3.2.1:/home/gitpod/.rvm/gems/ruby-3.2.1@global
+GEM_PATH = /home/gitpod/.rvm/gems/ruby-3.2.2:/home/gitpod/.rvm/gems/ruby-3.2.2@global
 # makefile
 MAKEFLAGS = pqrR
 # environment
 GIT_EDITOR = /ide/bin/remote-cli/gitpod-code --wait
+# environment
+RUST_VERSION = 1.73.0
 # environment
 GITPOD_HOST = https://gitpod.io
 # makefile
@@ -109,12 +99,9 @@ CURDIR := /workspace/pepeBot_LambdaAPI
 PROMPT_COMMAND = _direnv_hook;history -a
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
-# environment
-VSCODE_L10N_BUNDLE_LOCATION = 
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
- 
 PYENV_MIRROR = /workspace/.pyenv_mirror
 # environment
 MFLAGS = -pqrR
@@ -124,6 +111,8 @@ MFLAGS = -pqrR
 +D = $(patsubst %/,%,$(dir $+))
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
+# environment
+GITPOD_DEFAULT_WORKSPACE_IMAGE = gitpod/workspace-full:latest
 # automatic
 @F = $(notdir $@)
 # environment
@@ -137,7 +126,7 @@ GITPOD_IDE_ALIAS = code
 # environment
 PYTHONUSERBASE = /workspace/.pyenv_mirror/user/current
 # environment
-MY_RUBY_HOME = /home/gitpod/.rvm/rubies/ruby-3.2.1
+MY_RUBY_HOME = /home/gitpod/.rvm/rubies/ruby-3.2.2
 # environment
 PYCHARM_PYTHON_PATH = /home/gitpod/.pyenv/shims/python
 # environment
@@ -168,7 +157,6 @@ GITPOD_PREVENT_METADATA_ACCESS = true
 SHLVL = 0
 # environment
 rvm_path = /home/gitpod/.rvm
- 
 # environment
 WORKSPACEKIT_WRAP_NETNS = true
 # environment
@@ -178,7 +166,7 @@ MAKE = $(MAKE_COMMAND)
 # environment
 GITPOD_WORKSPACE_CLASS_INFO = {"id":"g1-standard","category":"GENERAL PURPOSE","displayName":"Standard","description":"Up to 4 cores, 8GB RAM, 30GB storage","powerups":1,"isDefault":true,"deprecated":false}
 # environment
-PATH = /ide/bin/remote-cli:/home/gitpod/.nix-profile/bin:/home/gitpod/.local/bin:/home/gitpod/.sdkman/candidates/maven/current/bin:/home/gitpod/.sdkman/candidates/java/current/bin:/home/gitpod/.sdkman/candidates/gradle/current/bin:/workspace/.cargo/bin:/home/gitpod/.rvm/gems/ruby-3.2.1/bin:/home/gitpod/.rvm/gems/ruby-3.2.1@global/bin:/home/gitpod/.rvm/rubies/ruby-3.2.1/bin:/home/gitpod/.pyenv/shims:/workspace/go/bin:/home/gitpod/.nix-profile/bin:/ide/bin/remote-cli:/home/gitpod/go/bin:/home/gitpod/go-packages/bin:/home/gitpod/.nvm/versions/node/v18.17.1/bin:/home/gitpod/.yarn/bin:/home/gitpod/.pnpm:/home/gitpod/.pyenv/bin:/home/gitpod/.rvm/bin:/home/gitpod/.cargo/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin/:/home/gitpod/.local/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/gitpod/.nvm/versions/node/v18.17.1/bin:/home/gitpod/.rvm/bin
+PATH = /ide/bin/remote-cli:/home/gitpod/.nix-profile/bin:/home/gitpod/.local/bin:/home/gitpod/.sdkman/candidates/maven/current/bin:/home/gitpod/.sdkman/candidates/java/current/bin:/home/gitpod/.sdkman/candidates/gradle/current/bin:/workspace/.cargo/bin:/home/gitpod/.rvm/gems/ruby-3.2.2/bin:/home/gitpod/.rvm/gems/ruby-3.2.2@global/bin:/home/gitpod/.rvm/rubies/ruby-3.2.2/bin:/home/gitpod/.pyenv/shims:/workspace/go/bin:/home/gitpod/.nix-profile/bin:/ide/bin/remote-cli:/home/gitpod/go/bin:/home/gitpod/go-packages/bin:/home/gitpod/.nvm/versions/node/v20.9.0/bin:/home/gitpod/.yarn/bin:/home/gitpod/.pnpm:/home/gitpod/.pyenv/bin:/home/gitpod/.rvm/bin:/home/gitpod/.cargo/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin/:/home/gitpod/.local/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/gitpod/.nvm/versions/node/v20.9.0/bin:/home/gitpod/.rvm/bin
 # environment
 NIX_SSL_CERT_FILE = /etc/ssl/certs/ca-certificates.crt
 # default
@@ -200,24 +188,23 @@ PYENV_INIT_LOCK = /tmp/.pyenv_init.lock
 # environment
 VSX_REGISTRY_URL = https://open-vsx.gitpod.io
 # environment
-NODE_VERSION = 18.17.1
+NODE_VERSION = 20.9.0
 # environment
 GITPOD_GIT_USER_NAME = MWang
 # environment
 TRIGGER_REBUILD = 1
 # environment
 GITPOD_ANALYTICS_SEGMENT_ENDPOINT = https://gitpod.io/analytics
- 
 # environment
 GITPOD_INTERVAL = 30000
 # environment
-GITPOD_CODE_HOST = https://gitpod.io
+GITPOD_CODE_HOST = gitpod.io
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # automatic
 ?F = $(notdir $?)
 # environment
-GITPOD_INSTANCE_ID = 0b797bb0-a42f-4b98-a6f2-8d270278a0eb
+GITPOD_INSTANCE_ID = 9da2f90a-ad9e-4312-9693-5d3dcb820b99
 # environment
 NGINX_DOCROOT_IN_REPO = public
 # environment
@@ -229,7 +216,7 @@ LS_COLORS =
 # automatic
 +F = $(notdir $+)
 # environment
-IRBRC = /home/gitpod/.rvm/rubies/ruby-3.2.1/.irbrc
+IRBRC = /home/gitpod/.rvm/rubies/ruby-3.2.2/.irbrc
 # environment
 MAVEN_HOME = /home/gitpod/.sdkman/candidates/maven/current
 # environment
@@ -239,7 +226,7 @@ GNUMAKEFLAGS :=
 # environment
 BROWSER = /ide/bin/helpers/browser.sh
 # environment
-GITPOD_WORKSPACE_CONTEXT = {"isFile":false,"path":"","title":"mouWorks/pepeBot_LambdaAPI - master","ref":"master","refType":"branch","revision":"993a5c06577cd44e4952c3af297207183b593843","repository":{"cloneUrl":"https://github.com/mouWorks/pepeBot_LambdaAPI.git","host":"github.com","defaultBranch":"master","name":"pepeBot_LambdaAPI","owner":"mouWorks","private":false},"normalizedContextURL":"https://github.com/mouWorks/pepeBot_LambdaAPI","checkoutLocation":"pepeBot_LambdaAPI"}
+GITPOD_WORKSPACE_CONTEXT = {"isFile":false,"path":"","title":"mouWorks/pepeBot_LambdaAPI - master","ref":"master","refType":"branch","revision":"7a9c4f5328debd957bd5a052ef91f732479c6daf","repository":{"cloneUrl":"https://github.com/mouWorks/pepeBot_LambdaAPI.git","host":"github.com","defaultBranch":"master","name":"pepeBot_LambdaAPI","owner":"mouWorks","private":false},"normalizedContextURL":"https://github.com/mouWorks/pepeBot_LambdaAPI","checkoutLocation":"pepeBot_LambdaAPI"}
 # makefile
 .DEFAULT_GOAL := all
 # environment
@@ -261,18 +248,17 @@ NIX_PROFILES = /nix/var/nix/profiles/default /home/gitpod/.nix-profile
 # environment
 _ = /ide/node
 # environment
-GEM_HOME = /home/gitpod/.rvm/gems/ruby-3.2.1
+GEM_HOME = /home/gitpod/.rvm/gems/ruby-3.2.2
 # environment
- 
 GITPOD_MEMORY = 3489
 # environment
-GITPOD_WORKSPACE_URL = https://mouworks-pepebotlambdaa-hnuziurvdox.ws-us104.gitpod.io
+GITPOD_WORKSPACE_URL = https://mouworks-pepebotlambdaa-wntxjfuhk58.ws-us105.gitpod.io
 # environment
 PYTHONUSERBASE_VERSION_FILE = /workspace/.pyenv_mirror/user/.mounted_version
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4636b9a1-5df0-4e86-bc5b-53c1e8a62ee8.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-5c7fe5cd-98cf-4a8b-a1b7-f20c75f2e281.sock
 # environment
-GO_VERSION = 1.20.7
+GO_VERSION = 1.21.3
 # environment
 VISUAL = /ide/bin/remote-cli/gitpod-code
 # environment
@@ -292,7 +278,7 @@ PIP_CACHE_DIR = /workspace/.pyenv_mirror/pip_cache
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-GITPOD_WORKSPACE_ID = mouworks-pepebotlambdaa-hnuziurvdox
+GITPOD_WORKSPACE_ID = mouworks-pepebotlambdaa-wntxjfuhk58
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -316,11 +302,11 @@ GITPOD_REPO_ROOT = /workspace/pepeBot_LambdaAPI
 # environment
 HOMEBREW_NO_AUTO_UPDATE = 1
 # environment
-RUBY_VERSION = ruby-3.2.1
+RUBY_VERSION = ruby-3.2.2
 # environment
 APACHE_DOCROOT_IN_REPO = public
 # variable set hash-table stats:
-# Load=146/1024=14%, Rehash=0, Collisions=10/181=6%
+# Load=147/1024=14%, Rehash=0, Collisions=9/182=5%
 
 # Pattern-specific Variable Values
 
@@ -328,7 +314,7 @@ APACHE_DOCROOT_IN_REPO = public
 
 # Directories
 
-# . (device 64769, inode 811623974): 26 files, no impossibilities.
+# . (device 64769, inode 1488982087): 26 files, no impossibilities.
 
 # 26 files, no impossibilities in 1 directories.
 
@@ -354,7 +340,7 @@ pull:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-09-04 12:50:47.837279625
+#  Last modified 2023-10-31 00:36:15.958534811
 #  File has been updated.
 #  Successfully updated.
 
@@ -417,6 +403,7 @@ build:
 # automatic
 # < := 
 # automatic
+ 
 # + := 
 # automatic
 # % := 
@@ -444,7 +431,6 @@ test:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
 #  recipe to execute (from 'Makefile', line 20):
 	npm run test && \
 	node --check index.js \
@@ -476,6 +462,6 @@ test:
 # strcache performance: lookups = 70 / hit rate = 41%
 # hash-table stats:
 # Load=41/8192=1%, Rehash=0, Collisions=0/70=0%
-# Finished Make data base on Mon Sep  4 12:51:15 2023
+# Finished Make data base on Tue Oct 31 00:36:42 2023
 
  

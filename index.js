@@ -200,6 +200,10 @@ exports.handler = function (req, res) {
                     msg = '冰淇淋';
                 }
             }
+
+            if ((msg.indexOf('YY') !== -1) || (msg.indexOf('遙遙') !== -1)) {
+                msg = 'YYXL';
+            }
         }
 
         var reply_token = event.replyToken; //Need to get this Token to pass back.
@@ -372,6 +376,10 @@ exports.handler = function (req, res) {
                     var text = 'Eslite 華麗起飛' + timeRangeDesc
                     messages[0] = messageBuilder.flexCountDown(text, 'ESLITE 華麗起飛', timeRangeDesc, note);
                     break;      
+
+            case 'YYXL':
+                    messages[0].text = rand.getFromArray(['遙遙領先', '遙遙領先, 遙遙領先, 不是領先一點點', '是 遙 遙 領 先'])
+                    break;
 
             case '王':
                 countdown = lib.getTimeRemaining(deadline);
