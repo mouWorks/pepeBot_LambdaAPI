@@ -35,6 +35,7 @@ const carefulArray = require('data/_carefulArray');
 const jayArray = require('data/_jayArray');
 const clockArray = require('data/_clockArray');
 const jkArray = require('data/_jkArray');
+const urgentArray = require('data/_urgentArray')
 
 //怕的 EmojiCon
 const scaredEmojiArray = require('data/_scaredArray');
@@ -141,6 +142,10 @@ exports.handler = function (req, res) {
 
             if (msg.indexOf('難道') !== -1) {
                 msg = '難道';
+            }
+
+            if (msg.indexOf('急') !== -1) {
+                msg = '急';
             }
 
             if (msg.indexOf('小心') !== -1) {
@@ -515,6 +520,10 @@ exports.handler = function (req, res) {
 
             case 'CEO':
                 messages[0] = messageBuilder.image(rand.getFromArray(ceoArray));
+                break;
+
+            case '急':
+                messages[0] = messageBuilder.image(rand.getFromArray(urgentArray));
                 break;
 
             case 'GUAN': case '慣': case '冠':
