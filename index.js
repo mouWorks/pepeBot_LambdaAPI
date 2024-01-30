@@ -35,7 +35,8 @@ const carefulArray = require('data/_carefulArray');
 const jayArray = require('data/_jayArray');
 const clockArray = require('data/_clockArray');
 const jkArray = require('data/_jkArray');
-const urgentArray = require('data/_urgentArray')
+const urgentArray = require('data/_urgentArray');
+const thanksArray = require('data/_thanksArray')
 
 //怕的 EmojiCon
 const scaredEmojiArray = require('data/_scaredArray');
@@ -298,6 +299,14 @@ exports.handler = function (req, res) {
             case '熊福利':
                 messages[0].text = '_請支援收銀~_';
                 break;
+
+            case '我勸你':
+                messages[0].text = '*少管閒事*';
+                break;    
+
+            case '謝謝妳':
+                messages[0].text = lib.getRandomFromArrayWithStringStyle(thanksArray);
+                break;      
 
             case 'LUNCH':
             case '吃':
