@@ -300,11 +300,12 @@ exports.handler = function (req, res) {
                 messages[0].text = '_請支援收銀~_';
                 break;
 
-            case '我勸你':
+            case '':
                 messages[0].text = '*少管閒事*';
                 break;    
 
             case '謝謝妳':
+            case '謝謝你':    
                 messages[0].text = lib.getRandomFromArrayWithStringStyle(thanksArray);
                 break;      
 
