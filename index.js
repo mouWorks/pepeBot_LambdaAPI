@@ -1,6 +1,6 @@
 const rp = require('request-promise');
 const request = require('request');
-const AWS = require('aws-sdk');
+const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 const fs = require('fs');
 
 const PEPEBOT_S3_BUCKET = 'pepebot-images';
@@ -97,19 +97,20 @@ exports.handler = function (req, res) {
                 if (FALSE) {
 
                     //Here Upload to S3
-                    var s3Bucket = new AWS.S3({ params: { Bucket: PEPEBOT_S3_BUCKET } });
-                    var data = {
+                    const s3Client = new S3Client({});
+                    const command = new PutObjectCommand({
+                        Bucket: PEPEBOT_S3_BUCKET,
                         Key: imageName,
                         Body: body,
                         ContentType: "image/jpeg"
-                    };
-
-                    s3Bucket.upload(data, function (err, data) {
-                        if (err) { console.log('Error uploading data: ', data); }
-                        else {
-                            console.log('Successfully uploaded the image! Yo');
-                        }
                     });
+
+                    try {
+                        await s3Client.send(command);
+                        console.log('Successfully uploaded the image! Yo');
+                    } catch (err) {
+                        console.log('Error uploading data: ', err);
+                    }
                 }
             });//end of request
 
