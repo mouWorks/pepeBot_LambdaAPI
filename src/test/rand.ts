@@ -1,4 +1,5 @@
 import * as rand from '../lib/rand.js'
+import { describe, test, expect } from '@jest/globals'
 
 describe(`Rand`, () => {
     describe(`getFromArray`, () => {

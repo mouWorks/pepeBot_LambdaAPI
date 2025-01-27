@@ -1,4 +1,4 @@
-import miment from 'miment'
+import dayjs from 'dayjs'
 
 export function getRandomFromArrayWithStringStyle(ArrayNames) {
     var length = ArrayNames.length
@@ -21,18 +21,18 @@ export function getRandomFromArrayWithStringStyle(ArrayNames) {
 }
 
 export function getWorkedDate(today = '') {
-    today = today || miment().format('YYYY-MM-DD')
+    today = today || dayjs().format('YYYY-MM-DD')
     let diff_secs =
-        miment(today + ' 00:00:00').diff('2019-04-01 00:00:00') / 1000
+        dayjs(today + ' 00:00:00').diff(dayjs('2019-04-01 00:00:00'), 'second')
     let diff_days = diff_secs / 86400
 
     return diff_days + 1
 }
 
 export function getSurvivedDate() {
-    let today = miment().format('YYYY-MM-DD')
+    let today = dayjs().format('YYYY-MM-DD')
     let diff_secs =
-        miment('2019-08-30 00:00:00').diff(today + ' 00:00:00') / 1000
+        dayjs('2019-08-30 00:00:00').diff(dayjs(today + ' 00:00:00'), 'second')
     let diff_days = diff_secs / 86400
 
     return diff_days + 1
@@ -69,11 +69,11 @@ export function getTimeRemaining(target_time) {
 export function getCountDownDate(today) {
     let designedDate = '2019-08-30 00:00:00' //Date of QQ
 
-    today = today || miment().format('YYYY-MM-DD')
+    today = today || dayjs().format('YYYY-MM-DD')
     let nowDate = today + ' 00:00:00'
-    //let diff_secs = miment(today + ' 00:00:00').diff('2019-04-01 00:00:00') / 1000;
+    //let diff_secs = dayjs(today + ' 00:00:00').diff(dayjs('2019-04-01 00:00:00'), 'second');
 
-    let diff_secs = miment(designedDate).diff(nowDate) / 1000
+    let diff_secs = dayjs(designedDate).diff(dayjs(nowDate), 'second')
     let diff_days = diff_secs / 86400
 
     return diff_days + 1
