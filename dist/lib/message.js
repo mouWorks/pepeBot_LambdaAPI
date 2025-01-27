@@ -1,6 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.flexBadge = exports.flexTip = exports.flexCountDown = exports.stickerFormat = exports.imageFormat = void 0;
+exports.imageFormat = imageFormat;
+exports.stickerFormat = stickerFormat;
+exports.flexCountDown = flexCountDown;
+exports.flexTip = flexTip;
+exports.flexBadge = flexBadge;
 //圖片訊息
 function imageFormat(imgUrl) {
     return {
@@ -9,7 +13,6 @@ function imageFormat(imgUrl) {
         previewImageUrl: imgUrl,
     };
 }
-exports.imageFormat = imageFormat;
 //貼圖訊息
 function stickerFormat(packageId, stickerId) {
     return {
@@ -18,7 +21,6 @@ function stickerFormat(packageId, stickerId) {
         stickerId: stickerId,
     };
 }
-exports.stickerFormat = stickerFormat;
 //CountDown Badge
 function flexCountDown(flexMessage, title, Highlight, messageBelow) {
     return {
@@ -84,7 +86,6 @@ function flexCountDown(flexMessage, title, Highlight, messageBelow) {
         },
     };
 }
-exports.flexCountDown = flexCountDown;
 //BlackBeltTip
 function flexTip(flexMessage, title, Highlight, messageBelow) {
     return {
@@ -150,7 +151,6 @@ function flexTip(flexMessage, title, Highlight, messageBelow) {
         },
     };
 }
-exports.flexTip = flexTip;
 //特殊的badge訊息
 function flexBadge(flexMessage, title, Highlight, messageBelow) {
     return {
@@ -216,5 +216,4 @@ function flexBadge(flexMessage, title, Highlight, messageBelow) {
         },
     };
 }
-exports.flexBadge = flexBadge;
 //# sourceMappingURL=message.js.map

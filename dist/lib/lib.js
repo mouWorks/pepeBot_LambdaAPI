@@ -3,8 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getEmoji = exports.recognizePeople = exports.getCountDownDate = exports.getTimeRemaining = exports.getSurvivedDate = exports.getWorkedDate = exports.getRandomFromArrayWithStringStyle = void 0;
-const miment_1 = __importDefault(require("miment"));
+exports.getRandomFromArrayWithStringStyle = getRandomFromArrayWithStringStyle;
+exports.getWorkedDate = getWorkedDate;
+exports.getSurvivedDate = getSurvivedDate;
+exports.getTimeRemaining = getTimeRemaining;
+exports.getCountDownDate = getCountDownDate;
+exports.recognizePeople = recognizePeople;
+exports.getEmoji = getEmoji;
+const dayjs_1 = __importDefault(require("dayjs"));
 function getRandomFromArrayWithStringStyle(ArrayNames) {
     var length = ArrayNames.length;
     var getString = ArrayNames[Math.floor(Math.random() * length)];
@@ -20,21 +26,18 @@ function getRandomFromArrayWithStringStyle(ArrayNames) {
             return '*' + getString + '*';
     }
 }
-exports.getRandomFromArrayWithStringStyle = getRandomFromArrayWithStringStyle;
 function getWorkedDate(today = '') {
-    today = today || (0, miment_1.default)().format('YYYY-MM-DD');
-    let diff_secs = (0, miment_1.default)(today + ' 00:00:00').diff('2019-04-01 00:00:00') / 1000;
+    today = today || (0, dayjs_1.default)().format('YYYY-MM-DD');
+    let diff_secs = (0, dayjs_1.default)(today + ' 00:00:00').diff((0, dayjs_1.default)('2019-04-01 00:00:00'), 'second');
     let diff_days = diff_secs / 86400;
     return diff_days + 1;
 }
-exports.getWorkedDate = getWorkedDate;
 function getSurvivedDate() {
-    let today = (0, miment_1.default)().format('YYYY-MM-DD');
-    let diff_secs = (0, miment_1.default)('2019-08-30 00:00:00').diff(today + ' 00:00:00') / 1000;
+    let today = (0, dayjs_1.default)().format('YYYY-MM-DD');
+    let diff_secs = (0, dayjs_1.default)('2019-08-30 00:00:00').diff((0, dayjs_1.default)(today + ' 00:00:00'), 'second');
     let diff_days = diff_secs / 86400;
     return diff_days + 1;
 }
-exports.getSurvivedDate = getSurvivedDate;
 function getTimeRemaining(target_time) {
     let t_target = Date.parse(target_time);
     let t_now = Date.parse(new Date().toISOString());
@@ -61,17 +64,15 @@ function getTimeRemaining(target_time) {
         seconds: seconds,
     };
 }
-exports.getTimeRemaining = getTimeRemaining;
 function getCountDownDate(today) {
     let designedDate = '2019-08-30 00:00:00'; //Date of QQ
-    today = today || (0, miment_1.default)().format('YYYY-MM-DD');
+    today = today || (0, dayjs_1.default)().format('YYYY-MM-DD');
     let nowDate = today + ' 00:00:00';
-    //let diff_secs = miment(today + ' 00:00:00').diff('2019-04-01 00:00:00') / 1000;
-    let diff_secs = (0, miment_1.default)(designedDate).diff(nowDate) / 1000;
+    //let diff_secs = dayjs(today + ' 00:00:00').diff(dayjs('2019-04-01 00:00:00'), 'second');
+    let diff_secs = (0, dayjs_1.default)(designedDate).diff((0, dayjs_1.default)(nowDate), 'second');
     let diff_days = diff_secs / 86400;
     return diff_days + 1;
 }
-exports.getCountDownDate = getCountDownDate;
 /**
  * 記錄常用 User ID Hash
  * @param hash
@@ -93,10 +94,8 @@ function recognizePeople(hash) {
             return '';
     }
 }
-exports.recognizePeople = recognizePeople;
 //Get Special Emoji from Line
 function getEmoji(unicode) {
     return String.fromCodePoint(unicode);
 }
-exports.getEmoji = getEmoji;
 //# sourceMappingURL=lib.js.map
