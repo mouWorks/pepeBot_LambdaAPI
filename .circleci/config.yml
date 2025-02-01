@@ -7,7 +7,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/node:12.19.0
+      - image: cimg/node:18.19.0
 
     working_directory: ~/Pepebot-Lambda
     executor: aws-cli/default
@@ -50,7 +50,7 @@ jobs:
 
   test:
     docker:
-      - image: cimg/node:12.19.0-browsers
+      - image: cimg/node:18.19.0-browsers
     working_directory: ~/Pepebot-Lambda
     steps:
       - checkout
@@ -67,7 +67,7 @@ jobs:
           command: make test
   deploy:
     docker:
-      - image: cimg/node:12.19.0
+      - image: cimg/node:18.19.0
 
     working_directory: ~/Pepebot-Lambda
     executor: aws-cli/default
