@@ -89,7 +89,7 @@ exports.handler = function (req, res) {
                 encoding: null
             };
 
-            request(requestSettings, function (error, response, body) {
+            request(requestSettings, async function (error, response, body) {
                 // Use body as a binary Buffer
                 imageName = img_id + '.jpg';
 
