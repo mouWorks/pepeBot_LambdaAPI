@@ -4,7 +4,7 @@
         "module": "commonjs",
         "esModuleInterop": true,
         "sourceMap": true,
-        "outDir": "dist",
+        "outDir": "libs",
         "types": ["jest", "node"]
     },
     "include": ["src/**/*", "src/test/**/*", "src/test"]
