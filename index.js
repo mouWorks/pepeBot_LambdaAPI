@@ -7,9 +7,9 @@ const PEPEBOT_S3_BUCKET = 'pepebot-images';
 const EXPORT_PATH = 'pepebot/';
 
 // load libraries
-const rand = require('./libs/rand.js');
-const lib = require('./libs/lib.js');
-const messageBuilder = require('./libs/message.js');
+const rand = require('./dist/lib/rand.js');
+const lib = require('./dist/lib/lib.js');
+const messageBuilder = require('./dist/lib/message.js');
 
 //Extract Lists - add more data here if needed.
 const duckArray = require('data/_duckArray.json')
